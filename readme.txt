@@ -53,7 +53,7 @@ Once products are added to the Compare sidebar widget users click the Compare bu
 * Publish or update a product and the Products Comparable Features auto show when the Compare button is clicked.
 
 = Pro Version Features =
-Coming Soon with these extra features!
+* Coming Soon with these extra features!
 * The FREE version of Woo Compare Products has 1 Master Features Category set. This is fine for small sites or sites that have one type of product.The PRO version allows you to create and easily manage unlimited Featured Category sets.
 * PRO version does not auto add the Compare Button to ALL products. This allows you to progressively roll out the Feature accross your site.
 * PRO version allows users to add products to their cart from the Fly-out screen.
