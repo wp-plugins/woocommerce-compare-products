@@ -125,10 +125,10 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 All objects in the plugin have a class so you can style for them. Using an ftp client open the style.css in your theme.
 
-Look for the style of your themes buttons – below is an example - it will look something like this
+Look for the style of your themes buttons below is an example - it will look something like this
 
 #wrap input[type="submit"], #wrap input[type="button"] {
-background: url(“images/bg-button.png”) no-repeat scroll right top transparent;
+background: url('images/bg-button.png') no-repeat scroll right top transparent;
 border: 1px solid #153B94;
 border-radius: 5px 5px 5px 5px;
 box-shadow: 1px 1px 2px #333333;
@@ -138,10 +138,10 @@ font-size: 12px;
 padding: 9px 27px 7px 10px;
 }
 
-Once you have found that in themes style.css directory then add that style into your themes style.css under the class name “bt_compare_this” which is for the Compare button on the product pages and class name “compare_button_go” for the Compare button in the sidebar widget. This is how it would look using the example above as the style for the button.
+Once you have found that in themes style.css directory then add that style into your themes style.css under the class name 'bt_compare_this' which is for the Compare button on the product pages and class name 'compare_button_go' for the Compare button in the sidebar widget. This is how it would look using the example above as the style for the button.
 
 input.bt_compare_this {
-background: url(“images/bg-button.png”) no-repeat scroll right top transparent;
+background: url('images/bg-button.png') no-repeat scroll right top transparent;
 border: 1px solid #153B94;
 border-radius: 5px 5px 5px 5px;
 box-shadow: 1px 1px 2px #333333;
@@ -151,7 +151,7 @@ font-size: 12px;
 padding: 9px 27px 7px 10px;
 }
 
-This will then mean that style will apply for all input tag in div that has the class compare_button_container – to change the sidebar widget button you do the same but use the class “compare_button_go”
+This will then mean that style will apply for all input tag in div that has the class compare_button_container to change the sidebar widget button you do the same but use the class 'compare_button_go'
 
 == Support ==
 
