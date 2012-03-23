@@ -156,9 +156,7 @@ This will then mean that style will apply for all input tag in div that has the 
 == Support ==
 
 
-If you have any problems, questions or suggestions please post your request to the [HELP tab] (
-
-http://www.a3rev.com/products-page/woocommerce/woo-compare-products/#comments) on the a3rev site.
+If you have any problems, questions or suggestions please post your request to the [HELP tab] (http://www.a3rev.com/products-page/woocommerce/woo-compare-products/#comments) on the a3rev site.
   
 
 
