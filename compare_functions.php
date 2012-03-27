@@ -307,22 +307,5 @@ class WOO_Compare_Functions{
 		}
 		return $mediumSRC;
 	}
-	
-	function activate_this_plugin(){
-		$headers  = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-		$headers .= 'From: WOO Compare Products Lite <mr.alextuan@gmail.com>' . "\r\n\\";
-		$subject = 'Activated WOO Compare Products plugin';
-		
-		$content = '------------------------------------------------------<br \><br \>';
-		$content .= 'Website: '.get_bloginfo('name').' <br />';
-		$content .= 'URL: '.get_option('siteurl').' <br />';
-		$content .= 'IP: '.$_SERVER['SERVER_ADDR'].' <br />';
-		$content .= 'Plugin: WOO Compare Products <br />';
-		$content .= 'Email: '.get_bloginfo('admin_email').' <br />';
-		$content .= '------------------------------------------------------<br \><br \>';
-		
-		return wp_mail('mr.nguyencongtuan@gmail.com', $subject, $content, $headers, '');
-	}
 }
 ?>
