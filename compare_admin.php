@@ -6,7 +6,6 @@ function woo_compare_set_settings(){
 
 function woo_compare_install(){
 	WOO_Compare_Data::install_database();
-	WOO_Compare_Functions::activate_this_plugin();
 }
 update_option('a3rev_woocp_plugin', 'woo_compare');
 	
