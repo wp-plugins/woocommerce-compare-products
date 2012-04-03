@@ -176,14 +176,14 @@ http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help) W
 
 = 1.0.2 - 04/04/2012 =
 
-* Feature: Add default WooCommerce Fancybox  Fly-Out screen option. Retained Lightbox – now have option to use Fancybox or Lightbox to power Fly-Out window.
+* Feature: Add default WooCommerce Fancybox  Fly-Out screen option. Retained Lightbox and now have option to use Fancybox or Lightbox to power Fly-Out window.
 * Feature: Greatly improved the layout and ease of use of the single page admin panel.
 * Feature: Added comprehensive admin page plugin setup instructions and added Tool Tips
 * Fix : Auto add Compare Widget to sidebar when plugin is activated.
-* Fix: Feature Unit of Measurement is added in brackets after Feature Name – if nothing added it does not show.
+* Fix: Feature Unit of Measurement is added in brackets after Feature Name and if nothing added it does not show.
 * Fix: Use $woocommerce->add_inline_js for inline javascript to add it to the footer (after scripts/fancybox are loaded) to prevent errors
 * Tweak: Changed Fly-Out window from - include( '../../../wp-config.php') to show content using wp_ajax
-* Tweak: Run WP_DEBUG and fix plugins 'undefined É' errors
+* Tweak: Run WP_DEBUG and fix plugins 'undefined...' errors
 * Tweak: Removed fading update messages and animation and replaced with default wordpress 'updated' messages.
 * Tweak: Replace custom ajax handlers  with wp_ajax and wp_ajax_nopriv 
 * Tweak: Add pop up window when deleting feature fields to ask you to check if you are sure? 
