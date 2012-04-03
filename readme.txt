@@ -8,7 +8,7 @@ Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, woocommerc
 
 Requires at least: 2.92
 Tested up to: 3.3.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 Add a Compare Products Feature to all of your products on you WooCommerce site with the FREE Woo Comapre Products plugin. It is plug and play.
 
