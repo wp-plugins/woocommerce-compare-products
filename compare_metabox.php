@@ -216,105 +216,73 @@ class WOO_Compare_MetaBox{
 <?php
 	}
 	
-	function woocp_get_variation_compare(){
-		check_ajax_referer( 'woocp-variable-compare', 'security' );
-		$variation_id = $_REQUEST['variation_id'];
-		echo WOO_Compare_MetaBox::woo_variations_compare_feature_box($variation_id);
-		die();
-	}
-	
 	function variable_compare_meta_boxes(){
 		global $post, $woocommerce;
-		$post_status = get_post_status($post->ID);
-		$post_type = get_post_type($post->ID);
-		if($post_type == 'product' && $post_status != false){
-			$woocp_variable_compare = wp_create_nonce("woocp-variable-compare");
-			$attributes = (array) maybe_unserialize( get_post_meta($post->ID, '_product_attributes', true) );
-			
-			// See if any are set
-			$variation_attribute_found = false;
-			if ($attributes) foreach($attributes as $attribute){
-				if (isset($attribute['is_variation'])) :
-					$variation_attribute_found = true;
-					break;
-				endif;
-			}
-			if ($variation_attribute_found){
-				$args = array(
-						'post_type'	=> 'product_variation',
-						'post_status' => array('private', 'publish'),
-						'numberposts' => -1,
-						'orderby' => 'id',
-						'order' => 'asc',
-						'post_parent' => $post->ID
-				);
-				$variations = get_posts($args);
-				$loop = 0;
-			ob_start();
-			?>
-			jQuery(function(){
-			<?php
-				if ($variations && count($variations) > 0){?>
-				jQuery('#variable_product_options .woocommerce_variation').each(function(){
-					var current_variation = jQuery(this); 
-					if(current_variation.hasClass('have_compare_feature') == false){
-						var variation_id = jQuery(this).find('.remove_variation').attr('rel');
-						var data = {
-							action: 'woocp_get_variation_compare',
-							variation_id: variation_id,
-							security: '<?php echo $woocp_variable_compare; ?>'
-						};
-						jQuery.post('<?php echo admin_url('admin-ajax.php'); ?>', data, function(response) {
-							current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
-						});
-						current_variation.addClass('have_compare_feature');
-					}
-				});
-			<?php } ?>
-				jQuery('#variable_product_options').on('click', 'button.add_variation', function(){
-					setTimeout(function(){
-						jQuery('#variable_product_options .woocommerce_variation').each(function(){
-							var current_variation = jQuery(this); 
-							if(current_variation.hasClass('have_compare_feature') == false){
-								var variation_id = jQuery(this).find('.remove_variation').attr('rel');
-								var data = {
-									action: 'woocp_get_variation_compare',
-									variation_id: variation_id,
-									security: '<?php echo $woocp_variable_compare; ?>'
-								};
-								jQuery.post('<?php echo admin_url('admin-ajax.php'); ?>', data, function(response) {
-									current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
-								});
-								current_variation.addClass('have_compare_feature');
-							}
-						});
-					}, 1000);
-				});
-				jQuery('#variable_product_options').on('click', 'button.link_all_variations', function(){
-					setTimeout(function(){
-						jQuery('#variable_product_options .woocommerce_variation').each(function(){
-							var current_variation = jQuery(this); 
-							if(current_variation.hasClass('have_compare_feature') == false){
-								var variation_id = jQuery(this).find('.remove_variation').attr('rel');
-								var data = {
-									action: 'woocp_get_variation_compare',
-									variation_id: variation_id,
-									security: '<?php echo $woocp_variable_compare; ?>'
-								};
-								jQuery.post('<?php echo admin_url('admin-ajax.php'); ?>', data, function(response) {
-									current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
-								});
-								current_variation.addClass('have_compare_feature');
-							}
-						});
-					}, 5000);
-				});
-			});
-			
-	<?php
-			$javascript = ob_get_clean();
-			$woocommerce->add_inline_js( $javascript );
-			}
+	
+		$attributes = (array) maybe_unserialize( get_post_meta($post->ID, '_product_attributes', true) );
+		
+		// See if any are set
+		$variation_attribute_found = false;
+		if ($attributes) foreach($attributes as $attribute){
+			if (isset($attribute['is_variation'])) :
+				$variation_attribute_found = true;
+				break;
+			endif;
+		}
+		if ($variation_attribute_found){
+			$args = array(
+					'post_type'	=> 'product_variation',
+					'post_status' => array('private', 'publish'),
+					'numberposts' => -1,
+					'orderby' => 'id',
+					'order' => 'asc',
+					'post_parent' => $post->ID
+			);
+			$variations = get_posts($args);
+			$loop = 0;
+		ob_start();
+		?>
+        jQuery(function(){
+        <?php
+			if ($variations && count($variations) > 0){?>
+			jQuery('#variable_product_options .woocommerce_variation').each(function(){
+            	var current_variation = jQuery(this); 
+                if(current_variation.hasClass('have_compare_feature') == false){
+                    var variation_id = jQuery(this).find('.remove_variation').attr('rel');
+                    var data = {
+                        action: 'get_variation_compare',
+                        variation_id: variation_id                
+                    };
+                    jQuery.post('<?php echo WOOCP_URL.'/compare_process_ajax.php'; ?>', data, function(response) {
+                        current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
+                    });
+                    current_variation.addClass('have_compare_feature');
+                }
+           	});
+        <?php } ?>
+        	jQuery('#variable_product_options').on('click', 'button.link_all_variations, button.add_variation', function(){
+            	setTimeout(function(){
+                    jQuery('#variable_product_options .woocommerce_variation').each(function(){
+                        var current_variation = jQuery(this); 
+                        if(current_variation.hasClass('have_compare_feature') == false){
+                            var variation_id = jQuery(this).find('.remove_variation').attr('rel');
+                            var data = {
+                                action: 'get_variation_compare',
+                                variation_id: variation_id                
+                            };
+                            jQuery.post('<?php echo WOOCP_URL.'/compare_process_ajax.php'; ?>', data, function(response) {
+                                current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
+                            });
+                            current_variation.addClass('have_compare_feature');
+                        }
+                    });
+            	}, 1000);
+            });
+        });
+		
+<?php
+		$javascript = ob_get_clean();
+		$woocommerce->add_inline_js( $javascript );
 		}
 	}
 	
@@ -334,7 +302,7 @@ class WOO_Compare_MetaBox{
 				}
 			}
 			
-			if(isset($_REQUEST['variable_post_id'])){
+			/*if(isset($_REQUEST['variable_post_id'])){
 				$variable_ids = $_REQUEST['variable_post_id'];
 				foreach($variable_ids as $variation_id){
 					$post_type = get_post_type($variation_id);
@@ -351,7 +319,7 @@ class WOO_Compare_MetaBox{
 						}
 					}
 				}
-			}
+			}*/
 		}
 	}
 }

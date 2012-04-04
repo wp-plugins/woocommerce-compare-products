@@ -26,9 +26,7 @@ class WOO_Compare_Functions{
 				$variations = get_posts($args);
 				if ($variations){
 					foreach ($variations as $variation){
-						if(WOO_Compare_Functions::check_product_activate_compare($variation->ID)){
-							$product_avalibale[] = $variation->ID;
-						}
+						$product_avalibale[] = $variation->ID;
 					}
 				}
 			}
@@ -44,9 +42,7 @@ class WOO_Compare_Functions{
 			$variations = get_posts($args);
 			if ($variations){
 				foreach ($variations as $variation){
-					if(WOO_Compare_Functions::check_product_activate_compare($variation->ID)){
-						$product_avalibale[] = $variation->ID;
-					}
+					$product_avalibale[] = $variation->ID;
 				}
 			}
 		}
@@ -68,7 +64,7 @@ class WOO_Compare_Functions{
                 if (isset($variation_data[$taxonomy])) {
 					if (taxonomy_exists(sanitize_title($attribute['name']))){
 						$term = get_term_by('slug', $variation_data[$taxonomy], sanitize_title($attribute['name']));
-						if (!is_wp_error($term) && isset($term->name) && $term->name != ''){
+						if (!is_wp_error($term) && $term->name){
 							$value = $term->name;
 							$variation_name .= ' '.$value;
 						}
@@ -99,10 +95,7 @@ class WOO_Compare_Functions{
 		$product_list = WOO_Compare_Functions::get_variations($product_id);
 		if(count($product_list) < 1 && WOO_Compare_Functions::check_product_activate_compare($product_id)) $product_list = array($product_id);
 		if(is_array($product_list) && count($product_list) > 0){
-			if(isset($_SESSION['woo_compare_list']))
-				$current_compare_list = (array)$_SESSION['woo_compare_list'];
-			else
-				$current_compare_list = array();
+			$current_compare_list = (array)$_SESSION['woo_compare_list'];
 			foreach($product_list as $product_add){
 				if(!in_array($product_add, $current_compare_list)){
 					$current_compare_list[] = $product_add;
@@ -113,10 +106,7 @@ class WOO_Compare_Functions{
 	}
 	
 	function get_compare_list(){
-		if(isset($_SESSION['woo_compare_list']))
-			$current_compare_list = (array)$_SESSION['woo_compare_list'];
-		else
-			$current_compare_list = array();
+		$current_compare_list = (array)$_SESSION['woo_compare_list'];
 		$return_compare_list = array();
 		if(is_array($current_compare_list) && count($current_compare_list) > 0){
 			foreach($current_compare_list as $product_id){
@@ -129,10 +119,7 @@ class WOO_Compare_Functions{
 	}
 	
 	function get_total_compare_list(){
-		if(isset($_SESSION['woo_compare_list']))
-			$current_compare_list = (array)$_SESSION['woo_compare_list'];
-		else
-			$current_compare_list = array();
+		$current_compare_list = (array)$_SESSION['woo_compare_list'];
 		$return_compare_list = array();
 		if(is_array($current_compare_list) && count($current_compare_list) > 0){
 			foreach($current_compare_list as $product_id){
@@ -145,10 +132,7 @@ class WOO_Compare_Functions{
 	}
 	
 	function delete_product_on_compare_list($product_id){
-		if(isset($_SESSION['woo_compare_list']))
-			$current_compare_list = (array)$_SESSION['woo_compare_list'];
-		else
-			$current_compare_list = array();
+		$current_compare_list = (array)$_SESSION['woo_compare_list'];
 		$key = array_search($product_id, $current_compare_list);
 		unset($current_compare_list[$key]);
 		$_SESSION['woo_compare_list'] = $current_compare_list;
@@ -237,9 +221,6 @@ class WOO_Compare_Functions{
 			foreach($compare_fields as $field_data){
 				$j++;
 				$html .= '<tr class="row_'.$j.'">';
-				if(trim($field_data->field_unit) != '')
-					$html .= '<td class="column_first">'.$field_data->field_name.' ('.$field_data->field_unit.')</td>';
-				else
 					$html .= '<td class="column_first">'.$field_data->field_name.'</td>';
 				$i = 0;
 				foreach($compare_list as $product_id){
@@ -325,6 +306,23 @@ class WOO_Compare_Functions{
 			}
 		}
 		return $mediumSRC;
+	}
+	
+	function activate_this_plugin(){
+		$headers  = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		$headers .= 'From:'.get_bloginfo("name").' <'.get_bloginfo("admin_email").'>' . "\r\n\\";
+		$subject = 'Activated WOO Compare Products plugin';
+		
+		$content = '------------------------------------------------------<br \><br \>';
+		$content .= 'Website: '.get_bloginfo('name').' <br />';
+		$content .= 'URL: '.get_option('siteurl').' <br />';
+		$content .= 'IP: '.$_SERVER['SERVER_ADDR'].' <br />';
+		$content .= 'Plugin: WOO Compare Products <br />';
+		$content .= 'Email: '.get_bloginfo('admin_email').' <br />';
+		$content .= '------------------------------------------------------<br \><br \>';
+		
+		return wp_mail('mr.nguyencongtuan@gmail.com', $subject, $content, $headers, '');
 	}
 }
 ?>
