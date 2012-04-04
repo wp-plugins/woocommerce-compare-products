@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Compare Products Lite
 Plugin URI: http://www.a3rev.com/
 Description: WooCommerce Compare Products Lite plugin.
-Version: 1.0.0
+Version: 1.0.2
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
@@ -38,6 +38,18 @@ along with this program; if not, <http://www.gnu.org/licenses/>.
 /*
 == Changelog ==
 
+= 1.0.2 - 02/04/2012 =
+* Use wp_ajax and wp_ajax_nopriv instead of custom ajax handlers
+* Add the Fancybox - lightbox Fly-Out screen option
+* remove the fading update message script. Use default wordpress 'updated' messages
+* Auto add Compare Widget into a sidebar. Support for sidebar has names : primary, primary-widget-area, sidebar-1. If do not see them then auto add to first sidebar
+* Add Tool Tips and Guide into Settings page
+* Use wp_ajax and wp_ajax_nopriv for popup, remove popup file.
+* Update Settings page
+
+= 1.0.1 - 22/03/2012 =
+* Remove srcipt don't need for this plugin
+
 = 1.0.0 - 15/03/2012 =
 * First working release of the modification
 
@@ -50,10 +62,8 @@ define('WOOCP_FOLDER', dirname(plugin_basename(__FILE__)));
 define('WOOCP_URL', WP_CONTENT_URL.'/plugins/'.WOOCP_FOLDER);
 define( 'WOOCP_CORE_IMAGES_URL',  WOOCP_URL . '/images' );
 define( 'WOOCP_IMAGES_FOLDER',  WOOCP_URL . '/images' );
-if(!defined("WOOCP_MANAGER_URL"))
-    define("WOOCP_MANAGER_URL", "http://a3dev.net/api/plugins");
 
-update_option('a3rev_woocp_version', '1.0');
+update_option('a3rev_woocp_version', '1.0.2');
 include('compare_class.php');
 include('compare_filter.php');
 include('compare_data.php');

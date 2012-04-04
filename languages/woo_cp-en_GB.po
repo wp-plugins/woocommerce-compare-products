@@ -1,0 +1,510 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Compare Products Lite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-03 16:57+0700\n"
+"PO-Revision-Date: 2012-04-03 22:55+1000\n"
+"Last-Translator: Steve Truman <admin@a3rev.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite\n"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_admin.php:89
+msgid "Compare Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:60
+msgid "Save Compare Settings successfully"
+msgstr "Compare Settings Successfully Saved"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:63
+msgid "Reset Compare Settings successfully"
+msgstr "Compare Setting Successfully reset"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:70
+msgid "Edit Compare Feature successfully"
+msgstr "Compare Feature edited successfully"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:72
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:83
+msgid "This Feature Key is existed, please enter other Feature Key"
+msgstr "This Feature Key already exists, please enter another unique Feature Key."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:78
+msgid "Create Compare Feature successfully"
+msgstr "Compare Feature Successfully created."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:80
+msgid "Create Compare Feature error"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:91
+msgid "Delete Compare Feature successfully"
+msgstr "Compare Feature Successfully deleted."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:138
+msgid "WooCommerce Compare Products Lite"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:139
+msgid "Thanks for installing WooCommerce Compare Products Lite Version. Set up and manage all the of the Plugins functions from this admin page. Click the Read More links to read detailed instructions and use the tool tips for more help."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:142
+msgid "How to use this page to set up and manage the Compare Products Plugin"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:142
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:153
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:214
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:251
+msgid "Read More"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:144
+msgid "Now you have Compare Products Lite activated it has auto added a Compare Button to all of your Products and the Compare sidebar widget. If you go to the front of your site and add any product to your Compare Products sidebar list and open the Compare Fly-Out by clicking the Compare Button you will see the product, but no Compare features. The PRO version does not auto add the Compare Button to Products and allows you to roll out the feature to each product as you add them, that is one of the reasons that PRO is more suitable for larger sites."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:145
+msgid "Setting up the Compare Products Lite feature on your site is a simple 3 step process."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:146
+msgid "STEP 1. Scroll down this page and you will See the Compare Products Setup section. It is the first thing you should do because in the Lite Version the feature is auto added to every product on your site so you should set it to look the way you want it to. The set up section is at the bottom of the page because after you have done the set up you will rarely use it again."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:147
+msgid "STEP 2. Create Compare Product Features. Compare Products Lite has only 1 Master Compare Product Category and all you have to do is add the features. In the PRO version you Create Compare Product Categories and then add the Features to the Category. This is another reason that the PRO version is more suitable to larger sites that have a variety of products which of course have different feature sets."
+msgstr "STEP 2. Create Compare Product Features. Compare Products Lite has only 1 Master Compare Product Category and all you have to do is add the features. In the PRO version you Create Compare Product Categories and then add the Features to those Categories. This is another reason that the PRO version is more suitable to larger sites that have a variety of products which of course will have different feature sets."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:148
+msgid "STEP 3. Once you have Created some Compare Products features you then can start adding data for those features to your products OR if you do not want the Compare feature to show on that product you should deactivate the feature on that products page."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:153
+msgid "How to add/edit /deactivate Compare Features for each Product."
+msgstr "How to add/edit/deactivate Compare Features for each Product."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:155
+msgid "Once you add a Compare Feature that feature is automatically added to the Compare Features section on every products edit page on your site. If you enter nothing in the Feature Field on product pages it will auto show N/A for that field when a user looks at the product in the compare Fly -out window. To add data for features:"
+msgstr "Once you add a Compare Feature that feature is automatically added to the Compare Features section on every products edit page on your site. If you enter nothing in the Feature Field on product pages it will auto show N/A for that field when a user looks at the product in the compare Fly-Out window. To add data for features:"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:156
+msgid "1. Go to the Products page and click edit."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:157
+msgid "2. Scroll to the bottom of the edit screen and you will see the Compare Feature Fields section."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:158
+msgid "3. Enter data for each feature that is applicable to this product."
+msgstr "3. Enter data for each feature that is applicable to the product you are editing."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:159
+msgid "4. update your product post and the feature fields are activated. Empty fields show N/A as default."
+msgstr "4. Update or publish your product post and the feature fields are activated. Empty fields show N/A as default."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:160
+msgid "5. Edit Features and Fields on the product page and update your post to save the changes."
+msgstr "5. You also edit Feature Fields on a product just the same way. Open the product edit screen make any changes to the Feature data fields and update your post to save the changes."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:161
+msgid "6. Deactivate the feature. To deactivate the feature check the \"Deactivate Compare Feature for this Product\" section and update your post. This removes the Compare this button from the Product Page. Any data you have entered for the product is saved and if you choose to reactivate the feature on this product the data shows."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:186
+msgid "Edit Compare Feature"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:186
+msgid "Create New Compare Feature"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:191
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:272
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:280
+msgid "Feature Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:191
+msgid "This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:193
+msgid "Feature Key"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:193
+msgid "Users don't see this - its the features unique name on your database."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:194
+msgid "Please do not enter space character."
+msgstr "Please do not enter spaces in the Feature key."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:196
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:273
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:281
+msgid "Feature Input Type"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:196
+msgid "Users don't see this. You use this to set the data input field type that you will use on the product page to enter the Products data for this feature."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:214
+msgid "Feature Input Types Explained"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:217
+msgid "Input Text - Use when option is a single Line of Text"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:218
+msgid "Text Area - Use when option is Multiple lines of Text"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:219
+msgid "Check Box - Use when option is short like sizes eg XL - Select Multiple options"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:220
+msgid "Radio Button - Use when option is short like size eg SM - Only select one option"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:221
+msgid "Drop Down - Use when option is large eg Description - Only select one option"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:222
+msgid "Mutli Select - Like Drop Down but allows you to Mutiple select Options"
+msgstr "Multi Select - Like Drop Down but allows you to Mutiple select Options"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:231
+msgid "Enter Input Type Options"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:231
+msgid "You have selected one of the Check Box, Radio Button, Drop Down, Mutli Select Input Types. Type your Options here, one line for each option."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:234
+msgid "Feature Unit of Measurement"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:234
+msgid "e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets) on the Compare Feature List on the front end. If you leave this blank you will just see the Feature name."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:236
+msgid "Feature Description"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:236
+msgid "The front end user does not see this. It is a short note that shows on the Feature data entry field on the Products edit page to remind your what the feature is about."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:241
+msgid "Save"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:241
+msgid "Create"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:241
+msgid "Cancel"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:248
+msgid "Compare Products Lite Master Category Features List"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:251
+msgid "How to manage Master Category feature list"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:253
+msgid "As soon as you create a Feature above you will see it appear at the bottom of the master category Feature list below. The features below are in the order that they will show for the Products in the Fly-Out window. You can change the order by dragging and dropping any feature up or down the list. You can edit any feature by clicking on the paper and pencil icon. You can delete any feature by clicking the RED X."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:271
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:279
+msgid "Order"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:274
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:282
+msgid "Action"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:332
+msgid "Do not have any Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:342
+msgid "WooCommerce Compare Products Settings"
+msgstr "WooCommerce Compare Products Lite Settings"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:349
+msgid "Compare Set up"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:353
+msgid "COMPARE FLY-OUT WINDOW SETUP"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:357
+msgid "Compare Fly-Out Header Image"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:358
+msgid "To add a header image to your Compare Fly-Out screen put the full URL of the image you want to use. Use file formats .jpg .png. jpeg Your image can be any size. If it is not as wide as the Fly-Out Container width you set below it will sit in the centre at the top of the Fly-Out screen. If it is wider the bottom scroll bar will come into play."
+msgstr "To add a header image to your Compare Fly-Out screen put the full URL of the image you want to use in the text area above. Use file formats .jpg .png. jpeg Your image can be any size. If it is not as wide as the Fly-Out Container width you set below it will sit in the centre at the top of the Fly-Out screen. If it is wider the bottom scroll bar will come into play."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:360
+msgid "Comapre Fly-Out Width"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:362
+msgid "Compare Fly-Out Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:364
+msgid "Fly-Out Inner Container Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:365
+msgid "Setting this at slightly less than the Fly-Out height will ensure that your Header Image and the Print button will always be visible as users scroll down the products list of features in the Fly-Out screen."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:367
+msgid "Compare Popup Type"
+msgstr "Compare Pop-up Type"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:367
+msgid "Fancybox"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:367
+msgid "Lightbox"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:368
+msgid "Fancybox is the default tool used for the Fly-out window when you install the Compare extension as it is the the tool used in the WooCommerce Plugin and Themes. Fancybox is an alternative to the widely used and popular Lightbox tool so we have included both options so you can decide which one you want to use. To test it select Lightbox, Save at the bottom of this page, add some products to the compare sidebar widget and click the compare button.\n"
+msgstr "Fancybox is the default tool used for the Fly-Out window when you install the Compare Products extension as it is the the tool used in the WooCommerce Plugin and Themes. Fancybox is an alternative to the widely used and popular Lightbox tool so we have included both options so you can decide which one you want to use. To test it select Lightbox, Save at the bottom of this page, add some products to the compare sidebar widget and click the compare button.\n"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:374
+msgid "COMPARE PRODUCT PAGE BUTTONS"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:378
+msgid "Auto Add Compare button"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:378
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:381
+msgid "Yes"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:379
+msgid "This feature must be set at YES in the FREE version for Compare Products to work. You can manually deactivate the Compare Button and features from any individual products page edit screen. If you'd prefer to be just able to just activate the Plugin and then add the Compare Products Button and Features to individual Products rather than ALL Products (and then have to deactivate on individual product pages) you can do that by upgrading to the PRO version. IMORTANT! If your theme does not auto show the Campare button on each product page you will need to activate the next option and take the necessary steps."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:381
+msgid "Manually set Show Compare button and/or Button Position"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:382
+msgid "IMPORTANT! - Selecting this option will mean that the Compare Button will not show on your Product Pages. YOU MUST know how to write code to do this. Select it if you want to manually set/change the default position of the Button on the product page or if by the remote chance your theme does not support auto show the compare button on product pages - Set this option to YES. Then use this function"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:382
+msgid "to put into your theme code to allow your theme to show the button. Set it in your theme where you want the Compare button to show on the product pages."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:384
+msgid "Button or Text"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:384
+msgid "Show Compare feature on products as a Button or Hyperlink Text."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:384
+msgid "Button"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:384
+msgid "Link"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:385
+msgid "If you select LINK - the hyperlinked text auto shows in the same font and colour as set by your themes style sheets. Unfortunately is not possible to auto know the Style and Colour of your themes BUTTONS as many themes have many different buttons. If you have a little coding knowledge you can easily manually change the style and Colour of the Compare button used as default by us. All objects in the plugin have a class so you can style them. The Compare button on the product pages class name is 'bt_compare_this' and class name and the Compare button in the sidebar widget class name is 'compare_button_go'. Find the button style in you style sheets that you want to use and apply it to the plugin classes to change the buttons to your themes style.\n"
+msgstr "If you select LINK - the hyperlinked text auto shows in the same font and colour as set by your themes style sheets. Unfortunately is not possible to auto know the Style and Colour of your themes BUTTONS as many themes have many different buttons. If you have a little coding knowledge you can easily manually change the style and Colour of the Compare button used as default by us. All objects in the plugin have a class so you can style them. The Compare button on the product pages class name is 'bt_compare_this' and the Compare button in the sidebar widget class name is 'compare_button_go'. Find the button style in you style sheets that you want to use and apply it to the plugin classes to change the buttons to your themes style.\n"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:388
+msgid "BUTTON or LINK text"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:388
+msgid "Add the text you want to show on your Compare Button / Link on the Products pages"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:393
+msgid "COMPARE PRODUCT PAGE NAVIGATION TAB"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:397
+msgid "Compare Features Product Page Tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:397
+msgid "Select the position of the Compare Features Tab on the default WooCommerce Product Page Nav bar. Products Compare feature list shows here."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:398
+msgid "Before Description tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:399
+msgid "Between  Description and Additional tabs"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:400
+msgid "Between  Additional and Reviews tabs"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:401
+msgid "After Reviews tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:402
+msgid "Do not auto show"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:404
+msgid "Compare Featured Tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:404
+msgid "Give the tab you just created a name."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:406
+msgid "Manually Position Compare Features List"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:408
+msgid "If your theme does not use the WooCommerce Product Page Nav Bar You can use this function"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:408
+msgid "to put into your theme code where you want to show Compare Featured fields"
+msgstr "to put the code into your theme where you want to show Compare Featured fields to show."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:414
+msgid "Save Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:414
+msgid "Reset Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:423
+msgid "SUPPORT"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:424
+msgid "Please post your support requests, questions or suggestions on the Plugins home page - Under the"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:424
+msgid "Tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:427
+msgid "Compare PRO Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:428
+msgid "By upgrading to compare PRO you get these features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:430
+msgid "Seamless Upgrade - you do not lose any of the Compare Features you have set up on the Lite Version when you upgrade."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:431
+msgid "Add to Cart Functionality from Compare Fly-Out Window."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:432
+msgid "Create Unlimited Compare Product Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:433
+msgid "Assign Compare Features to Multiple categories."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:434
+msgid "Fly-Out Window only shows Compare Features for that Product - Not All."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:435
+msgid "Create Compare Features for Product \"Variants\" (Models)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:436
+msgid "Variants allows users to compare Model features side-by-side"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:437
+msgid "Neat and tidy Compare Feature on Product edit screen instead of a big long list of features."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:439
+msgid "PRO version avialble soon from the WooCommerce official Extensions site."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_class.php:456
+msgid "You just save the order for Compare Features."
+msgstr "You just save a new order for Compare Features."
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_filter.php:13
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_filter.php:34
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_filter.php:55
+msgid "Compare this"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_filter.php:317
+msgid "Compare Products"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_filter.php:317
+msgid "Print This Page"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_filter.php:317
+msgid "Narrow your selection to 3 products and print!"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_metabox.php:6
+msgid "Compare Feature Fields"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_metabox.php:15
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_metabox.php:119
+msgid "Deactivate Compare Feature for this Product"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_metabox.php:68
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/compare_metabox.php:172
+msgid "Select value"
+msgstr ""
+
