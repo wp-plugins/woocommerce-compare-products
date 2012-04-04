@@ -8,7 +8,7 @@ Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, WooCommerc
 
 Requires at least: 2.92
 Tested up to: 3.3.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
 Add a Compare Products Feature to all of your products on you WooCommerce site with the FREE WooCommerce Compare Products plugin. It is plug and play.
 
@@ -181,12 +181,12 @@ All support requests, questions or suggestions should be posted to the [HELP tab
 
 == Changelog ==
 
-= 1.0.3 - 04/04/2012 =
+= 1.0.3 - 05/04/2012 =
 
 * Tweak: Compare Settings page now on 2 tabs - SETTINGS | FEATURES in the same style as WooCommerce setting page for familiarity and greater ease of use.
 
 
-= 1.0.2 - 03/04/2012 =
+= 1.0.2 - 04/04/2012 =
 
 * Feature: Add default WooCommerce Fancybox  Fly-Out screen option. Retained Lightbox and now have option to use Fancybox or Lightbox to power Fly-Out window.
 * Feature: Greatly improved the layout and ease of use of the single page admin panel.
