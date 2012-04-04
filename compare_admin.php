@@ -10,6 +10,13 @@ function woo_compare_install(){
 }
 update_option('a3rev_woocp_plugin', 'woo_compare');
 	
+
+function woocp_init() {
+  load_plugin_textdomain( 'woo_cp', false, WOOCP_FOLDER.'/languages' ); 
+}
+	// Add language
+	add_action('init', 'woocp_init');
+
 	// Add Admin Menu
 	add_action('admin_menu', 'woocp_add_menu_item_e_commerce', 11);
 	
@@ -75,7 +82,7 @@ update_option('a3rev_woocp_plugin', 'woo_compare');
 	if(in_array(basename($_SERVER['PHP_SELF']), array('post.php', 'page.php', 'page-new.php', 'post-new.php'))){
 		//add_action('admin_footer', array('WOO_Compare_MetaBox', 'variable_compare_meta_boxes'));
 	}
-	if(in_array(basename($_SERVER['PHP_SELF']), array('admin.php', 'edit.php')) && isset($_REQUEST['page']) && in_array($_REQUEST['page'], array('woo-comparable-settings', 'woo-compare-fields'))){
+	if(in_array(basename($_SERVER['PHP_SELF']), array('admin.php', 'edit.php')) && isset($_REQUEST['page']) && in_array($_REQUEST['page'], array('woo-compare-settings', 'woo-compare-fields'))){
 		add_action('admin_footer', array('WOO_Compare_Hook_Filter','woocp_admin_script'));
 	}
 	
@@ -86,7 +93,7 @@ update_option('a3rev_woocp_plugin', 'woo_compare');
 // Add Menu Comparable Settings in E Commerce Plugins
 function woocp_add_menu_item_e_commerce() {
 	$woo_page = 'woocommerce';
-	$comparable_settings_page = add_submenu_page( $woo_page , __( 'Compare Settings', 'woo_cp' ), __( 'Compare Settings', 'woo_cp' ), 'manage_options', 'woo-comparable-settings', 'woo_display_comparable_settings' );
+	$comparable_settings_page = add_submenu_page( $woo_page , __( 'Compare Settings', 'woo_cp' ), __( 'Compare Settings', 'woo_cp' ), 'manage_options', 'woo-compare-settings', 'woo_display_comparable_settings' );
 }
 
 function woo_display_comparable_settings(){

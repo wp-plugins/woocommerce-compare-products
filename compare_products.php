@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Compare Products Lite
 Plugin URI: http://www.a3rev.com/
 Description: WooCommerce Compare Products Lite plugin.
-Version: 1.0.2
+Version: 1.0.3
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
@@ -38,6 +38,9 @@ along with this program; if not, <http://www.gnu.org/licenses/>.
 /*
 == Changelog ==
 
+= 1.0.3 - 04/04/2012 =
+* Tweak: Compare Settings page now on 2 tabs - SETTINGS | FEATURES in the same style as WooCommerce setting page for familiarity and greater ease of use.
+
 = 1.0.2 - 02/04/2012 =
 * Use wp_ajax and wp_ajax_nopriv instead of custom ajax handlers
 * Add the Fancybox - lightbox Fly-Out screen option
@@ -63,7 +66,7 @@ define('WOOCP_URL', WP_CONTENT_URL.'/plugins/'.WOOCP_FOLDER);
 define( 'WOOCP_CORE_IMAGES_URL',  WOOCP_URL . '/images' );
 define( 'WOOCP_IMAGES_FOLDER',  WOOCP_URL . '/images' );
 
-update_option('a3rev_woocp_version', '1.0.2');
+update_option('a3rev_woocp_version', '1.0.3');
 include('compare_class.php');
 include('compare_filter.php');
 include('compare_data.php');
