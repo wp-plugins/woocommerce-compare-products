@@ -1,0 +1,633 @@
+# Copyright (C) 2012 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/woocommerce-compare-products\n"
+"POT-Creation-Date: 2012-04-04 08:05:41+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2012-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: compare_admin.php:96
+msgid "Compare Settings"
+msgstr ""
+
+#: compare_class.php:52
+msgid "WooCommerce Compare Products Lite"
+msgstr ""
+
+#: compare_class.php:54
+msgid ""
+"Compare Products Lite has only 1 Master Compare Product Category and all you "
+"have to do is add the Compare Features. Once you have created some Compare "
+"Products features you then can start adding data for those features to your "
+"products."
+msgstr ""
+
+#: compare_class.php:57
+msgid "How to add/edit/deactivate Compare Features for each Product"
+msgstr ""
+
+#: compare_class.php:57 compare_class.php:117 compare_class.php:154
+#: compare_class.php:254
+msgid "Read More"
+msgstr ""
+
+#: compare_class.php:59
+msgid ""
+"Once you add a Compare Feature that feature is automatically added to the "
+"Compare Features section on every products edit page on your site. If you "
+"enter nothing in the Feature Field on product pages it will auto show N/A "
+"for that field when a user looks at the product in the compare Fly -out "
+"window. To add data for feature"
+msgstr ""
+
+#: compare_class.php:60
+msgid "1. Go to the Products page and click edit"
+msgstr ""
+
+#: compare_class.php:61
+msgid ""
+"2. Scroll to the bottom of the edit screen and you will see the Compare "
+"Feature Fields section"
+msgstr ""
+
+#: compare_class.php:62
+msgid "3. Enter data for each feature that is applicable to this product"
+msgstr ""
+
+#: compare_class.php:63
+msgid ""
+"4. Update your product post and the feature fields are activated. Empty "
+"fields show N/A as default"
+msgstr ""
+
+#: compare_class.php:64
+msgid ""
+"5. To edit Features/ Fields, open the the product edit page and update your "
+"Compare Fields data and update the post to save the changes"
+msgstr ""
+
+#: compare_class.php:65
+msgid ""
+"6. Deactivate the feature. To deactivate the feature check the \"Deactivate "
+"Compare Feature for this Product\" section and update your post. This "
+"removes the Compare this button from the Product Page. Any data you have "
+"entered for the product is saved and if you choose to reactivate the feature "
+"on this product the data shows"
+msgstr ""
+
+#: compare_class.php:89
+msgid "Edit Compare Feature"
+msgstr ""
+
+#: compare_class.php:89
+msgid "Create New Compare Feature"
+msgstr ""
+
+#: compare_class.php:94 compare_class.php:175 compare_class.php:183
+msgid "Feature Name"
+msgstr ""
+
+#: compare_class.php:94
+msgid ""
+"This is the Feature Name that users see in the Compare Fly-Out Window, for "
+"example-  System Height"
+msgstr ""
+
+#: compare_class.php:96
+msgid "Feature Key"
+msgstr ""
+
+#: compare_class.php:96
+msgid "Users don't see this - its the features unique name on your database."
+msgstr ""
+
+#: compare_class.php:97
+msgid "Please do not enter spaces in the Feature key."
+msgstr ""
+
+#: compare_class.php:99 compare_class.php:176 compare_class.php:184
+msgid "Feature Input Type"
+msgstr ""
+
+#: compare_class.php:99
+msgid ""
+"Users don't see this. You use this to set the data input field type that you "
+"will use on the product page to enter the Products data for this feature."
+msgstr ""
+
+#: compare_class.php:117
+msgid "Feature Input Types Explained"
+msgstr ""
+
+#: compare_class.php:120
+msgid "Input Text - Use when option is a single Line of Text"
+msgstr ""
+
+#: compare_class.php:121
+msgid "Text Area - Use when option is Multiple lines of Text"
+msgstr ""
+
+#: compare_class.php:122
+msgid ""
+"Check Box - Use when option is short like sizes eg XL - Select Multiple "
+"options"
+msgstr ""
+
+#: compare_class.php:123
+msgid ""
+"Radio Button - Use when option is short like size eg SM - Only select one "
+"option"
+msgstr ""
+
+#: compare_class.php:124
+msgid ""
+"Drop Down - Use when option is large eg Description - Only select one option"
+msgstr ""
+
+#: compare_class.php:125
+msgid "Multi Select - Like Drop Down but allows you to Mutiple select Options"
+msgstr ""
+
+#: compare_class.php:134
+msgid "Enter Input Type Options"
+msgstr ""
+
+#: compare_class.php:134
+msgid ""
+"You have selected one of the Check Box, Radio Button, Drop Down, Mutli "
+"Select Input Types. Type your Options here, one line for each option."
+msgstr ""
+
+#: compare_class.php:137
+msgid "Feature Unit of Measurement"
+msgstr ""
+
+#: compare_class.php:137
+msgid ""
+"e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the "
+"Feature name in (brackets) on the Compare Feature List on the front end. If "
+"you leave this blank you will just see the Feature name."
+msgstr ""
+
+#: compare_class.php:139
+msgid "Feature Description"
+msgstr ""
+
+#: compare_class.php:139
+msgid ""
+"The front end user does not see this. It is a short note that shows on the "
+"Feature data entry field on the Products edit page to remind your what the "
+"feature is about."
+msgstr ""
+
+#: compare_class.php:144
+msgid "Save"
+msgstr ""
+
+#: compare_class.php:144
+msgid "Create"
+msgstr ""
+
+#: compare_class.php:144
+msgid "Cancel"
+msgstr ""
+
+#: compare_class.php:151
+msgid "Compare Products Lite Master Category Features List"
+msgstr ""
+
+#: compare_class.php:154
+msgid "How to manage Master Category feature list"
+msgstr ""
+
+#: compare_class.php:156
+msgid ""
+"As soon as you create a Feature above you will see it appear at the bottom "
+"of the master category Feature list below. The features below are in the "
+"order that they will show for the Products in the Fly-Out window. You can "
+"change the order by dragging and dropping any feature up or down the list. "
+"You can edit any feature by clicking on the paper and pencil icon. You can "
+"delete any feature by clicking the RED X."
+msgstr ""
+
+#: compare_class.php:174 compare_class.php:182
+msgid "Order"
+msgstr ""
+
+#: compare_class.php:177 compare_class.php:185
+msgid "Action"
+msgstr ""
+
+#: compare_class.php:235
+msgid "Do not have any Features"
+msgstr ""
+
+#: compare_class.php:248
+msgid "WooCommerce Compare Products Lite Settings"
+msgstr ""
+
+#: compare_class.php:251
+msgid ""
+"Thanks for installing WooCommerce Compare Products Lite Version. Set up and "
+"manage all the of the Plugins functions from this admin page. Click the Read "
+"More links to read detailed instructions and use the tool tips for more help."
+msgstr ""
+
+#: compare_class.php:254
+msgid "How to use this page to set up and manage the Compare Products Plugin"
+msgstr ""
+
+#: compare_class.php:256
+msgid ""
+"Now you have Compare Products Lite activated it has auto added a Compare "
+"Button to all of your Products and the Compare sidebar widget. If you go to "
+"the front of your site and add any product to your Compare Products sidebar "
+"list and open the Compare Fly-Out by clicking the Compare Button you will "
+"see the product, but no Compare features. The PRO version does not auto add "
+"the Compare Button to Products and allows you to roll out the feature to "
+"each product as you add them, that is one of the reasons that PRO is more "
+"suitable for larger sites."
+msgstr ""
+
+#: compare_class.php:257
+msgid ""
+"Setting up the Compare Products Lite feature on your site is a simple 3 step "
+"process."
+msgstr ""
+
+#: compare_class.php:258
+msgid ""
+"STEP 1. Style your Compare Features. The Compare Lite plugin has auto added "
+"the Compare feature to all of your product pages. Follow the instructions "
+"below to style how the feature shows on your sites frontend."
+msgstr ""
+
+#: compare_class.php:259
+msgid ""
+"STEP 2. Create Compare Product Features. After you have done your set up - "
+"go to the FEATURES tab at the top to add your Compare Product features."
+msgstr ""
+
+#: compare_class.php:260
+msgid ""
+"STEP 3. Once you have Created some Compare Products features you then can "
+"start adding data for those features to your products OR if you do not want "
+"the Compare feature to show on that product you should deactivate the "
+"feature on that products page."
+msgstr ""
+
+#: compare_class.php:269
+msgid "Compare Set up"
+msgstr ""
+
+#: compare_class.php:273
+msgid "COMPARE FLY-OUT WINDOW SETUP"
+msgstr ""
+
+#: compare_class.php:277
+msgid "Compare Fly-Out Header Image"
+msgstr ""
+
+#: compare_class.php:278
+msgid ""
+"To add a header image to your Compare Fly-Out screen put the full URL of the "
+"image you want to use in the text area above. Use file formats .jpg .png. "
+"jpeg Your image can be any size. If it is not as wide as the Fly-Out "
+"Container width you set below it will sit in the centre at the top of the "
+"Fly-Out screen. If it is wider the bottom scroll bar will come into play."
+msgstr ""
+
+#: compare_class.php:280
+msgid "Compare Fly-Out Width"
+msgstr ""
+
+#: compare_class.php:282
+msgid "Compare Fly-Out Height"
+msgstr ""
+
+#: compare_class.php:284
+msgid "Fly-Out Inner Container Height"
+msgstr ""
+
+#: compare_class.php:285
+msgid ""
+"Setting this at slightly less than the Fly-Out height will ensure that your "
+"Header Image and the Print button will always be visible as users scroll "
+"down the products list of features in the Fly-Out screen."
+msgstr ""
+
+#: compare_class.php:287
+msgid "Compare Pop-up Type"
+msgstr ""
+
+#: compare_class.php:287
+msgid "Fancybox"
+msgstr ""
+
+#: compare_class.php:287
+msgid "Lightbox"
+msgstr ""
+
+#: compare_class.php:288
+msgid ""
+"Fancybox is the default tool used for the Fly-Out window when you install "
+"the Compare Products extension as it is the the tool used in the WooCommerce "
+"Plugin and Themes. Fancybox is an alternative to the widely used and popular "
+"Lightbox tool so we have included both options so you can decide which one "
+"you want to use. To test it select Lightbox, Save at the bottom of this "
+"page, add some products to the compare sidebar widget and click the compare "
+"button."
+msgstr ""
+
+#: compare_class.php:293
+msgid "COMPARE PRODUCT PAGE BUTTONS"
+msgstr ""
+
+#: compare_class.php:297
+msgid "Auto Add Compare button"
+msgstr ""
+
+#: compare_class.php:297 compare_class.php:300
+msgid "Yes"
+msgstr ""
+
+#: compare_class.php:298
+msgid ""
+"This feature must be set at YES in the FREE version for Compare Products to "
+"work. You can manually deactivate the Compare Button and features from any "
+"individual products page edit screen. If you'd prefer to be just able to "
+"just activate the Plugin and then add the Compare Products Button and "
+"Features to individual Products rather than ALL Products (and then have to "
+"deactivate on individual product pages) you can do that by upgrading to the "
+"PRO version. IMORTANT! If your theme does not auto show the Campare button "
+"on each product page you will need to activate the next option and take the "
+"necessary steps."
+msgstr ""
+
+#: compare_class.php:300
+msgid "Manually set Show Compare button and/or Button Position"
+msgstr ""
+
+#: compare_class.php:301
+msgid ""
+"IMPORTANT! - Selecting this option will mean that the Compare Button will "
+"not show on your Product Pages. YOU MUST know how to write code to do this. "
+"Select it if you want to manually set/change the default position of the "
+"Button on the product page or if by the remote chance your theme does not "
+"support auto show the compare button on product pages - Set this option to "
+"YES. Then use this function"
+msgstr ""
+
+#: compare_class.php:301
+msgid ""
+"to put into your theme code to allow your theme to show the button. Set it "
+"in your theme where you want the Compare button to show on the product pages."
+msgstr ""
+
+#: compare_class.php:303
+msgid "Button or Text"
+msgstr ""
+
+#: compare_class.php:303
+msgid "Show Compare feature on products as a Button or Hyperlink Text."
+msgstr ""
+
+#: compare_class.php:303
+msgid "Button"
+msgstr ""
+
+#: compare_class.php:303
+msgid "Link"
+msgstr ""
+
+#: compare_class.php:304
+msgid ""
+"If you select LINK - the hyperlinked text auto shows in the same font and "
+"colour as set by your themes style sheets. Unfortunately is not possible to "
+"auto know the Style and Colour of your themes BUTTONS as many themes have "
+"many different buttons. If you have a little coding knowledge you can easily "
+"manually change the style and Colour of the Compare button used as default "
+"by us. All objects in the plugin have a class so you can style them. The "
+"Compare button on the product pages class name is 'bt_compare_this' and the "
+"Compare button in the sidebar widget class name is 'compare_button_go'. Find "
+"the button style in you style sheets that you want to use and apply it to "
+"the plugin classes to change the buttons to your themes style."
+msgstr ""
+
+#: compare_class.php:306
+msgid "BUTTON or LINK text"
+msgstr ""
+
+#: compare_class.php:306
+msgid ""
+"Add the text you want to show on your Compare Button / Link on the Products "
+"pages"
+msgstr ""
+
+#: compare_class.php:311
+msgid "COMPARE PRODUCT PAGE NAVIGATION TAB"
+msgstr ""
+
+#: compare_class.php:315
+msgid "Compare Features Product Page Tab"
+msgstr ""
+
+#: compare_class.php:315
+msgid ""
+"Select the position of the Compare Features Tab on the default WooCommerce "
+"Product Page Nav bar. Products Compare feature list shows here."
+msgstr ""
+
+#: compare_class.php:316
+msgid "Before Description tab"
+msgstr ""
+
+#: compare_class.php:317
+msgid "Between  Description and Additional tabs"
+msgstr ""
+
+#: compare_class.php:318
+msgid "Between  Additional and Reviews tabs"
+msgstr ""
+
+#: compare_class.php:319
+msgid "After Reviews tab"
+msgstr ""
+
+#: compare_class.php:320
+msgid "Do not auto show"
+msgstr ""
+
+#: compare_class.php:322
+msgid "Compare Featured Tab"
+msgstr ""
+
+#: compare_class.php:322
+msgid "Give the tab you just created a name."
+msgstr ""
+
+#: compare_class.php:324
+msgid "Manually Position Compare Features List"
+msgstr ""
+
+#: compare_class.php:326
+msgid ""
+"If your theme does not use the WooCommerce Product Page Nav Bar You can use "
+"this function"
+msgstr ""
+
+#: compare_class.php:326
+msgid ""
+"to put the code into your theme where you want to show Compare Featured "
+"fields to show."
+msgstr ""
+
+#: compare_class.php:332
+msgid "Save Settings"
+msgstr ""
+
+#: compare_class.php:332
+msgid "Reset Settings"
+msgstr ""
+
+#: compare_class.php:343
+msgid "SUPPORT"
+msgstr ""
+
+#: compare_class.php:344
+msgid ""
+"Please post your support requests, questions or suggestions on the Plugins "
+"home page - Under the"
+msgstr ""
+
+#: compare_class.php:344
+msgid "Tab"
+msgstr ""
+
+#: compare_class.php:347
+msgid "COMPARE PRO FEATURES"
+msgstr ""
+
+#: compare_class.php:348
+msgid "By upgrading to compare PRO you get these features"
+msgstr ""
+
+#: compare_class.php:350
+msgid ""
+"Seamless Upgrade - you do not lose any of the Compare Features you have set "
+"up on the Lite Version when you upgrade."
+msgstr ""
+
+#: compare_class.php:351
+msgid "Add to Cart Functionality from Compare Fly-Out Window."
+msgstr ""
+
+#: compare_class.php:352
+msgid "Create Unlimited Compare Product Categories"
+msgstr ""
+
+#: compare_class.php:353
+msgid "Assign Compare Features to Multiple categories."
+msgstr ""
+
+#: compare_class.php:354
+msgid "Fly-Out Window only shows Compare Features for that Product - Not All."
+msgstr ""
+
+#: compare_class.php:355
+msgid "Create Compare Features for Product \"Variants\" (Models)"
+msgstr ""
+
+#: compare_class.php:356
+msgid "Variants allows users to compare Model features side-by-side"
+msgstr ""
+
+#: compare_class.php:357
+msgid ""
+"Neat and tidy Compare Feature on Product edit screen instead of a big long "
+"list of features."
+msgstr ""
+
+#: compare_class.php:359
+msgid ""
+"PRO version avialble soon from the WooCommerce official Extensions site."
+msgstr ""
+
+#: compare_class.php:375
+msgid "Compare Settings Successfully Saved"
+msgstr ""
+
+#: compare_class.php:378
+msgid "Compare Setting Successfully reset"
+msgstr ""
+
+#: compare_class.php:385
+msgid "Compare Feature edited successfully"
+msgstr ""
+
+#: compare_class.php:387 compare_class.php:398
+msgid ""
+"This Feature Key already exists, please enter another unique Feature Key."
+msgstr ""
+
+#: compare_class.php:393
+msgid "Compare Feature Successfully created"
+msgstr ""
+
+#: compare_class.php:395
+msgid "Create Compare Feature error"
+msgstr ""
+
+#: compare_class.php:406
+msgid "Compare Feature Successfully deleted."
+msgstr ""
+
+#: compare_class.php:455
+msgid "Settings"
+msgstr ""
+
+#: compare_class.php:456
+msgid "Features"
+msgstr ""
+
+#: compare_class.php:498
+msgid "You just save a new order for Compare Features."
+msgstr ""
+
+#: compare_filter.php:13 compare_filter.php:34 compare_filter.php:55
+msgid "Compare this"
+msgstr ""
+
+#: compare_filter.php:317 compare_popup.php:147
+msgid "Compare Products"
+msgstr ""
+
+#: compare_filter.php:317 compare_popup.php:147
+msgid "Print This Page"
+msgstr ""
+
+#: compare_filter.php:317 compare_popup.php:147
+msgid "Narrow your selection to 3 products and print!"
+msgstr ""
+
+#: compare_metabox.php:6
+msgid "Compare Feature Fields"
+msgstr ""
+
+#: compare_metabox.php:15 compare_metabox.php:119
+msgid "Deactivate Compare Feature for this Product"
+msgstr ""
+
+#: compare_metabox.php:68 compare_metabox.php:172
+msgid "Select value"
+msgstr ""
+
+#: compare_process_ajax.php:12
+msgid "You just save the order for compare fields."
+msgstr ""
