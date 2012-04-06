@@ -205,3 +205,5 @@ All support requests, questions or suggestions should be posted to the [HELP tab
 
 = 1.0.0 - 15/03/2012 =
 * First working release of the modification
+
+== Upgrade Notice ==
