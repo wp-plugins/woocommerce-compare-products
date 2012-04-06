@@ -207,3 +207,6 @@ All support requests, questions or suggestions should be posted to the [HELP tab
 * First working release of the modification
 
 == Upgrade Notice ==
+
+= 1.0.0 - 15/03/2012 =
+This first version.
