@@ -8,9 +8,9 @@ Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, WooCommerc
 
 Requires at least: 2.92
 Tested up to: 3.3.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
-Add a Compare Products Feature to all of your products on you WooCommerce site with the FREE Woo Compare Products plugin. It is plug and play.
+Add a Compare Products Feature to all of your products on you WooCommerce site with the FREE WooCommerce Compare Products plugin. It is plug and play.
 
 == Description ==
 
@@ -63,6 +63,12 @@ PRO version available soon from the WooCommerce official Extensions site.
 * Create Compare Features for Product 'Variants' (Models)
 * Variants allows users to compare Model features side-by-side
 * Neat and tidy Compare Feature on Product edit screen instead of a big long list of features.
+
+= Localization =
+* English (default) - always include.
+* .pot file (woo_cp.pot) in languages folder for translations.
+* Your translation? Please [send it to us](http://www.a3rev.com/contact/) We'll acknowledge your work and link to your site.
+Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
  
 [Documentation](http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/) |
 [Support](http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help)
@@ -88,8 +94,7 @@ PRO version available soon from the WooCommerce official Extensions site.
 
 
 
-= Localization =
-Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
+
 
 == Installation ==
 
@@ -105,23 +110,27 @@ Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a tr
 
 1. Open WooCommerce > Compare Settings
 
-2. Follow the detailed set up instructions on Compare setting dashboard which show you how to
+2. Opens to the SETTINGS tab
 
-3. Style you Compare Products Fly out screen - upload header image and set screen dimensions.
+3. Follow the detailed set up instructions on Compare setting dashboard which show you how to
 
-4. Select to show Compare Feature on Product Pages as Button or Hyperlink Text.
+4. Style you Compare Products Fly-Out screen - upload header image and set screen dimensions.
 
-5. Set text to show in Button or Link.
+5. Select to show Compare Feature on Product Pages as Button or Hyperlink Text.
 
-6. Set Compare Products Tab to show in WooCommerce Product Page Navigation Tabs.
+6. Set text to show in Button or Link.
 
-7. Add your Master Category Feature Fields
+7. Set Compare Products Tab to show in WooCommerce Product Page Navigation Tabs.
 
-8 . Save Settings and Compare Products Features is activated on every product on your site. You are now ready to add the Compare features data for each product.
+8. Save Settings to save your work. You are now ready to add the Compare features data for each product.
 
-9. Visit Product edit pages to where you (i) Deactivate the feature for that Product or (ii) Add Compare Feature Fields data for that Products. Update (or publish) and your compare features for that product is published.
+9. Click the FEATURES tab add your Master Category Feature Fields
 
-10. Celebrate the extra sales Compare Products brings you !  
+10. Follow the instructions on adding and managing Compare Features to the master category.
+
+11. Visit Product edit pages to where you (i) Deactivate the feature for that Product or (ii) Add Compare Feature Fields data for that Products. Update (or publish) and your compare features for that product is published.
+
+Celebrate the extra sales Compare Products brings you !  
 
 == Frequently Asked Questions ==
 
@@ -165,14 +174,17 @@ This will then mean that style will apply for all input tag in div that has the 
 == Support ==
 
 
-All support requests, questions or suggestions should be posted to the [HELP tab](
-
-http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help) WooCommerce Compare Products Home page on the a3rev site.
+All support requests, questions or suggestions should be posted to the [HELP tab](http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help) WooCommerce Compare Products Home page on the a3rev site.
   
 
 
 
 == Changelog ==
+
+= 1.0.3 - 05/04/2012 =
+
+* Tweak: Compare Settings page now on 2 tabs - SETTINGS | FEATURES in the same style as WooCommerce setting page for familiarity and greater ease of use.
+
 
 = 1.0.2 - 04/04/2012 =
 
