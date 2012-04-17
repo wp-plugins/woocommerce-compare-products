@@ -3,26 +3,27 @@
 
 Contributors: A3 Revolution Software Development team
 
-Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, WooCommerce plugins, compare products plugin, compare products
+Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 
 
 Requires at least: 2.92
 Tested up to: 3.3.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 Add a Compare Products Feature to all of your products on you WooCommerce site with the FREE WooCommerce Compare Products plugin. It is plug and play.
 
 == Description ==
 
 
-WooCommerce Compare Products is is the one and only Compare Products plugin for WooCommerce. Ever seen or used one of those excellent Compare Products features on another ecommerce platform? You will agree they are a brilliant feature. WooCommerce Compare Products has very every feature of the best of those and it is plug-and-play.
+WooCommerce Compare Products is is the one and only Compare Products plugin for WooCommerce. Ever seen or used one of those excellent Compare Products features on another ecommerce platform? You will agree they are a brilliant feature. WooCommerce Compare Products has every feature of the best of those and will sell more products for you.
 
-WooCommerce Compare Products allows you to add a professional product Comparison feature to any product on your woocommerce site. Site users click a button or a link to add products to their compare list in the sidebar widget area.
+WooCommerce Compare Products allows you to add a professional product Comparison feature to any product on your WooCommerce site. Site users click a button or a link to add products to their compare list in the sidebar widget area.
 
 When you install and activate WooCommerce Compare Products Lite it auto adds a Compare Button to every product page and the Compare Products sidebar widget to your active products page sidebar. It also adds a Compare Settings link to your WooCommerce sidebar admin panel. On the Compare Products settings page you will find detailed and comprehensive instructions on how to set up and manage your WooCommerce Compare Products feature. 
 
 = WooCommerce Compare Products Lite Key Features =
 
+* A Professional Compare Products feature will sell more products for you off your site. 
 * Users don't have to be logged or even registered to use the Compare Products feature.
 * Users can add any number of products to the Compare Widget in the sidebar.
 * Products are added to the sidebar widget by Ajax - meaning that the page does not reload any time items added or removed to the Compare sidebar widget.
@@ -55,6 +56,7 @@ When you install and activate WooCommerce Compare Products Lite it auto adds a C
 
 PRO version available soon from the WooCommerce official Extensions site.
 
+* Compare Products Manager - allows you to quickly add and edit Compare features to every product on your site from a single admin page.
 * Seamless upgrade - you do not lose any of the Compare Features you have set up on the Lite Version when you upgrade. 
 * Add to Cart Functionality from Compare Fly-Out Window.
 * Create Unlimited Compare Product Categories
@@ -62,7 +64,7 @@ PRO version available soon from the WooCommerce official Extensions site.
 * Fly-Out Window only shows Compare Features for that Product - Not All.
 * Create Compare Features for Product 'Variants' (Models)
 * Variants allows users to compare Model features side-by-side
-* Neat and tidy Compare Feature on Product edit screen instead of a big long list of features.
+ 
 
 = Localization =
 * English (default) - always include.
@@ -180,6 +182,15 @@ All support requests, questions or suggestions should be posted to the [HELP tab
 
 
 == Changelog ==
+
+= 1.0.4 - 17/04/2012 =
+
+* Fixed: Print this page feature not working on Fly-Out screen
+* Fixed: Column alignment problem on Features admin panel on smaller screens.
+* Tweak: Re-designed admin panel style for improve UX and in line with the PRO version
+* Tweak: Changed blue border in pop-up screen to square corners and gray colour.
+* Tweak: Change alignment of Compare button to 'align right' in sidebar widget.
+* Tweak: Code re-organized into folders with all files commented on and appropriate names as per WordPress Coding standards.
 
 = 1.0.3 - 05/04/2012 =
 
