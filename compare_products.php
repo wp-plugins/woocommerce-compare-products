@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Compare Products Lite
 Plugin URI: http://www.a3rev.com/
 Description: WooCommerce Compare Products Lite plugin.
-Version: 1.0.4
+Version: 1.0.5
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
@@ -37,6 +37,10 @@ along with this program; if not, <http://www.gnu.org/licenses/>.
 
 /*
 == Changelog ==
+
+= 1.0.5 - 22/05/2012 =
+* Feature: Set Compare Button position above or below and padding from the WooCommerce Add to Cart Button. 
+* Fix: This feature is a workaround for site owners who use the WooCommerce Premium Catalog Visibility extension that removes the WooCommerce hook that Compare needs to show the button. Set the Compare button to show below the Add to Cart button in your theme and it will still show when that plugin removes the cart fuunctionality.
 
 = 1.0.4 - 17/04/2012 =
 
@@ -75,8 +79,6 @@ define('WOOCP_URL', WP_CONTENT_URL.'/plugins/'.WOOCP_FOLDER);
 define( 'WOOCP_JS_URL',  WOOCP_URL . '/assets/js' );
 define( 'WOOCP_IMAGES_URL',  WOOCP_URL . '/assets/images' );
 
-update_option('a3rev_woocp_version', '1.0.4');
-
 include('includes/class-compare_functions.php');
 
 include('classes/data/class-compare_data.php');
@@ -86,6 +88,8 @@ include('widget/class-compare_widget.php');
 
 include('admin/classes/class-compare_settings.php');
 include('admin/compare_init.php');
+
+include('classes/class-compare_upgrade.php');
 
 /**
  * Show compare button
@@ -109,4 +113,8 @@ function woo_show_compare_fields($product_id='', $echo=false){
  * Call when the plugin is activated
  */
 register_activation_hook(__FILE__,'woo_compare_set_settings');
+
+if(version_compare(get_option('a3rev_woocp_version'), '1.0.5') === -1){
+	WOO_Compare_Upgrade::upgrade_version_1_0_5();
+}
 ?>

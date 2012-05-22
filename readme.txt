@@ -8,7 +8,7 @@ Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare pr
 
 Requires at least: 2.92
 Tested up to: 3.3.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 
 Add a Compare Products Feature to all of your products on you WooCommerce site with the FREE WooCommerce Compare Products plugin. It is plug and play.
 
@@ -182,6 +182,11 @@ All support requests, questions or suggestions should be posted to the [HELP tab
 
 
 == Changelog ==
+
+= 1.0.5 - 22/05/2012 =
+
+* Feature: Set Compare Button position above or below and padding from the WooCommerce Add to Cart Button. 
+* Fix: This feature is a workaround for site owners who use the WooCommerce Premium Catalog Visibility extension that removes the WooCommerce hook that Compare needs to show the button. Set the Compare button to show below the Add to Cart button in your theme and it will still show when that plugin removes the cart functionality.
 
 = 1.0.4 - 17/04/2012 =
 

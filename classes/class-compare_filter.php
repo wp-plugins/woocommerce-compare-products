@@ -36,13 +36,35 @@ class WOO_Compare_Hook_Filter{
 				if($button_text == '') $button_text = __('Compare this', 'woo_cp');
 				if(($post->post_type == 'product' || $post->post_type == 'product_variation') && WOO_Compare_Functions::check_product_activate_compare($product_id) && $comparable_settings['auto_add'] == 'yes'){
 					if($comparable_settings['button_type'] == 'button'){
-						$compare_html = '<div class="woo_compare_button_container"><input type="button" value="'.$button_text.'" class="button woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer" /> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
-						
+							$compare_html = '<div class="woo_compare_button_container"><input type="button" value="'.$button_text.'" class="button woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer" /> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
+							
 						echo $compare_html;
 					}else{
-						$compare_html = '<div class="woo_compare_button_container"><a class="woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer">'.$button_text.'</a> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
+							$compare_html = '<div class="woo_compare_button_container"><a class="woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer">'.$button_text.'</a> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
 						echo $compare_html;
 					}
+				}
+			}
+		}
+	}
+	
+	function woo_shop_add_compare_button_below_cart(){
+		global $post;
+		global $product;
+		$product_id = $product->id;
+		$comparable_settings = get_option('woo_comparable_settings');
+		$button_text = $comparable_settings['button_text'];
+		$compare_fields = WOO_Compare_Data::get_results('','field_order ASC');
+		if(is_array($compare_fields) && count($compare_fields)>0){
+			if($button_text == '') $button_text = __('Compare this', 'woo_cp');
+			if(($post->post_type == 'product' || $post->post_type == 'product_variation') && WOO_Compare_Functions::check_product_activate_compare($product_id) && $comparable_settings['auto_add'] == 'yes'){
+				if($comparable_settings['button_type'] == 'button'){
+					$compare_html = '<div class="woo_compare_button_container"><input type="button" value="'.$button_text.'" class="button woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer" /> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
+						
+					echo $compare_html;
+				}else{
+					$compare_html = '<div class="woo_compare_button_container"><a class="woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer">'.$button_text.'</a> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
+					echo $compare_html;
 				}
 			}
 		}
@@ -513,7 +535,16 @@ class WOO_Compare_Hook_Filter{
 			// fancy box
 			//wp_enqueue_style('fancybox_style', WOOCP_JS_URL . '/fancybox/jquery.fancybox.css');
 		}
-		echo '<style>.woo_compare_button_container{margin-bottom:10px;}</style>';
+		$compare_style = '<style>.woo_compare_button_container .button{';
+		if(isset($comparable_settings['above_padding']) && is_numeric($comparable_settings['above_padding'])) $above_padding = $comparable_settings['above_padding'];
+		else $above_padding = 10;
+		if(isset($comparable_settings['below_padding']) && is_numeric($comparable_settings['below_padding'])) $below_padding = $comparable_settings['below_padding'];
+		else $below_padding = 10;
+		
+		if(!isset($comparable_settings['button_position']) || $comparable_settings['button_position'] == 'above') $compare_style .= 'margin-bottom:'.$above_padding.'px !important;';
+		else $compare_style .= 'margin-top:'.$below_padding.'px !important;';
+		$compare_style .= '}</style>';
+		echo $compare_style;
 	}
 	
 	function woo_product_compare_featured_tab(){

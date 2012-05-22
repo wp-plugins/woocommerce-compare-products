@@ -3,6 +3,7 @@
  * Install Database, settings option and auto add widget to sidebar
  */ 
 function woo_compare_set_settings(){
+	update_option('a3rev_woocp_version', '1.0.5');
 	woo_compare_install();
 	WOO_Compare_Class::woocp_set_setting_default();
 }
@@ -17,6 +18,7 @@ update_option('a3rev_woocp_plugin', 'woo_compare');
 function woocp_init() {
   load_plugin_textdomain( 'woo_cp', false, WOOCP_FOLDER.'/languages' ); 
 }
+	$comparable_settings = get_option('woo_comparable_settings');
 	// Add language
 	add_action('init', 'woocp_init');
 
@@ -67,13 +69,20 @@ function woocp_init() {
 	add_action('wp_print_styles', array('WOO_Compare_Hook_Filter','woocp_print_styles'));
 		
 	// Add Compare Button on Shop page
-	add_action('woocommerce_before_template_part', array('WOO_Compare_Hook_Filter','woo_shop_add_compare_button'), 10, 3);
+	if(!isset($comparable_settings['button_position']) || $comparable_settings['button_position'] == 'above'){
+		add_action('woocommerce_before_template_part', array('WOO_Compare_Hook_Filter','woo_shop_add_compare_button'), 10, 3);
+	}else{
+		add_action('woocommerce_after_shop_loop_item', array('WOO_Compare_Hook_Filter','woo_shop_add_compare_button_below_cart'), 11);
+	}
 	
 	// Add Compare Button on Product Details page
-	add_action('woocommerce_before_add_to_cart_button', array('WOO_Compare_Hook_Filter','woo_details_add_compare_button'));
+	if(!isset($comparable_settings['button_position']) || $comparable_settings['button_position'] == 'above'){
+		add_action('woocommerce_before_add_to_cart_button', array('WOO_Compare_Hook_Filter','woo_details_add_compare_button'));
+	}else{
+		add_action('woocommerce_after_add_to_cart_button', array('WOO_Compare_Hook_Filter','woo_details_add_compare_button'));
+	}
 	
 	// Add Compare Featured Field tab into Product Details page
-	$comparable_settings = get_option('woo_comparable_settings');
 	if($comparable_settings['auto_compare_featured_tab'] > 0 ){
 		add_action( 'woocommerce_product_tabs', array('WOO_Compare_Hook_Filter', 'woo_product_compare_featured_tab'), $comparable_settings['auto_compare_featured_tab'] );
 		add_action( 'woocommerce_product_tab_panels', array('WOO_Compare_Hook_Filter', 'woo_product_compare_featured_panel'), $comparable_settings['auto_compare_featured_tab']);

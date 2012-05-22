@@ -56,6 +56,15 @@ class WOO_Compare_Class{
 		if(!isset($comparable_settings['popup_type']) || trim($comparable_settings['popup_type']) == '' || $reset){
 			$comparable_settings['popup_type'] = 'fancybox';
 		}
+		if(!isset($comparable_settings['button_position']) || trim($comparable_settings['button_position']) == '' || $reset){
+			$comparable_settings['button_position'] = 'above';
+		}
+		if(!isset($comparable_settings['above_padding']) || trim($comparable_settings['above_padding']) == '' || $reset){
+			$comparable_settings['above_padding'] = '10';
+		}
+		if(!isset($comparable_settings['below_padding']) || trim($comparable_settings['below_padding']) == '' || $reset){
+			$comparable_settings['below_padding'] = '10';
+		}
 		update_option('woo_comparable_settings', $comparable_settings);
 	}
 	
@@ -292,6 +301,15 @@ class WOO_Compare_Class{
         <h3><?php _e('Compare Product Page Buttons', 'woo_cp'); ?></h3>
         <table class="form-table">
 			<tbody>
+            	<tr valign="top">
+					<th class="titledesc" scope="rpw"><label for="button_position1"><?php _e('Button Position','woo_cp'); ?></label></th>
+                    <td class="forminp"><div style="width:160px; float:left;"><input type="radio" name="button_position" id="button_position1" value="above" <?php if(!isset($comparable_settings['button_position']) || $comparable_settings['button_position'] == 'above'){ echo 'checked="checked"';} ?> /> <label for="button_position1"><?php _e('Above','woo_cp'); ?></label></div> <div style="float:left; width:100px;"><label for="above_padding"><?php _e('Padding Bottom','woo_cp'); ?></label></div> <input type="text" name="above_padding" id="above_padding" value="<?php echo $comparable_settings['above_padding'] ?>" size="3" /> px
+                    	<div style="clear:both;"></div>
+                    	<div style="width:160px; float:left;"><input type="radio" name="button_position" id="button_position2" value="below" <?php if(isset($comparable_settings['button_position']) && $comparable_settings['button_position'] == 'below'){ echo 'checked="checked"';} ?> /> <label for="button_position2"><?php _e('Below','woo_cp'); ?></label></div> <div style="float:left; width:100px;"><label for="above_padding"><?php _e('Padding Top','woo_cp'); ?></label></div> <input type="text" name="below_padding" id="below_padding" value="<?php echo $comparable_settings['below_padding'] ?>" size="3" /> px
+                        <div style="clear:both;"></div>
+                    	<p class="description"><?php _e("Switch the position if you can not see Compare Button on frontend.", 'woo_cp'); ?></p>
+                    </td>
+                </tr>
 				<tr valign="top">
 					<th class="titledesc" scope="rpw"><label for="auto_add1"><?php _e('Default Button setting','woo_cp'); ?></label></th>
                     <td class="forminp"><input type="radio" name="auto_add" id="auto_add1" value="yes" <?php if($comparable_settings['auto_add'] == 'yes'){ echo 'checked="checked"';} ?> /> <label for="auto_add1"><?php _e('Yes','woo_cp'); ?></label>

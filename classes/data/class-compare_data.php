@@ -71,6 +71,7 @@ class WOO_Compare_Data{
 		$field_unit = strip_tags(addslashes($field_unit));
 		$field_description = strip_tags(addslashes($field_description));
 		$field_order = WOO_Compare_Data::get_maximum_order();
+		$field_order++;
 		$field_key = sanitize_title( $field_key, '' );
 		if(trim($field_key) == '') {
 			$query = $wpdb->query("INSERT INTO {$table_name}(field_name, field_type, default_value, field_unit, field_description, field_order) VALUES('$field_name', '$field_type', '$default_value', '$field_unit', '$field_description', '$field_order')");
