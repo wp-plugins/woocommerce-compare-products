@@ -35,7 +35,7 @@ class WOO_Compare_Widget extends WP_Widget{
 			echo $before_title . 'Compare Products <span id="total_compare_product">('.$total_compare_product.')</span>' . $after_title;
 		
 		
-		echo '<div class="woo_compare_widget_container">'.WOO_Compare_Functions::get_compare_list_html_widget().'</div><div class="woo_compare_widget_loader" style="display:none; text-align:center"><img src="'.WOOCP_URL.'/ajax-loader.gif" border=0 /></div>';
+		echo '<div class="woo_compare_widget_container">'.WOO_Compare_Functions::get_compare_list_html_widget().'</div><div class="woo_compare_widget_loader" style="display:none; text-align:center"><img src="'.WOOCP_IMAGES_URL.'/ajax-loader.gif" border=0 /></div>';
 		
 		echo $after_widget;
 	
