@@ -213,9 +213,9 @@ class WOO_Compare_Functions{
 				$html .= '</li>';
 			}
 			$html .= '</ul>';
-			$html .= '<div class="compare_widget_action"><a class="woo_compare_clear_all" style="cursor:pointer;float:left;">Clear All</a> <input type="button" name="woo_compare_button_go" class="woo_compare_button_go" value="Compare" style="cursor:pointer;float:right;" /></div><div style="clear:both"></div>';
+			$html .= '<div class="compare_widget_action"><a class="woo_compare_clear_all" style="cursor:pointer;float:left;">'.__( 'Clear All', 'woo_cp' ).'</a> <input type="button" name="woo_compare_button_go" class="woo_compare_button_go" value="'.__( 'Compare', 'woo_cp' ).'" style="cursor:pointer;float:right;" /></div><div style="clear:both"></div>';
 		}else{
-			$html .= '<div class="no_compare_list">You do not have any product to compare.</div>';	
+			$html .= '<div class="no_compare_list">'.__( 'You do not have any product to compare.', 'woo_cp' ).'</div>';	
 		}
 		return $html;
 	}
@@ -265,8 +265,8 @@ class WOO_Compare_Functions{
 					$field_value = get_post_meta( $product_id, '_woo_compare_'.$field_data->field_key, true );
 					if(is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
 					if(is_array($field_value) && count($field_value) > 0) $field_value = implode(', ', $field_value);
-					elseif(is_array($field_value) && count($field_value) < 0) $field_value = 'N/A';
-					if(trim($field_value) == '') $field_value = 'N/A';
+					elseif(is_array($field_value) && count($field_value) < 0) $field_value = __('N/A', 'woo_cp');
+					if(trim($field_value) == '') $field_value = __('N/A', 'woo_cp');
 					$html .= '<td class="column_'.$i.'"><div class="compare_value compare_'.$field_data->field_key.'">'.$field_value.'</div></td>';
 				}
 				$html .= '</tr>';
@@ -285,7 +285,7 @@ class WOO_Compare_Functions{
 		}
 			$html .= '</table>';
 		}else{
-			$html .= '<div class="no_compare_list">You do not have any product to compare.</div>';	
+			$html .= '<div class="no_compare_list">'.__( 'You do not have any product to compare.', 'woo_cp' ).'</div>';	
 		}
 		return $html;
 	}

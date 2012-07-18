@@ -32,7 +32,7 @@ class WOO_Compare_Widget extends WP_Widget{
 		if ( $title != '')
 			echo $before_title . $title . ' <span id="total_compare_product">('.$total_compare_product.')</span>' . $after_title;
 		else
-			echo $before_title . 'Compare Products <span id="total_compare_product">('.$total_compare_product.')</span>' . $after_title;
+			echo $before_title . __( 'Compare Products', 'woo_cp' ).' <span id="total_compare_product">('.$total_compare_product.')</span>' . $after_title;
 		
 		
 		echo '<div class="woo_compare_widget_container">'.WOO_Compare_Functions::get_compare_list_html_widget().'</div><div class="woo_compare_widget_loader" style="display:none; text-align:center"><img src="'.WOOCP_IMAGES_URL.'/ajax-loader.gif" border=0 /></div>';
@@ -54,7 +54,7 @@ class WOO_Compare_Widget extends WP_Widget{
 	    ?>
 
         <p>
-          	<label for="<?php echo $this->get_field_id('title'); ?>">Title :
+          	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title', 'woo_cp' ); ?> :
             	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
           	</label>
         </p>

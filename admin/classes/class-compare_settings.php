@@ -112,7 +112,7 @@ class WOO_Compare_Class{
                 <tbody>
                 	<tr>
                     	<td>
-                        	<div style="width:200px; float:left"><label for="field_name"><?php _e('Feature Name','woo_cp'); ?></label></div> <input type="text" name="field_name" id="field_name" value="<?php if(!empty($field)) echo stripslashes($field->field_name); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e('This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height', 'woo_cp') ?>' src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
+                        	<div style="width:200px; float:left"><label for="field_name"><?php _e('Feature Name','woo_cp'); ?></label></div> <input type="text" name="field_name" id="field_name" value="<?php if(!empty($field)) echo stripslashes($field->field_name); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e('This is the Feature Name that users see in the Compare Fly-Out Window, for example - System Height', 'woo_cp') ?>' src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
                             <div style="clear:both; height:20px;"></div>
                             <div style="width:200px; float:left"><label for="field_key"><?php _e('Feature Key','woo_cp'); ?></label></div> <input type="text" name="field_key" id="field_key" value="<?php if(!empty($field)) echo stripslashes($field->field_key); ?>" style="min-width:300px" /> <img class="help_tip" tip="<?php _e("Users don't see this - its the features unique name on your database.", 'woo_cp') ?>" src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
 							<div style="margin-left:200px;"><?php _e('Please do not enter spaces in the Feature key.','woo_cp'); ?></div>
@@ -302,12 +302,12 @@ class WOO_Compare_Class{
         <table class="form-table">
 			<tbody>
             	<tr valign="top">
-					<th class="titledesc" scope="rpw"><label for="button_position1"><?php _e('Button Position','woo_cp'); ?></label></th>
+					<th class="titledesc" scope="rpw"><label for="button_position1"><?php _e('Button Position relative to Add to Cart Button','woo_cp'); ?></label></th>
                     <td class="forminp"><div style="width:160px; float:left;"><input type="radio" name="button_position" id="button_position1" value="above" <?php if(!isset($comparable_settings['button_position']) || $comparable_settings['button_position'] == 'above'){ echo 'checked="checked"';} ?> /> <label for="button_position1"><?php _e('Above','woo_cp'); ?></label></div> <div style="float:left; width:100px;"><label for="above_padding"><?php _e('Padding Bottom','woo_cp'); ?></label></div> <input type="text" name="above_padding" id="above_padding" value="<?php echo $comparable_settings['above_padding'] ?>" size="3" /> px
                     	<div style="clear:both;"></div>
                     	<div style="width:160px; float:left;"><input type="radio" name="button_position" id="button_position2" value="below" <?php if(isset($comparable_settings['button_position']) && $comparable_settings['button_position'] == 'below'){ echo 'checked="checked"';} ?> /> <label for="button_position2"><?php _e('Below','woo_cp'); ?></label></div> <div style="float:left; width:100px;"><label for="above_padding"><?php _e('Padding Top','woo_cp'); ?></label></div> <input type="text" name="below_padding" id="below_padding" value="<?php echo $comparable_settings['below_padding'] ?>" size="3" /> px
                         <div style="clear:both;"></div>
-                    	<p class="description"><?php _e("Switch the position if you can not see Compare Button on frontend.", 'woo_cp'); ?></p>
+                    	<p class="description"><?php _e("Change position if Compare Button does not show on the frontend.", 'woo_cp'); ?></p>
                     </td>
                 </tr>
 				<tr valign="top">
@@ -378,7 +378,7 @@ class WOO_Compare_Class{
         	<h3><?php _e('Compare PRO Features','woo_cp'); ?></h3>
             <p><?php _e('Upgrade to WooCommerce Compare PRO you get these features','woo_cp'); ?>:</p>
             <ul>
-            	<li>* <?php _e('NEW FEATURE! – Compare Products – Easily and quickly manage, activate / deactivate, add and edit Compare Features on every product and variations on your site from the Compare Products admin panel.','woo_cp'); ?></li>
+            	<li>* <?php _e('NEW FEATURE! - Compare Products - Easily and quickly manage, activate / deactivate, add and edit Compare Features on every product and variations on your site from the Compare Products admin panel.','woo_cp'); ?></li>
             	<li>* <?php _e('Seamless Upgrade - you do not lose any of the Compare Features you have set up on the Lite Version when you upgrade.','woo_cp'); ?></li>
                 <li>* <?php _e('Add to Cart Functionality from Compare Fly-Out Window.','woo_cp'); ?></li>
                 <li>* <?php _e('Create Unlimited Compare Product Categories.','woo_cp'); ?></li>

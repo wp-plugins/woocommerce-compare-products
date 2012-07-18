@@ -129,8 +129,8 @@ class WOO_Compare_Hook_Filter{
 							$field_value = get_post_meta( $variation_id, '_woo_compare_'.$field_data->field_key, true );
 							if(is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
 							if(is_array($field_value) && count($field_value) > 0) $field_value = implode(', ', $field_value);
-							elseif(is_array($field_value) && count($field_value) < 0) $field_value = 'N/A';
-							if(trim($field_value) == '') $field_value = 'N/A';
+							elseif(is_array($field_value) && count($field_value) < 0) $field_value = __('N/A', 'woo_cp');
+							if(trim($field_value) == '') $field_value = __('N/A', 'woo_cp');
 							if(trim($field_data->field_unit) != '')
 								$html .= '<li class="compare_featured_item"><span class="compare_featured_name"><strong>'.$field_data->field_name.'</strong> ('.$field_data->field_unit.')</span> : <span class="compare_featured_value">'.$field_value.'</span></li>';
 							else 
@@ -147,8 +147,8 @@ class WOO_Compare_Hook_Filter{
 					$field_value = get_post_meta( $product_id, '_woo_compare_'.$field_data->field_key, true );
 					if(is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
 					if(is_array($field_value) && count($field_value) > 0) $field_value = implode(', ', $field_value);
-					elseif(is_array($field_value) && count($field_value) < 0) $field_value = 'N/A';
-					if(trim($field_value) == '') $field_value = 'N/A';
+					elseif(is_array($field_value) && count($field_value) < 0) $field_value = __('N/A', 'woo_cp');
+					if(trim($field_value) == '') $field_value = __('N/A', 'woo_cp');
 					if(trim($field_data->field_unit) != '')
 						$html .= '<li class="compare_featured_item"><span class="compare_featured_name"><strong>'.$field_data->field_name.'</strong> ('.$field_data->field_unit.')</span> : <span class="compare_featured_value">'.$field_value.'</span></li>';
 					else
