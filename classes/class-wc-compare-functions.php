@@ -621,13 +621,13 @@ class WC_Compare_Functions {
 	
 	function categories_extension() {
 		$html = '';
-		$html .= '<div class="upgrade_extensions">'.__('Your Product categories have been auto created as Compare Categories. All of your sites Parent Product Variations have been auto added as Compare Features to the Master category. Visit the plugins Documents to see how to use Compare categories and Compare features. Upgrade to the Pro Version to activate Compare categories.', 'woo_cp').'</div>';
+		$html .= '<div class="upgrade_extensions">'.__('Your Product categories have been auto created as Compare Categories. All of your sites Parent Product Variations have been auto added as Compare Features to the Master category. Visit the plugins', 'woo_cp').' <a href="http://docs.a3rev.com/user-guides/woocommerce/compare-products/" target="_blank">'.__('Documents', 'woo_cp').'</a> '.__('to see how to use Compare categories and Compare features. Upgrade to the', 'woo_cp').' <a target="_blank" href="'.WOOCP_AUTHOR_URI.'">'.__('Pro Version', 'woo_cp').'</a> '.__('to activate Compare categories.', 'woo_cp').'</div>';
 		return $html;	
 	}
 	
 	function create_category_extension() {
 		$html = '';
-		$html .= '<div class="upgrade_extensions">'.__('Please upgrade to the', 'woo_cp').' <a target="_blank" href="'.WOOCP_AUTHOR_URI.'">'.__('Pro Version', 'woo_cp').'</a> '.__('to activate the power of Compare Categories. Find out more here.', 'woo_cp').'</div>';
+		$html .= '<div class="upgrade_extensions">'.__('Please upgrade to the', 'woo_cp').' <a target="_blank" href="'.WOOCP_AUTHOR_URI.'">'.__('Pro Version', 'woo_cp').'</a> '.__('to activate the power of Compare Categories. Find out more', 'woo_cp').' <a href="http://docs.a3rev.com/user-guides/woocommerce/compare-products/" target="_blank">'.__('here.', 'woo_cp').'</a></div>';
 		return $html;	
 	}
 	
