@@ -1,0 +1,615 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Compare Products Lite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-02 13:02+0700\n"
+"PO-Revision-Date: 2012-08-02 13:02+0700\n"
+"Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
+"Language-Team: a3rev\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite\n"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/compare_init.php:165
+msgid "Compare Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/compare_init.php:165
+msgid "Product Comparison"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/compare_init.php:291
+msgid "Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/compare_init.php:292
+msgid "Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/compare_init.php:293
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:291
+msgid "Products"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-categories.php:29
+msgid "Edit Compare Product Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-categories.php:29
+msgid "Add Compare Product Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-categories.php:30
+msgid "Create Categories based on groups of products that share the same compare feature list."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-categories.php:44
+msgid "Edit Category Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-categories.php:44
+msgid "Category Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-categories.php:50
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:202
+msgid "Please upgrade to the Pro Version to activate Compare categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-categories.php:50
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:174
+msgid "Save"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-categories.php:50
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:174
+msgid "Create"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-categories.php:50
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:174
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:211
+msgid "Cancel"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-categories.php:66
+msgid "You just save the order for compare categories."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:45
+msgid "Compare Feature Successfully edited"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:47
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:65
+msgid "That Compare Feature Name already exists. Please try again"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:59
+msgid "Compare Feature Successfully created"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:61
+msgid "Compare Feature Error created"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:75
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:89
+msgid "Compare Feature successfully deleted"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:77
+msgid "Please select item(s) to delete"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:85
+msgid "Compare Feature successfully removed"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:104
+msgid "Edit Compare Product Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:104
+msgid "Add Compare Product Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:120
+msgid "Edit Compare Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:120
+msgid "Create New Compare Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:125
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:294
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:383
+msgid "Feature Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:125
+msgid "This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:127
+msgid "Feature Unit of Measurement"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:127
+msgid "e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:129
+msgid "Feature Input Type"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:143
+msgid "Users don't see this. Use to set the data input field type that you will use on to enter the Products data for this feature."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:146
+msgid "Enter Input Type options"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:146
+msgid "You have selected one of the Check Box, Radio Button, Drop Down, Mutli Select Input Types. Type your Options here, one line for each option."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:150
+msgid "Assign Feature to Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:166
+msgid "Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:185
+msgid "Manage Compare Categories and Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:186
+msgid "Use drag and drop to change Category order and Feature order within Categories."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:202
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:216
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:309
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:395
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:82
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:113
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:283
+msgid "Edit"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:202
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:309
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:314
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:395
+msgid "Delete"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:216
+msgid "Are you sure you want to remove"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:216
+msgid "from"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:216
+msgid "Remove"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:221
+msgid "You have not assigned any Features to this category yet. No Hurry!"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:287
+msgid "Un-Assigned Features (Assign to a Category to activate)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:293
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:278
+msgid "No"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:295
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:384
+msgid "Type"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:309
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:395
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:314
+msgid "Are you sure about deleting this?"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:330
+msgid "You just save the order for Compare Features."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:337
+msgid "Categories & Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:337
+msgid "Add New"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:350
+msgid "Search Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:376
+msgid "Found"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:376
+msgid "feature(s)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:403
+msgid "Show"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:414
+msgid "Go"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:415
+msgid "Displaying"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-fields.php:415
+msgid "of"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:71
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:102
+msgid "Activated"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:72
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:103
+msgid "Deactivated"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:188
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:65
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:207
+msgid "Activate Compare Feature for this Product"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:189
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:66
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:208
+msgid "Select a  Compare Category for this Product"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:191
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:68
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:210
+msgid "Select..."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:210
+msgid "Update"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:257
+msgid "Compare Product Feature Fields Successfully updated."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:261
+msgid "WooCommerce Compare Products Manager"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:279
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:286
+msgid "Product Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:280
+msgid "Product Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:281
+msgid "Compare Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:282
+msgid "Activated / Deactivated"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:292
+msgid "Find Product Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-products.php:308
+msgid "Please upgrade to the Pro Version to activate Products express Compare feature manager"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:77
+msgid "Compare Settings Successfully saved."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:80
+msgid "Compare Settings Successfully reseted."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:85
+msgid "Compare Fly-Out Window Setup"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:90
+msgid "Add Fly-Out Header Image"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:91
+msgid "Full image URL. File formats .jpg, .pgn, .jpeg. Any size."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:94
+msgid "Compare Fly-Out Width"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:98
+msgid "Compare Fly-Out Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:102
+msgid "Fly-Out Inner Container Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:103
+msgid "Set at less than the Fly-Out height so Header Image stays visible in the Fly-Out screen."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:106
+msgid "Compare Fly-Out Type"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:107
+msgid "Fancybox"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:107
+msgid "Lightbox"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:107
+msgid "Choose to power the Fly-Out Screen with fancybox or lightbox tool."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:111
+msgid "Product Page Compare Buttons"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:115
+msgid "Button Position relative to Add to Cart Button"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:116
+msgid "Above"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:116
+msgid "Padding Bottom"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:118
+msgid "Below"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:118
+msgid "Padding Top"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:120
+msgid "Change position if Compare Button does not show on the frontend."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:124
+msgid "Default Button setting"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:125
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:129
+msgid "Yes"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:128
+msgid "Manually set Compare button position"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:129
+msgid "Select to manually set / change the default position of the Compare Button on product pages"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:130
+msgid "Use this function to manually postion the Compare button on product pages"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:133
+msgid "Button or Text"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:134
+msgid "Button"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:134
+msgid "Link"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:134
+msgid "Show Compare feature on products as a Button or Hyperlink Text."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:135
+msgid "Manual styling Class names - Compare Button 'bt_compare_this', sidebar widget button 'compare_button_go'"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:138
+msgid "Button or hyperlink text"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:139
+msgid "Set text to show on Compare Button / Link on Product pages"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:143
+msgid "Compare product page navigation tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:147
+msgid "Compare Features tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:149
+msgid "Before Description tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:150
+msgid "Between  Description and Additional tabs"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:151
+msgid "Between  Additional and Reviews tabs"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:152
+msgid "After Reviews tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:153
+msgid "Do not auto show"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:153
+msgid "Select the position of the Compare Features tab on the default WooCommerce product page Nav bar. Products Compare feature list shows under the tab."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:156
+msgid "Compare Featured tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:157
+msgid "Set tab name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:160
+msgid "Manually set Compare Features list"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:161
+msgid "Show Compare Featured fields anywhere in your theme with this function"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:166
+msgid "Save changes"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/admin/classes/class-wc-compare-settings.php:167
+msgid "Reset Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:44
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:64
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:83
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:103
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:122
+msgid "Compare this"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:157
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:158
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:187
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:188
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:394
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:395
+msgid "N/A"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:438
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/widgets/compare_widget.php:36
+msgid "Compare Products"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:438
+msgid "Print This Page"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-filter.php:438
+msgid "Refine slections to 3 products and print!"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:292
+msgid "Clear All"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:292
+msgid "Compare"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:294
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:417
+msgid "You do not have any product to compare."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:370
+msgid "Add to cart"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:574
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:577
+msgid "Back"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:591
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:594
+msgid "Next"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:603
+msgid "See more quality WooCommerce plugins at the"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-functions.php:603
+msgid "WooCommerce extensions"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:24
+msgid "Compare Feature Fields"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:147
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:290
+msgid "Select value"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:191
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:334
+msgid "There are no Features created for this category, please add some."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:191
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/classes/class-wc-compare-metabox.php:334
+msgid "This page"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/widgets/compare_widget.php:22
+msgid "WOO Compare Products"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/woocommerce-compare-products-lite/widgets/compare_widget.php:58
+msgid "Title"
+msgstr ""
+

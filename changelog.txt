@@ -1,0 +1,15 @@
+*** Compare Products Pro Changelog ***
+
+= 1.1.1 - 2012/07/18 =
+* Tweak - Update language file.
+
+= 1.1 - 2012/06/08 =
+ * Fixed: Admin Tool Tips not showing and Products manager feature not loading on the Products tab by adding jQuery tipTip script.
+ * Fixed: Button Position relative to Add to Cart Button set px padding not working.
+ * Fixed: Change add_action from woocommerce_after_add_to_cart_button to woocommerce_after_template_part to fix the Compare button not showing when site is using the Catalog Visibility extension to disable Purchase function.
+ * Fixed: Add to Cart button showing on products in pop up when Catalog Visibility extension had disbale the Add to Cart Button and price for the product. Added custom code to auto check Show or Hide Price and Add to Cart button and display in pop-up as it does on the product page.
+ * Tweak: Complete UI overhaul of the Thickbox pop up display on Products Feature manager.
+
+= 1.0 - 2012/05/24 =
+ * First release
+ 
