@@ -133,8 +133,6 @@ All support requests, questions or suggestions should be posted to the [HELP tab
 
 == Changelog ==
 
-= 
-
 = 2.0 - 2012/08/03 =
 
 MAJOR UPGRADE
