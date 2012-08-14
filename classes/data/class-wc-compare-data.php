@@ -25,6 +25,12 @@
 class WC_Compare_Data {
 	function install_database() {
 		global $wpdb;
+		$collate = '';
+		if ( $wpdb->supports_collation() ) {
+			if( ! empty($wpdb->charset ) ) $collate .= "DEFAULT CHARACTER SET $wpdb->charset";
+			if( ! empty($wpdb->collate ) ) $collate .= " COLLATE $wpdb->collate";
+		}
+	
 		$table_woo_compare_fields = $wpdb->prefix. "woo_compare_fields";
 		if ($wpdb->get_var("SHOW TABLES LIKE '$table_woo_compare_fields'") != $table_woo_compare_fields) {
 			$sql = "CREATE TABLE IF NOT EXISTS `{$table_woo_compare_fields}` (
@@ -37,7 +43,7 @@ class WC_Compare_Data {
 				  `field_description` blob NOT NULL,
 				  `field_order` int(11) NOT NULL,
 				  PRIMARY KEY  (`id`)
-				) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";
+				) $collate; ";
 			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 			dbDelta($sql);
 		}
@@ -61,7 +67,7 @@ class WC_Compare_Data {
 ';
 						}
 					}
-					$feature_id = WC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->attribute_label)), 'field_type' => 'drop-down', 'field_unit' => '', 'default_value' => $default_value) );
+					$feature_id = WC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->attribute_label)), 'field_type' => 'checkbox', 'field_unit' => '', 'default_value' => $default_value) );
 					if ($feature_id !== false) {
 						WC_Compare_Categories_Fields_Data::insert_row($master_category_id, $feature_id);
 					}

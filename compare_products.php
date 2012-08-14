@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Compare Products LITE
 Plugin URI: http://woothemes.com/woocommerce
 Description: WooCommerce Compare Products LITE plugin.
-Version: 2.0.0
+Version: 2.0.1
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later

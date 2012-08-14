@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 2.92
 Tested up to: 3.4.1
-Stable tag: 2.0
+Stable tag: 2.0.1
 
 Add a Compare Products Feature to all of your products on you WooCommerce site today with the WooCommerce Compare Products plugin..
 
@@ -12,35 +12,34 @@ Add a Compare Products Feature to all of your products on you WooCommerce site t
 WooCommerce Compare Products instantly adds the <strong>cutting edge Compare products feature</strong> to your WooCommerce store in just minutes.
 
 [youtube http://www.youtube.com/watch?v=g8__ZFxKSRA] 
+
+WooCommerce Compare Products uses your existing WooCommerce Product Categories and WooCommerce Product Attributes to create Compare Features for each and every product that can then be compared – side-by-side, feature by feature, price-by-price (if you show prices) in a single on-page pop-up screen.  
  
 = Key Features =
 
-* Professional front end compare products presentation, buttons, links, sidebar widget and compare pop-up
+* Professional front end compare products presentation, buttons, links, sidebar widget and Compare pop-up window.
 * Works with any Theme that has WooCommerce plugin installed and activated.
-* Takes just minutes to set up on your site.
-* Product variants auto created as Compare features and added to the master category.
-* Add unlimited custom features to compare.
+* Existing Product Categories, Attributes and Terms are auto created as Compare Categories, Features and Feature values. Compare features are auto added the Compare Master Category.
+* Add an additional unlimited number of custom Compare categories and features - very flexible.
 
 <strong>Online shoppers love the compare products feature</strong> and giving customers more of what they love leads to <strong>more sales.</strong>. Boost your sales today by installing WooCommerce Compare Products on your WooCommerce store.
+
+= Comprehensive Documentation =
+
+Find comprehensive plugin documentation [here](http://docs.a3rev.com/user-guides/woocommerce/compare-products/)
 
 = Premium Upgrade =
 
 When you install WooCommerce Compare Products you will see all the added functionality that the Premium Version offers. The plugin is designed so that the upgrade is completely seamless. Nothing changes except all the features of Compare Products you see on the lite version are activated. This means you can activate, set up and use the free version completely risk free.  
 
-PRO Version upgrade features:
-
-* Compare Categories - is activated - Categories are important to delivering your customers easy to read compare features in the pop-up window.
-* Create unlimited number of custom Compare Categories allows you to customize the compare results to meet your exact requirements. 
-* Compare Express Products Manager  - is activated - makes setting up and managing the Compare feature across you entire catalogue at least 50 times faster. 
- 
-TRY WooCommerce Compare Products FREE version today. <strong>Your customers will love you for it.</strong>
 
 [Pro Version Upgrade](http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/) |
-[Read Documentation](http://docs.a3rev.com/user-guides/woocommerce/compare-products/) |
+[Documentation](http://docs.a3rev.com/user-guides/woocommerce/compare-products/) |
 [Support](http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help)
 
 = Localization =
 * English (default) - always include.
+* Turkish - added thanks to ManusH
 * .pot file (woo_cp.pot) in languages folder for translations.
 * Your translation? Please [send it to us](http://www.a3rev.com/contact/) We'll acknowledge your work and link to your site.
 Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update. 
@@ -69,23 +68,19 @@ Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a tr
 
 2. Opens to the SETTINGS tab
 
-3. Follow the detailed set up instructions on Compare setting dashboard.
-
 * Style your Compare Products Fly-Out screen - upload header image and set screen dimensions.
 * Select to show Compare Feature on Product Pages as Button or Hyperlink Text.
 * Set text to show in Button or Link.
 * Set Compare Products Tab to show in WooCommerce Product Page Navigation Tabs.
 * Save Settings to save your work. You are now ready to add the Compare features data for each product.
 
-4. Click the FEATURES tab 
+3. Click the FEATURES tab 
 
-5. Click the dropdown arrow at the end of the Master Cateory tab. You'll see that all of your sites Parent variations have been auto created as Compare Features.
+4. Click the dropdown arrow at the end of the Master Cateory tab. You'll see that all of your parent product Attributes have been auto created as Compare Features.
 
-6. Edit each Master category comapre feature to add the required feature fields.
+5. Add any Custom Compare categories or features you require.
 
-10. Follow the instructions on adding and managing Compare Features to the master category.
-
-11. Visit Product edit pages to where you (i) Deactivate the feature for that Product or (ii) Add Compare Feature Fields data for that Products. Update (or publish) and your compare features for that product is published.
+6  Edit or deactivate the Compare feature for any products edit page.
 
 Celebrate the extra sales Compare Products brings you !  
 
@@ -96,42 +91,21 @@ When can I use this plugin? =
 
 You can use this plugin when you have installed the WooCommerce plugin.
 
-= How do I change the Color of the Button to match my theme? = It is an easy task to change the color of the button - but you will need some coding knowledge.
-
-All objects in the plugin have a class so you can style for them. Using an ftp client open the style.css in your theme.
-
-Look for the style of your themes buttons below is an example - it will look something like this
-
-#wrap input[type="submit"], #wrap input[type="button"] {
-background: url('images/bg-button.png') no-repeat scroll right top transparent;
-border: 1px solid #153B94;
-border-radius: 5px 5px 5px 5px;
-box-shadow: 1px 1px 2px #333333;
-color: #FFFFFF;
-cursor: pointer;
-font-size: 12px;
-padding: 9px 27px 7px 10px;
-}
-
-Once you have found that in themes style.css directory then add that style into your themes style.css under the class name 'bt_compare_this' which is for the Compare button on the product pages and class name 'compare_button_go' for the Compare button in the sidebar widget. This is how it would look using the example above as the style for the button.
-
-input.bt_compare_this {
-background: url('images/bg-button.png') no-repeat scroll right top transparent;
-border: 1px solid #153B94;
-border-radius: 5px 5px 5px 5px;
-box-shadow: 1px 1px 2px #333333;
-color: #FFFFFF;
-cursor: pointer;
-font-size: 12px;
-padding: 9px 27px 7px 10px;
-}
-
-This will then mean that style will apply for all input tag in div that has the class compare_button_container to change the sidebar widget button you do the same but use the class 'compare_button_go'
-
+ 
 == Support ==
 All support requests, questions or suggestions should be posted to the [HELP tab](http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help) WooCommerce Compare Products Home page on the a3rev site.
 
 == Changelog ==
+
+= 2.0.1 - 2012/08/14 =
+
+* Changed - attributes terms where auto created as Compare Feature input type 'dropdown' (single select). Changed to input type 'check box' (multi-select)
+* Documentation - Added comprehensive extension documentation to the [a3rev wiki](http://docs.a3rev.com/user-guides/woocommerce/compare-products/).
+* Localization - Added Turkish translation (thanks to ManusH & Keremidi)
+* Video - Added demo video to extensions home page
+* Tweak: Set database table name to be created the same as WordPress table type
+* Tweak - Change localization file path from actual to base path
+* Tweak - Corrected typo on Compare pop-up window
 
 = 2.0 - 2012/08/03 =
 

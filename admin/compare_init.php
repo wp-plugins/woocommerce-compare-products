@@ -4,7 +4,7 @@
  * Install Database, settings option and auto add widget to sidebar
  */
 function woocp_install() {
-	update_option('a3rev_woocp_free_version', '2.0.0');
+	update_option('a3rev_woocp_free_version', '2.0.1');
 	WC_Compare_Settings::woocp_set_setting_default();
 	WC_Compare_Data::install_database();
 	WC_Compare_Categories_Data::install_database();
@@ -152,7 +152,12 @@ if(version_compare(get_option('a3rev_woocp_free_version'), '2.0.0') === -1){
 	WC_Compare_Upgrade::upgrade_version_2_0();
 	update_option('a3rev_woocp_free_version', '2.0.0');
 }
-update_option('a3rev_woocp_free_version', '2.0.0');
+// Upgrade to 2.0.1
+if(version_compare(get_option('a3rev_woocp_free_version'), '2.0.1') === -1){
+	WC_Compare_Upgrade::upgrade_version_2_0_1();
+	update_option('a3rev_woocp_free_version', '2.0.1');
+}
+update_option('a3rev_woocp_free_version', '2.0.1');
 
 
 // Add Menu Comparable Settings in E Commerce Plugins

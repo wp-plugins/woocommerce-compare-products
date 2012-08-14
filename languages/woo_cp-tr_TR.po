@@ -1,180 +1,223 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Compare Products Lite\n"
+"Project-Id-Version: WooCommerce Compare Products PRO v2.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-14 15:37+0700\n"
-"PO-Revision-Date: 2012-08-14 15:37+0700\n"
+"POT-Creation-Date: 2012-08-14 15:36+0700\n"
+"PO-Revision-Date: 2012-08-14 15:36+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
-"Language-Team: a3rev\n"
+"Language-Team: ManusH <info@ManusH.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Turkish\n"
+"X-Poedit-Country: TURKEY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
+# @ woo_cp
 #: admin/compare_init.php:171
 msgid "Compare Settings"
-msgstr ""
+msgstr "Karşılaştırma Ayarları"
 
+# @ woo_cp
 #: admin/compare_init.php:171
 msgid "Product Comparison"
-msgstr ""
+msgstr "Ürün Karşılaştırması"
 
+# @ woo_cp
 #: admin/compare_init.php:301
 msgid "Settings"
-msgstr ""
+msgstr "Ayarlar"
 
+# @ woo_cp
 #: admin/compare_init.php:302
 msgid "Features"
-msgstr ""
+msgstr "Özellikler"
 
+# @ woo_cp
 #: admin/compare_init.php:303
 #: admin/classes/class-wc-compare-products.php:292
 msgid "Products"
-msgstr ""
+msgstr "Ürünler"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:29
 msgid "Edit Compare Product Categories"
-msgstr ""
+msgstr "Ürün Karşılaştırma Kategorisi Düzenle"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:29
 msgid "Add Compare Product Categories"
-msgstr ""
+msgstr "Ürün Karşılaştırma Kategorisi Ekle"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:30
 msgid "Create Categories based on groups of products that share the same compare feature list."
-msgstr ""
+msgstr "Aynı özellikleri içeren ürünleri karşılaştırabilmek için Ürün Karşılaştırma Kategorisi  oluşturabilirsiniz."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:44
 msgid "Edit Category Name"
-msgstr ""
+msgstr "Kategori İsmini Düzenle"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:44
 msgid "Category Name"
-msgstr ""
+msgstr "Kategori İsmi"
 
 #: admin/classes/class-wc-compare-categories.php:50
 #: admin/classes/class-wc-compare-fields.php:205
 msgid "Please upgrade to the Pro Version to activate Compare categories"
 msgstr ""
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:50
 #: admin/classes/class-wc-compare-fields.php:174
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:50
 #: admin/classes/class-wc-compare-fields.php:174
 msgid "Create"
-msgstr ""
+msgstr "Oluştur"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:50
 #: admin/classes/class-wc-compare-fields.php:174
 #: admin/classes/class-wc-compare-products.php:211
 msgid "Cancel"
-msgstr ""
+msgstr "İptal"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:67
 msgid "You just save the order for compare categories."
-msgstr ""
+msgstr "Karşılaştırma Kategorileri sıralamasını kaydettiniz."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:45
 msgid "Compare Feature Successfully edited"
-msgstr ""
+msgstr "Karşılaştırma Özelliği başarıyla düzenlendi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:47
 #: admin/classes/class-wc-compare-fields.php:65
 msgid "That Compare Feature Name already exists. Please try again"
-msgstr ""
+msgstr "Bu Karşılaştırma Özelliği zaten var. Lütfen yeniden deneyin."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:59
 msgid "Compare Feature Successfully created"
-msgstr ""
+msgstr "Karşılaştırma Özelliği başarıyla oluşturuldu"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:61
 msgid "Compare Feature Error created"
-msgstr ""
+msgstr "Karşılaştırma Özelliği Hatası oluşturuldu"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:75
 #: admin/classes/class-wc-compare-fields.php:89
 msgid "Compare Feature successfully deleted"
-msgstr ""
+msgstr "Karşılaştırma Özelliği Başarıyla Silindi."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:77
 msgid "Please select item(s) to delete"
-msgstr ""
+msgstr "Lütfen silinecek elemanları seçin."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:85
 msgid "Compare Feature successfully removed"
-msgstr ""
+msgstr "Karşılaştırma Özelliği Başarıyla Kaldırıldı."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:104
 msgid "Edit Compare Product Features"
-msgstr ""
+msgstr "Ürün Karşılaştırma Özelliklerini Düzenle."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:104
 msgid "Add Compare Product Features"
-msgstr ""
+msgstr "Ürün Karşılaştırma Özellikleri Ekle"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:120
 msgid "Edit Compare Features"
-msgstr ""
+msgstr "Karşılaştırma Özelliklerini Düzenle"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:120
 msgid "Create New Compare Features"
-msgstr ""
+msgstr "Yeni Karşılaştırma Özelliği Oluştur"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:125
 #: admin/classes/class-wc-compare-fields.php:290
 #: admin/classes/class-wc-compare-fields.php:379
 msgid "Feature Name"
-msgstr ""
+msgstr "Özellik İsmi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:125
 msgid "This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height"
-msgstr ""
+msgstr "Ön-yüzde Karşılaştırma açılır-penceresindeki Tabloda ziyaretçilerin göreceği Karşılaştırma İsmi'dir. örn: Yükseklik"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:127
 msgid "Feature Unit of Measurement"
-msgstr ""
+msgstr "Özellik için Ölçü Birimi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:127
 msgid "e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name."
-msgstr ""
+msgstr "Ör: kgs, mm, lbs, cm, inç - Karşılaştırma isminden hemen sonra (parantezler) içinde görüntülenecek ölçü birimi ifadesidir. Herhangi bir birim belirtmek istenmez ise boş bırakılabilir, Karşılaştırma ismi tyek başına görüntülenir."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:129
 msgid "Feature Input Type"
-msgstr ""
+msgstr "Özellik Veri Giriş Türü"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:143
 msgid "Users don't see this. Use to set the data input field type that you will use on to enter the Products data for this feature."
-msgstr ""
+msgstr "Sitenizdeki ziyaretçiler bu kısmı göremezler. Bu özellik için değerleri girerken kullanmak istediğiniz veri giriş yöntemini belirlemeniz için gereklidir."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:146
 msgid "Enter Input Type options"
-msgstr ""
+msgstr "Giriş Tipi seçeneklerini girin"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:146
 msgid "You have selected one of the Check Box, Radio Button, Drop Down, Mutli Select Input Types. Type your Options here, one line for each option."
-msgstr ""
+msgstr "Seçim Kutusu, Radyo Düğmeleri, Açılır Menü, Çoklu Seçim Giriş Tiplerinden birini seçtiniz. Seçenekleri buraya girebilirsiniz; her seçenek için ayrı satır kullanın."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:150
 msgid "Assign Feature to Categories"
-msgstr ""
+msgstr "Kategorilere Özellik Ata"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:166
 msgid "Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories."
-msgstr ""
+msgstr "Özelliği bir yada daha fazla kategoriye atayabilirsiniz. Renk, Boyut, Ağırlık gibi özellikler bir çok Ürün Kategorisinde ortaklaşa yeralabilir, o kategorilere atanabilir. Öncelikle özelliği oluşturun, devamında onu bir veya dilediğiniz kadar kategoriye atayabilirsiniz."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:185
 msgid "Manage Compare Categories and Features"
-msgstr ""
+msgstr "Karşılaştırma Kategorilerini ve Özellikleri Yönet"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:186
 msgid "Use drag and drop to change Category order and Feature order within Categories."
-msgstr ""
+msgstr "Kategorilerin sıralarını veya kategori içindeki Özelliklerin sıralamasını Sürükle/Bırak yöntemi ile kontrol edebilir, değiştirebilirsiniz."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:205
 #: admin/classes/class-wc-compare-fields.php:219
 #: admin/classes/class-wc-compare-fields.php:305
@@ -183,352 +226,433 @@ msgstr ""
 #: admin/classes/class-wc-compare-products.php:113
 #: admin/classes/class-wc-compare-products.php:284
 msgid "Edit"
-msgstr ""
+msgstr "Düzenle"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:205
 #: admin/classes/class-wc-compare-fields.php:305
 #: admin/classes/class-wc-compare-fields.php:310
 #: admin/classes/class-wc-compare-fields.php:391
 msgid "Delete"
-msgstr ""
+msgstr "SİL"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:219
 msgid "Are you sure you want to remove"
-msgstr ""
+msgstr "Kaldırmak istediğinizden emin misiniz?"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:219
 msgid "from"
-msgstr ""
+msgstr "-dan"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:219
 msgid "Remove"
-msgstr ""
+msgstr "KALDIR"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:224
 msgid "You have not assigned any Features to this category yet. No Hurry!"
-msgstr ""
+msgstr "Bu kategoriye henüz hiç bir özellik atamadınız. Devam edin!"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:283
 msgid "Un-Assigned Features (Assign to a Category to activate)"
-msgstr ""
+msgstr "Hiç-Atanmamış Özellikler (Etkinleştirmek için bir kategoriye Atayın)"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:289
 #: admin/classes/class-wc-compare-products.php:279
 msgid "No"
-msgstr ""
+msgstr "Hayır"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:291
 #: admin/classes/class-wc-compare-fields.php:380
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:305
 #: admin/classes/class-wc-compare-fields.php:391
 msgid "Are you sure you want to delete"
-msgstr ""
+msgstr "Silmek istediğinize emin misiniz?"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:310
 msgid "Are you sure about deleting this?"
-msgstr ""
+msgstr "Bunu silmek istediğinize emin misiniz?"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:326
 msgid "You just save the order for Compare Features."
-msgstr ""
+msgstr "Karşılaştırma Özellikleri sıralamasını kaydettiniz."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:333
 msgid "Categories & Features"
-msgstr ""
+msgstr "Kategoriler ve Özellikler"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:333
 msgid "Add New"
-msgstr ""
+msgstr "Yeni Ekle"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:346
 msgid "Search Features"
-msgstr ""
+msgstr "Özelliklerde Ara"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:372
 msgid "Found"
-msgstr ""
+msgstr "Bulundu"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:372
 msgid "feature(s)"
-msgstr ""
+msgstr "özellik(ler)"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:399
 msgid "Show"
-msgstr ""
+msgstr "Göster"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:410
 msgid "Go"
-msgstr ""
+msgstr "Git"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:411
 msgid "Displaying"
-msgstr ""
+msgstr "Görüntüleniyor:"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:411
 msgid "of"
-msgstr ""
+msgstr "/"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:71
 #: admin/classes/class-wc-compare-products.php:102
 msgid "Activated"
-msgstr ""
+msgstr "Etkinleştirildi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:72
 #: admin/classes/class-wc-compare-products.php:103
 msgid "Deactivated"
-msgstr ""
+msgstr "Etkisizleştirildi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:188
 #: classes/class-wc-compare-metabox.php:65
 #: classes/class-wc-compare-metabox.php:207
 msgid "Activate Compare Feature for this Product"
-msgstr ""
+msgstr "Bu Ürün için Karşılaştırma özelliğini etkinleştir."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:189
 #: classes/class-wc-compare-metabox.php:66
 #: classes/class-wc-compare-metabox.php:208
 msgid "Select a  Compare Category for this Product"
-msgstr ""
+msgstr "Bu Ürün için bir Karşılaştırma Kategorisi seçin"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:191
 #: classes/class-wc-compare-metabox.php:68
 #: classes/class-wc-compare-metabox.php:210
 msgid "Select..."
-msgstr ""
+msgstr "Seçin..."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:210
 msgid "Update"
-msgstr ""
+msgstr "Güncelle"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:257
 msgid "Compare Product Feature Fields Successfully updated."
-msgstr ""
+msgstr "Ürün Karşılaştırma Özelliği Alanı başarıyla güncellendi."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:262
 msgid "WooCommerce Compare Products Manager"
-msgstr ""
+msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:280
 #: admin/classes/class-wc-compare-products.php:287
 msgid "Product Name"
-msgstr ""
+msgstr "Ürün İsmi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:281
 msgid "Product Category"
-msgstr ""
+msgstr "Ürün Kategorisi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:282
 msgid "Compare Category"
-msgstr ""
+msgstr "Karşılaştırma Kategorisi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:283
 msgid "Activated / Deactivated"
-msgstr ""
+msgstr "Etkin / Etkisiz"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-products.php:293
 msgid "Find Product Name"
-msgstr ""
+msgstr "Ürün İsmi BUL"
 
 #: admin/classes/class-wc-compare-products.php:309
 msgid "Please upgrade to the Pro Version to activate Products express Compare feature manager"
 msgstr ""
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:77
 msgid "Compare Settings Successfully saved."
-msgstr ""
+msgstr "Karşılaştırma Ayarları başarıyla kaydedildi."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:80
 msgid "Compare Settings Successfully reseted."
-msgstr ""
+msgstr "Karşılaştırma Ayarları başarıyla sıfırlandı."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:85
 msgid "Compare Fly-Out Window Setup"
-msgstr ""
+msgstr "Karşılaştırma Açılır-Penceresi Ayarları"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:90
 msgid "Add Fly-Out Header Image"
-msgstr ""
+msgstr "Açılır-Pencere için Başlık Görseli Ekle"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:91
 msgid "Full image URL. File formats .jpg, .pgn, .jpeg. Any size."
-msgstr ""
+msgstr "Görselin tam bağlantı yolu. Kabul edilen dosya türleri: *.jpg, *.png, *.jpeg . Dosya boyutu sınırlaması yoktur."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:94
 msgid "Compare Fly-Out Width"
-msgstr ""
+msgstr "Karşılaştırma Açılır-Penceresi Genişliği"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:98
 msgid "Compare Fly-Out Height"
-msgstr ""
+msgstr "Karşılaştırma Açılır-Penceresi Yüksekliği"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:102
 msgid "Fly-Out Inner Container Height"
-msgstr ""
+msgstr "Açılır-Pencere İç-Taşıyıcı Yüksekliği"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:103
 msgid "Set at less than the Fly-Out height so Header Image stays visible in the Fly-Out screen."
-msgstr ""
+msgstr "Açılır-Pencerenin kendi yüksekliğinden daha küçük bir değer belirleyin. Böylelikle Başlık için belirlediğiniz Görsel pencere içinde rahatça görüntülenebilir."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:106
 msgid "Compare Fly-Out Type"
-msgstr ""
+msgstr "Karşılaştırma Açılır-Penceresi Tipi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:107
 msgid "Fancybox"
 msgstr ""
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:107
 msgid "Lightbox"
 msgstr ""
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:107
 msgid "Choose to power the Fly-Out Screen with fancybox or lightbox tool."
-msgstr ""
+msgstr "Karşılaştırma Açılır-Penceresi için Fancybox veya Lightbox yöntemlerinden birini seçin."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:111
 msgid "Product Page Compare Buttons"
-msgstr ""
+msgstr "Ürün Sayfası Karşılaştırma Düğmeleri"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:115
 msgid "Button Position relative to Add to Cart Button"
-msgstr ""
+msgstr "(Sepete Ekle) düğmesine bağlı olarak Düğmenin konumu "
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:116
 msgid "Above"
-msgstr ""
+msgstr "Üstünde"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:116
 msgid "Padding Bottom"
-msgstr ""
+msgstr "Padding Bottom (alttan boşluk)"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:118
 msgid "Below"
-msgstr ""
+msgstr "Altında"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:118
 msgid "Padding Top"
-msgstr ""
+msgstr "Padding Top (üstten boşluk)"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:120
 msgid "Change position if Compare Button does not show on the frontend."
-msgstr ""
+msgstr "Karşılaştırma Düğmesi eğer ön-yüzde görüntülenemiyorsa, konumunu değiştirin."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:124
 msgid "Default Button setting"
-msgstr ""
+msgstr "Varsayılan Düğme ayarı"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:125
 #: admin/classes/class-wc-compare-settings.php:129
 msgid "Yes"
-msgstr ""
+msgstr "Evet"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:128
 msgid "Manually set Compare button position"
-msgstr ""
+msgstr "Karşılaştırma Düğmesinin konumunu elle ayarla"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:129
 msgid "Select to manually set / change the default position of the Compare Button on product pages"
-msgstr ""
+msgstr "Ürün sayfalarında görüntülenecek Karşılaştırma Düğmesinin varsayılan konumunu manüel olarak ayarlamak/değiştirmek için bu seçeneği kullanın."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:130
 msgid "Use this function to manually postion the Compare button on product pages"
-msgstr ""
+msgstr "Ürün sayfalarındaki Karşılaştırma Düğmesinin yerini kendiniz ayarlamak için bu fonksiyonu kullanın."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:133
 msgid "Button or Text"
-msgstr ""
+msgstr "Düğme veya Metin"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:134
 msgid "Button"
-msgstr ""
+msgstr "Düğme"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:134
 msgid "Link"
-msgstr ""
+msgstr "Bağlantı"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:134
 msgid "Show Compare feature on products as a Button or Hyperlink Text."
-msgstr ""
+msgstr "Karşılaştırma Özelliğini Ürün sayfalarında Düğme veya Bağlantı Köprüsü verilmiş Metin olarak göster."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:135
 msgid "Manual styling Class names - Compare Button 'bt_compare_this', sidebar widget button 'compare_button_go'"
-msgstr ""
+msgstr "Kişisel tasarım için Sınıf isimleri - Karşılaştırma Düğmesi: 'bt_compare_this', Yan-sütun Bileşen Düğmesi: 'compare_button_go'"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:138
 msgid "Button or hyperlink text"
-msgstr ""
+msgstr "Düğme veya Bağlantı Metni"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:139
 msgid "Set text to show on Compare Button / Link on Product pages"
-msgstr ""
+msgstr "Ürün sayfalarında gösterilecek Karşılaştırma Düğmesi/Bağlantısı için kullanılacak Metni ayarlayın."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:143
 msgid "Compare product page navigation tab"
-msgstr ""
+msgstr "Ürün sayfasındaki Karşılaştırmalı Özellikler navigasyon sekmesi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:147
 msgid "Compare Features tab"
-msgstr ""
+msgstr "Karşılaştırmalı Özellikler Sekmesi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:149
 msgid "Before Description tab"
-msgstr ""
+msgstr "Ürün Açıklamaları sekmesinden Önce"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:150
 msgid "Between  Description and Additional tabs"
-msgstr ""
+msgstr "Ürün Açıklaması ve Ek Özellikler sekmeleri arasında"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:151
 msgid "Between  Additional and Reviews tabs"
-msgstr ""
+msgstr "Ek Özellikler ve İncelemeler sekmeleri Arasında"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:152
 msgid "After Reviews tab"
-msgstr ""
+msgstr "İncelemeler Sekmesinden Sonra"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:153
 msgid "Do not auto show"
-msgstr ""
+msgstr "Otomatik Gösterme"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:153
 msgid "Select the position of the Compare Features tab on the default WooCommerce product page Nav bar. Products Compare feature list shows under the tab."
-msgstr ""
+msgstr "WooTicaret Ürün Sayfasında navigasyon çubuğu üzerinde KArşılaştırmalı Özellikler Sekmesinin yerini belirleyebilirsiniz. Ürünlerin karşılaştırmalı Özellikleri bu sekme altında sıralanacaklardır."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:156
 msgid "Compare Featured tab"
-msgstr ""
+msgstr "Karşılaştırmalı Özellikler Sekmesi"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:157
 msgid "Set tab name"
-msgstr ""
+msgstr "Sekme İsmini Ayarla"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:160
 msgid "Manually set Compare Features list"
-msgstr ""
+msgstr "Karşılaştırmalı Özellikler Listesini manüel Ayarla"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:161
 msgid "Show Compare Featured fields anywhere in your theme with this function"
-msgstr ""
+msgstr "Bu fonksiyonu kullanarak Karşılaştırmalı Özellikler ve Değerlerini temanız içerisinde istediğiniz yerde görüntüleyebilirsiniz."
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:166
 msgid "Save changes"
-msgstr ""
+msgstr "Değişiklikleri Kaydet"
 
+# @ woo_cp
 #: admin/classes/class-wc-compare-settings.php:167
 msgid "Reset Settings"
-msgstr ""
+msgstr "Ayarları Sıfırla"
 
+# @ woo_cp
 #: classes/class-wc-compare-filter.php:44
 #: classes/class-wc-compare-filter.php:64
 #: classes/class-wc-compare-filter.php:83
 #: classes/class-wc-compare-filter.php:103
 #: classes/class-wc-compare-filter.php:122
 msgid "Compare this"
-msgstr ""
+msgstr "Karşılaştırmaya Ekle"
 
+# @ woo_cp
 #: classes/class-wc-compare-filter.php:157
 #: classes/class-wc-compare-filter.php:158
 #: classes/class-wc-compare-filter.php:187
@@ -536,55 +660,66 @@ msgstr ""
 #: classes/class-wc-compare-functions.php:396
 #: classes/class-wc-compare-functions.php:397
 msgid "N/A"
-msgstr ""
+msgstr "YOK"
 
+# @ woo_cp
 #: classes/class-wc-compare-filter.php:438
 #: widgets/compare_widget.php:38
 msgid "Compare Products"
-msgstr ""
+msgstr "Ürünleri Karşılaştır"
 
+# @ woo_cp
 #: classes/class-wc-compare-filter.php:438
 msgid "Print This Page"
-msgstr ""
+msgstr "Bu sayfayı Yazdır"
 
+# @ woo_cp
 #: classes/class-wc-compare-filter.php:438
 msgid "Refine slections to 3 products and print!"
-msgstr ""
+msgstr "Seçiminizi 3 ürüne indirgeyin ve Yazdırın!"
 
+# @ woo_cp
 #: classes/class-wc-compare-functions.php:294
 msgid "Clear All"
-msgstr ""
+msgstr "Tümünü Temizle"
 
+# @ woo_cp
 #: classes/class-wc-compare-functions.php:294
 msgid "Compare"
-msgstr ""
+msgstr "Karşılaştır"
 
+# @ woo_cp
 #: classes/class-wc-compare-functions.php:296
 #: classes/class-wc-compare-functions.php:419
 msgid "You do not have any product to compare."
-msgstr ""
+msgstr "Karşılaştırmak için hiçbir ürün seçilmemiş."
 
+# @ woo_cp
 #: classes/class-wc-compare-functions.php:372
 msgid "Add to cart"
-msgstr ""
+msgstr "Sepete Ekle"
 
+# @ woo_cp
 #: classes/class-wc-compare-functions.php:589
 #: classes/class-wc-compare-functions.php:592
 msgid "Back"
-msgstr ""
+msgstr "Geri"
 
+# @ woo_cp
 #: classes/class-wc-compare-functions.php:606
 #: classes/class-wc-compare-functions.php:609
 msgid "Next"
-msgstr ""
+msgstr "İleri"
 
 #: classes/class-wc-compare-functions.php:618
 msgid "See more quality WooCommerce plugins at the"
 msgstr ""
 
+# @ woo_cp
 #: classes/class-wc-compare-functions.php:618
+#, fuzzy
 msgid "WooCommerce extensions"
-msgstr ""
+msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
 
 #: classes/class-wc-compare-functions.php:624
 msgid "Your Product categories have been auto created as Compare Categories. All of your sites Parent Product Variations have been auto added as Compare Features to the Master category. Visit the plugins"
@@ -604,17 +739,21 @@ msgstr ""
 msgid "Pro Version"
 msgstr ""
 
+# @ woo_cp
 #: classes/class-wc-compare-functions.php:624
+#, fuzzy
 msgid "to activate Compare categories."
-msgstr ""
+msgstr "Ürün Karşılaştırma Kategorisi Düzenle"
 
 #: classes/class-wc-compare-functions.php:630
 msgid "Please upgrade to the"
 msgstr ""
 
+# @ woo_cp
 #: classes/class-wc-compare-functions.php:630
+#, fuzzy
 msgid "to activate the power of Compare Categories. Find out more"
-msgstr ""
+msgstr "Karşılaştırma Kategorileri sıralamasını kaydettiniz."
 
 #: classes/class-wc-compare-functions.php:630
 msgid "here."
@@ -628,30 +767,61 @@ msgstr ""
 msgid "to activate this feature."
 msgstr ""
 
+# @ woo_cp
 #: classes/class-wc-compare-metabox.php:24
 msgid "Compare Feature Fields"
-msgstr ""
+msgstr "Karşılaştırma Özellik Alanları"
 
+# @ woo_cp
 #: classes/class-wc-compare-metabox.php:147
 #: classes/class-wc-compare-metabox.php:290
 msgid "Select value"
-msgstr ""
+msgstr "Değer seçin"
 
+# @ woo_cp
 #: classes/class-wc-compare-metabox.php:191
 #: classes/class-wc-compare-metabox.php:334
 msgid "There are no Features created for this category, please add some."
-msgstr ""
+msgstr "Bu kategori için herhangi bir özellik oluşturulmamış, lütfen ekleyin."
 
+# @ woo_cp
 #: classes/class-wc-compare-metabox.php:191
 #: classes/class-wc-compare-metabox.php:334
 msgid "This page"
-msgstr ""
+msgstr "Bu sayfa"
 
+# @ woo_cp
 #: widgets/compare_widget.php:22
 msgid "WOO Compare Products"
-msgstr ""
+msgstr "Woo-Ürün Karşılaştırma"
 
+# @ woo_cp
 #: widgets/compare_widget.php:60
 msgid "Title"
-msgstr ""
+msgstr "Başlık"
 
+# @ woo_cp
+#~ msgid "Compare Category Successfully edited"
+#~ msgstr "Karşılaştırma Kategorisi başarıyla Düzenlendi."
+# @ woo_cp
+#~ msgid ""
+#~ "That Compare category name already exists or empty. Please try again."
+#~ msgstr ""
+#~ "Bu Karşılaştırma Kategorisi zaten var yada geçersiz. Lütfen tekrar "
+#~ "deneyin."
+# @ woo_cp
+#~ msgid "Compare Category Successfully created"
+#~ msgstr "Karşılaştırma Kategorisi başarıyla Oluşturuldu."
+# @ woo_cp
+#~ msgid "Compare Category Error created"
+#~ msgstr "Karşılaştırma Kategorisi HATA"
+# @ woo_cp
+#~ msgid "Compare Category deleted"
+#~ msgstr "Karşılaştırma Kategorisi Silindi."
+# @ woo_cp
+#~ msgid "Product Compare Feature Fields"
+#~ msgstr "Ürün Karşılaştırma Özellik değerleri"
+# @ woo_cp
+#, fuzzy
+#~ msgid "There is a new version of WooCommerce Compare Products available."
+#~ msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
