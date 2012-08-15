@@ -2,7 +2,7 @@
 /*
 Plugin Name: WooCommerce Compare Products LITE
 Plugin URI: http://woothemes.com/woocommerce
-Description: WooCommerce Compare Products LITE plugin.
+Description: Compare Products uses your existing WooCommerce Product Categories and Product Attributes to create Compare Product Features for all your products. A sidebar Compare basket is created that users add products to and view the Comparison in a Compare this pop-up screen.
 Version: 2.0.1
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
@@ -39,6 +39,7 @@ along with this program; if not, <http://www.gnu.org/licenses/>.
 	define( 'WOOCP_FILE_PATH', dirname( __FILE__ ) );
 	define( 'WOOCP_DIR_NAME', basename( WOOCP_FILE_PATH ) );
 	define( 'WOOCP_FOLDER', dirname( plugin_basename( __FILE__ ) ) );
+	define(	'WOOCP_NAME', plugin_basename(__FILE__) );
 	define( 'WOOCP_URL', WP_CONTENT_URL . '/plugins/' . WOOCP_FOLDER );
 	define( 'WOOCP_JS_URL',  WOOCP_URL . '/assets/js' );
 	define( 'WOOCP_IMAGES_URL',  WOOCP_URL . '/assets/images' );

@@ -31,6 +31,7 @@
  * woocp_set_selected_attributes()
  * auto_create_compare_category()
  * auto_create_compare_feature()
+ * plugin_extra_links()
  */
 class WC_Compare_Hook_Filter {
 
@@ -862,6 +863,15 @@ class WC_Compare_Hook_Filter {
 				}
 			}
 		}
+	}
+	
+	function plugin_extra_links($links, $plugin_name) {
+		if ( $plugin_name != WOOCP_NAME) {
+			return $links;
+		}
+		$links[] = '<a href="http://docs.a3rev.com/user-guides/woocommerce/compare-products/" target="_blank">'.__('Documentation', 'woo_cp').'</a>';
+		$links[] = '<a href="http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help" target="_blank">'.__('Support', 'woo_cp').'</a>';
+		return $links;
 	}
 }
 ?>

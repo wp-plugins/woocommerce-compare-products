@@ -159,6 +159,8 @@ if(version_compare(get_option('a3rev_woocp_free_version'), '2.0.1') === -1){
 }
 update_option('a3rev_woocp_free_version', '2.0.1');
 
+// Add text on right of Visit the plugin on Plugin manager page
+add_filter( 'plugin_row_meta', array('WC_Compare_Hook_Filter', 'plugin_extra_links'), 10, 2 );
 
 // Add Menu Comparable Settings in E Commerce Plugins
 function woocp_add_menu_item_e_commerce() {

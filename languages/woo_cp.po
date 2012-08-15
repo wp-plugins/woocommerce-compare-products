@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Compare Products Lite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-14 15:37+0700\n"
-"PO-Revision-Date: 2012-08-14 15:37+0700\n"
+"POT-Creation-Date: 2012-08-15 11:30+0700\n"
+"PO-Revision-Date: 2012-08-15 11:30+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -13,23 +13,23 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/compare_init.php:171
+#: admin/compare_init.php:173
 msgid "Compare Settings"
 msgstr ""
 
-#: admin/compare_init.php:171
+#: admin/compare_init.php:173
 msgid "Product Comparison"
 msgstr ""
 
-#: admin/compare_init.php:301
+#: admin/compare_init.php:303
 msgid "Settings"
 msgstr ""
 
-#: admin/compare_init.php:302
+#: admin/compare_init.php:304
 msgid "Features"
 msgstr ""
 
-#: admin/compare_init.php:303
+#: admin/compare_init.php:305
 #: admin/classes/class-wc-compare-products.php:292
 msgid "Products"
 msgstr ""
@@ -521,34 +521,42 @@ msgstr ""
 msgid "Reset Settings"
 msgstr ""
 
-#: classes/class-wc-compare-filter.php:44
-#: classes/class-wc-compare-filter.php:64
-#: classes/class-wc-compare-filter.php:83
-#: classes/class-wc-compare-filter.php:103
-#: classes/class-wc-compare-filter.php:122
+#: classes/class-wc-compare-filter.php:45
+#: classes/class-wc-compare-filter.php:65
+#: classes/class-wc-compare-filter.php:84
+#: classes/class-wc-compare-filter.php:104
+#: classes/class-wc-compare-filter.php:123
 msgid "Compare this"
 msgstr ""
 
-#: classes/class-wc-compare-filter.php:157
 #: classes/class-wc-compare-filter.php:158
-#: classes/class-wc-compare-filter.php:187
+#: classes/class-wc-compare-filter.php:159
 #: classes/class-wc-compare-filter.php:188
+#: classes/class-wc-compare-filter.php:189
 #: classes/class-wc-compare-functions.php:396
 #: classes/class-wc-compare-functions.php:397
 msgid "N/A"
 msgstr ""
 
-#: classes/class-wc-compare-filter.php:438
+#: classes/class-wc-compare-filter.php:439
 #: widgets/compare_widget.php:38
 msgid "Compare Products"
 msgstr ""
 
-#: classes/class-wc-compare-filter.php:438
+#: classes/class-wc-compare-filter.php:439
 msgid "Print This Page"
 msgstr ""
 
-#: classes/class-wc-compare-filter.php:438
+#: classes/class-wc-compare-filter.php:439
 msgid "Refine slections to 3 products and print!"
+msgstr ""
+
+#: classes/class-wc-compare-filter.php:872
+msgid "Documentation"
+msgstr ""
+
+#: classes/class-wc-compare-filter.php:873
+msgid "Support"
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:294
