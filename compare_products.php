@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: WooCommerce Compare Products LITE
-Plugin URI: http://woothemes.com/woocommerce
+Plugin URI: http://www.a3rev.com/
 Description: Compare Products uses your existing WooCommerce Product Categories and Product Attributes to create Compare Product Features for all your products. A sidebar Compare basket is created that users add products to and view the Comparison in a Compare this pop-up screen.
 Version: 2.0.1
-Author: A3 Revolution Software Development team
+Author: A3 Revolution
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
 */
@@ -26,9 +26,9 @@ along with this program; if not, <http://www.gnu.org/licenses/>.
 
 /*
 	WooCommerce Compare Products LITE. Plugin for the WooCommerce plugin.
-	Copyright © 2011 A3 Revolution Software Development team
+	Copyright © 2011 A3 Revolution
 
-	A3 Revolution Software Development team
+	A3 Revolution
 	admin@a3rev.com
 	PO Box 1170
 	Gympie 4570
