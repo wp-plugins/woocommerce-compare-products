@@ -4,7 +4,7 @@
  * Install Database, settings option and auto add widget to sidebar
  */
 function woocp_install() {
-	update_option('a3rev_woocp_free_version', '2.0.1');
+	update_option('a3rev_woocp_free_version', '2.0.2');
 	WC_Compare_Settings::woocp_set_setting_default();
 	WC_Compare_Data::install_database();
 	WC_Compare_Categories_Data::install_database();
@@ -157,7 +157,7 @@ if(version_compare(get_option('a3rev_woocp_free_version'), '2.0.1') === -1){
 	WC_Compare_Upgrade::upgrade_version_2_0_1();
 	update_option('a3rev_woocp_free_version', '2.0.1');
 }
-update_option('a3rev_woocp_free_version', '2.0.1');
+update_option('a3rev_woocp_free_version', '2.0.2');
 
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array('WC_Compare_Hook_Filter', 'plugin_extra_links'), 10, 2 );

@@ -856,7 +856,7 @@ class WC_Compare_Hook_Filter {
 				
 				$check_existed = WC_Compare_Data::get_count("field_name='".$attribute_label."'");
 				if ($check_existed < 1 ) {
-					$feature_id = WC_Compare_Data::insert_row(array('field_name' => $attribute_label, 'field_type' => 'checkbox', 'field_unit' => '', 'default_value' => '' ) );
+					$feature_id = WC_Compare_Data::insert_row(array('field_name' => $attribute_label, 'field_type' => 'input-text', 'field_unit' => '', 'default_value' => '' ) );
 					if ($feature_id !== false) {
 						WC_Compare_Categories_Fields_Data::insert_row($master_category_id, $feature_id);
 					}

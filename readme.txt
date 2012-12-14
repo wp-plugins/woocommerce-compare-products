@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 2.92
-Tested up to: 3.4.1
-Stable tag: 2.0.1
+Tested up to: 3.5
+Stable tag: 2.0.2
 
 Add a Compare Products Feature to all of your products on you WooCommerce site today with the WooCommerce Compare Products plugin..
 
@@ -96,6 +96,13 @@ You can use this plugin when you have installed the WooCommerce plugin.
 All support requests, questions or suggestions should be posted to the [HELP tab](http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help) WooCommerce Compare Products Home page on the a3rev site.
 
 == Changelog ==
+
+= 2.0.2 - 2012/12/14 =
+
+* Fixed: Updated depreciated custom database collator $wpdb->supports_collation() with new WP3.5 function $wpdb->has_cap( 'collation' ). ÊSupports backward version compatibility.
+* Fixed: When Product attributes are auto created as Compare Features, if the Attribute has no terms then the value input field is created as Input Text - Single line instead of a Checkbox.
+* Fixed: On Compare Products admin tab, ajax not able to load the products list again after saving a product edit
+
 
 = 2.0.1 - 2012/08/14 =
 
