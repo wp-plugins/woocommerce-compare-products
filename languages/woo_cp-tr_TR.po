@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Compare Products PRO v2.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-08 13:19+0700\n"
-"PO-Revision-Date: 2013-01-08 13:19+0700\n"
+"POT-Creation-Date: 2013-01-08 13:55+0700\n"
+"PO-Revision-Date: 2013-01-08 13:55+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: ManusH <info@ManusH.net>\n"
 "MIME-Version: 1.0\n"
@@ -778,7 +778,7 @@ msgstr ""
 # @ woo_cp
 #: classes/class-wc-compare-functions.php:644
 #, fuzzy
-msgid "Upgarde to Comapre Products Pro"
+msgid "Upgarde to Compare Products Pro"
 msgstr "Ürün Karşılaştırma Özelliklerini Düzenle."
 
 #: classes/class-wc-compare-functions.php:645

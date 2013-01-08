@@ -641,7 +641,7 @@ class WC_Compare_Functions {
 	function other_plugins_notice() {
 		$html = '';
 		$html .= '<div id="a3rev_plugins_notice">';
-		$html .= '<h3>'.__('Upgarde to Comapre Products Pro', 'woo_cp').'</h3>';
+		$html .= '<h3>'.__('Upgarde to Compare Products Pro', 'woo_cp').'</h3>';
 		$html .= '<p>'.__("Visit the", 'woo_cp').' <a href="http://a3rev.com/shop/woocommerce-compare-products/" target="_blank">'.__("a3rev website", 'woo_cp').'</a> '.__("to see all the extra features the Pro version of this plugin offers, like the Compare categories that you can see inside the yellow box. All of your Product Categories have been auto created here as Compare categories. The Lite Version uses only 1 category - The Master category. All of your product attributes have been auto created as Compare features under the Master category.", 'woo_cp').'</p>';
 		$html .= '<h3>'.__('Plugin Documentation', 'woo_cp').'</h3>';
 		$html .= '<p>'.__('All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request', 'woo_cp').'. <a href="http://docs.a3rev.com/" target="_blank">'.__('Visit the a3rev wiki.', 'woo_cp').'</a></p>';
