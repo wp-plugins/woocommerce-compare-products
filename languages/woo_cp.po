@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Compare Products Lite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-08 12:11+0700\n"
-"PO-Revision-Date: 2013-01-08 12:11+0700\n"
+"POT-Creation-Date: 2013-01-08 13:19+0700\n"
+"PO-Revision-Date: 2013-01-08 13:19+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -637,7 +637,7 @@ msgid "to activate this feature."
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:644
-msgid "Upgarde to Comapre Product Pro"
+msgid "Upgarde to Comapre Products Pro"
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:645
@@ -665,7 +665,7 @@ msgid "Visit the a3rev wiki."
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:648
-msgid "More A3 Quality Plugins"
+msgid "More a3rev Quality Plugins"
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:649
@@ -693,7 +693,11 @@ msgid "WooCommerce Widget Product Slideshow"
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:657
-msgid "WooCommerce Email Inquiry & Cart Options (Pro Version only fro the A3 Rev site)"
+msgid "WooCommerce Email Inquiry & Cart Options"
+msgstr ""
+
+#: classes/class-wc-compare-functions.php:657
+msgid " - Pro Version only from a3rev"
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:660
@@ -733,7 +737,7 @@ msgid "WP e-Commerce Grid View"
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:677
-msgid "Help spead the Word about this plugin"
+msgid "Help spread the Word about this plugin"
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:678
