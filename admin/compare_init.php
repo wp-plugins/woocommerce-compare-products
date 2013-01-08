@@ -192,7 +192,7 @@ function woo_cp_dashboard() {
 		#compare_extensions { background: url("<?php echo WOOCP_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #F1F1F1; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 10px 0 5px; padding: 4px 8px 4px 38px; position: relative; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 220px;
 		}
 		.compare_upgrade_area { border:2px solid #FF0;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; margin-top:10px; padding:10px; position:relative}
-	   	.upgrade_extensions { background: url("<?php echo WOOCP_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #FFFBCC; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 0px; padding: 4px 8px 4px 38px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 400px; right:10px; top:10px; border:1px solid #E6DB55}
+	   	.upgrade_extensions { background: #FFFBCC; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 0px; padding: 4px 8px 4px 8px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 480px; right:10px; top:10px; border:1px solid #E6DB55}
 		.products_tab_extension{position:relative; float:right;}
 	   
 		.form-table{margin:0;border-collapse:separate;}

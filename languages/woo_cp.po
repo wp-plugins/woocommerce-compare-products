@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Compare Products Lite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-08 13:55+0700\n"
-"PO-Revision-Date: 2013-01-08 13:55+0700\n"
+"POT-Creation-Date: 2013-01-08 16:16+0700\n"
+"PO-Revision-Date: 2013-01-08 16:17+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -629,130 +629,130 @@ msgid "here."
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:637
-msgid "Make managing the Compare products feature across your entire ctalogue a breeze. Upgrade to the"
+msgid "Make managing the Compare products feature across your entire catalog a breeze. Upgrade to the"
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:637
 msgid "to activate this feature."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:644
-msgid "Upgarde to Compare Products Pro"
-msgstr ""
-
 #: classes/class-wc-compare-functions.php:645
-msgid "Visit the"
-msgstr ""
-
-#: classes/class-wc-compare-functions.php:645
-msgid "a3rev website"
-msgstr ""
-
-#: classes/class-wc-compare-functions.php:645
-msgid "to see all the extra features the Pro version of this plugin offers, like the Compare categories that you can see inside the yellow box. All of your Product Categories have been auto created here as Compare categories. The Lite Version uses only 1 category - The Master category. All of your product attributes have been auto created as Compare features under the Master category."
+msgid "Upgrade to Compare Products Pro"
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:646
+msgid "Visit the"
+msgstr ""
+
+#: classes/class-wc-compare-functions.php:646
+msgid "a3rev website"
+msgstr ""
+
+#: classes/class-wc-compare-functions.php:646
+msgid "to see all the extra features the Pro version of this plugin offers, like the Compare categories that you can see inside the yellow box. All of your Product Categories have been auto created here as Compare categories. The Lite Version uses only 1 category - The Master category. All of your product attributes have been auto created as Compare features under the Master category."
+msgstr ""
+
+#: classes/class-wc-compare-functions.php:647
 msgid "Plugin Documentation"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:647
+#: classes/class-wc-compare-functions.php:648
 msgid "All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:647
+#: classes/class-wc-compare-functions.php:648
 msgid "Visit the a3rev wiki."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:648
+#: classes/class-wc-compare-functions.php:649
 msgid "More a3rev Quality Plugins"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:649
-msgid "Below is a list of the A3 plugins that are available for free download from wordpress.org"
+#: classes/class-wc-compare-functions.php:650
+msgid "Below is a list of the a3rev plugins that are available for free download from wordpress.org"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:650
+#: classes/class-wc-compare-functions.php:651
 msgid "WooCommerce Plugins"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:653
+#: classes/class-wc-compare-functions.php:654
 msgid "WooCommerce Dynamic Products Gallery"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:654
+#: classes/class-wc-compare-functions.php:655
 msgid "WooCommerce Predictive Search"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:655
+#: classes/class-wc-compare-functions.php:656
 msgid "WooCommerce Compare Products"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:656
+#: classes/class-wc-compare-functions.php:657
 msgid "WooCommerce Widget Product Slideshow"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:657
+#: classes/class-wc-compare-functions.php:658
 msgid "WooCommerce Email Inquiry & Cart Options"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:657
+#: classes/class-wc-compare-functions.php:658
 msgid " - Pro Version only from a3rev"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:660
+#: classes/class-wc-compare-functions.php:661
 msgid "WordPress Plugins"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:663
+#: classes/class-wc-compare-functions.php:664
 msgid "WordPress Email Template"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:664
+#: classes/class-wc-compare-functions.php:665
 msgid "Page View Count"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:667
+#: classes/class-wc-compare-functions.php:668
 msgid "WP e-Commerce Plugins"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:670
+#: classes/class-wc-compare-functions.php:671
 msgid "WP e-Commerce Dynamic Gallery"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:671
+#: classes/class-wc-compare-functions.php:672
 msgid "WP e-Commerce Predictive Search"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:672
+#: classes/class-wc-compare-functions.php:673
 msgid "WP e-Commerce Compare Products"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:673
+#: classes/class-wc-compare-functions.php:674
 msgid "WP e-Commerce Catalog Visibility & Email Inquiry"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:674
+#: classes/class-wc-compare-functions.php:675
 msgid "WP e-Commerce Grid View"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:677
+#: classes/class-wc-compare-functions.php:678
 msgid "Help spread the Word about this plugin"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:678
+#: classes/class-wc-compare-functions.php:679
 msgid "Things you can do to help others find this plugin"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:680
+#: classes/class-wc-compare-functions.php:681
 msgid "Rate this plugin 5"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:680
+#: classes/class-wc-compare-functions.php:681
 msgid "on WordPress.org"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:681
+#: classes/class-wc-compare-functions.php:682
 msgid "Mark the plugin as a fourite"
 msgstr ""
 

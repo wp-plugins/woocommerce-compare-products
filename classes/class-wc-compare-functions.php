@@ -628,25 +628,26 @@ class WC_Compare_Functions {
 	
 	function create_category_extension() {
 		$html = '';
-		$html .= '<div class="upgrade_extensions">'.__('Please upgrade to the', 'woo_cp').' <a target="_blank" href="'.WOOCP_AUTHOR_URI.'">'.__('Pro Version', 'woo_cp').'</a> '.__('to activate the power of Compare Categories. Find out more', 'woo_cp').' <a href="http://docs.a3rev.com/user-guides/woocommerce/compare-products/" target="_blank">'.__('here.', 'woo_cp').'</a></div>';
+		$html .= '<div class="upgrade_extensions"><a href="http://a3rev.com/shop/" target="_blank" style="float:left; margin-right:10px;"><img src="'.WOOCP_IMAGES_URL.'/logo_a3blue.png" /></a>'.__('Please upgrade to the', 'woo_cp').' <a target="_blank" href="'.WOOCP_AUTHOR_URI.'">'.__('Pro Version', 'woo_cp').'</a> '.__('to activate the power of Compare Categories. Find out more', 'woo_cp').' <a href="http://docs.a3rev.com/user-guides/woocommerce/compare-products/" target="_blank">'.__('here.', 'woo_cp').'</a></div>';
 		return $html;	
 	}
 	
 	function products_tab_extension() {
 		$html = '';
-		$html .= '<div class="upgrade_extensions products_tab_extension">'.__('Make managing the Compare products feature across your entire ctalogue a breeze. Upgrade to the', 'woo_cp').' <a target="_blank" href="'.WOOCP_AUTHOR_URI.'">'.__('Pro Version', 'woo_cp').'</a> '.__('to activate this feature.', 'woo_cp').'</div>';
+		$html .= '<div class="upgrade_extensions products_tab_extension"><a href="http://a3rev.com/shop/" target="_blank" style="float:left; margin-right:10px;"><img src="'.WOOCP_IMAGES_URL.'/logo_a3blue.png" /></a>'.__('Make managing the Compare products feature across your entire catalog a breeze. Upgrade to the', 'woo_cp').' <a target="_blank" href="'.WOOCP_AUTHOR_URI.'">'.__('Pro Version', 'woo_cp').'</a> '.__('to activate this feature.', 'woo_cp').'</div>';
 		return $html;	
 	}
 	
 	function other_plugins_notice() {
 		$html = '';
 		$html .= '<div id="a3rev_plugins_notice">';
-		$html .= '<h3>'.__('Upgarde to Compare Products Pro', 'woo_cp').'</h3>';
+		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><img src="'.WOOCP_IMAGES_URL.'/a3logo.png" /></a>';
+		$html .= '<h3>'.__('Upgrade to Compare Products Pro', 'woo_cp').'</h3>';
 		$html .= '<p>'.__("Visit the", 'woo_cp').' <a href="http://a3rev.com/shop/woocommerce-compare-products/" target="_blank">'.__("a3rev website", 'woo_cp').'</a> '.__("to see all the extra features the Pro version of this plugin offers, like the Compare categories that you can see inside the yellow box. All of your Product Categories have been auto created here as Compare categories. The Lite Version uses only 1 category - The Master category. All of your product attributes have been auto created as Compare features under the Master category.", 'woo_cp').'</p>';
 		$html .= '<h3>'.__('Plugin Documentation', 'woo_cp').'</h3>';
-		$html .= '<p>'.__('All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request', 'woo_cp').'. <a href="http://docs.a3rev.com/" target="_blank">'.__('Visit the a3rev wiki.', 'woo_cp').'</a></p>';
+		$html .= '<p>'.__('All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request', 'woo_cp').'. <a href="http://docs.a3rev.com/user-guides/woocommerce/compare-products/" target="_blank">'.__('Visit the a3rev wiki.', 'woo_cp').'</a></p>';
 		$html .= '<h3>'.__('More a3rev Quality Plugins', 'woo_cp').'</h3>';
-		$html .= '<p>'.__('Below is a list of the A3 plugins that are available for free download from wordpress.org', 'woo_cp').'</p>';
+		$html .= '<p>'.__('Below is a list of the a3rev plugins that are available for free download from wordpress.org', 'woo_cp').'</p>';
 		$html .= '<h3>'.__('WooCommerce Plugins', 'woo_cp').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
