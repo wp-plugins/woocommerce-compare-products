@@ -24,6 +24,7 @@
  * printPage()
  * compare_extension()
  * categories_extension()
+ * other_plugins_notice()
  */
 class WC_Compare_Functions {
 
@@ -615,7 +616,7 @@ class WC_Compare_Functions {
 	
 	function compare_extension() {
 		$html = '';
-		$html .= '<div id="compare_extensions">'.__('See more quality WooCommerce plugins at the', 'woo_cp').' <a target="_blank" href="http://a3rev.com/products-page/woocommerce/">'.__('WooCommerce extensions', 'woo_cp').'</a>.</div>';
+		$html .= '<div id="compare_extensions">'.__('See more quality WooCommerce plugins at the', 'woo_cp').' <a target="_blank" href="http://a3rev.com/product-category/woocommerce/">'.__('WooCommerce extensions', 'woo_cp').'</a>.</div>';
 		return $html;	
 	}
 	
@@ -634,6 +635,53 @@ class WC_Compare_Functions {
 	function products_tab_extension() {
 		$html = '';
 		$html .= '<div class="upgrade_extensions products_tab_extension">'.__('Make managing the Compare products feature across your entire ctalogue a breeze. Upgrade to the', 'woo_cp').' <a target="_blank" href="'.WOOCP_AUTHOR_URI.'">'.__('Pro Version', 'woo_cp').'</a> '.__('to activate this feature.', 'woo_cp').'</div>';
+		return $html;	
+	}
+	
+	function other_plugins_notice() {
+		$html = '';
+		$html .= '<div id="a3rev_plugins_notice">';
+		$html .= '<h3>'.__('Upgarde to Comapre Product Pro', 'woo_cp').'</h3>';
+		$html .= '<p>'.__("Visit the", 'woo_cp').' <a href="http://a3rev.com/shop/woocommerce-compare-products/" target="_blank">'.__("a3rev website", 'woo_cp').'</a> '.__("to see all the extra features the Pro version of this plugin offers, like the Compare categories that you can see inside the yellow box. All of your Product Categories have been auto created here as Compare categories. The Lite Version uses only 1 category - The Master category. All of your product attributes have been auto created as Compare features under the Master category.", 'woo_cp').'</p>';
+		$html .= '<h3>'.__('Plugin Documentation', 'woo_cp').'</h3>';
+		$html .= '<p>'.__('All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request', 'woo_cp').'. <a href="http://docs.a3rev.com/" target="_blank">'.__('Visit the a3rev wiki.', 'woo_cp').'</a></p>';
+		$html .= '<h3>'.__('More A3 Quality Plugins', 'woo_cp').'</h3>';
+		$html .= '<p>'.__('Below is a list of the A3 plugins that are available for free download from wordpress.org', 'woo_cp').'</p>';
+		$html .= '<h3>'.__('WooCommerce Plugins', 'woo_cp').'</h3>';
+		$html .= '<p>';
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-dynamic-gallery/" target="_blank">'.__('WooCommerce Dynamic Products Gallery', 'woo_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-predictive-search/" target="_blank">'.__('WooCommerce Predictive Search', 'woo_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-compare-products/" target="_blank">'.__('WooCommerce Compare Products', 'woo_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woo-widget-product-slideshow/" target="_blank">'.__('WooCommerce Widget Product Slideshow', 'woo_cp').'</a></li>';
+		$html .= '<li>* <a href="http://a3rev.com/shop/woocommerce-email-inquiry-and-cart-options/" target="_blank">'.__('WooCommerce Email Inquiry & Cart Options (Pro Version only fro the A3 Rev site)', 'woo_cp').'</a></li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		$html .= '<h3>'.__('WordPress Plugins', 'woo_cp').'</h3>';
+		$html .= '<p>';
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'woo_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'woo_cp').'</a></li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		$html .= '<h3>'.__('WP e-Commerce Plugins', 'woo_cp').'</h3>';
+		$html .= '<p>';
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-dynamic-gallery/" target="_blank">'.__('WP e-Commerce Dynamic Gallery', 'woo_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-predictive-search/" target="_blank">'.__('WP e-Commerce Predictive Search', 'woo_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('WP e-Commerce Compare Products', 'woo_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-catalog-visibility-and-email-inquiry/" target="_blank">'.__('WP e-Commerce Catalog Visibility & Email Inquiry', 'woo_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-grid-view/" target="_blank">'.__('WP e-Commerce Grid View', 'woo_cp').'</a></li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		$html .= '<h3>'.__('Help spead the Word about this plugin', 'woo_cp').'</h3>';
+		$html .= '<p>'.__("Things you can do to help others find this plugin", 'woo_cp');
+		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-compare-products/" target="_blank">'.__('Rate this plugin 5', 'woo_cp').' <img src="'.WOOCP_IMAGES_URL.'/stars.png" align="top" /> '.__('on WordPress.org', 'woo_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/woocommerce-compare-products/" target="_blank">'.__('Mark the plugin as a fourite', 'woo_cp').'</a></li>';
+		$html .= '</ul>';
+		$html .= '</p>';
+		$html .= '</div>';
 		return $html;	
 	}
 }

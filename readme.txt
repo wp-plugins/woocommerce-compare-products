@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 2.92
 Tested up to: 3.5
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 
 Add a Compare Products Feature to all of your products on you WooCommerce site today with the WooCommerce Compare Products plugin..
 
@@ -33,9 +33,9 @@ Find comprehensive plugin documentation [here](http://docs.a3rev.com/user-guides
 When you install WooCommerce Compare Products you will see all the added functionality that the Premium Version offers. The plugin is designed so that the upgrade is completely seamless. Nothing changes except all the features of Compare Products you see on the lite version are activated. This means you can activate, set up and use the free version completely risk free.  
 
 
-[Pro Version Upgrade](http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/) |
+[Pro Version Upgrade](http://a3rev.com/shop/woocommerce-compare-products/) |
 [Documentation](http://docs.a3rev.com/user-guides/woocommerce/compare-products/) |
-[Support](http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help)
+[Support](http://a3rev.com/shop/woocommerce-compare-products/#tab-reviews)
 
 = Localization =
 * English (default) - always include.
@@ -76,7 +76,7 @@ Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a tr
 
 3. Click the FEATURES tab 
 
-4. Click the dropdown arrow at the end of the Master Cateory tab. You'll see that all of your parent product Attributes have been auto created as Compare Features.
+4. Click the dropdown arrow at the end of the Master Category tab. You'll see that all of your parent product Attributes have been auto created as Compare Features.
 
 5. Add any Custom Compare categories or features you require.
 
@@ -93,9 +93,15 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
  
 == Support ==
-All support requests, questions or suggestions should be posted to the [HELP tab](http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help) WooCommerce Compare Products Home page on the a3rev site.
+All support requests, questions or suggestions should be posted to the [HELP tab](http://a3rev.com/shop/woocommerce-compare-products/#tab-reviews) WooCommerce Compare Products Home page on the a3rev site.
 
 == Changelog ==
+
+= 2.0.3 - 2013/01/08 = 
+
+* Feature: Added support for Chinese Characters* Tweak: UI tweak - changed the order of the admin panel tabs so that the most used Features tab is moved to first tab.* Tweak: Added links to all other a3rev wordpress.org plugins from the Features tab
+* Tweak: Updated Support and Pro Version link URL's on wordpress.org description, plugins and plugins dashboard. Links were returning 404 errors since the launch of the all new a3rev.com mobile responsive site as the base e-commerce permalinks is changed.
+
 
 = 2.0.2 - 2012/12/14 =
 

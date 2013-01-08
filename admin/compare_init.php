@@ -4,7 +4,7 @@
  * Install Database, settings option and auto add widget to sidebar
  */
 function woocp_install() {
-	update_option('a3rev_woocp_free_version', '2.0.2');
+	update_option('a3rev_woocp_free_version', '2.0.3');
 	WC_Compare_Settings::woocp_set_setting_default();
 	WC_Compare_Data::install_database();
 	WC_Compare_Categories_Data::install_database();
@@ -157,7 +157,7 @@ if(version_compare(get_option('a3rev_woocp_free_version'), '2.0.1') === -1){
 	WC_Compare_Upgrade::upgrade_version_2_0_1();
 	update_option('a3rev_woocp_free_version', '2.0.1');
 }
-update_option('a3rev_woocp_free_version', '2.0.2');
+update_option('a3rev_woocp_free_version', '2.0.3');
 
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array('WC_Compare_Hook_Filter', 'plugin_extra_links'), 10, 2 );
@@ -300,14 +300,14 @@ function woo_cp_dashboard() {
 		<?php
 	$current_tab = (isset($_REQUEST['tab'])) ? $_REQUEST['tab'] : '';
 	$tabs = array(
-		'settings' => __( 'Settings', 'woo_cp' ),
 		'features' => __( 'Features', 'woo_cp' ),
 		'compare-products' => __( 'Products', 'woo_cp' ),
+		'settings' => __( 'Settings', 'woo_cp' ),
 	);
 
 	foreach ($tabs as $name => $label) :
 		echo '<a href="' . admin_url( 'admin.php?page=woo-compare-settings&tab=' . $name ) . '" class="nav-tab ';
-	if ($current_tab == '' && $name == 'settings') echo 'nav-tab-active';
+	if ($current_tab == '' && $name == 'features') echo 'nav-tab-active';
 	if ( $current_tab==$name ) echo 'nav-tab-active';
 	echo '">' . $label . '</a>';
 	endforeach;
@@ -321,7 +321,13 @@ function woo_cp_dashboard() {
         <?php
 		//echo WC_Compare_Functions::compare_extension();
 		switch ($current_tab) :
-			case 'features':
+			case 'settings':
+				WC_Compare_Settings::woocp_settings_display();
+				break;
+			case 'compare-products':
+				WC_Compare_Products_Class::woocp_products_manager();
+				break;
+			default :
 				echo WC_Compare_Fields_Class::init_features_actions();
 				echo WC_Compare_Categories_Class::init_categories_actions();
 				if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'add-new') {
@@ -337,12 +343,6 @@ function woo_cp_dashboard() {
 					WC_Compare_Fields_Class::features_search_area();
 					WC_Compare_Fields_Class::woocp_features_orders();
 				}
-				break;
-			case 'compare-products':
-				WC_Compare_Products_Class::woocp_products_manager();
-				break;
-			default :
-				WC_Compare_Settings::woocp_settings_display();
 				break;
 		endswitch;
 ?>

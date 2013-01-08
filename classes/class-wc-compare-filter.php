@@ -870,7 +870,7 @@ class WC_Compare_Hook_Filter {
 			return $links;
 		}
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/woocommerce/compare-products/" target="_blank">'.__('Documentation', 'woo_cp').'</a>';
-		$links[] = '<a href="http://a3rev.com/products-page/woocommerce/woocommerce-compare-products/#help" target="_blank">'.__('Support', 'woo_cp').'</a>';
+		$links[] = '<a href="http://a3rev.com/shop/woocommerce-compare-products/#tab-reviews" target="_blank">'.__('Support', 'woo_cp').'</a>';
 		return $links;
 	}
 }

@@ -81,7 +81,7 @@ class WC_Compare_Settings {
 		}
 ?>
         <?php $comparable_settings = get_option('woo_comparable_settings'); ?>
-        <form action="admin.php?page=woo-compare-settings" method="post" name="form_comparable_settings" id="form_comparable_settings">
+        <form action="" method="post" name="form_comparable_settings" id="form_comparable_settings">
         <h3><?php _e('Compare Fly-Out Window Setup', 'woo_cp'); ?></h3>
         <?php echo $comparable_setting_msg; ?>
   		<table class="form-table">
