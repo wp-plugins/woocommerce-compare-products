@@ -178,16 +178,17 @@ class WC_Compare_Functions {
 		$product_list = WC_Compare_Functions::get_variations($product_id);
 		if (count($product_list) < 1 && WC_Compare_Functions::check_product_activate_compare($product_id) && WC_Compare_Functions::check_product_have_cat($product_id)) $product_list = array($product_id);
 		if (is_array($product_list) && count($product_list) > 0) {
-			if (isset($_SESSION['woo_compare_list']))
-				$current_compare_list = (array)$_SESSION['woo_compare_list'];
+			if (isset($_COOKIE['woo_compare_list']))
+				$current_compare_list = (array) unserialize($_COOKIE['woo_compare_list']);
 			else
 				$current_compare_list = array();
 			foreach ($product_list as $product_add) {
 				if (!in_array($product_add, $current_compare_list)) {
-					$current_compare_list[] = $product_add;
+					$current_compare_list[] = (int)$product_add;
 				}
 			}
-			$_SESSION['woo_compare_list'] = $current_compare_list;
+			
+			setcookie( "woo_compare_list", serialize($current_compare_list), 0, COOKIEPATH, COOKIE_DOMAIN, false, true );
 		}
 	}
 
@@ -195,15 +196,15 @@ class WC_Compare_Functions {
 	 * Get list product ids , variation ids
 	 */
 	function get_compare_list() {
-		if (isset($_SESSION['woo_compare_list']))
-			$current_compare_list = (array)$_SESSION['woo_compare_list'];
+		if (isset($_COOKIE['woo_compare_list']))
+			$current_compare_list = (array) unserialize($_COOKIE['woo_compare_list']);
 		else
 			$current_compare_list = array();
 		$return_compare_list = array();
 		if (is_array($current_compare_list) && count($current_compare_list) > 0) {
 			foreach ($current_compare_list as $product_id) {
 				if (WC_Compare_Functions::check_product_activate_compare($product_id)) {
-					$return_compare_list[] = $product_id;
+					$return_compare_list[] = (int)$product_id;
 				}
 			}
 		}
@@ -214,15 +215,15 @@ class WC_Compare_Functions {
 	 * Get total products in complare list
 	 */
 	function get_total_compare_list() {
-		if (isset($_SESSION['woo_compare_list']))
-			$current_compare_list = (array)$_SESSION['woo_compare_list'];
+		if (isset($_COOKIE['woo_compare_list']))
+			$current_compare_list = (array) unserialize($_COOKIE['woo_compare_list']);
 		else
 			$current_compare_list = array();
 		$return_compare_list = array();
 		if (is_array($current_compare_list) && count($current_compare_list) > 0) {
 			foreach ($current_compare_list as $product_id) {
 				if (WC_Compare_Functions::check_product_activate_compare($product_id)) {
-					$return_compare_list[] = $product_id;
+					$return_compare_list[] = (int)$product_id;
 				}
 			}
 		}
@@ -233,20 +234,20 @@ class WC_Compare_Functions {
 	 * Remove a product out compare list
 	 */
 	function delete_product_on_compare_list($product_id) {
-		if (isset($_SESSION['woo_compare_list']))
-			$current_compare_list = (array)$_SESSION['woo_compare_list'];
+		if (isset($_COOKIE['woo_compare_list']))
+			$current_compare_list = (array) unserialize($_COOKIE['woo_compare_list']);
 		else
 			$current_compare_list = array();
 		$key = array_search($product_id, $current_compare_list);
 		unset($current_compare_list[$key]);
-		$_SESSION['woo_compare_list'] = $current_compare_list;
+		setcookie( "woo_compare_list", serialize($current_compare_list), 0, COOKIEPATH, COOKIE_DOMAIN, false, true );
 	}
 
 	/**
 	 * Clear compare list
 	 */
 	function clear_compare_list() {
-		unset($_SESSION['woo_compare_list']);
+		setcookie( "woo_compare_list", serialize(array()), 0, COOKIEPATH, COOKIE_DOMAIN, false, true );
 	}
 
 	/**
@@ -324,7 +325,14 @@ class WC_Compare_Functions {
 			$i = 0;
 			foreach ($compare_list as $product_id) {
 				$i++;
-				$current_product = new WC_Product($product_id);
+				
+				$current_db_version = get_option( 'woocommerce_db_version', null );
+				if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
+					$current_product = new WC_Product($product_id);
+				} else {
+					$current_product = get_product($product_id);
+				}
+				
 				$product_name = WC_Compare_Functions::get_variation_name($product_id);
 				
 				$product_price = $current_product->get_price_html();
@@ -397,7 +405,7 @@ class WC_Compare_Functions {
 							elseif (is_array($field_value) && count($field_value) < 0) $field_value = __('N/A', 'woo_cp');
 							if (trim($field_value) == '') $field_value = __('N/A', 'woo_cp');
 						}else {
-							$field_value = '';
+							$field_value = __('N/A', 'woo_cp');
 						}
 						$html .= '<td class="column_'.$i.'"><div class="compare_value compare_'.$field_data->field_key.'">'.$field_value.'</div></td>';
 					}

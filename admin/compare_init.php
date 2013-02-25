@@ -4,7 +4,7 @@
  * Install Database, settings option and auto add widget to sidebar
  */
 function woocp_install() {
-	update_option('a3rev_woocp_free_version', '2.0.3');
+	update_option('a3rev_woocp_free_version', '2.0.4');
 	WC_Compare_Settings::woocp_set_setting_default();
 	WC_Compare_Data::install_database();
 	WC_Compare_Categories_Data::install_database();
@@ -43,6 +43,10 @@ add_action('wp_ajax_nopriv_woocp_add_to_compare', array('WC_Compare_Hook_Filter'
 // AJAX remove product from compare popup
 add_action('wp_ajax_woocp_remove_from_popup_compare', array('WC_Compare_Hook_Filter', 'woocp_remove_from_popup_compare') );
 add_action('wp_ajax_nopriv_woocp_remove_from_popup_compare', array('WC_Compare_Hook_Filter', 'woocp_remove_from_popup_compare') );
+
+// AJAX update compare popup
+add_action('wp_ajax_woocp_update_compare_popup', array('WC_Compare_Hook_Filter', 'woocp_update_compare_popup') );
+add_action('wp_ajax_nopriv_woocp_update_compare_popup', array('WC_Compare_Hook_Filter', 'woocp_update_compare_popup') );
 
 // AJAX update compare widget
 add_action('wp_ajax_woocp_update_compare_widget', array('WC_Compare_Hook_Filter', 'woocp_update_compare_widget') );
@@ -116,8 +120,14 @@ else
 
 // Add Compare Featured Field tab into Product Details page
 if ($comparable_settings['auto_compare_featured_tab'] > 0 ) {
-	add_action( 'woocommerce_product_tabs', array('WC_Compare_Hook_Filter', 'woocp_product_featured_tab'), $comparable_settings['auto_compare_featured_tab'] );
-	add_action( 'woocommerce_product_tab_panels', array('WC_Compare_Hook_Filter', 'woocp_product_featured_panel'), $comparable_settings['auto_compare_featured_tab']);
+	$current_db_version = get_option( 'woocommerce_db_version', null );
+	if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
+		add_action( 'woocommerce_product_tabs', array('WC_Compare_Hook_Filter', 'woocp_product_featured_tab'), $comparable_settings['auto_compare_featured_tab'] );
+		add_action( 'woocommerce_product_tab_panels', array('WC_Compare_Hook_Filter', 'woocp_product_featured_panel'), $comparable_settings['auto_compare_featured_tab']);
+	} else {
+		// woo 2.0
+		add_filter( 'woocommerce_product_tabs', array('WC_Compare_Hook_Filter', 'woocp_product_featured_tab_woo_2_0') );
+	}
 }
 
 // Create Compare Category when Product Category is created
@@ -157,7 +167,7 @@ if(version_compare(get_option('a3rev_woocp_free_version'), '2.0.1') === -1){
 	WC_Compare_Upgrade::upgrade_version_2_0_1();
 	update_option('a3rev_woocp_free_version', '2.0.1');
 }
-update_option('a3rev_woocp_free_version', '2.0.3');
+update_option('a3rev_woocp_free_version', '2.0.4');
 
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array('WC_Compare_Hook_Filter', 'plugin_extra_links'), 10, 2 );

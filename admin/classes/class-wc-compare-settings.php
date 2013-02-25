@@ -47,7 +47,7 @@ class WC_Compare_Settings {
 			$comparable_settings['button_type'] = 'button';
 		}
 		if (!isset($comparable_settings['popup_type']) || trim($comparable_settings['popup_type']) == '' || $reset) {
-			$comparable_settings['popup_type'] = 'fancybox';
+			$comparable_settings['popup_type'] = 'prettyphoto';
 		}
 		if (!isset($comparable_settings['button_position']) || trim($comparable_settings['button_position']) == '' || $reset) {
 			$comparable_settings['button_position'] = 'above';
@@ -104,7 +104,10 @@ class WC_Compare_Settings {
                 </tr>
                 <tr valign="top">
                     <th class="titledesc" scope="rpw"><label for="button_type"><?php _e('Compare Fly-Out Type', 'woo_cp'); ?></label></th>
-                    <td class="forminp"><input type="radio" name="popup_type" id="popup_type1" value="fancybox" <?php if (!isset($comparable_settings['popup_type']) || $comparable_settings['popup_type'] == 'fancybox') { echo 'checked="checked"';} ?> /> <label for="popup_type1"><?php _e('Fancybox', 'woo_cp'); ?></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="popup_type" id="popup_type2" value="lightbox" <?php if ($comparable_settings['popup_type'] == 'lightbox') { echo 'checked="checked"';} ?> /> <label for="popup_type2"><?php _e('Lightbox', 'woo_cp'); ?></label> <img class="help_tip" tip='<?php _e('Choose to power the Fly-Out Screen with fancybox or lightbox tool.', 'woo_cp') ?>' src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" /></td>
+                    <td class="forminp">
+                    	<input type="radio" name="popup_type" id="popup_type1" value="prettyphoto" <?php if (!isset($comparable_settings['popup_type']) || $comparable_settings['popup_type'] == 'prettyphoto') { echo 'checked="checked"';} ?> /> <label for="popup_type1"><?php _e('PrettyPhoto', 'woo_cp'); ?></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<input type="radio" name="popup_type" id="popup_type2" value="fancybox" <?php if ($comparable_settings['popup_type'] == 'fancybox') { echo 'checked="checked"';} ?> /> <label for="popup_type2"><?php _e('Fancybox', 'woo_cp'); ?></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="popup_type" id="popup_type3" value="lightbox" <?php if ($comparable_settings['popup_type'] == 'lightbox') { echo 'checked="checked"';} ?> /> <label for="popup_type3"><?php _e('Lightbox', 'woo_cp'); ?></label> <img class="help_tip" tip='<?php _e('Choose to power the Fly-Out Screen with PrettyPhoto or Fancybox or Lightbox tool.', 'woo_cp') ?>' src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" /></td>
                  </tr>
 			</tbody>
 		</table>
