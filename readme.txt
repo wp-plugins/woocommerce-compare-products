@@ -54,20 +54,15 @@ Once you have the plugin installed and activated please refer to the plugins com
 * When you upgrade nothing changes except all the features of Compare Products you see on the lite version are activated. 
 * This means you can activate, set up and use the free version and then if you find you want the added features and functionality you can upgrade, completely risk free.  
 
+
 = Pro Version Features =
 
 * All of the In-Plugin Custom Style and layout settings are activated.
-
 * Product Express Manager - worth the price of the Pro Version upgrade on its own - Saves you hours, days or even weeks of work on larger stores
-
 * Activates the 'View Cart' feature on Grid View. 
-
 * Activates all Grid View layout and display styling function.
-
 * Activates full Compare Widget layout and styling functions.
-
 * Activates 'Add to Cart', 'View Cart' feature on the comparison table.
-
 * Activates full Comparison Table layout and style functions.   
 
 
@@ -133,9 +128,6 @@ You can use this plugin when you have installed the WooCommerce plugin.
 == Changelog ==
 
 = 2.1.0 - 2013/04/09 =
-
-INTRODUCING IN-PLUGIN CUSTOM STYLING!
-
 * Feature: Added Compare Categories functionality for Lite Version - previously only available in the Pro Version upgrade.
 * Feature: Replaced Compare Fancybox and Lightbox pop-up fly out with Comparisons page opening in a new browser window. WooCommerce Version 2.0 uses new WordPress PrettyPhoto as the pop-up tool and in testing we found supporting 3 pop-up scripts, PrettyPhoto, Fancybox and Lightbox was very buggy and troublesome. Removed all 3 pop-up scripts and replaced with open in browser window. 
 * Feature: Added 2 Comparison widow opening options. Option 1. Show the product Comparison in an on-screen pop-up window or Option 2. Show Comparisons in a new window.
@@ -223,9 +215,6 @@ INTRODUCING IN-PLUGIN CUSTOM STYLING!
 * Tweak - Corrected typo on Compare pop-up window
 
 = 2.0 - 2012/08/03 =
-
-MAJOR UPGRADE
-
 * Feature - All Product Categories and Sub Categories are auto created as Compare Categories when plugin is activated. Feature is activated on upgrade.
 * Feature - All Product Parent Variations auto added to Master Category as Compare Features when the plugin is first activated.
 * Feature - When Product Categories or Sub categories are created they are auto created as Compare categories. The plugin only listens to Create new so edits to Product categories are ignored.
