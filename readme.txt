@@ -54,13 +54,20 @@ Once you have the plugin installed and activated please refer to the plugins com
 * When you upgrade nothing changes except all the features of Compare Products you see on the lite version are activated. 
 * This means you can activate, set up and use the free version and then if you find you want the added features and functionality you can upgrade, completely risk free.  
 
-<strong>Pro Version Features</strong> 
-* All of the In-Plugin Custom Style and layout settings are activated. 
+= Pro Version Features =
+
+* All of the In-Plugin Custom Style and layout settings are activated.
+
 * Product Express Manager - worth the price of the Pro Version upgrade on its own - Saves you hours, days or even weeks of work on larger stores
+
 * Activates the 'View Cart' feature on Grid View. 
+
 * Activates all Grid View layout and display styling function.
+
 * Activates full Compare Widget layout and styling functions.
+
 * Activates 'Add to Cart', 'View Cart' feature on the comparison table.
+
 * Activates full Comparison Table layout and style functions.   
 
 
@@ -79,19 +86,25 @@ Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a tr
 == Screenshots ==
 
 1. screenshot-1.png
+
 2. screenshot-2.png
+
 3. screenshot-3.png
+
 4. screenshot-4.png
+
 5. screenshot-5.png
 
 == Installation ==
 
 1. Upload the folder woocommerce-compare-products to the /wp-content/plugins/ directory
+
 2. Activate the plugin through the Plugins menu in WordPress
 
 == Usage ==
 
 1. Open WooCommerce > Compare Settings
+
 2. Opens to the SETTINGS tab
 
  * Style your Compare Products Fly-Out screen - upload header image and set screen dimensions.
@@ -101,8 +114,11 @@ Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a tr
  * Save Settings to save your work. You are now ready to add the Compare features data for each product.
 
 3. Click the FEATURES tab 
+
 4. Click the dropdown arrow at the end of the Master Category tab. You'll see that all of your parent product Attributes have been auto created as Compare Features.
+
 5. Add any Custom Compare categories or features you require.
+
 6  Edit or deactivate the Compare feature for any products edit page.
 
 Celebrate the extra sales Compare Products brings you !  
@@ -207,7 +223,9 @@ INTRODUCING IN-PLUGIN CUSTOM STYLING!
 * Tweak - Corrected typo on Compare pop-up window
 
 = 2.0 - 2012/08/03 =
+
 MAJOR UPGRADE
+
 * Feature - All Product Categories and Sub Categories are auto created as Compare Categories when plugin is activated. Feature is activated on upgrade.
 * Feature - All Product Parent Variations auto added to Master Category as Compare Features when the plugin is first activated.
 * Feature - When Product Categories or Sub categories are created they are auto created as Compare categories. The plugin only listens to Create new so edits to Product categories are ignored.
