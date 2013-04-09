@@ -119,6 +119,7 @@ You can use this plugin when you have installed the WooCommerce plugin.
 = 2.1.0 - 2013/04/09 =
 
 INTRODUCING IN-PLUGIN CUSTOM STYLING!
+
 * Feature: Added Compare Categories functionality for Lite Version - previously only available in the Pro Version upgrade.
 * Feature: Replaced Compare Fancybox and Lightbox pop-up fly out with Comparisons page opening in a new browser window. WooCommerce Version 2.0 uses new WordPress PrettyPhoto as the pop-up tool and in testing we found supporting 3 pop-up scripts, PrettyPhoto, Fancybox and Lightbox was very buggy and troublesome. Removed all 3 pop-up scripts and replaced with open in browser window. 
 * Feature: Added 2 Comparison widow opening options. Option 1. Show the product Comparison in an on-screen pop-up window or Option 2. Show Comparisons in a new window.
