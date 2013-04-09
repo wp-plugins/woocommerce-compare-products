@@ -22,9 +22,8 @@ class WC_Compare_Fields_Class {
 	);
 	
 	function init_features_actions() {
-		$result_msg = '';	
-		$master_category_id = get_option('master_category_compare');
-		
+		$result_msg = '';
+
 		if (isset($_REQUEST['bt_save_field'])) {
 			$field_name = trim(strip_tags(addslashes($_REQUEST['field_name'])));
 			if (isset($_REQUEST['field_id']) && $_REQUEST['field_id'] > 0) {
@@ -33,18 +32,19 @@ class WC_Compare_Fields_Class {
 				if ($field_name != '' && $count_field_name == 0) {
 					$result = WC_Compare_Data::update_row($_REQUEST);
 					if (isset($_REQUEST['field_cats']) && count((array)$_REQUEST['field_cats']) > 0) {
-						$cat_id = $master_category_id;
-						$check_existed = WC_Compare_Categories_Fields_Data::get_count("cat_id='".$cat_id."' AND field_id='".$field_id."'");
-						if ($check_existed == 0) {
-							WC_Compare_Categories_Fields_Data::insert_row($cat_id, $field_id);
+						foreach ($_REQUEST['field_cats'] as $cat_id) {
+							$check_existed = WC_Compare_Categories_Fields_Data::get_count("cat_id='".$cat_id."' AND field_id='".$field_id."'");
+							if ($check_existed == 0) {
+								WC_Compare_Categories_Fields_Data::insert_row($cat_id, $field_id);
+							}
 						}
-						WC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."' AND cat_id != '".$master_category_id."'");
+						WC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."' AND cat_id NOT IN(".implode(',', $_REQUEST['field_cats']).")");
 					}else {
 						WC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."'");
 					}
 					$result_msg = '<div class="updated" id="result_msg"><p>'.__('Compare Feature Successfully edited', 'woo_cp').'.</p></div>';
 				}else {
-					$result_msg = '<div class="error" id="result_msg"><p>'.__('That Compare Feature Name already exists. Please try again', 'woo_cp').'.</p></div>';
+					$result_msg = '<div class="error" id="result_msg"><p>'.__('Nothing edited! You already have a Compare Feature with that name. Use the Features Search function to find it. Use unique names to edit each Compare Feature.', 'woo_cp').'</p></div>';
 				}
 			}else {
 				$count_field_name = WC_Compare_Data::get_count("field_name = '".$field_name."'");
@@ -53,8 +53,9 @@ class WC_Compare_Fields_Class {
 					if ($field_id > 0) {
 						WC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."'");
 						if (isset($_REQUEST['field_cats']) && count((array)$_REQUEST['field_cats']) > 0) {
-							$cat_id = $master_category_id;
-							WC_Compare_Categories_Fields_Data::insert_row($cat_id, $field_id);
+							foreach ($_REQUEST['field_cats'] as $cat_id) {
+								WC_Compare_Categories_Fields_Data::insert_row($cat_id, $field_id);
+							}
 						}
 						$result_msg = '<div class="updated" id="result_msg"><p>'.__('Compare Feature Successfully created', 'woo_cp').'.</p></div>';
 					}else {
@@ -62,7 +63,7 @@ class WC_Compare_Fields_Class {
 					}
 
 				}else {
-					$result_msg = '<div class="error" id="result_msg"><p>'.__('That Compare Feature Name already exists. Please try again', 'woo_cp').'.</p></div>';
+					$result_msg = '<div class="error" id="result_msg"><p>'.__('Nothing created! You already have a Compare Feature with that name. Use the Features Search function to find it. Use unique names to create each Compare Feature.', 'woo_cp').'</p></div>';
 				}
 			}
 		}elseif (isset($_REQUEST['bt_delete'])) {
@@ -95,8 +96,6 @@ class WC_Compare_Fields_Class {
 	
 	function woocp_features_manager() {
 		global $wpdb;
-		$master_category_id = get_option('master_category_compare');
-		$master_category = 'Master Category';
 ?>
         <style>
 			#field_type_chzn{width:300px !important;}
@@ -127,7 +126,7 @@ class WC_Compare_Fields_Class {
                         	<div class="field_title"><label for="field_unit"><?php _e('Feature Unit of Measurement', 'woo_cp'); ?></label></div> <input type="text" name="field_unit" id="field_unit" value="<?php if (!empty($field)) echo stripslashes($field->field_unit); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e("e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name.", 'woo_cp') ?>' src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
                             <div style="clear:both; height:20px"></div>
                             <div class="field_title"><label for="field_type"><?php _e('Feature Input Type', 'woo_cp'); ?></label></div>
-                            <select style="min-width:300px;" name="field_type" id="field_type" class="chosen_select">
+                            <select style="min-width:300px;" name="field_type" id="field_type" class="chzn-select">
                             <?php
 		foreach (WC_Compare_Fields_Class::$default_types as $type => $type_name) {
 			if (!empty($field) && $type == $field->field_type) {
@@ -148,22 +147,30 @@ class WC_Compare_Fields_Class {
                             </div>
                             <div style="clear:both; height:20px"></div>
                             <div class="field_title"><label for="field_type"><?php _e('Assign Feature to Categories', 'woo_cp'); ?></label></div>
-                            <div style="overflow:auto; width:290px; height:140px; float:left; padding:5px; margin:5px 3px 5px 0; border:1px solid #DDD;background:#FFF; clear:none;" class="widefat">
                             	<?php
-		echo '<input type="checkbox" name="field_cats[]" value="'.$master_category_id.'" checked="checked" /> '.$master_category.'<br />';
-		$all_cat = WC_Compare_Categories_Data::get_results("id != '".$master_category_id."'", 'category_order ASC');
-		$cat_fields = WC_Compare_Categories_Fields_Data::get_catid_results($field_id);
-		if (is_array($all_cat) && count($all_cat) > 0) {
-			foreach ($all_cat as $cat) {
-				if (in_array($cat->id, (array)$cat_fields)) {
-					echo '<input type="checkbox" disabled="disabled" name="field_cats[]" value="'.$cat->id.'" checked="checked" /> '.stripslashes($cat->category_name).'<br />';
-				}else {
-					echo '<input type="checkbox" disabled="disabled" name="field_cats[]" value="'.$cat->id.'" /> '.stripslashes($cat->category_name).'<br />';
-				}
-			}
-		}
-?>
-                            </div> <img class="help_tip" tip='<?php _e("Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories.", 'woo_cp') ?>' src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
+								$all_cat = WC_Compare_Categories_Data::get_results('', 'category_order ASC');
+								$cat_fields = WC_Compare_Categories_Fields_Data::get_catid_results($field_id);
+								if (is_array($all_cat) && count($all_cat) > 0) {
+								?>
+								<select multiple="multiple" name="field_cats[]" data-placeholder="<?php _e('Select Compare Categories', 'woo_cp'); ?>" style="width:300px; height:80px;" class="chzn-select">
+									<?php
+                                    foreach ($all_cat as $cat) {
+                                        if (in_array($cat->id, (array)$cat_fields)) {
+                                    ?>
+                                        <option value="<?php echo $cat->id; ?>" selected="selected"><?php echo stripslashes($cat->category_name); ?></option>
+                                    <?php
+                                        } else {
+                                    ?>
+                                        <option value="<?php echo $cat->id; ?>"><?php echo stripslashes($cat->category_name); ?></option>
+                                    <?php	
+                                        }
+                                    }
+                                    ?>
+								</select>
+                                <?php 
+								}
+								?>
+                            	<img class="help_tip" style="vertical-align:top;" tip='<?php _e("Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories.", 'woo_cp') ?>' src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
 
                             <div style="clear:both"></div>
                     	</td>
@@ -179,24 +186,55 @@ class WC_Compare_Fields_Class {
 	}
 
 	function woocp_features_orders() {
+		$unavaliable_fields = WC_Compare_Categories_Fields_Data::get_unavaliable_field_results('field_name ASC');
+		if (is_array($unavaliable_fields) && count($unavaliable_fields) > 0) {
+			$un_i = 0;
+?>
+
+        <h3 id="#un_assigned"><?php _e('Un-Assigned Features (Assign to a Category to activate)', 'woo_cp'); ?></h3>
+        <form action="admin.php?page=woo-compare-settings&tab=features" method="post" name="form_delete_fields" id="form_delete_fields" style="margin-bottom:30px;">
+        	<table cellspacing="0" class="widefat post fixed" style="width:535px;">
+            	<thead>
+                	<tr>
+                    	<th width="30" class="manage-column" scope="col" style="white-space: nowrap;"><input id="toggle1" class="toggle" type="checkbox" style="margin:0;" /></th>
+                        <th width="35" class="manage-column" scope="col" style="white-space: nowrap;"><?php _e('No', 'woo_cp'); ?></th>
+                        <th class="manage-column" scope="col"><?php _e('Feature Name', 'woo_cp'); ?></th>
+                        <th width="90" class="manage-column" scope="col" style="text-align:right"><?php _e('Type', 'woo_cp'); ?></th>
+                        <th width="100" class="manage-column" scope="col" style="text-align:right"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+			foreach ($unavaliable_fields as $field_data) {
+				$un_i++;
+?>
+                	<tr>
+                    	<td><input class="list_fields" type="checkbox" name="un_fields[]" value="<?php echo $field_data->id; ?>" /></td>
+                        <td><?php echo $un_i; ?></td>
+                        <td><?php echo stripslashes($field_data->field_name); ?></td>
+                        <td align="right"><?php echo WC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
+                        <td align="right"><a href="admin.php?page=woo-compare-settings&tab=features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>" ><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-settings&tab=features&act=field-delete&field_id=<?php echo $field_data->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'woo_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?>');" title="<?php _e('Delete', 'woo_cp') ?>" ><?php _e('Delete', 'woo_cp') ?></a></td>
+                	</tr>
+                 <?php } ?>
+                </tbody>
+            </table>
+            <div style="margin-top:10px;"><input type="submit" name="bt_delete" id="bt_delete" class="button-primary" value="<?php _e('Delete', 'woo_cp') ; ?>" onclick="if (confirm('<?php _e('Are you sure about deleting this?', 'woo_cp') ; ?>')) return true; else return false" /></div>
+            </form>
+        <?php
+		}
+		
 		$compare_cats = WC_Compare_Categories_Data::get_results('', 'category_order ASC');
 		if (is_array($compare_cats) && count($compare_cats)>0) {
 ?>
-		<style type="text/css">
-	   	#a3rev_plugins_notice { background:#FFFBCC; border:2px solid #E6DB55; -webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; color: #555555; float: right; margin: 0px; padding: 0px 15px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 420px; right:0px; top:0px;}
-        </style>
         <h3><?php _e('Manage Compare Categories and Features', 'woo_cp'); ?></h3>
         <p><?php _e('Use drag and drop to change Category order and Feature order within Categories.', 'woo_cp') ?></p>
         <div class="updated below-h2 update_feature_order_message" style="display:none"><p></p></div>
         <div style="clear:both"></div>
         <ul style="margin:0; padding:0;" class="sorttable">
         <?php
-			$number_cat = 0;
 			foreach ($compare_cats as $cat) {
-				$number_cat++;
 				$compare_fields = WC_Compare_Categories_Fields_Data::get_results("cat_id='".$cat->id."'", 'cf.field_order ASC');
 ?>
-		<?php if ($number_cat == 2) { ?><div class="compare_upgrade_area"><?php echo WC_Compare_Functions::other_plugins_notice(); } ?>
         <li id="recordsArray_<?php echo $cat->id; ?>">
           <input type="hidden" name="compare_orders_<?php echo $cat->id; ?>" class="compare_category_id" value="<?php echo $cat->id; ?>"  />
   		  <table cellspacing="0" class="widefat post fixed sorttable" id="compare_orders_<?php echo $cat->id; ?>" style="width:535px; margin-bottom:20px;">
@@ -205,7 +243,7 @@ class WC_Compare_Fields_Class {
               <th width="30" style="white-space: nowrap;"><span class="c_field_name">&nbsp;</span></th>
               <th><strong><?php echo stripslashes($cat->category_name) ;?></strong> :</th>
               <th width="90"></th>
-              <th width="100" style="text-align:right; font-size:12px;white-space: nowrap;"><a onclick="javascript:return alert_upgrade('<?php _e('Please upgrade to the Pro Version to activate Compare categories', 'woo_cp') ; ?>');" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>"><?php _e('Edit', 'woo_cp') ?></a> | <a onclick="javascript:return alert_upgrade('<?php _e('Please upgrade to the Pro Version to activate Compare categories', 'woo_cp') ; ?>');" title="<?php _e('Delete', 'woo_cp') ?>" class="c_field_delete" ><?php _e('Delete', 'woo_cp') ?></a><?php if (is_array($compare_fields) && count($compare_fields)>0) { ?> | <span class="c_openclose_table c_close_table" id="expand_<?php echo $cat->id; ?>">&nbsp;</span><?php }else {?> | <span class="c_openclose_none">&nbsp;</span><?php }?></th>
+              <th width="100" style="text-align:right; font-size:12px;white-space: nowrap;"><a href="admin.php?page=woo-compare-settings&tab=features&act=cat-edit&category_id=<?php echo $cat->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>"><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-settings&tab=features&act=cat-delete&category_id=<?php echo $cat->id; ?>" title="<?php _e('Delete', 'woo_cp') ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'woo_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');"><?php _e('Delete', 'woo_cp') ?></a><?php if (is_array($compare_fields) && count($compare_fields)>0) { ?> | <span class="c_openclose_table c_close_table" id="expand_<?php echo $cat->id; ?>">&nbsp;</span><?php }else {?> | <span class="c_openclose_none">&nbsp;</span><?php }?></th>
             </tr>
             </thead>
             <tbody class="expand_<?php echo $cat->id; ?>">
@@ -230,7 +268,6 @@ class WC_Compare_Fields_Class {
             </tbody>
           </table>
         </li>
-        <?php if ($number_cat == count($compare_cats) && $number_cat >= 2) { ?></div><?php } ?>
         <?php
 			}
 ?>
@@ -261,7 +298,7 @@ class WC_Compare_Fields_Class {
 							$(".sorttable tbody").sortable({ helper: fixHelper, placeholder: "ui-state-highlight", opacity: 0.8, cursor: 'move', update: function() {
 								var cat_id = $(this).parent('table').siblings(".compare_category_id").val();
 								var order = $(this).sortable("serialize") + '&action=woocp_update_orders&security=<?php echo $woocp_update_order; ?>&cat_id='+cat_id;
-								$.post("<?php echo admin_url('admin-ajax.php'); ?>", order, function(theResponse){
+								$.post("<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>", order, function(theResponse){
 									$(".update_feature_order_message p").html(theResponse);
 									$(".update_feature_order_message").show();
 									$("#compare_orders_"+cat_id).find(".compare_sort").each(function(index){
@@ -271,47 +308,17 @@ class WC_Compare_Fields_Class {
 							}
 							});
 
+							$("ul.sorttable").sortable({ placeholder: "ui-state-highlight", opacity: 0.8, cursor: 'move', update: function() {
+								var order = $(this).sortable("serialize") + '&action=woocp_update_cat_orders&security=<?php echo $woocp_update_cat_order; ?>';
+								$.post("<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>", order, function(theResponse){
+									$(".update_feature_order_message p").html(theResponse).show();
+									$(".update_feature_order_message").show();
+								});
+							}
+							});
 						});
 					})(jQuery);
 				</script>
-        <?php
-		}
-?>
-        <?php
-		$unavaliable_fields = WC_Compare_Categories_Fields_Data::get_unavaliable_field_results('field_name ASC');
-		if (is_array($unavaliable_fields) && count($unavaliable_fields) > 0) {
-			$un_i = 0;
-?>
-
-        <h3 id="#un_assigned"><?php _e('Un-Assigned Features (Assign to a Category to activate)', 'woo_cp'); ?></h3>
-        <form action="admin.php?page=woo-compare-settings&tab=features" method="post" name="form_delete_fields" id="form_delete_fields">
-        	<table cellspacing="0" class="widefat post fixed" style="width:535px;">
-            	<thead>
-                	<tr>
-                    	<th width="30" class="manage-column" scope="col" style="white-space: nowrap;"><input id="toggle1" class="toggle" type="checkbox" style="margin:0;" /></th>
-                        <th width="35" class="manage-column" scope="col" style="white-space: nowrap;"><?php _e('No', 'woo_cp'); ?></th>
-                        <th class="manage-column" scope="col"><?php _e('Feature Name', 'woo_cp'); ?></th>
-                        <th width="90" class="manage-column" scope="col" style="text-align:right"><?php _e('Type', 'woo_cp'); ?></th>
-                        <th width="100" class="manage-column" scope="col" style="text-align:right"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
-			foreach ($unavaliable_fields as $field_data) {
-				$un_i++;
-?>
-                	<tr>
-                    	<td><input class="list_fields" type="checkbox" name="un_fields[]" value="<?php echo $field_data->id; ?>" /></td>
-                        <td><?php echo $un_i; ?></td>
-                        <td><?php echo stripslashes($field_data->field_name); ?></td>
-                        <td align="right"><?php echo WC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
-                        <td align="right"><a href="admin.php?page=woo-compare-settings&tab=features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>" ><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-settings&tab=features&act=field-delete&field_id=<?php echo $field_data->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'woo_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?>');" title="<?php _e('Delete', 'woo_cp') ?>" ><?php _e('Delete', 'woo_cp') ?></a></td>
-                	</tr>
-                 <?php } ?>
-                </tbody>
-            </table>
-            <div style="margin-top:10px;"><input type="submit" name="bt_delete" id="bt_delete" class="button-primary" value="<?php _e('Delete', 'woo_cp') ; ?>" onclick="if (confirm('<?php _e('Are you sure about deleting this?', 'woo_cp') ; ?>')) return true; else return false" /></div>
-            </form>
         <?php
 		}
 	}
@@ -424,5 +431,6 @@ class WC_Compare_Fields_Class {
         </form>
     <?php	
 	}
+
 }
 ?>

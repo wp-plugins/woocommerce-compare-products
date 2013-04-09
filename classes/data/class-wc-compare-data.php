@@ -7,7 +7,6 @@
  *
  * install_database()
  * automatic_add_features()
- * add_features_to_master_category()
  * get_row()
  * get_maximum_order()
  * get_count()
@@ -51,7 +50,6 @@ class WC_Compare_Data {
 	
 	function automatic_add_features() {
 		global $woocommerce;
-		$master_category_id = get_option('master_category_compare');
 		$top_variations = $woocommerce->get_attribute_taxonomies();
 		if ( $top_variations ) {
 			foreach ($top_variations as $top_variation) {
@@ -71,27 +69,11 @@ class WC_Compare_Data {
 						$feature_id = WC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->attribute_label)), 'field_type' => 'checkbox', 'field_unit' => '', 'default_value' => $default_value) );
 					else
 						$feature_id = WC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->attribute_label)), 'field_type' => 'input-text', 'field_unit' => '', 'default_value' => '') );
-					if ($feature_id !== false) {
-						WC_Compare_Categories_Fields_Data::insert_row($master_category_id, $feature_id);
-					}
 				}
 			}
 		}
 	}
 	
-	function add_features_to_master_category() {
-		$master_category_id = get_option('master_category_compare');
-		$features = WC_Compare_Data::get_results();
-		if (is_array($features) && count($features) > 0) {
-			foreach ($features as $feature) {
-				$check_existed = WC_Compare_Categories_Fields_Data::get_count("cat_id='".$master_category_id."' AND field_id='".$feature->id."'");
-				if($check_existed == 0){
-					WC_Compare_Categories_Fields_Data::insert_row($master_category_id, $feature->id);
-				}
-				WC_Compare_Categories_Fields_Data::delete_row("field_id='".$feature->id."' AND cat_id != '".$master_category_id."'");
-			}
-		}
-	}
 
 	function get_row($id, $where='', $output_type='OBJECT') {
 		global $wpdb;

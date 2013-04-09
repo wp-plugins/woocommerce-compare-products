@@ -23,19 +23,21 @@ class WC_Compare_Widget extends WP_Widget{
 
 	}
 	function widget($args, $instance) {
+		global $woo_compare_widget_style, $woo_compare_widget_title_style;
+		extract($woo_compare_widget_style);
+		extract($woo_compare_widget_title_style);
 		extract($args, EXTR_SKIP);
 		$compare_list = WC_Compare_Functions::get_compare_list();
 		$total_compare_product = 0;
 		if (is_array($compare_list)) $total_compare_product = count($compare_list);
 		$title = empty($instance['title']) ? '' : apply_filters('widget_title', $instance['title']);
 		
-		add_action('wp_footer', array('WC_Compare_Hook_Filter', 'woocp_print_scripts') );
-
 		echo $before_widget;
+		
 		if ( $title != '')
-			echo $before_title . $title . ' <span id="total_compare_product">('.$total_compare_product.')</span>' . $after_title;
+			echo $before_title . $title . ' <span class="total_compare_product_container">'.$before_total_text.'<span id="total_compare_product">'.$total_compare_product.'</span>'.$after_total_text.'</span>' . $after_title;
 		else
-			echo $before_title . __( 'Compare Products', 'woo_cp' ).' <span id="total_compare_product">('.$total_compare_product.')</span>' . $after_title;
+			echo $before_title . __( 'Compare Products', 'woo_cp' ).' <span class="total_compare_product_container">'.$before_total_text.'<span id="total_compare_product">'.$total_compare_product.'</span>'.$after_total_text.'</span>' . $after_title;
 
 
 		echo '<div class="woo_compare_widget_container">'.WC_Compare_Functions::get_compare_list_html_widget().'</div><div class="woo_compare_widget_loader" style="display:none; text-align:center"><img src="'.WOOCP_IMAGES_URL.'/ajax-loader.gif" border=0 /></div>';

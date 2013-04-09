@@ -122,101 +122,6 @@ class WC_Compare_Products_Class {
 		die();
 	}
 
-	function woocp_popup_features() {
-		check_ajax_referer( 'woocp-popup-features', 'security' );
-		$post_id = 0;
-		$paged = 1;
-		$rp = 10;
-		$sortname = 'title';
-		$sortorder = 'asc';
-		$cp_show_variations = 0;
-		$query = false;
-		$qtype = false;
-		$product_data = explode('|', $_REQUEST['product_data']);
-		if (is_array($product_data) && count($product_data) > 0) {
-			$post_id = $product_data[0];
-			$paged = $product_data[1];
-			$rp = $product_data[2];
-			$sortname = $product_data[3];
-			$sortorder = $product_data[4];
-			$cp_show_variations = $product_data[5];
-			$qtype = $product_data[6];
-		}
-		if (isset($_REQUEST['search_string']) && trim($_REQUEST['search_string']) != '') $query = trim($_REQUEST['search_string']);
-
-		$woocp_product_compare = wp_create_nonce("woocp-product-compare");
-		$deactivate_compare_feature = get_post_meta( $post_id, '_woo_deactivate_compare_feature', true );
-		$compare_category = get_post_meta( $post_id, '_woo_compare_category', true );
-?>
-		<style>
-		#compare_cat_fields table td input[type="text"], #compare_cat_fields table td textare, #compare_cat_fields table td select{ width:250px !important; }
-		</style>
-        <script type="text/javascript">
-		(function($){
-			$(function(){
-				$("#compare_category").change(function(){
-					var cat_id = $(this).val();
-					var post_id = <?php echo $post_id; ?>;
-					$(".compare_widget_loader").show();
-					var data = {
-                        action: 'woocp_product_get_fields',
-                        cat_id: cat_id,
-                        post_id: post_id,
-                        security: '<?php echo $woocp_product_compare; ?>'
-                    };
-                    $.post('<?php echo admin_url('admin-ajax.php'); ?>', data, function(response) {
-						$(".compare_widget_loader").hide();
-						$("#compare_cat_fields").html(response);
-					});
-				});
-			});
-		})(jQuery);
-		</script>
-		<div id="TB_iframeContent" style="position:relative;width:100%;">
-        <div style="padding:10px 25px;">
-        <form action="admin.php?page=woo-compare-settings&tab=compare-products" method="post" name="form_product_features">
-        	<input type="hidden" name="paged" value="<?php echo $paged; ?>" />
-            <input type="hidden" name="rp" value="<?php echo $rp; ?>" />
-            <input type="hidden" name="sortname" value="<?php echo $sortname; ?>" />
-            <input type="hidden" name="sortorder" value="<?php echo $sortorder; ?>" />
-            <input type="hidden" name="cp_show_variations" value="<?php echo $cp_show_variations; ?>" />
-            <input type="hidden" name="qtype" value="<?php echo $qtype; ?>" />
-        	<input type="hidden" name="query" value="<?php echo $query; ?>" />
-        	<h3 style="margin-top:0; padding-top:20px;"><?php echo WC_Compare_Functions::get_variation_name($post_id); ?></h3>
-            <input type="hidden" name="productid" value="<?php echo $post_id; ?>" />
-            <p><input id='deactivate_compare_feature' type='checkbox' value='no' <?php if ( $deactivate_compare_feature == 'no' ) echo 'checked="checked"'; else echo ''; ?> name='_woo_deactivate_compare_feature' style="float:none; width:auto; display:inline-block;" />
-            <label style="display:inline-block" for='deactivate_compare_feature' class='small'><?php _e( "Activate Compare Feature for this Product", 'woo_cp' ); ?></label></p>
-            <label style="display:inline-block; float:left;" for='compare_category' class='small'><?php _e( "Select a  Compare Category for this Product", 'woo_cp' ); ?> :</label>
-            <p style="margin:0; padding:0; margin-left:290px;"><select name="_woo_compare_category" id="compare_category" style="width:180px; margin-top:-2px;">
-                    <option value="0"><?php _e('Select...', 'woo_cp'); ?></option>
-            <?php
-		$compare_cats = WC_Compare_Categories_Data::get_results('', 'category_order ASC');
-		if (is_array($compare_cats) && count($compare_cats)>0) {
-			foreach ($compare_cats as $cat_data) {
-				if ($compare_category == $cat_data->id) {
-					echo '<option selected="selected" value="'.$cat_data->id.'">'.stripslashes($cat_data->category_name).'</option>';
-				}else {
-					echo '<option value="'.$cat_data->id.'">'.stripslashes($cat_data->category_name).'</option>';
-				}
-			}
-		}
-?>
-                </select> <img class="compare_widget_loader" style="display:none;" src="<?php echo WOOCP_IMAGES_URL; ?>/ajax-loader.gif" border=0 />
-            </p>
-            <div style="clear:both; margin-bottom:10px;"></div>
-            <div id="compare_cat_fields" style=""><?php WC_Compare_MetaBox::woo_show_field_of_cat($post_id, $compare_category); ?></div>
-
-            <div style="text-align:left; display:inline-block; padding:10px 0 30px 0;">
-            	<input type="submit" name="bt_update_product_features" id="bt_update_product_features" class="button" value="<?php _e( "Update", 'woo_cp' ); ?>" /> 
-                <a onclick="tb_remove(); return false;" href="#" style="color:#21759B; margin-left:10px;"><?php _e( "Cancel", 'woo_cp' ); ?></a>
-            </div>
-        </form>
-        </div>
-        </div>
-		<?php
-		die();
-	}
-
 	function woocp_products_manager() {
 		$compare_product_message = '';
 		$paged = isset($_POST['paged']) ? $_POST['paged'] : 1;
@@ -247,7 +152,9 @@ class WC_Compare_Products_Class {
 						$compare_fields = WC_Compare_Categories_Fields_Data::get_results("cat_id='".$compare_category."'", 'cf.field_order ASC');
 						if (is_array($compare_fields) && count($compare_fields)>0) {
 							foreach ($compare_fields as $field_data) {
-								update_post_meta($post_id, '_woo_compare_'.$field_data->field_key, $_REQUEST['_woo_compare_'.$field_data->field_key]);
+								if ( isset($_REQUEST['_woo_compare_'.$field_data->field_key]) ) {
+									update_post_meta($post_id, '_woo_compare_'.$field_data->field_key, $_REQUEST['_woo_compare_'.$field_data->field_key]);
+								}
 							}
 						}
 					}else {
@@ -258,11 +165,17 @@ class WC_Compare_Products_Class {
 			}
 		}
 ?>
-	<?php echo WC_Compare_Functions::products_tab_extension(); ?>
-    <h3><?php _e('WooCommerce Compare Products Manager', 'woo_cp'); ?></h3>
-    <?php echo $compare_product_message; ?>
-    <div style="clear:both; margin-bottom:40px;"></div>
+<?php echo $compare_product_message; ?>
+<div id="wc_compare_product_panel_container">
+<div id="wc_compare_product_panel_fields">
+	<div class="pro_feature_fields" style="margin-top:15px; padding-left:5px; padding-bottom:10px;">
+	<h3><?php _e('WooCommerce Compare Products Manager', 'woo_cp'); ?></h3>
+    <div style="clear:both; margin-bottom:20px;"></div>
     <table id="woocp_products_manager" style="display:none"></table>
+    </div>
+</div>
+<div id="wc_compare_product_upgrade_area"><?php echo WC_Compare_Functions::plugin_pro_notice(); ?></div>
+</div>
     <?php
 		$woocp_products_manager = wp_create_nonce("woocp-products-manager");
 		$woocp_popup_features = wp_create_nonce("woocp-popup-features");
@@ -271,17 +184,17 @@ class WC_Compare_Products_Class {
 	(function($){
 		$(function(){
 			$("#woocp_products_manager").flexigrid({
-				url: '<?php echo admin_url("admin-ajax.php").'?action=woocp_get_products&security='.$woocp_products_manager; ?>',
+				url: '<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ).'?action=woocp_get_products&security='.$woocp_products_manager; ?>',
 				dataType: 'json',
 				width: 'auto',
 				resizable: false,
 				colModel : [
-					{display: '<?php _e( "No", 'woo_cp' ); ?>', name : 'number', width : 30, sortable : false, align: 'right'},
-					{display: '<?php _e( "Product Name", 'woo_cp' ); ?>', name : 'title', width : 380, sortable : true, align: 'left'},
-					{display: '<?php _e( "Product Category", 'woo_cp' ); ?>', name : 'cat', width : 160, sortable : false, align: 'left'},
-					{display: '<?php _e( "Compare Category", 'woo_cp' ); ?>', name : '_woo_compare_category_name', width : 160, sortable : true, align: 'left'},
+					{display: '<?php _e( "No", 'woo_cp' ); ?>', name : 'number', width : 20, sortable : false, align: 'right'},
+					{display: '<?php _e( "Product Name", 'woo_cp' ); ?>', name : 'title', width : 200, sortable : true, align: 'left'},
+					{display: '<?php _e( "Product Category", 'woo_cp' ); ?>', name : 'cat', width : 110, sortable : false, align: 'left'},
+					{display: '<?php _e( "Compare Category", 'woo_cp' ); ?>', name : '_woo_compare_category_name', width : 110, sortable : true, align: 'left'},
 					{display: '<?php _e( "Activated / Deactivated", 'woo_cp' ) ;?>', name : '_woo_deactivate_compare_feature', width : 110, sortable : false, align: 'center'},
-					{display: '<?php _e( "Edit", 'woo_cp' ); ?>', name : 'edit', width : 50, sortable : false, align: 'center'}
+					{display: '<?php _e( "Edit", 'woo_cp' ); ?>', name : 'edit', width : 30, sortable : false, align: 'center'}
 					],
 				searchitems : [
 					{display: '<?php _e( "Product Name", 'woo_cp' ); ?>', name : 'title', isdefault: true}

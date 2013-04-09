@@ -7,6 +7,8 @@
  *
  * Table Of Contents
  *
+ * template_loader()
+ * include_customized_style()
  * woocp_shop_add_compare_button()
  * woocp_shop_add_compare_button_below_cart()
  * woocp_details_add_compare_button()
@@ -21,11 +23,8 @@
  * woocp_update_total_compare()
  * woocp_remove_from_compare()
  * woocp_clear_compare()
- * woocp_get_popup()
  * woocp_footer_script()
  * woocp_variable_add_to_cart_script()
- * woocp_print_scripts()
- * woocp_print_styles()
  * woocp_product_featured_tab()
  * woocp_product_featured_tab_woo_2_0()
  * woocp_product_featured_panel()
@@ -37,24 +36,49 @@
  * plugin_extra_links()
  */
 class WC_Compare_Hook_Filter {
+	
+	function template_loader( $template ) {
+		global $product_compare_id;
+		global $post;
+
+		if ( $product_compare_id == $post->ID ) {
+
+			$file 	= 'product-compare.php';
+			$find[] = $file;
+			$find[] = apply_filters( 'woocommerce_template_url', 'woocommerce/' ) . $file;
+			
+			$template = locate_template( $find );
+			if ( ! $template ) $template = WOOCP_FILE_PATH . '/templates/' . $file;
+
+		}
+	
+		return $template;
+	}
+	
+	function include_customized_style() {
+		include( WOOCP_DIR. '/templates/customized_style.php' );
+	}
 
 	function woocp_shop_add_compare_button($template_name, $template_path, $located) {
 		global $post;
 		global $product;
+		global $woo_compare_grid_view_settings, $woo_compare_grid_view_button_style;
+		global $woo_compare_comparison_page_global_settings;
+		global $woo_compare_gridview_view_compare_style;
+		global $product_compare_id;
+		extract($woo_compare_grid_view_settings);
+		extract($woo_compare_grid_view_button_style);
 		if ($template_name == 'loop/add-to-cart.php') {
 			$product_id = $product->id;
-			$comparable_settings = get_option('woo_comparable_settings');
-			$button_text = $comparable_settings['button_text'];
-			if ($button_text == '') $button_text = __('Compare this', 'woo_cp');
-			if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && $comparable_settings['auto_add'] == 'yes' && WC_Compare_Functions::check_product_have_cat($product_id)) {
-				if ($comparable_settings['button_type'] == 'button') {
-					$compare_html = '<div class="woo_compare_button_container"><input type="button" value="'.$button_text.'" class="button woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer" /> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
-
-					echo $compare_html;
-				}else {
-					$compare_html = '<div class="woo_compare_button_container"><a class=" woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer">'.$button_text.'</a> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
-					echo $compare_html;
-				}
+			if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && WC_Compare_Functions::check_product_have_cat($product_id)) {
+				$compare_grid_view_custom_class = $woo_compare_grid_view_button_style['button_class'];
+				$compare_grid_view_text = $woo_compare_grid_view_button_style['button_text'];
+				$compare_grid_view_class = 'woo_bt_compare_this_button';
+				
+				$view_compare_html = '';
+				
+				$compare_html = '<div class="woo_grid_compare_button_container"><a class="woo_bt_compare_this '.$compare_grid_view_class.' '.$compare_grid_view_custom_class.'" id="woo_bt_compare_this_'.$product_id.'">'.$compare_grid_view_text.'</a>' . $view_compare_html . '<input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
+				echo $compare_html;
 			}
 		}
 	}
@@ -62,83 +86,155 @@ class WC_Compare_Hook_Filter {
 	function woocp_shop_add_compare_button_below_cart() {
 		global $post;
 		global $product;
+		global $woo_compare_grid_view_settings, $woo_compare_grid_view_button_style;
+		global $woo_compare_comparison_page_global_settings;
+		global $woo_compare_gridview_view_compare_style;
+		global $product_compare_id;
+		extract($woo_compare_grid_view_settings);
+		extract($woo_compare_grid_view_button_style);
 			$product_id = $product->id;
-			$comparable_settings = get_option('woo_comparable_settings');
-			$button_text = $comparable_settings['button_text'];
-			if ($button_text == '') $button_text = __('Compare this', 'woo_cp');
-			if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && $comparable_settings['auto_add'] == 'yes' && WC_Compare_Functions::check_product_have_cat($product_id)) {
-				if ($comparable_settings['button_type'] == 'button') {
-					$compare_html = '<div class="woo_compare_button_container"><input type="button" value="'.$button_text.'" class="button woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer" /> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
-					
-					echo $compare_html;
-				}else {
-					$compare_html = '<div class="woo_compare_button_container"><a class=" woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer">'.$button_text.'</a> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
-					echo $compare_html;
-				}
+			if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && WC_Compare_Functions::check_product_have_cat($product_id)) {
+				$compare_grid_view_custom_class = $woo_compare_grid_view_button_style['button_class'];
+				$compare_grid_view_text = $woo_compare_grid_view_button_style['button_text'];
+				$compare_grid_view_class = 'woo_bt_compare_this_button';
+				
+				$view_compare_html = '';
+				
+				$compare_html = '<div class="woo_grid_compare_button_container"><a class="woo_bt_compare_this '.$compare_grid_view_class.' '.$compare_grid_view_custom_class.'" id="woo_bt_compare_this_'.$product_id.'">'.$compare_grid_view_text.'</a>' . $view_compare_html . '<input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
+				echo $compare_html;
 			}
 	}
 
 	function woocp_details_add_compare_button() {
 		global $post;
 		global $product;
+		global $woo_compare_product_page_button_style;
+		global $woo_compare_product_page_settings;
+		global $woo_compare_comparison_page_global_settings;
+		global $woo_compare_product_page_view_compare_style;
+		global $product_compare_id;
+		extract($woo_compare_product_page_button_style);
 		$product_id = $product->id;
-		$comparable_settings = get_option('woo_comparable_settings');
-		$button_text = $comparable_settings['button_text'];
-		if ($button_text == '') $button_text = __('Compare this', 'woo_cp');
-		if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && $comparable_settings['auto_add'] == 'yes' && WC_Compare_Functions::check_product_have_cat($product_id)) {
-			if ($comparable_settings['button_type'] == 'button') {
-				$compare_html = '<div class="woo_compare_button_container"><input type="button" value="'.$button_text.'" class="button woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer" /> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
-
-				echo $compare_html;
-			}else {
-				$compare_html = '<div class="woo_compare_button_container"><a class=" woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer">'.$button_text.'</a> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
-				echo $compare_html;
+		if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && $woo_compare_product_page_settings['auto_add'] == 'yes' && WC_Compare_Functions::check_product_have_cat($product_id)) {
+			$product_compare_custom_class = $woo_compare_product_page_button_style['button_class'];
+			$product_compare_text = $woo_compare_product_page_button_style['product_compare_button_text'];
+			$product_compare_class = 'woo_bt_compare_this_button';
+			if ($woo_compare_product_page_button_style['product_compare_button_type'] == 'link') {
+				$product_compare_custom_class = '';
+				$product_compare_text = $woo_compare_product_page_button_style['product_compare_link_text'];
+				$product_compare_class = 'woo_bt_compare_this_link';
 			}
+			
+			$view_compare_html = '';
+			if ($woo_compare_product_page_view_compare_style['disable_product_view_compare'] == 0) {
+				$product_view_compare_custom_class = '';
+				$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_link_text'];
+				$product_view_compare_class = 'woo_bt_view_compare_link';
+				if ($woo_compare_product_page_view_compare_style['product_view_compare_button_type'] == 'button') {
+					$product_view_compare_custom_class = $woo_compare_product_page_view_compare_style['button_class'];
+					$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_button_text'];
+					$product_view_compare_class = 'woo_bt_view_compare_button';
+				}
+				$product_compare_page = get_permalink($product_compare_id);
+				if ($woo_compare_comparison_page_global_settings['open_compare_type'] != 'new_page') {
+					$product_compare_page = '#';
+				}
+				$view_compare_html = '<div style="clear:both;"></div><a class="woo_bt_view_compare '.$product_view_compare_class.' '.$product_view_compare_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="" style="display:none;">'.$product_view_compare_text.'</a>';
+			}
+			$compare_html = '<div class="woo_compare_button_container"><a class="woo_bt_compare_this '.$product_compare_class.' '.$product_compare_custom_class.'" id="woo_bt_compare_this_'.$product_id.'">'.$product_compare_text.'</a>' . $view_compare_html . '<input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
+			echo $compare_html;
 		}
 	}
 	
 	function woocp_details_add_compare_button_below_cart($template_name, $template_path, $located){
 		global $post;
 		global $product;
+		global $woo_compare_product_page_button_style;
+		global $woo_compare_product_page_settings;
+		global $woo_compare_comparison_page_global_settings;
+		global $woo_compare_product_page_view_compare_style;
+		global $product_compare_id;
+		extract($woo_compare_product_page_button_style);
 		if (in_array($template_name, array('single-product/add-to-cart/simple.php', 'single-product/add-to-cart/grouped.php', 'single-product/add-to-cart/external.php', 'single-product/add-to-cart/variable.php'))) {
 			$product_id = $product->id;
-			$comparable_settings = get_option('woo_comparable_settings');
-			$button_text = $comparable_settings['button_text'];
-			if ($button_text == '') $button_text = __('Compare this', 'woo_cp');
-			if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && $comparable_settings['auto_add'] == 'yes' && WC_Compare_Functions::check_product_have_cat($product_id)) {
-				if ($comparable_settings['button_type'] == 'button') {
-					$compare_html = '<div class="woo_compare_button_container"><input type="button" value="'.$button_text.'" class="button woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer" /> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
-	
-					echo $compare_html;
-				}else {
-					$compare_html = '<div class="woo_compare_button_container"><a class=" woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer">'.$button_text.'</a> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
-					echo $compare_html;
+			if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && $woo_compare_product_page_settings['auto_add'] == 'yes' && WC_Compare_Functions::check_product_have_cat($product_id)) {
+				$product_compare_custom_class = $woo_compare_product_page_button_style['button_class'];
+				$product_compare_text = $woo_compare_product_page_button_style['product_compare_button_text'];
+				$product_compare_class = 'woo_bt_compare_this_button';
+				if ($woo_compare_product_page_button_style['product_compare_button_type'] == 'link') {
+					$product_compare_custom_class = '';
+					$product_compare_text = $woo_compare_product_page_button_style['product_compare_link_text'];
+					$product_compare_class = 'woo_bt_compare_this_link';
 				}
+				
+				$view_compare_html = '';
+				if ($woo_compare_product_page_view_compare_style['disable_product_view_compare'] == 0) {
+					$product_view_compare_custom_class = '';
+					$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_link_text'];
+					$product_view_compare_class = 'woo_bt_view_compare_link';
+					if ($woo_compare_product_page_view_compare_style['product_view_compare_button_type'] == 'button') {
+						$product_view_compare_custom_class = $woo_compare_product_page_view_compare_style['button_class'];
+						$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_button_text'];
+						$product_view_compare_class = 'woo_bt_view_compare_button';
+					}
+					$product_compare_page = get_permalink($product_compare_id);
+					if ($woo_compare_comparison_page_global_settings['open_compare_type'] != 'new_page') {
+						$product_compare_page = '#';
+					}
+					$view_compare_html = '<div style="clear:both;"></div><a class="woo_bt_view_compare '.$product_view_compare_class.' '.$product_view_compare_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="" style="display:none;">'.$product_view_compare_text.'</a>';
+				}
+			
+				$compare_html = '<div class="woo_compare_button_container"><a class="woo_bt_compare_this '.$product_compare_class.' '.$product_compare_custom_class.'" id="woo_bt_compare_this_'.$product_id.'">'.$product_compare_text.'</a>' . $view_compare_html . '<input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
+				echo $compare_html;
 			}
 		}
 	}
 
 	function add_compare_button($product_id='') {
 		global $post;
+		global $woo_compare_product_page_button_style;
+		global $woo_compare_comparison_page_global_settings;
+		global $woo_compare_product_page_view_compare_style;
+		global $product_compare_id;
+		extract($woo_compare_product_page_button_style);
 		if (trim($product_id) == '') $product_id = $post->ID;
-		$comparable_settings = get_option('woo_comparable_settings');
-		$button_text = $comparable_settings['button_text'];
-		if ($button_text == '') $button_text = __('Compare this', 'woo_cp');
 		$post_type = get_post_type($product_id);
 		$html = '';
 		if (($post_type == 'product' || $post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && WC_Compare_Functions::check_product_have_cat($product_id)) {
-			if ($comparable_settings['button_type'] == 'button') {
-				$html .= '<div class="woo_compare_button_container"><input type="button" value="'.$button_text.'" class="button woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer" /> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
-			}else {
-				$html .= '<div class="woo_compare_button_container"><a class=" woo_bt_compare_this" id="woo_bt_compare_this_'.$product_id.'" style="cursor:pointer">'.$button_text.'</a> <img class="woo_add_compare_success" style="display:none !important; width:16px !important; height:14px !important;" src="'.WOOCP_IMAGES_URL.'/compare_success.png" border=0 /><input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
+			$product_compare_custom_class = $woo_compare_product_page_button_style['button_class'];
+			$product_compare_text = $woo_compare_product_page_button_style['product_compare_button_text'];
+			$product_compare_class = 'woo_bt_compare_this_button';
+			if ($woo_compare_product_page_button_style['product_compare_button_type'] == 'link') {
+				$product_compare_custom_class = '';
+				$product_compare_text = $woo_compare_product_page_button_style['product_compare_link_text'];
+				$product_compare_class = 'woo_bt_compare_this_link';
 			}
+			
+			$view_compare_html = '';
+			if ($woo_compare_product_page_view_compare_style['disable_product_view_compare'] == 0) {
+				$product_view_compare_custom_class = '';
+				$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_link_text'];
+				$product_view_compare_class = 'woo_bt_view_compare_link';
+				if ($woo_compare_product_page_view_compare_style['product_view_compare_button_type'] == 'button') {
+					$product_view_compare_custom_class = $woo_compare_product_page_view_compare_style['button_class'];
+					$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_button_text'];
+					$product_view_compare_class = 'woo_bt_view_compare_button';
+				}
+				$product_compare_page = get_permalink($product_compare_id);
+				if ($woo_compare_comparison_page_global_settings['open_compare_type'] != 'new_page') {
+					$product_compare_page = '#';
+				}
+				$view_compare_html = '<div style="clear:both;"></div><a class="woo_bt_view_compare '.$product_view_compare_class.' '.$product_view_compare_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="" style="display:none;">'.$product_view_compare_text.'</a>';
+			}
+			
+			$html .= '<div class="woo_compare_button_container"><a class="woo_bt_compare_this '.$product_compare_class.' '.$product_compare_custom_class.'" id="woo_bt_compare_this_'.$product_id.'">'.$product_compare_text.'</a>' . $view_compare_html . '<input type="hidden" id="input_woo_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
 		}
 
 		return $html;
 	}
 
 	function show_compare_fields($product_id='', $use_wootheme_style=true) {
-		global $post;
+		global $post, $woo_compare_table_content_style;
 		if (trim($product_id) == '') $product_id = $post->ID;
 		$html = '';
 		$variations_list = WC_Compare_Functions::get_variations($product_id);
@@ -158,8 +254,8 @@ class WC_Compare_Hook_Filter {
 							$field_value = get_post_meta( $variation_id, '_woo_compare_'.$field_data->field_key, true );
 							if (is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
 							if (is_array($field_value) && count($field_value) > 0) $field_value = implode(', ', $field_value);
-							elseif (is_array($field_value) && count($field_value) < 0) $field_value = __('N/A', 'woo_cp');
-							if (trim($field_value) == '') $field_value = __('N/A', 'woo_cp');
+							elseif (is_array($field_value) && count($field_value) < 0) $field_value = $woo_compare_table_content_style['empty_text'];
+							if (trim($field_value) == '') $field_value = $woo_compare_table_content_style['empty_text'];
 							$field_unit = '';
 							if (trim($field_data->field_unit) != '') $field_unit = ' <span class="compare_featured_unit">('.trim(stripslashes($field_data->field_unit)).')</span>';
 							if ($use_wootheme_style) 
@@ -188,8 +284,8 @@ class WC_Compare_Hook_Filter {
 					$field_value = get_post_meta( $product_id, '_woo_compare_'.$field_data->field_key, true );
 					if (is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
 					if (is_array($field_value) && count($field_value) > 0) $field_value = implode(', ', $field_value);
-					elseif (is_array($field_value) && count($field_value) < 0) $field_value = __('N/A', 'woo_cp');
-					if (trim($field_value) == '') $field_value = __('N/A', 'woo_cp');
+					elseif (is_array($field_value) && count($field_value) < 0) $field_value = $woo_compare_table_content_style['empty_text'];
+					if (trim($field_value) == '') $field_value = $woo_compare_table_content_style['empty_text'];
 					$field_unit = '';
 					if (trim($field_data->field_unit) != '') $field_unit = ' <span class="compare_featured_unit">('.trim(stripslashes($field_data->field_unit)).')</span>';
 					if ($use_wootheme_style) 
@@ -261,6 +357,7 @@ class WC_Compare_Hook_Filter {
 	function woocp_update_compare_popup() {
 		check_ajax_referer( 'woocp-compare-events', 'security' );
 		$result = WC_Compare_Functions::get_compare_list_html_popup();
+		$result .= '<script src="'. WOOCP_JS_URL.'/fixedcolumntable/fixedcolumntable.js"></script>';
 		echo json_encode( $result );
 		die();
 	}
@@ -289,271 +386,34 @@ class WC_Compare_Hook_Filter {
 	function woocp_clear_compare() {
 		check_ajax_referer( 'woocp-compare-events', 'security' );
 		WC_Compare_Functions::clear_compare_list();
-		
-		die();
-	}
-
-	function woocp_get_popup() {
-		check_ajax_referer( 'woocp-compare-popup', 'security' );
-		$comparable_settings = get_option('woo_comparable_settings');
-		if (trim($comparable_settings['compare_container_height']) != '') $compare_container_height = $comparable_settings['compare_container_height']; else $compare_container_height = 500;
-?>
-    	<div class="compare_popup_container">
-			<style type="text/css">
-            .compare_popup_container{
-                font-size:12px;
-                margin:auto;
-                width:960px;
-            }
-            .compare_popup_wrap{
-                overflow:auto;
-                width:940px;
-                height:<?php echo $compare_container_height; ?>px;
-                margin:0 10px;
-                padding-bottom:10px;
-            }
-            .compare_heading{
-                float:left;
-                width:940px;
-                margin:10px 0;
-            }
-            .compare_heading h1{
-                font-size:20px;
-                font-weight:bold;
-                float:left;
-            }
-			.compare_logo {
-				float:left;
-				max-width:600px;
-				max-height:80px;
-				border:none !important;
-				margin:0 0 0 30px !important;
-				padding: 0 !important;
-			}
-			.print_control {
-				float:right;
-				margin-right:30px;
-				line-height: 24px;
-			}
-            .woo_compare_print{
-                float:right;
-                background:url(<?php echo WOOCP_IMAGES_URL; ?>/icon_print.png) no-repeat 0 center;
-                padding-left:20px;
-                cursor:pointer;
-            }
-            .woo_compare_print_msg{
-                float:right;
-                clear:right;
-            }
-            .compare_popup_table{
-                border:1px solid #CBCBCB;
-                border-radius:0px;
-                -khtml-border-radius: 0px;
-                -webkit-border-radius: 0px;
-                -moz-border-radius: 0px;
-                box-shadow:0px 0px 0px #333333;
-                -moz-box-shadow: 0px 0px 0px #333333;
-                -webkit-box-shadow: 0px 0px 0px #333333;
-                margin:auto;
-            }
-            .compare_popup_table td{
-                font-size:12px;
-                text-align:center;
-                padding:2px 10px;
-                vertical-align:middle;
-            }
-            .compare_popup_table tr.row_product_detail td{
-                vertical-align:top;
-            }
-            .compare_popup_table .column_first{
-                background:#f6f6f6;
-                font-size:13px;
-                font-weight:bold;
-            }
-            .compare_popup_table .first_row{
-                width:220px;
-                min-width:220px;
-                height:20px;
-                text-align:right;
-                /* fallback (opera, ie<=7) */
-                background: #EEEEEE;
-                /* Mozilla: */
-                background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE);
-                /* Chrome, safari:*/
-                background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#EEEEEE));
-                /* MSIE 8+ */
-                filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#FFFFFF', EndColorStr='#EEEEEE', GradientType=0);
-            }
-            .compare_popup_table .column_first.first_row{
-                width:190px;
-                min-width:190px;
-            }
-            .compare_popup_table .row_1{
-                background:#FFF;
-            }
-            .compare_popup_table .row_2{
-                background:#f6f6f6;
-                border-top:1px solid #CCC;
-                border-bottom:1px solid #CCC;
-            }
-            .compare_popup_table .row_2 td{
-                border-top:1px solid #CCC;
-                border-bottom:1px solid #CCC;
-            }
-            .compare_popup_table .row_end td{
-                border-bottom:none;
-                padding-bottom:10px;
-                padding-top:10px;
-            }
-            .compare_image_container{
-                /*width:220px;*/
-                height:180px;
-                /*display:table-cell;*/
-                overflow:hidden;
-                text-align:center;
-                line-height:180px;
-                vertical-align:middle;
-            }
-            .compare_image_container img{
-                max-width:220px;
-                max-height:180px;
-                border:0;
-                vertical-align:middle;
-            }
-            .compare_product_name{
-                color:#C30;
-                font-weight:bold;
-                font-size:16px;
-                line-height:21px;
-                margin-bottom:5px;
-            }
-            .compare_avg_rating{
-                margin-bottom:5px;
-            }
-            .compare_avg_rating .votetext{
-                height:auto;
-            }
-            .compare_price{
-                color:#C30;
-                font-weight:bold;
-                font-size:16px;
-                margin-bottom:5px;
-            }
-            .compare_price del{
-                color:#999;
-                font-size:13px;
-                font-weight:normal;
-            }
-			/* For Print Page*/
-			.compare_popup_print {
-				width:960px !important;
-				overflow:hidden !important;
-			}
-			.compare_popup_print .compare_popup_wrap {
-				height:auto;
-			}
-			.compare_popup_print .woo_compare_print, .compare_popup_print .compare_add_cart, .compare_popup_print .woo_compare_popup_remove_product {
-				display:none;
-			}
-			.compare_popup_print .compare_popup_table td {
-				display:none !important;
-			}
-			.compare_popup_print .compare_popup_table td.column_first, .compare_popup_print .compare_popup_table td.first_row, .compare_popup_print .compare_popup_table td.column_1, .compare_popup_print .compare_popup_table td.column_2, .compare_popup_print .compare_popup_table td.column_3 {
-				display:table-cell !important;
-			}
-			.compare_popup_print .compare_popup_table td {
-				border:1px solid #D6D6D6 !important;
-			}
-			.compare_popup_print .compare_popup_table {
-				margin-left:10px !important;
-				width:auto !important;
-			}
-            </style>
-                <div class="compare_heading">
-                	<?php if (trim($comparable_settings['compare_logo']) != '') { ?>
-                    <img class="compare_logo" src="<?php echo $comparable_settings['compare_logo']; ?>" alt="<?php _e('Compare Products', 'woo_cp'); ?>" />
-                    <?php } else { ?> 
-                    <h1><?php _e('Compare Products', 'woo_cp'); ?></h1>
-                    <?php } ?>
-                    <div class="print_control">
-                	<span class="woo_compare_print"><?php _e('Print This Page', 'woo_cp'); ?></span><span class="woo_compare_print_msg"><?php _e('Refine slections to 3 products and print!', 'woo_cp'); ?></span>
-                    </div>
-                </div>
-                <div style="clear:both;"></div>
-                <div class="popup_woo_compare_widget_loader" style="display:none; text-align:center"><img src="<?php echo WOOCP_IMAGES_URL; ?>/ajax-loader.gif" border=0 /></div>
-                <div class="compare_popup_wrap">
-                    <?php echo WC_Compare_Functions::get_compare_list_html_popup();?>
-                </div>
-        </div>
-    <?php
 		die();
 	}
 
 	function woocp_footer_script() {
+		global $product_compare_id;
+		global $woo_compare_comparison_page_global_settings;
 		$woocp_compare_events = wp_create_nonce("woocp-compare-events");
 		$woocp_compare_popup = wp_create_nonce("woocp-compare-popup");
-		$comparable_settings = get_option('woo_comparable_settings');
-		if (trim($comparable_settings['popup_width']) != '') $popup_width = $comparable_settings['popup_width'];
-		else $popup_width = 1000;
-
-		if (trim($comparable_settings['popup_height']) != '') $popup_height = $comparable_settings['popup_height'];
-		else $popup_height = 650;
 
 		$script_add_on = '';
 		$script_add_on .= '<script type="text/javascript">
-				(function($){
-					$(function(){
-						var ajax_url = "'.admin_url('admin-ajax.php').'"';
-		if (trim($comparable_settings['popup_type']) == 'fancybox') {
+				jQuery(document).ready(function($) {
+						var ajax_url = "'.( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ).'"';
+		if ($woo_compare_comparison_page_global_settings['open_compare_type'] != 'new_page') {
 			$script_add_on .= '
-						$(".woo_compare_button_go").live("click", function(ev){
-							$.fancybox({
-								href: ajax_url+"?action=woocp_get_popup&security='.$woocp_compare_popup.'",
-								title: "'.__('Compare Products', 'woo_cp').'",
-								maxWidth: '.$popup_width.',
-								maxHeight: '.$popup_height.',
-								openEffect	: "none",
-								closeEffect	: "none"
-							});
-							ev.preventDefault();
-						});';
-		} elseif (trim($comparable_settings['popup_type']) == 'lightbox') {
-			$script_add_on .= '
-						$(".woo_compare_button_go").live("click", function(ev){
-							  $.lightbox(ajax_url+"?action=woocp_get_popup&security='.$woocp_compare_popup.'", {
-								"width"       : '.$popup_width.',
-								"height"      : '.$popup_height.'
-							  });
-							  ev.preventDefault();
-						});';
-		}else {
-			$current_db_version = get_option( 'woocommerce_db_version', null );
-			if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
-				$script_add_on .= '
-						$(".woo_compare_button_go").live("click", function(ev){
-							$().prettyPhoto({modals: "true", social_tools: false, theme: "light_square"});
-							$.prettyPhoto.open(ajax_url+"?action=woocp_get_popup&ajax=true&width='.$popup_width.'&height='.$popup_height.'&security='.$woocp_compare_popup.'", "'.__('Compare Products', 'woo_cp').'", "");
-							ev.preventDefault();
-						});';
-			} else {
-				$script_add_on .= '
-						$(".woo_compare_button_go").live("click", function(ev){
-							$().prettyPhoto({modals: "true", social_tools: false, theme: "pp_woocommerce"});
-							$.prettyPhoto.open(ajax_url+"?action=woocp_get_popup&ajax=true&width='.$popup_width.'&height='.$popup_height.'&security='.$woocp_compare_popup.'", "'.__('Compare Products', 'woo_cp').'", "");
-							ev.preventDefault();
-						});';
-			}
+						$(".woo_compare_button_go, .woo_bt_view_compare").live("click",function (event){
+							var compare_url = "'.get_permalink($product_compare_id).'";
+							if ($.browser.webkit) {
+							  window.open(compare_url, "'.__('Product Comparison', 'woo_cp').'", "width=980, height=650");
+							} else {
+							  window.open(compare_url, "'.__('Product Comparison', 'woo_cp').'", "scrollbars=1, width=980, height=650");
+							}
+							event.preventDefault();
+							return false;
+					 
+					  });';
 		}
 		$script_add_on .= '
-						$(".woo_compare_print").live("click", function(){
-							$(".compare_popup_container").printElement({
-								printBodyOptions:{
-									styleToAdd:"overflow:visible !important;",
-									classNameToAdd : "compare_popup_print"
-								}
-							});
-						});
-
 						$(".woo_bt_compare_this").live("click", function(){
 							var woo_bt_compare_current = $(this);
 							var product_id = $("#input_"+$(this).attr("id")).val();
@@ -565,10 +425,12 @@ class WC_Compare_Hook_Filter {
 								security: 		"'.$woocp_compare_events.'"
 							};
 							$.post( ajax_url, data, function(response) {
-								woo_bt_compare_current.siblings(".woo_add_compare_success").show();
-								setTimeout(function(){
-									woo_bt_compare_current.siblings(".woo_add_compare_success").hide();
-								}, 3000);
+								//woo_bt_compare_current.siblings(".woo_add_compare_success").show();
+								woo_bt_compare_current.addClass("compared");
+								woo_bt_compare_current.siblings(".woo_bt_view_compare").show();
+								//setTimeout(function(){
+								//	woo_bt_compare_current.siblings(".woo_add_compare_success").hide();
+								//}, 3000);
 								data = {
 									action: 		"woocp_update_compare_widget",
 									security: 		"'.$woocp_compare_events.'"
@@ -577,38 +439,6 @@ class WC_Compare_Hook_Filter {
 									result = $.parseJSON( response );
 									$(".woo_compare_widget_loader").hide();
 									$(".woo_compare_widget_container").html(result);
-								});
-								woo_update_total_compare_list();
-							});
-						});
-
-						$(".woo_compare_popup_remove_product").live("click", function(){
-							var popup_remove_product_id = $(this).attr("rel");
-							$(".popup_woo_compare_widget_loader").show();
-							$(".compare_popup_wrap").html("");
-							var data = {
-								action: 		"woocp_remove_from_popup_compare",
-								product_id: 	popup_remove_product_id,
-								security: 		"'.$woocp_compare_events.'"
-							};
-							$.post( ajax_url, data, function(response) {
-								data = {
-									action: 		"woocp_update_compare_popup",
-									security: 		"'.$woocp_compare_events.'"
-								};
-								$.post( ajax_url, data, function(response) {
-									result = $.parseJSON( response );
-									$(".popup_woo_compare_widget_loader").hide();
-									$(".compare_popup_wrap").html(result);
-								});
-								
-								data = {
-									action: 		"woocp_update_compare_widget",
-									security: 		"'.$woocp_compare_events.'"
-								};
-								$.post( ajax_url, data, function(response) {
-									new_widget = $.parseJSON( response );
-									$(".woo_compare_widget_container").html(new_widget);
 								});
 								woo_update_total_compare_list();
 							});
@@ -664,12 +494,11 @@ class WC_Compare_Hook_Filter {
 							};
 							$.post( ajax_url, data, function(response) {
 								total_compare = $.parseJSON( response );
-								$("#total_compare_product").html("("+total_compare+")");
+								$("#total_compare_product").html(total_compare);
 							});
 						}
 
 					});
-				})(jQuery);
 				</script>';
 		echo $script_add_on;
 	}
@@ -792,71 +621,11 @@ class WC_Compare_Hook_Filter {
 		echo $script_add_on;
 	}
 
-	function woocp_print_scripts() {
-		global $woocommerce;
-		wp_enqueue_script('jquery');
-		$woo_suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-		$comparable_settings = get_option('woo_comparable_settings');
-		$current_db_version = get_option( 'woocommerce_db_version', null );
-		if (trim($comparable_settings['popup_type']) == 'fancybox') {
-			if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
-				wp_enqueue_script( 'fancybox', $woocommerce->plugin_url() . '/assets/js/fancybox/fancybox'.$woo_suffix.'.js');
-			} else {
-				wp_enqueue_script( 'fancybox', WOOCP_JS_URL . '/fancybox/fancybox.min.js');
-			}
-			//wp_enqueue_script('mousewheel_script', WOOCP_JS_URL . '/jquery.mousewheel-3.0.4.pack.js');
-		} elseif (trim($comparable_settings['popup_type']) == 'lightbox') {
-			// light box
-			wp_enqueue_script('lightbox2_script', WOOCP_JS_URL . '/lightbox/jquery.lightbox.js');
-		} else {
-			if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
-				wp_enqueue_script( 'prettyPhoto', WOOCP_JS_URL . '/prettyPhoto/jquery.prettyPhoto'.$woo_suffix.'.js');
-			} else {
-				wp_enqueue_script( 'prettyPhoto', $woocommerce->plugin_url() . '/assets/js/prettyPhoto/jquery.prettyPhoto' . $woo_suffix . '.js', array( 'jquery' ), $woo_suffix->version, true );
-			}
-		}
-		wp_enqueue_script('a3_print_element', WOOCP_JS_URL . '/jquery.printElement.js');
-	}
-
-	function woocp_print_styles() {
-		global $woocommerce;
-		$comparable_settings = get_option('woo_comparable_settings');
-		$current_db_version = get_option( 'woocommerce_db_version', null );
-		if (trim($comparable_settings['popup_type']) == 'fancybox') {
-			if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
-				wp_enqueue_style( 'woocommerce_fancybox_styles', $woocommerce->plugin_url() . '/assets/css/fancybox.css' );
-			} else {
-				wp_enqueue_style('fancybox_style', WOOCP_JS_URL . '/fancybox/fancybox.css');
-			}
-			// fancy box
-			//wp_enqueue_style('fancybox_style', WOOCP_JS_URL . '/fancybox/jquery.fancybox.css');
-		} elseif (trim($comparable_settings['popup_type']) == 'lightbox') {
-			// light box
-			wp_enqueue_style('a3_lightbox_style', WOOCP_JS_URL . '/lightbox/themes/default/jquery.lightbox.css');
-		}else {
-			if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
-				wp_enqueue_style( 'woocommerce_prettyPhoto_css', WOOCP_JS_URL . '/prettyPhoto/prettyPhoto.css');
-			} else {
-				wp_enqueue_style( 'woocommerce_prettyPhoto_css', $woocommerce->plugin_url() . '/assets/css/prettyPhoto.css' );
-			}
-		}
-		$compare_style = '<style>.woo_compare_button_container .woo_bt_compare_this{';
-		if (isset($comparable_settings['above_padding']) && is_numeric($comparable_settings['above_padding'])) $above_padding = $comparable_settings['above_padding'];
-		else $above_padding = 10;
-		if (isset($comparable_settings['below_padding']) && is_numeric($comparable_settings['below_padding'])) $below_padding = $comparable_settings['below_padding'];
-		else $below_padding = 10;
-		
-		if (!isset($comparable_settings['button_position']) || $comparable_settings['button_position'] == 'above') $compare_style .= 'margin-bottom:'.$above_padding.'px !important; display:inline-block !important;';
-		else $compare_style .= 'margin-top:'.$below_padding.'px !important; display:inline-block !important;';
-		$compare_style .= '}</style>';
-		echo $compare_style;
-	}
-
 	function woocp_product_featured_tab() {
 		global $post;
-		$comparable_settings = get_option('woo_comparable_settings');
-		$compare_featured_tab = trim($comparable_settings['compare_featured_tab']);
-		if ($compare_featured_tab == '') $compare_featured_tab = 'Technical Details';
+		global $woo_compare_product_page_tab;
+		$compare_featured_tab = trim($woo_compare_product_page_tab['compare_featured_tab']);
+		if ($compare_featured_tab == '') $compare_featured_tab = __('Technical Details', 'woo_cp');
 
 		$show_compare_featured_tab = false;
 		$product_id = $post->ID;
@@ -880,15 +649,15 @@ class WC_Compare_Hook_Filter {
 			}
 		}
 
-		if ($show_compare_featured_tab) echo '<li><a href="#tab-compare-featured">'.$compare_featured_tab.'</a></li>';
+		if ($show_compare_featured_tab) echo '<li><a href="#tab-compare-featured">'.esc_attr( stripslashes( $compare_featured_tab ) ).'</a></li>';
 	}
 	
 	function woocp_product_featured_tab_woo_2_0( $tabs = array() ) {
 		global $product, $post;
-		$comparable_settings = get_option('woo_comparable_settings');
+		global $woo_compare_product_page_tab;
 		
-		$compare_featured_tab = trim($comparable_settings['compare_featured_tab']);
-		if ($compare_featured_tab == '') $compare_featured_tab = 'Technical Details';
+		$compare_featured_tab = trim($woo_compare_product_page_tab['compare_featured_tab']);
+		if ($compare_featured_tab == '') $compare_featured_tab = __('Technical Details', 'woo_cp');
 
 		$show_compare_featured_tab = false;
 		$product_id = $post->ID;
@@ -915,8 +684,8 @@ class WC_Compare_Hook_Filter {
 		if ($show_compare_featured_tab) {
 		
 			$tabs['compare-featured'] = array(
-				'title'    => $compare_featured_tab,
-				'priority' => $comparable_settings['auto_compare_featured_tab'],
+				'title'    => esc_attr( stripslashes( $compare_featured_tab ) ),
+				'priority' => $woo_compare_product_page_tab['auto_compare_featured_tab'],
 				'callback' => array('WC_Compare_Hook_Filter', 'woocp_product_featured_panel_woo_2_0')
 			);
 		}
@@ -937,15 +706,53 @@ class WC_Compare_Hook_Filter {
 		global $post;
 		echo WC_Compare_Hook_Filter::show_compare_fields($post->ID);
 	}
+	
+	function woocp_admin_header_script() {
+		wp_enqueue_script('jquery');
+		wp_enqueue_script('farbtastic');
+		wp_enqueue_style('farbtastic');
+		
+		WC_Compare_Uploader::uploader_js();
+	}
 
 	function woocp_admin_script() {
 		global $woocommerce;
-		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.minified';
-		wp_enqueue_script( 'ajax-chosen' );
-		wp_enqueue_script( 'chosen' );
+		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+		
+		wp_enqueue_style( 'a3rev-chosen-style', WOOCP_JS_URL . '/chosen/chosen.css' );
+		wp_enqueue_script( 'chosen', A3_ROOM_JS_URL . '/chosen/chosen.jquery'.$suffix.'.js', array(), false, true );
+		wp_enqueue_script( 'a3rev-chosen-script-init', WOOCP_JS_URL.'/init-chosen.js', array(), false, true );
+		
 		wp_enqueue_style( 'woocommerce_admin_styles', $woocommerce->plugin_url() . '/assets/css/admin.css' );
 		echo '<script src="'.WOOCP_JS_URL . '/tipTip/jquery.tipTip'.$suffix.'.js" type="text/javascript"></script>';
-		echo '<script type="text/javascript">
+		?>
+<script type="text/javascript">
+jQuery(window).load(function(){
+	// Subsubsub tabs
+	jQuery('div.a3_subsubsub_section ul.subsubsub li a:eq(0)').addClass('current');
+	jQuery('div.a3_subsubsub_section .section:gt(0)').hide();
+	jQuery('div.a3_subsubsub_section ul.subsubsub li a').click(function(){
+		var $clicked = jQuery(this);
+		var $section = $clicked.closest('.a3_subsubsub_section');
+		var $target  = $clicked.attr('href');
+	
+		$section.find('a').removeClass('current');
+	
+		if ( $section.find('.section:visible').size() > 0 ) {
+			$section.find('.section:visible').fadeOut( 100, function() {
+				$section.find( $target ).fadeIn('fast');
+			});
+		} else {
+			$section.find( $target ).fadeIn('fast');
+		}
+	
+		$clicked.addClass('current');
+		jQuery('#last_tab').val( $target );
+	
+		return false;
+	});
+	<?php if (isset($_REQUEST['subtab']) && $_REQUEST['subtab']) echo 'jQuery("div.a3_subsubsub_section ul.subsubsub li a[href='.$_REQUEST['subtab'].']").click();'; ?>
+});
 (function($){
 	$(function(){
 		// Tooltips
@@ -954,10 +761,20 @@ class WC_Compare_Hook_Filter {
 			"fadeIn" : 50,
 			"fadeOut" : 50
 		});
-		$("select.chosen_select").chosen();
+		// Color picker
+		$('.colorpick').each(function(){
+			$('.colorpickdiv', $(this).parent()).farbtastic(this);
+			$(this).live('click',function() {
+				$('.colorpickdiv', $(this).parent() ).show();
+			});	
+		});
+		$(document).mousedown(function(){
+			$('.colorpickdiv').hide();
+		});
 	});
 })(jQuery);
-		</script>';
+</script>
+        <?php
 	}
 	
 	function woocp_set_selected_attributes($default_attributes) {
@@ -991,7 +808,6 @@ class WC_Compare_Hook_Filter {
 	}
 	
 	function auto_create_compare_feature() {
-		$master_category_id = get_option('master_category_compare');
 		if (isset($_POST['add_new_attribute']) && $_POST['add_new_attribute']) {
 			//check_admin_referer( 'woocommerce-add-new_attribute' );
 			$attribute_name = (string) sanitize_title($_POST['attribute_name']);
@@ -1007,9 +823,6 @@ class WC_Compare_Hook_Filter {
 				$check_existed = WC_Compare_Data::get_count("field_name='".$attribute_label."'");
 				if ($check_existed < 1 ) {
 					$feature_id = WC_Compare_Data::insert_row(array('field_name' => $attribute_label, 'field_type' => 'input-text', 'field_unit' => '', 'default_value' => '' ) );
-					if ($feature_id !== false) {
-						WC_Compare_Categories_Fields_Data::insert_row($master_category_id, $feature_id);
-					}
 				}
 			}
 		}
@@ -1020,7 +833,7 @@ class WC_Compare_Hook_Filter {
 			return $links;
 		}
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/woocommerce/compare-products/" target="_blank">'.__('Documentation', 'woo_cp').'</a>';
-		$links[] = '<a href="http://a3rev.com/shop/woocommerce-compare-products/#help_tab" target="_blank">'.__('Support', 'woo_cp').'</a>';
+		$links[] = '<a href="http://a3rev.com/shop/woocommerce-compare-products/#tab-reviews" target="_blank">'.__('Support', 'woo_cp').'</a>';
 		return $links;
 	}
 }
