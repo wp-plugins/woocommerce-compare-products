@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 2.92
 Tested up to: 3.5.1
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -126,6 +126,11 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.1.1 - 2013/04/10 =
+* Fixed: Compare on screen widow not opening in IE9. Missed an _ in command and IE9 don't recognize space. Thanks to Nicola from yithemes.com for picking that up
+* Fixed: Added correct Chosen script URL so admin panel uses plugin chosen script instead of defaulting to WooCommerce Chosen script.
+* Fixed: Added correct Tool Tip tipTip minimum script file .min so admin panel uses plugin Tool Tip script instead of defaulting to WooCommerce script.
 
 = 2.1.0 - 2013/04/09 =
 * Feature: Added Compare Categories functionality for Lite Version - previously only available in the Pro Version upgrade.

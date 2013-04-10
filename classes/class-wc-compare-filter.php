@@ -404,9 +404,9 @@ class WC_Compare_Hook_Filter {
 						$(".woo_compare_button_go, .woo_bt_view_compare").live("click",function (event){
 							var compare_url = "'.get_permalink($product_compare_id).'";
 							if ($.browser.webkit) {
-							  window.open(compare_url, "'.__('Product Comparison', 'woo_cp').'", "width=980, height=650");
+							  window.open(compare_url, "'.__('Product_Comparison', 'woo_cp').'", "width=980, height=650");
 							} else {
-							  window.open(compare_url, "'.__('Product Comparison', 'woo_cp').'", "scrollbars=1, width=980, height=650");
+							  window.open(compare_url, "'.__('Product_Comparison', 'woo_cp').'", "scrollbars=1, width=980, height=650");
 							}
 							event.preventDefault();
 							return false;
