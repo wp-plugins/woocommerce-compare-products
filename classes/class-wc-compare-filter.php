@@ -720,7 +720,7 @@ class WC_Compare_Hook_Filter {
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		
 		wp_enqueue_style( 'a3rev-chosen-style', WOOCP_JS_URL . '/chosen/chosen.css' );
-		wp_enqueue_script( 'chosen', A3_ROOM_JS_URL . '/chosen/chosen.jquery'.$suffix.'.js', array(), false, true );
+		wp_enqueue_script( 'chosen', WOOCP_JS_URL . '/chosen/chosen.jquery'.$suffix.'.js', array(), false, true );
 		wp_enqueue_script( 'a3rev-chosen-script-init', WOOCP_JS_URL.'/init-chosen.js', array(), false, true );
 		
 		wp_enqueue_style( 'woocommerce_admin_styles', $woocommerce->plugin_url() . '/assets/css/admin.css' );
