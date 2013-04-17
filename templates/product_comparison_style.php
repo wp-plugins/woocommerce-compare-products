@@ -535,6 +535,9 @@ extract($woo_compare_product_prices_style);
 }
 
 /* For Print Page*/
+.compare_popup_print .compare_heading {
+	position:absolute !important;
+}
 .compare_popup_print .compare_value {
 	text-align: <?php echo $feature_title_align; ?> !important;
 	padding-top: <?php echo $row_padding_topbottom; ?>px !important;

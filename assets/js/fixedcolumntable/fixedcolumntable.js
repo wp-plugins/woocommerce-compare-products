@@ -16,13 +16,51 @@ function setLocationRemove(url) {
 };
 (function ($) {
     $.fn.scrollCompare = function (options) {
+		/*
+		 * jQuery 1.9 support. browser object has been removed in 1.9 
+		 */
+		var browser = $.browser;
+		
+		if (!browser) {
+			function uaMatch( ua ) {
+				ua = ua.toLowerCase();
+	
+				var match = /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
+					/(webkit)[ \/]([\w.]+)/.exec( ua ) ||
+					/(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
+					/(msie) ([\w.]+)/.exec( ua ) ||
+					ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
+					[];
+	
+				return {
+					browser: match[ 1 ] || "",
+					version: match[ 2 ] || "0"
+				};
+			};
+	
+			var matched = uaMatch( navigator.userAgent );
+			browser = {};
+	
+			if ( matched.browser ) {
+				browser[ matched.browser ] = true;
+				browser.version = matched.version;
+			}
+	
+			// Chrome is Webkit, but Webkit is also Safari.
+			if ( browser.chrome ) {
+				browser.webkit = true;
+			} else if ( browser.webkit ) {
+				browser.safari = true;
+			}
+		}
+		
         var opts = $.extend({}, $.fn.scrollCompare.defaults, options);
         var heightArray = [];
         return this.each(function () {
             var $this = $(this);
             var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
             init();
-            if ($.browser.msie && parseInt($.browser.version) <= 6) {
+            if (browser.msie && parseInt(browser.version) <= 6) {
                 lockPositionIE("#bg-labels", 120);
             } else {
                 lockPosition("#bg-labels", 120);
@@ -128,7 +166,7 @@ function setLocationRemove(url) {
                     duration: 0,
                     queue: false
                 });
-                if ($.browser.msie && parseInt($.browser.version) <= 6) {
+                if (browser.msie && parseInt(browser.version) <= 6) {
                     $(name).animate({
                         top: "60px"
                     }, {

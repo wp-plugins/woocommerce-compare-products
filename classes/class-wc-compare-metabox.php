@@ -42,7 +42,7 @@ class WC_Compare_MetaBox {
         <script type="text/javascript">
 		(function($){
 			$(function(){
-				$('.deactivate_compare_feature').live( 'click', function(){
+				$(document).on( 'click', '.deactivate_compare_feature', function(){
 					if ($(this).is(':checked')) {
 						$(this).siblings(".compare_feature_activate_form").show();
 					} else {
@@ -451,7 +451,7 @@ class WC_Compare_MetaBox {
 						});
 					}, 5000);
 				});
-				jQuery(".variable_compare_category").live("change", function(){
+				jQuery(document).on("change", ".variable_compare_category", function(){
 						var cat_id = jQuery(this).val();
 						var post_id = jQuery(this).attr("rel");
 						jQuery("#variable_compare_widget_loader_"+post_id).show();

@@ -82,7 +82,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
         <script type="text/javascript">
 			jQuery(document).ready(function($) {
 						var ajax_url = "<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) );?>";
-						$("#woo_compare_print").live("click", function(){
+						$(document).on("click", "#woo_compare_print", function(){
 							$(".compare_print_container").printElement({
 								printBodyOptions:{
 								styleToAdd:"overflow:visible !important;",
@@ -90,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								}
 							});
 						});
-						$(".woo_compare_popup_remove_product").live("click", function(){
+						$(document).on("click", ".woo_compare_popup_remove_product", function(){
 							var popup_remove_product_id = $(this).attr("rel");
 							$(".popup_woo_compare_widget_loader").show();
 							$(".compare_popup_wrap").html("");

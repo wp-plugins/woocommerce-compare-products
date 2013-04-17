@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Compare Products PRO v2.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-09 22:06+0700\n"
-"PO-Revision-Date: 2013-04-09 22:06+0700\n"
+"POT-Creation-Date: 2013-04-17 11:39+0700\n"
+"PO-Revision-Date: 2013-04-17 11:40+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: ManusH <info@ManusH.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,42 +20,42 @@ msgstr ""
 
 # @ woo_cp
 #: admin/compare_init.php:8
-#: admin/compare_init.php:222
+#: admin/compare_init.php:229
 msgid "Product Comparison"
 msgstr "Ürün Karşılaştırması"
 
 # @ woo_cp
-#: admin/compare_init.php:222
+#: admin/compare_init.php:229
 msgid "Compare Settings"
 msgstr "Karşılaştırma Ayarları"
 
 # @ woo_cp
-#: admin/compare_init.php:355
+#: admin/compare_init.php:353
 msgid "Features"
 msgstr "Özellikler"
 
 # @ woo_cp
-#: admin/compare_init.php:356
+#: admin/compare_init.php:354
 #: admin/classes/class-wc-compare-products.php:205
 msgid "Products"
 msgstr "Ürünler"
 
 # @ woo_cp
-#: admin/compare_init.php:357
+#: admin/compare_init.php:355
 #, fuzzy
 msgid "Product Page"
 msgstr "Ürün İsmi"
 
-#: admin/compare_init.php:358
+#: admin/compare_init.php:356
 msgid "Widget Style"
 msgstr ""
 
-#: admin/compare_init.php:359
+#: admin/compare_init.php:357
 msgid "Grid View Style"
 msgstr ""
 
 # @ woo_cp
-#: admin/compare_init.php:360
+#: admin/compare_init.php:358
 #, fuzzy
 msgid "Comparison Page"
 msgstr "Karşılaştır"
@@ -198,7 +198,7 @@ msgstr "Yeni Karşılaştırma Özelliği Oluştur"
 # @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:124
 #: admin/classes/class-wc-compare-fields.php:201
-#: admin/classes/class-wc-compare-fields.php:389
+#: admin/classes/class-wc-compare-fields.php:396
 msgid "Feature Name"
 msgstr "Özellik İsmi"
 
@@ -266,7 +266,7 @@ msgstr "Hayır"
 
 # @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:202
-#: admin/classes/class-wc-compare-fields.php:390
+#: admin/classes/class-wc-compare-fields.php:397
 msgid "Type"
 msgstr "Tip"
 
@@ -274,7 +274,7 @@ msgstr "Tip"
 #: admin/classes/class-wc-compare-fields.php:216
 #: admin/classes/class-wc-compare-fields.php:246
 #: admin/classes/class-wc-compare-fields.php:260
-#: admin/classes/class-wc-compare-fields.php:401
+#: admin/classes/class-wc-compare-fields.php:408
 #: admin/classes/class-wc-compare-products.php:82
 #: admin/classes/class-wc-compare-products.php:113
 #: admin/classes/class-wc-compare-products.php:197
@@ -284,7 +284,7 @@ msgstr "Düzenle"
 # @ woo_cp
 #: admin/classes/class-wc-compare-fields.php:216
 #: admin/classes/class-wc-compare-fields.php:246
-#: admin/classes/class-wc-compare-fields.php:401
+#: admin/classes/class-wc-compare-fields.php:408
 msgid "Are you sure you want to delete"
 msgstr "Silmek istediğinize emin misiniz?"
 
@@ -292,7 +292,7 @@ msgstr "Silmek istediğinize emin misiniz?"
 #: admin/classes/class-wc-compare-fields.php:216
 #: admin/classes/class-wc-compare-fields.php:221
 #: admin/classes/class-wc-compare-fields.php:246
-#: admin/classes/class-wc-compare-fields.php:401
+#: admin/classes/class-wc-compare-fields.php:408
 msgid "Delete"
 msgstr "SİL"
 
@@ -332,52 +332,52 @@ msgid "You have not assigned any Features to this category yet. No Hurry!"
 msgstr "Bu kategoriye henüz hiç bir özellik atamadınız. Devam edin!"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:336
+#: admin/classes/class-wc-compare-fields.php:338
 msgid "You just save the order for Compare Features."
 msgstr "Karşılaştırma Özellikleri sıralamasını kaydettiniz."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:343
+#: admin/classes/class-wc-compare-fields.php:346
 msgid "Categories & Features"
 msgstr "Kategoriler ve Özellikler"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:343
+#: admin/classes/class-wc-compare-fields.php:346
 msgid "Add New"
 msgstr "Yeni Ekle"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:356
+#: admin/classes/class-wc-compare-fields.php:359
 msgid "Search Features"
 msgstr "Özelliklerde Ara"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:382
+#: admin/classes/class-wc-compare-fields.php:389
 msgid "Found"
 msgstr "Bulundu"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:382
+#: admin/classes/class-wc-compare-fields.php:389
 msgid "feature(s)"
 msgstr "özellik(ler)"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:409
+#: admin/classes/class-wc-compare-fields.php:416
 msgid "Show"
 msgstr "Göster"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:420
+#: admin/classes/class-wc-compare-fields.php:427
 msgid "Go"
 msgstr "Git"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:421
+#: admin/classes/class-wc-compare-fields.php:428
 msgid "Displaying"
 msgstr "Görüntüleniyor:"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:421
+#: admin/classes/class-wc-compare-fields.php:428
 msgid "of"
 msgstr "/"
 
@@ -1085,71 +1085,71 @@ msgstr ""
 msgid "Compare Table Close Window Linked Text Styling"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:78
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:79
 msgid "Comparison Page Header Image"
 msgstr ""
 
 # @ woo_cp
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:82
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:83
 #, fuzzy
 msgid "Upload Page Header Image"
 msgstr "Açılır-Pencere için Başlık Görseli Ekle"
 
 # @ woo_cp
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:83
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:84
 #, fuzzy
 msgid "Compare Logo"
 msgstr "Karşılaştır"
 
 # @ woo_cp
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:83
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:84
 #, fuzzy
 msgid "Upload an image with formats .jpg, .pgn, .jpeg. Any size."
 msgstr "Görselin tam bağlantı yolu. Kabul edilen dosya türleri: *.jpg, *.png, *.jpeg . Dosya boyutu sınırlaması yoktur."
 
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:88
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:89
 msgid "Comparison Page Window"
 msgstr ""
 
 # @ woo_cp
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:92
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:93
 #, fuzzy
 msgid "Open Comparison Page In"
 msgstr "Karşılaştırmaya Ekle"
 
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:94
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:95
 msgid "On Screen Window"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:95
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:96
 msgid "New Window"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:95
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:96
 msgid "(Recommended - more mobile devise friendly, can't be blocked by pop-up blockers)"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:100
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:101
 msgid "Comparison Page Shortcode"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:104
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:105
 msgid "A 'Product Comparison' page with the shortcode [product_comparison_page] inserted should have been auto created on install. If not you need to manually create a new page and add the shortcode. Then set that page below so the plugin knows where to find it."
 msgstr ""
 
 # @ woo_cp
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:107
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:108
 #, fuzzy
 msgid "Product Comparison Page"
 msgstr "Ürün Karşılaştırması"
 
 # @ woo_cp
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:110
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:111
 #, fuzzy
 msgid "Select Page"
 msgstr "Değer seçin"
 
-#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:122
+#: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:123
 msgid "Page contents"
 msgstr ""
 
@@ -1625,8 +1625,8 @@ msgid "Check to deactivate the Compare feature on all product pages."
 msgstr "Bu Ürün için Karşılaştırma özelliğini etkinleştir."
 
 #: admin/classes/product_page-panel/class-wc-compare-product-page-tab.php:18
-#: classes/class-wc-compare-filter.php:628
-#: classes/class-wc-compare-filter.php:660
+#: classes/class-wc-compare-filter.php:624
+#: classes/class-wc-compare-filter.php:656
 msgid "Technical Details"
 msgstr ""
 
@@ -1972,11 +1972,17 @@ msgstr ""
 msgid "Count Number Font Colour"
 msgstr ""
 
-#: classes/class-wc-compare-filter.php:835
+# @ woo_cp
+#: classes/class-wc-compare-filter.php:406
+#, fuzzy
+msgid "Product_Comparison"
+msgstr "Ürün Karşılaştırması"
+
+#: classes/class-wc-compare-filter.php:831
 msgid "Documentation"
 msgstr ""
 
-#: classes/class-wc-compare-filter.php:836
+#: classes/class-wc-compare-filter.php:832
 msgid "Support"
 msgstr ""
 

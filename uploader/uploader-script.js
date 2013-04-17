@@ -2,7 +2,7 @@
 
 a3Uploader = {
 	removeFile: function () {
-		$( '.a3_uploader_remove').live( 'click', function(event) { 
+		$(document).on( 'click', '.a3_uploader_remove', function(event) { 
 			$(this).hide();
 			$(this).parents().parents().children( '.a3_upload').attr( 'value', '' );
 			$(this).parents( '.a3_screenshot').slideUp();
@@ -16,7 +16,7 @@ a3Uploader = {
 		
 		var formfield, formID, upload_title, btnContent = true;
 	
-		$( 'input.a3_upload_button').live( "click", function () {
+		$(document).on( 'click', 'input.a3_upload_button', function () {
 			formfield = $(this).prev( 'input').attr( 'name' );
 			formID = $(this).attr( 'rel' );
 			upload_title =  $(this).prev( 'input').attr( 'rel' );

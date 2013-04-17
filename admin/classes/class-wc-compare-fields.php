@@ -253,7 +253,7 @@ class WC_Compare_Fields_Class {
 					foreach ($compare_fields as $field_data) {
 						$i++;
 ?>
-                <tr id="recordsArray_<?php echo $field_data->id; ?>" style="display:none"">
+                <tr id="recordsArray_<?php echo $field_data->id; ?>" style="display:none">
                 	<td><span class="compare_sort"><?php echo $i; ?></span>.</td>
                     <td><div class="c_field_name"><?php echo stripslashes($field_data->field_name); ?></div></td>
                     <td align="right"><?php echo WC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
@@ -278,14 +278,16 @@ class WC_Compare_Fields_Class {
                 <script type="text/javascript">
 					(function($){
 						$(function(){
-							$(".c_openclose_table").toggle(function(){
-								$(this).removeClass("c_close_table");
-								$(this).addClass("c_open_table");
-								$("tbody."+$(this).attr('id')+" tr").css('display', '');
-							}, function(){
-								$(this).removeClass("c_open_table");
-								$(this).addClass("c_close_table");
-								$("tbody."+$(this).attr('id')+" tr").css('display', 'none');
+							$(".c_openclose_table").click( function() {
+								if ( $(this).hasClass('c_close_table') ) {
+									$(this).removeClass("c_close_table");
+									$(this).addClass("c_open_table");
+									$("tbody."+$(this).attr('id')+" tr").css('display', '');
+								} else {
+									$(this).removeClass("c_open_table");
+									$(this).addClass("c_close_table");
+									$("tbody."+$(this).attr('id')+" tr").css('display', 'none');
+								}
 							});
 
 							var fixHelper = function(e, ui) {
@@ -338,6 +340,7 @@ class WC_Compare_Fields_Class {
 	}
 	
 	function features_search_area() {
+		global $wpdb;
 	?>
     	<div id="icon-post" class="icon32 icon32-posts-post"><br></div>
         <h2><?php _e('Categories & Features', 'woo_cp'); ?> <a href="admin.php?page=woo-compare-settings&tab=features&act=add-new" class="add-new-h2"><?php _e('Add New', 'woo_cp'); ?></a></h2>
@@ -370,7 +373,11 @@ class WC_Compare_Fields_Class {
 			
 			$link = WC_Compare_Functions::modify_url(array('pp' => '', 'rows' => $rows, 's_feature' => $keyword ) );
 			
-			$where = "LOWER(field_name) LIKE '%".trim($_REQUEST['s_feature'])."%'";
+			$character = 'latin1';
+			if ( $wpdb->has_cap( 'collation' ) ) 
+				if( ! empty($wpdb->charset ) ) $character = "$wpdb->charset";
+			
+			$where = "LOWER( CONVERT( field_name USING ".$character.") ) LIKE '%".strtolower(trim($_REQUEST['s_feature']))."%'";
 			
 			$total = WC_Compare_Data::get_count($where);
 			if ($end > $total) $end = $total;

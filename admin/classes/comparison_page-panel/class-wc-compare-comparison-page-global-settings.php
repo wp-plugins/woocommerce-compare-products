@@ -57,6 +57,7 @@ class WC_Compare_Comparison_Page_Global_Settings{
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			update_option('product_compare_id', $_REQUEST['product_compare_id']);
+			update_option('woo_compare_logo', $_REQUEST['woo_compare_logo']);
 			$woo_compare_comparison_page_global_settings = $_REQUEST['woo_compare_comparison_page_global_settings'];
 									
 			update_option('woo_compare_comparison_page_global_settings', $woo_compare_comparison_page_global_settings);

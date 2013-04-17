@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 2.92
 Tested up to: 3.5.1
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -126,6 +126,11 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.1.2 - 2013/04/17 =
+* Feature: Added when install and activate plugin link redirects to WooCommerce Compare Products admin panel instead of the wp-plugins dashboard.
+* Fixed: Compare Feature search, search term is no longer case sensitive.
+* Fixed: Updated all JavaScript functions so that the plugin is compatible with jQuery Version1.9 and backwards to version 1.6. WordPress still uses jQuery version 1.8.3. In themes that use Google js Library instead of the WordPress jQuery then there was trouble because Google uses the latest jQuery version 1.9. There are a number of functions in jQuery Version 1.9 that have been depreciated and hence this was causing errors with the jQuery function in the plugin.
 
 = 2.1.1 - 2013/04/10 =
 * Fixed: Compare on screen widow not opening in IE9. Missed an _ in command and IE9 don't recognize space. Thanks to Nicola from yithemes.com for picking that up
@@ -275,3 +280,8 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 = 1.0.0 - 2012/03/15 =
 * First working release of the modification
+
+== Upgrade Notice ==
+
+= 2.1.2 =
+This update includes 1 new activation feature and 2 fixes.

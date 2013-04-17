@@ -4,7 +4,7 @@
  * Install Database, settings option and auto add widget to sidebar
  */
 function woocp_install() {
-	update_option('a3rev_woocp_pro_version', '2.1.1');
+	update_option('a3rev_woocp_pro_version', '2.1.2');
 	$product_compare_id = WC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'woo_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 	
@@ -40,11 +40,18 @@ function woocp_install() {
 	WC_Compare_Functions::add_meta_all_products();
 	WC_Compare_Widget_Add::automatic_add_widget_to_sidebar();
 	update_option('a3rev_woocp_just_confirm', 1);
+	
+	update_option('a3rev_woocp_just_installed', true);
 }
 
 update_option('a3rev_woocp_plugin', 'woo_compare');
 
 function woocp_init() {
+	if ( get_option('a3rev_woocp_just_installed') ) {
+		delete_option('a3rev_woocp_just_installed');
+		wp_redirect( ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin.php?page=woo-compare-settings' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin.php?page=woo-compare-settings' ) ) ) );
+		exit;
+	}
 	load_plugin_textdomain( 'woo_cp', false, WOOCP_FOLDER.'/languages' );
 }
 
@@ -209,7 +216,7 @@ if(version_compare(get_option('a3rev_woocp_pro_version'), '2.1.0') === -1){
 	WC_Compare_Functions::upgrade_version_2_1_0();
 	update_option('a3rev_woocp_pro_version', '2.1.0');
 }
-update_option('a3rev_woocp_pro_version', '2.1.1');
+update_option('a3rev_woocp_pro_version', '2.1.2');
 
 // Add Menu Comparable Settings in E Commerce Plugins
 function woocp_add_menu_item_e_commerce() {
@@ -240,7 +247,6 @@ function woo_cp_dashboard() {
 		.compare_set_1{width:46%; float:left; margin-right:5%; margin-bottom:15px;}
 		.compare_set_2{width:46%; float:left; margin-bottom:15px;}
 		.update_message{padding:10px; background-color:#FFFFCC;border:1px solid #DDDDDD;margin-bottom:15px;}
-		.woocp_read_more{text-decoration:underline; cursor:pointer; margin-left:40px; color:#06F;}
 		.ui-sortable-helper{}
 		.ui-state-highlight{background:#F6F6F6; height:24px; padding:8px 0 0; border:1px dotted #DDD; margin-bottom:20px;}
 		ul.compare_orders{float:left; margin:0; width:100%}
@@ -281,6 +287,8 @@ function woo_cp_dashboard() {
 		.icon32-compare-product {
 			background:url(<?php echo WOOCP_IMAGES_URL; ?>/a3-plugins.png) no-repeat left top !important;
 		}
+		.subsubsub { white-space:normal;}
+		.subsubsub li { white-space:nowrap;}
 		#wc_compare_product_panel_container { position:relative; margin-top:10px;}
 		#wc_compare_product_panel_fields {width:60%; float:left;}
 		#wc_compare_product_upgrade_area { position:relative; margin-left: 60%; padding-left:10px;}
@@ -291,16 +299,6 @@ function woo_cp_dashboard() {
 	<script>
 		(function($){
 			$(function(){
-				$(".woocp_read_more").toggle(
-					function(){
-						$(this).html('Read Less');
-						$(this).siblings(".woocp_description_text").slideDown('slow');
-					},
-					function(){
-						$(this).html('Read More');
-						$(this).siblings(".woocp_description_text").slideUp('slow');
-					}
-				);
 				$("#field_type").change( function() {
 					var field_type = $(this).val();
 					if(field_type == 'checkbox' || field_type == 'radio' || field_type == 'drop-down' || field_type == 'multi-select'){

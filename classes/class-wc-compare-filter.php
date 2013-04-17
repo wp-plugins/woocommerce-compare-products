@@ -401,20 +401,16 @@ class WC_Compare_Hook_Filter {
 						var ajax_url = "'.( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ).'"';
 		if ($woo_compare_comparison_page_global_settings['open_compare_type'] != 'new_page') {
 			$script_add_on .= '
-						$(".woo_compare_button_go, .woo_bt_view_compare").live("click",function (event){
+						$(document).on("click", ".woo_compare_button_go, .woo_bt_view_compare", function (event){
 							var compare_url = "'.get_permalink($product_compare_id).'";
-							if ($.browser.webkit) {
-							  window.open(compare_url, "'.__('Product_Comparison', 'woo_cp').'", "width=980, height=650");
-							} else {
-							  window.open(compare_url, "'.__('Product_Comparison', 'woo_cp').'", "scrollbars=1, width=980, height=650");
-							}
+							window.open(compare_url, "'.__('Product_Comparison', 'woo_cp').'", "scrollbars=1, width=980, height=650");
 							event.preventDefault();
 							return false;
 					 
 					  });';
 		}
 		$script_add_on .= '
-						$(".woo_bt_compare_this").live("click", function(){
+						$(document).on("click", ".woo_bt_compare_this", function(){
 							var woo_bt_compare_current = $(this);
 							var product_id = $("#input_"+$(this).attr("id")).val();
 							$(".woo_compare_widget_loader").show();
@@ -444,7 +440,7 @@ class WC_Compare_Hook_Filter {
 							});
 						});
 
-						$(".woo_compare_remove_product").live("click", function(){
+						$(document).on("click", ".woo_compare_remove_product", function(){
 							var remove_product_id = $(this).attr("rel");
 							$(".woo_compare_widget_loader").show();
 							$(".woo_compare_widget_container").html("");
@@ -466,7 +462,7 @@ class WC_Compare_Hook_Filter {
 								woo_update_total_compare_list();
 							});
 						});
-						$(".woo_compare_clear_all").live("click", function(){
+						$(document).on("click", ".woo_compare_clear_all", function(){
 							$(".woo_compare_widget_loader").show();
 							$(".woo_compare_widget_container").html("");
 							var data = {
@@ -512,7 +508,7 @@ class WC_Compare_Hook_Filter {
 						if (woocommerce_params.option_ajax_add_to_cart=="yes") {
 
 							// Ajax add to cart
-							$(".add_to_cart_button").live("click", function() {
+							$(document).on("click", ".add_to_cart_button", function() {
 
 								// AJAX add to cart request
 								var $thisbutton = $(this);
@@ -764,7 +760,7 @@ jQuery(window).load(function(){
 		// Color picker
 		$('.colorpick').each(function(){
 			$('.colorpickdiv', $(this).parent()).farbtastic(this);
-			$(this).live('click',function() {
+			$(this).click(function() {
 				$('.colorpickdiv', $(this).parent() ).show();
 			});	
 		});
@@ -833,7 +829,7 @@ jQuery(window).load(function(){
 			return $links;
 		}
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/woocommerce/compare-products/" target="_blank">'.__('Documentation', 'woo_cp').'</a>';
-		$links[] = '<a href="http://a3rev.com/shop/woocommerce-compare-products/#tab-reviews" target="_blank">'.__('Support', 'woo_cp').'</a>';
+		$links[] = '<a href="http://a3rev.com/shop/woocommerce-compare-products/#help_tab" target="_blank">'.__('Support', 'woo_cp').'</a>';
 		return $links;
 	}
 }

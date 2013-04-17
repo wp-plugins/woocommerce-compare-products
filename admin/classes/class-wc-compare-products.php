@@ -218,7 +218,7 @@ class WC_Compare_Products_Class {
 				height: 'auto',
 				variations: '<?php echo $cp_show_variations; ?>'
 			});
-			$(".edit_product_compare").live("click", function(ev){
+			$(document).on("click", ".edit_product_compare", function(ev){
 				return alert_upgrade('<?php _e( 'Please upgrade to the Pro Version to activate Products express Compare feature manager', 'woo_cp' ); ?>');
 			});
 		});
