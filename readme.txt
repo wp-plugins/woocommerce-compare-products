@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 2.92
 Tested up to: 3.5.1
-Stable tag: 2.1.2
+Stable tag: 2.1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -126,6 +126,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.1.3 - 2013/04/23 =
+* Fixed: External / Affiliates link on Compare Window is now backward compatible from WooCommerce Version 2.0. Was showing fatal Error for older versions.
 
 = 2.1.2 - 2013/04/17 =
 * Feature: Added when install and activate plugin link redirects to WooCommerce Compare Products admin panel instead of the wp-plugins dashboard.
@@ -281,7 +284,11 @@ You can use this plugin when you have installed the WooCommerce plugin.
 = 1.0.0 - 2012/03/15 =
 * First working release of the modification
 
+
 == Upgrade Notice ==
+
+= 2.1.3 =
+Upgrade now to fix a backward compatibility issue with External / Affiliate Links.
 
 = 2.1.2 =
 This update includes 1 new activation feature and 2 fixes.

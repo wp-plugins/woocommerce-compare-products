@@ -389,6 +389,7 @@ class WC_Compare_Functions {
 	function get_compare_list_html_popup() {
 		global $woo_compare_comparison_page_global_settings, $woo_compare_page_style, $woo_compare_table_style, $woo_compare_table_content_style, $woo_compare_addtocart_style, $woo_compare_viewcart_style;
 		global $woo_compare_product_prices_style;
+		$current_db_version = get_option( 'woocommerce_db_version', null );
 		$compare_list = WC_Compare_Functions::get_compare_list();
 		$woo_compare_basket_icon = get_option('woo_compare_basket_icon');
 		if (trim($woo_compare_basket_icon) == '') $woo_compare_basket_icon = WOOCP_IMAGES_URL.'/compare_remove.png';
@@ -414,7 +415,6 @@ class WC_Compare_Functions {
 				}
 				$i++;
 				
-				$current_db_version = get_option( 'woocommerce_db_version', null );
 				if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
 					$current_product = new WC_Product($product_id);
 				} else {
@@ -458,8 +458,14 @@ class WC_Compare_Functions {
 						if ( $current_product->product_type != 'external' ) {
 							$cart_url = add_query_arg('add-to-cart',$product_id, get_option('siteurl').'/?post_type=product');
 						} else if ( $current_product->product_type == 'external' ) {
-							$cart_url = $current_product->product_url;
-							$add_to_cart_text_external = $current_product->get_button_text();
+							if ( version_compare( $current_db_version, '2.0', '<' ) && null !== $current_db_version ) {
+								$cart_url = get_post_meta( $product_id, '_product_url', true  );
+								$add_to_cart_text_external = get_post_meta( $product_id, '_button_text', true  );
+								( $add_to_cart_text_external ) ? $add_to_cart_text_external : __( 'Buy product', 'woo_cp' );
+							} else {
+								$cart_url = $current_product->product_url;
+								$add_to_cart_text_external = $current_product->get_button_text();
+							}
 						}
 						switch (get_post_type($product_id)) :
 							case "product_variation" :
