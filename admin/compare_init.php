@@ -4,7 +4,7 @@
  * Install Database, settings option and auto add widget to sidebar
  */
 function woocp_install() {
-	update_option('a3rev_woocp_pro_version', '2.1.3');
+	update_option('a3rev_woocp_pro_version', '2.1.4');
 	$product_compare_id = WC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'woo_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 	
@@ -216,7 +216,7 @@ if(version_compare(get_option('a3rev_woocp_pro_version'), '2.1.0') === -1){
 	WC_Compare_Functions::upgrade_version_2_1_0();
 	update_option('a3rev_woocp_pro_version', '2.1.0');
 }
-update_option('a3rev_woocp_pro_version', '2.1.3');
+update_option('a3rev_woocp_pro_version', '2.1.4');
 
 // Add Menu Comparable Settings in E Commerce Plugins
 function woocp_add_menu_item_e_commerce() {

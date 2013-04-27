@@ -761,6 +761,7 @@ jQuery(window).load(function(){
 		$('.colorpick').each(function(){
 			$('.colorpickdiv', $(this).parent()).farbtastic(this);
 			$(this).click(function() {
+				if ( $(this).val() == "" ) $(this).val('#000000');
 				$('.colorpickdiv', $(this).parent() ).show();
 			});	
 		});

@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 2.92
 Tested up to: 3.5.1
-Stable tag: 2.1.3
+Stable tag: 2.1.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -126,6 +126,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.1.4 - 2013/04/26 =
+* Fixed: Text colour pickers not saving and displaying the hex number and hex colour in Font Colour, Font Link Colour and Font Hover colour selectors after editing and updating. The bug affected all font colour setting that use theme colours on install. These are the settings show an empty colour selector field on install.
 
 = 2.1.3 - 2013/04/23 =
 * Fixed: External / Affiliates link on Compare Window is now backward compatible from WooCommerce Version 2.0. Was showing fatal Error for older versions.
@@ -286,6 +289,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 2.1.4 =
+Install this upgrade to fix colour picker bug in your plugin
 
 = 2.1.3 =
 Upgrade now to fix a backward compatibility issue with External / Affiliate Links.
