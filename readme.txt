@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 2.92
 Tested up to: 3.5.1
-Stable tag: 2.1.4
+Stable tag: 2.1.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -126,6 +126,10 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.1.5 - 2013/06/15 =
+* Fix: Compare Features Tab on Product Page, Enable / Disable function. The 2 functions worked but the opposite of what they where supposed to.
+* Tweak: Updated support URL link to the plugins wordpress.org support forum.
 
 = 2.1.4 - 2013/04/26 =
 * Fixed: Text colour pickers not saving and displaying the hex number and hex colour in Font Colour, Font Link Colour and Font Hover colour selectors after editing and updating. The bug affected all font colour setting that use theme colours on install. These are the settings show an empty colour selector field on install.

@@ -300,7 +300,7 @@ class WC_Compare_Fields_Class {
 							$(".sorttable tbody").sortable({ helper: fixHelper, placeholder: "ui-state-highlight", opacity: 0.8, cursor: 'move', update: function() {
 								var cat_id = $(this).parent('table').siblings(".compare_category_id").val();
 								var order = $(this).sortable("serialize") + '&action=woocp_update_orders&security=<?php echo $woocp_update_order; ?>&cat_id='+cat_id;
-								$.post("<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>", order, function(theResponse){
+								$.post("<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>", order, function(theResponse){
 									$(".update_feature_order_message p").html(theResponse);
 									$(".update_feature_order_message").show();
 									$("#compare_orders_"+cat_id).find(".compare_sort").each(function(index){
@@ -312,7 +312,7 @@ class WC_Compare_Fields_Class {
 
 							$("ul.sorttable").sortable({ placeholder: "ui-state-highlight", opacity: 0.8, cursor: 'move', update: function() {
 								var order = $(this).sortable("serialize") + '&action=woocp_update_cat_orders&security=<?php echo $woocp_update_cat_order; ?>';
-								$.post("<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>", order, function(theResponse){
+								$.post("<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>", order, function(theResponse){
 									$(".update_feature_order_message p").html(theResponse).show();
 									$(".update_feature_order_message").show();
 								});

@@ -398,7 +398,7 @@ class WC_Compare_Hook_Filter {
 		$script_add_on = '';
 		$script_add_on .= '<script type="text/javascript">
 				jQuery(document).ready(function($) {
-						var ajax_url = "'.( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ).'"';
+						var ajax_url = "'.admin_url( 'admin-ajax.php', 'relative' ).'"';
 		if ($woo_compare_comparison_page_global_settings['open_compare_type'] != 'new_page') {
 			$script_add_on .= '
 						$(document).on("click", ".woo_compare_button_go, .woo_bt_view_compare", function (event){
@@ -830,7 +830,7 @@ jQuery(window).load(function(){
 			return $links;
 		}
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/woocommerce/compare-products/" target="_blank">'.__('Documentation', 'woo_cp').'</a>';
-		$links[] = '<a href="http://a3rev.com/shop/woocommerce-compare-products/#help_tab" target="_blank">'.__('Support', 'woo_cp').'</a>';
+		$links[] = '<a href="http://wordpress.org/support/plugin/woocommerce-compare-products/" target="_blank">'.__('Support', 'woo_cp').'</a>';
 		return $links;
 	}
 }

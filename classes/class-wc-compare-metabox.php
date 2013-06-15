@@ -42,7 +42,7 @@ class WC_Compare_MetaBox {
         <script type="text/javascript">
 		(function($){
 			$(function(){
-				$(document).on( 'click', '.deactivate_compare_feature', function(){
+				$(document).on('click', '.deactivate_compare_feature', function(){
 					if ($(this).is(':checked')) {
 						$(this).siblings(".compare_feature_activate_form").show();
 					} else {
@@ -59,7 +59,7 @@ class WC_Compare_MetaBox {
                         post_id: post_id,
                         security: '<?php echo $woocp_product_compare; ?>'
                     };
-                    $.post('<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>', data, function(response) {
+                    $.post('<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>', data, function(response) {
 						$(".compare_widget_loader").hide();
 						$("#compare_cat_fields").html(response);
 					});
@@ -406,7 +406,7 @@ class WC_Compare_MetaBox {
 							variation_id: variation_id,
 							security: '<?php echo $woocp_variable_compare; ?>'
 						};
-						jQuery.post('<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>', data, function(response) {
+						jQuery.post('<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>', data, function(response) {
 							current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
 						});
 						current_variation.addClass('have_compare_feature');
@@ -424,7 +424,7 @@ class WC_Compare_MetaBox {
 									variation_id: variation_id,
 									security: '<?php echo $woocp_variable_compare; ?>'
 								};
-								jQuery.post('<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>', data, function(response) {
+								jQuery.post('<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>', data, function(response) {
 									current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
 								});
 								current_variation.addClass('have_compare_feature');
@@ -443,7 +443,7 @@ class WC_Compare_MetaBox {
 									variation_id: variation_id,
 									security: '<?php echo $woocp_variable_compare; ?>'
 								};
-								jQuery.post('<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>', data, function(response) {
+								jQuery.post('<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>', data, function(response) {
 									current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
 								});
 								current_variation.addClass('have_compare_feature');
@@ -461,7 +461,7 @@ class WC_Compare_MetaBox {
 							post_id: post_id,
 							security: '<?php echo $woocp_variable_compare; ?>'
 						};
-						jQuery.post('<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>', data, function(response) {
+						jQuery.post('<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>', data, function(response) {
 							jQuery("#variable_compare_widget_loader_"+post_id).hide();
 							jQuery("#variable_compare_cat_fields_"+post_id).html(response);
 						});

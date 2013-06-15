@@ -184,7 +184,7 @@ class WC_Compare_Products_Class {
 	(function($){
 		$(function(){
 			$("#woocp_products_manager").flexigrid({
-				url: '<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ).'?action=woocp_get_products&security='.$woocp_products_manager; ?>',
+				url: '<?php echo admin_url( 'admin-ajax.php', 'relative' ) .'?action=woocp_get_products&security='.$woocp_products_manager; ?>',
 				dataType: 'json',
 				width: 'auto',
 				resizable: false,
