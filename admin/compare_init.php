@@ -4,7 +4,7 @@
  * Install Database, settings option and auto add widget to sidebar
  */
 function woocp_install() {
-	update_option('a3rev_woocp_pro_version', '2.1.5');
+	update_option('a3rev_woocp_pro_version', '2.1.6');
 	$product_compare_id = WC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'woo_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 	
@@ -49,7 +49,7 @@ update_option('a3rev_woocp_plugin', 'woo_compare');
 function woocp_init() {
 	if ( get_option('a3rev_woocp_just_installed') ) {
 		delete_option('a3rev_woocp_just_installed');
-		wp_redirect( ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin.php?page=woo-compare-settings' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin.php?page=woo-compare-settings' ) ) ) );
+		wp_redirect( admin_url( 'admin.php?page=woo-compare-settings', 'relative' ) );
 		exit;
 	}
 	load_plugin_textdomain( 'woo_cp', false, WOOCP_FOLDER.'/languages' );
@@ -216,7 +216,7 @@ if(version_compare(get_option('a3rev_woocp_pro_version'), '2.1.0') === -1){
 	WC_Compare_Functions::upgrade_version_2_1_0();
 	update_option('a3rev_woocp_pro_version', '2.1.0');
 }
-update_option('a3rev_woocp_pro_version', '2.1.5');
+update_option('a3rev_woocp_pro_version', '2.1.6');
 
 // Add Menu Comparable Settings in E Commerce Plugins
 function woocp_add_menu_item_e_commerce() {
@@ -359,7 +359,7 @@ function woo_cp_dashboard() {
 	);
 
 	foreach ($tabs as $name => $label) :
-		echo '<a href="' . admin_url( 'admin.php?page=woo-compare-settings&tab=' . $name ) . '" class="nav-tab ';
+		echo '<a href="' . admin_url( 'admin.php?page=woo-compare-settings&tab=' . $name, 'relative' ) . '" class="nav-tab ';
 	if ($current_tab == '' && $name == 'features') echo 'nav-tab-active';
 	if ( $current_tab==$name ) echo 'nav-tab-active';
 	echo '">' . $label . '</a>';

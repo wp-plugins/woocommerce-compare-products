@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WC_Compare_Grid_View_Settings{
-	function get_settings_default() {
+class WC_Compare_Grid_View_Settings
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'grid_view_button_position'		=> 'above',
 			'grid_view_button_below_padding'=> 10,
@@ -23,7 +24,7 @@ class WC_Compare_Grid_View_Settings{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		$woo_compare_grid_view_settings = get_option('woo_compare_grid_view_settings');
 		if ( !is_array($woo_compare_grid_view_settings) ) $woo_compare_grid_view_settings = array();
 		
@@ -39,7 +40,7 @@ class WC_Compare_Grid_View_Settings{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $woo_compare_grid_view_settings;
 		$woo_compare_grid_view_settings = get_option('woo_compare_grid_view_settings');
 		if ( !is_array($woo_compare_grid_view_settings) ) $woo_compare_grid_view_settings = array();
@@ -55,7 +56,7 @@ class WC_Compare_Grid_View_Settings{
 		return $woo_compare_grid_view_settings;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$woo_compare_grid_view_settings = $_REQUEST['woo_compare_grid_view_settings'];

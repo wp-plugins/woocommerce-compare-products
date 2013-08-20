@@ -10,8 +10,9 @@
  * woocp_products_manager()
  * woocp_compare_products_script()
  */
-class WC_Compare_Products_Class {
-	function woocp_get_products() {
+class WC_Compare_Products_Class 
+{
+	public static function woocp_get_products() {
 		check_ajax_referer( 'woocp-products-manager', 'security' );
 
 		$paged = isset($_POST['page']) ? $_POST['page'] : 1;
@@ -122,7 +123,7 @@ class WC_Compare_Products_Class {
 		die();
 	}
 
-	function woocp_products_manager() {
+	public static function woocp_products_manager() {
 		$compare_product_message = '';
 		$paged = isset($_POST['paged']) ? $_POST['paged'] : 1;
 		$rp = isset($_POST['rp']) ? $_POST['rp'] : 10;
@@ -227,7 +228,7 @@ class WC_Compare_Products_Class {
 <?php
 	}
 
-	function woocp_compare_products_script() {
+	public static function woocp_compare_products_script() {
 		//global $woocommerce;
 		echo'<style>
 			#TB_ajaxContent{padding-bottom:0 !important; padding-right:0 !important; height:auto !important; width:auto !important;}

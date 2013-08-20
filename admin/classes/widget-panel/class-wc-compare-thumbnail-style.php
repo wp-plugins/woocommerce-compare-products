@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WC_Compare_Widget_Thumbnail_Style{
-	function get_settings_default() {
+class WC_Compare_Widget_Thumbnail_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'activate_thumbnail'			=> 1,
 			'thumb_wide'					=> 64,
@@ -29,7 +30,7 @@ class WC_Compare_Widget_Thumbnail_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {		
+	public static function set_settings_default($reset=false) {		
 		$default_settings = WC_Compare_Widget_Thumbnail_Style::get_settings_default();
 				
 		if ($reset) {
@@ -39,14 +40,14 @@ class WC_Compare_Widget_Thumbnail_Style{
 		}	
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $woo_compare_widget_thumbnail_style;
 		$woo_compare_widget_thumbnail_style = WC_Compare_Widget_Thumbnail_Style::get_settings_default();
 		
 		return $woo_compare_widget_thumbnail_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {											
 			WC_Compare_Widget_Thumbnail_Style::set_settings_default(true);

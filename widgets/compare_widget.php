@@ -15,7 +15,8 @@ add_action( 'widgets_init', create_function('', 'return register_widget("WC_Comp
  * update()
  * form()
  */
-class WC_Compare_Widget extends WP_Widget{
+class WC_Compare_Widget extends WP_Widget
+{
 
 	function WC_Compare_Widget() {
 		$widget_ops = array('classname' => 'woo_compare_widget');
@@ -74,8 +75,9 @@ class WC_Compare_Widget extends WP_Widget{
  *
  * automatic_add_widget_to_sidebar()
  */
-class WC_Compare_Widget_Add {
-	function automatic_add_widget_to_sidebar() {
+class WC_Compare_Widget_Add 
+{
+	public static function automatic_add_widget_to_sidebar() {
 		$add_to_sidebars = array('primary', 'primary-widget-area', 'sidebar-1');
 		$widget_name = 'woo_compare_widget';
 		$sidebar_options = get_option('sidebars_widgets');

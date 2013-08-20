@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WC_Compare_Page_Style{
-	function get_settings_default() {
+class WC_Compare_Page_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'header_bg_colour'				=> '#FFFFFF',
 			'header_bottom_border_size'		=> '3px',
@@ -32,7 +33,7 @@ class WC_Compare_Page_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		$woo_compare_page_style = get_option('woo_compare_page_style');
 		if ( !is_array($woo_compare_page_style) ) $woo_compare_page_style = array();
 		
@@ -48,7 +49,7 @@ class WC_Compare_Page_Style{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $woo_compare_page_style;
 		$woo_compare_page_style = get_option('woo_compare_page_style');
 		if ( !is_array($woo_compare_page_style) ) $woo_compare_page_style = array();
@@ -64,7 +65,7 @@ class WC_Compare_Page_Style{
 		return $woo_compare_page_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$woo_compare_page_style = $_REQUEST['woo_compare_page_style'];

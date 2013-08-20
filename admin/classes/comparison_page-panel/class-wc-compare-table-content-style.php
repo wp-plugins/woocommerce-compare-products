@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WC_Compare_Table_Content_Style{
-	function get_settings_default() {
+class WC_Compare_Table_Content_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'feature_title_font'			=> 'Tahoma, Geneva, Verdana, sans-serif',
 			'feature_title_font_size'		=> '12px',
@@ -41,7 +42,7 @@ class WC_Compare_Table_Content_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		
 		$default_settings = WC_Compare_Table_Content_Style::get_settings_default();
 				
@@ -53,14 +54,14 @@ class WC_Compare_Table_Content_Style{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $woo_compare_table_content_style;
 		$woo_compare_table_content_style = WC_Compare_Table_Content_Style::get_settings_default();
 		
 		return $woo_compare_table_content_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			WC_Compare_Table_Content_Style::set_settings_default(true);

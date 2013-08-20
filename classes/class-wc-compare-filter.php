@@ -35,9 +35,10 @@
  * auto_create_compare_feature()
  * plugin_extra_links()
  */
-class WC_Compare_Hook_Filter {
+class WC_Compare_Hook_Filter 
+{
 	
-	function template_loader( $template ) {
+	public static function template_loader( $template ) {
 		global $product_compare_id;
 		global $post;
 
@@ -55,11 +56,11 @@ class WC_Compare_Hook_Filter {
 		return $template;
 	}
 	
-	function include_customized_style() {
+	public static function include_customized_style() {
 		include( WOOCP_DIR. '/templates/customized_style.php' );
 	}
 
-	function woocp_shop_add_compare_button($template_name, $template_path, $located) {
+	public static function woocp_shop_add_compare_button($template_name, $template_path, $located) {
 		global $post;
 		global $product;
 		global $woo_compare_grid_view_settings, $woo_compare_grid_view_button_style;
@@ -83,7 +84,7 @@ class WC_Compare_Hook_Filter {
 		}
 	}
 	
-	function woocp_shop_add_compare_button_below_cart() {
+	public static function woocp_shop_add_compare_button_below_cart() {
 		global $post;
 		global $product;
 		global $woo_compare_grid_view_settings, $woo_compare_grid_view_button_style;
@@ -105,7 +106,7 @@ class WC_Compare_Hook_Filter {
 			}
 	}
 
-	function woocp_details_add_compare_button() {
+	public static function woocp_details_add_compare_button() {
 		global $post;
 		global $product;
 		global $woo_compare_product_page_button_style;
@@ -146,7 +147,7 @@ class WC_Compare_Hook_Filter {
 		}
 	}
 	
-	function woocp_details_add_compare_button_below_cart($template_name, $template_path, $located){
+	public static function woocp_details_add_compare_button_below_cart($template_name, $template_path, $located){
 		global $post;
 		global $product;
 		global $woo_compare_product_page_button_style;
@@ -190,7 +191,7 @@ class WC_Compare_Hook_Filter {
 		}
 	}
 
-	function add_compare_button($product_id='') {
+	public static function add_compare_button($product_id='') {
 		global $post;
 		global $woo_compare_product_page_button_style;
 		global $woo_compare_comparison_page_global_settings;
@@ -233,7 +234,7 @@ class WC_Compare_Hook_Filter {
 		return $html;
 	}
 
-	function show_compare_fields($product_id='', $use_wootheme_style=true) {
+	public static function show_compare_fields($product_id='', $use_wootheme_style=true) {
 		global $post, $woo_compare_table_content_style;
 		if (trim($product_id) == '') $product_id = $post->ID;
 		$html = '';
@@ -303,7 +304,7 @@ class WC_Compare_Hook_Filter {
 		return $html;
 	}
 
-	function woocp_variable_ajax_add_to_cart() {
+	public static function woocp_variable_ajax_add_to_cart() {
 		global $woocommerce;
 		check_ajax_referer( 'woocp-add-to-cart', 'security' );
 
@@ -336,7 +337,7 @@ class WC_Compare_Hook_Filter {
 		die();
 	}
 
-	function woocp_add_to_compare() {
+	public static function woocp_add_to_compare() {
 		check_ajax_referer( 'woocp-compare-events', 'security' );
 
 		$product_id  = $_REQUEST['product_id'];
@@ -345,7 +346,7 @@ class WC_Compare_Hook_Filter {
 		die();
 	}
 
-	function woocp_remove_from_popup_compare() {
+	public static function woocp_remove_from_popup_compare() {
 		check_ajax_referer( 'woocp-compare-events', 'security' );
 
 		$product_id  = $_REQUEST['product_id'];
@@ -354,7 +355,7 @@ class WC_Compare_Hook_Filter {
 		die();
 	}
 	
-	function woocp_update_compare_popup() {
+	public static function woocp_update_compare_popup() {
 		check_ajax_referer( 'woocp-compare-events', 'security' );
 		$result = WC_Compare_Functions::get_compare_list_html_popup();
 		$result .= '<script src="'. WOOCP_JS_URL.'/fixedcolumntable/fixedcolumntable.js"></script>';
@@ -362,34 +363,34 @@ class WC_Compare_Hook_Filter {
 		die();
 	}
 
-	function woocp_update_compare_widget() {
+	public static function woocp_update_compare_widget() {
 		check_ajax_referer( 'woocp-compare-events', 'security' );
 		$result = WC_Compare_Functions::get_compare_list_html_widget();
 		echo json_encode( $result );
 		die();
 	}
 
-	function woocp_update_total_compare() {
+	public static function woocp_update_total_compare() {
 		check_ajax_referer( 'woocp-compare-events', 'security' );
 		$result = WC_Compare_Functions::get_total_compare_list();
 		echo json_encode( $result );
 		die();
 	}
 
-	function woocp_remove_from_compare() {
+	public static function woocp_remove_from_compare() {
 		check_ajax_referer( 'woocp-compare-events', 'security' );
 		$product_id  = $_REQUEST['product_id'];
 		WC_Compare_Functions::delete_product_on_compare_list($product_id);
 		die();
 	}
 
-	function woocp_clear_compare() {
+	public static function woocp_clear_compare() {
 		check_ajax_referer( 'woocp-compare-events', 'security' );
 		WC_Compare_Functions::clear_compare_list();
 		die();
 	}
 
-	function woocp_footer_script() {
+	public static function woocp_footer_script() {
 		global $product_compare_id;
 		global $woo_compare_comparison_page_global_settings;
 		$woocp_compare_events = wp_create_nonce("woocp-compare-events");
@@ -499,7 +500,7 @@ class WC_Compare_Hook_Filter {
 		echo $script_add_on;
 	}
 
-	function woocp_variable_add_to_cart_script() {
+	public static function woocp_variable_add_to_cart_script() {
 		$woocp_add_to_cart_nonce = wp_create_nonce("woocp-add-to-cart");
 		$script_add_on = '';
 		$script_add_on .= '<script type="text/javascript">
@@ -617,7 +618,7 @@ class WC_Compare_Hook_Filter {
 		echo $script_add_on;
 	}
 
-	function woocp_product_featured_tab() {
+	public static function woocp_product_featured_tab() {
 		global $post;
 		global $woo_compare_product_page_tab;
 		$compare_featured_tab = trim($woo_compare_product_page_tab['compare_featured_tab']);
@@ -648,7 +649,7 @@ class WC_Compare_Hook_Filter {
 		if ($show_compare_featured_tab) echo '<li><a href="#tab-compare-featured">'.esc_attr( stripslashes( $compare_featured_tab ) ).'</a></li>';
 	}
 	
-	function woocp_product_featured_tab_woo_2_0( $tabs = array() ) {
+	public static function woocp_product_featured_tab_woo_2_0( $tabs = array() ) {
 		global $product, $post;
 		global $woo_compare_product_page_tab;
 		
@@ -689,7 +690,7 @@ class WC_Compare_Hook_Filter {
 		return $tabs;
 	}
 
-	function woocp_product_featured_panel() {
+	public static function woocp_product_featured_panel() {
 		global $post;
 ?>
 		<div class="panel entry-content" id="tab-compare-featured">
@@ -698,12 +699,12 @@ class WC_Compare_Hook_Filter {
         <?php
 	}
 	
-	function woocp_product_featured_panel_woo_2_0() {
+	public static function woocp_product_featured_panel_woo_2_0() {
 		global $post;
 		echo WC_Compare_Hook_Filter::show_compare_fields($post->ID);
 	}
 	
-	function woocp_admin_header_script() {
+	public static function woocp_admin_header_script() {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('farbtastic');
 		wp_enqueue_style('farbtastic');
@@ -711,7 +712,7 @@ class WC_Compare_Hook_Filter {
 		WC_Compare_Uploader::uploader_js();
 	}
 
-	function woocp_admin_script() {
+	public static function woocp_admin_script() {
 		global $woocommerce;
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		
@@ -774,7 +775,7 @@ jQuery(window).load(function(){
         <?php
 	}
 	
-	function woocp_set_selected_attributes($default_attributes) {
+	public static function woocp_set_selected_attributes($default_attributes) {
 		if (isset($_REQUEST['variation_selected']) && $_REQUEST['variation_selected'] > 0) {
 			$variation_id = $_REQUEST['variation_selected'];
 			$mypost = get_post($variation_id);
@@ -796,7 +797,7 @@ jQuery(window).load(function(){
 		return $default_attributes;
 	}
 	
-	function auto_create_compare_category($term_id) {
+	public static function auto_create_compare_category($term_id) {
 		$term = get_term( $term_id, 'product_cat' );
 		$check_existed = WC_Compare_Categories_Data::get_count("category_name='".trim($term->name)."'");
 		if ($check_existed < 1 ) {
@@ -804,7 +805,7 @@ jQuery(window).load(function(){
 		}
 	}
 	
-	function auto_create_compare_feature() {
+	public static function auto_create_compare_feature() {
 		if (isset($_POST['add_new_attribute']) && $_POST['add_new_attribute']) {
 			//check_admin_referer( 'woocommerce-add-new_attribute' );
 			$attribute_name = (string) sanitize_title($_POST['attribute_name']);
@@ -825,7 +826,7 @@ jQuery(window).load(function(){
 		}
 	}
 	
-	function plugin_extra_links($links, $plugin_name) {
+	public static function plugin_extra_links($links, $plugin_name) {
 		if ( $plugin_name != WOOCP_NAME) {
 			return $links;
 		}

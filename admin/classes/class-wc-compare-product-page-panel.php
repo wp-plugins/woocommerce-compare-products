@@ -7,8 +7,9 @@
  *
  * panel_manager()
  */
-class WC_Compare_Product_Page_Panel{
-	function panel_manager() {
+class WC_Compare_Product_Page_Panel
+{
+	public static function panel_manager() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$message = '<div class="updated" id=""><p>'.__('Compare Product Page Settings Successfully saved.', 'woo_cp').'</p></div>';

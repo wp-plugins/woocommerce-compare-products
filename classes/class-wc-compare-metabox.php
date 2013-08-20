@@ -17,14 +17,15 @@
  * variable_compare_meta_boxes()
  * save_compare_meta_boxes()
  */
-class WC_Compare_MetaBox {
-	function compare_meta_boxes() {
+class WC_Compare_MetaBox 
+{
+	public static function compare_meta_boxes() {
 		global $post;
 		$pagename = 'product';
 		add_meta_box( 'woo_compare_feature_box', __('Compare Feature Fields', 'woo_cp'), array('WC_Compare_MetaBox', 'woo_compare_feature_box'), $pagename, 'normal', 'high' );
 	}
 
-	function woocp_product_get_fields() {
+	public static function woocp_product_get_fields() {
 		check_ajax_referer( 'woocp-product-compare', 'security' );
 		$cat_id = $_REQUEST['cat_id'];
 		$post_id = $_REQUEST['post_id'];
@@ -32,7 +33,7 @@ class WC_Compare_MetaBox {
 		die();
 	}
 
-	function woo_compare_feature_box() {
+	public static function woo_compare_feature_box() {
 		$woocp_product_compare = wp_create_nonce("woocp-product-compare");
 		global $post;
 		$post_id = $post->ID;
@@ -92,7 +93,7 @@ class WC_Compare_MetaBox {
 	<?php
 	}
 
-	function woo_show_field_of_cat($post_id=0, $cat_id=0) {
+	public static function woo_show_field_of_cat($post_id=0, $cat_id=0) {
 		if ($cat_id > 0 && WC_Compare_Categories_Data::get_count("id='".$cat_id."'") > 0) {
 ?>
     	<style>
@@ -206,7 +207,7 @@ class WC_Compare_MetaBox {
 		}
 	}
 
-	function woo_variations_compare_feature_box($post_id) {
+	public static function woo_variations_compare_feature_box($post_id) {
 		$deactivate_compare_feature = get_post_meta( $post_id, '_woo_deactivate_compare_feature', true );
 		$compare_category = get_post_meta( $post_id, '_woo_compare_category', true );
 ?>
@@ -236,7 +237,7 @@ class WC_Compare_MetaBox {
 	<?php
 	}
 
-	function woo_variation_show_field_of_cat($post_id=0, $cat_id=0) {
+	public static function woo_variation_show_field_of_cat($post_id=0, $cat_id=0) {
 		if ($cat_id > 0 && WC_Compare_Categories_Data::get_count("id='".$cat_id."'") > 0) {
 ?>
     	<style>
@@ -350,14 +351,14 @@ class WC_Compare_MetaBox {
 		}
 	}
 
-	function woocp_get_variation_compare() {
+	public static function woocp_get_variation_compare() {
 		check_ajax_referer( 'woocp-variable-compare', 'security' );
 		$variation_id = $_REQUEST['variation_id'];
 		echo WC_Compare_MetaBox::woo_variations_compare_feature_box($variation_id);
 		die();
 	}
 
-	function woocp_variation_get_fields() {
+	public static function woocp_variation_get_fields() {
 		check_ajax_referer( 'woocp-variable-compare', 'security' );
 		$cat_id = $_REQUEST['cat_id'];
 		$post_id = $_REQUEST['post_id'];
@@ -365,7 +366,7 @@ class WC_Compare_MetaBox {
 		die();
 	}
 
-	function variable_compare_meta_boxes() {
+	public static function variable_compare_meta_boxes() {
 		global $post, $woocommerce;
 		$post_status = get_post_status($post->ID);
 		$post_type = get_post_type($post->ID);
@@ -475,7 +476,7 @@ class WC_Compare_MetaBox {
 		}
 	}
 
-	function save_compare_meta_boxes($post_id) {
+	public static function save_compare_meta_boxes($post_id) {
 		$post_status = get_post_status($post_id);
 		$post_type = get_post_type($post_id);
 		if ($post_type == 'product' && $post_status != false) {

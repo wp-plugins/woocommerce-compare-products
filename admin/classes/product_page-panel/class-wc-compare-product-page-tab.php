@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WC_Compare_Product_Page_Tab{
-	function get_settings_default() {
+class WC_Compare_Product_Page_Tab
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'auto_compare_featured_tab'		=> 29,
 			'compare_featured_tab'			=> __('Technical Details', 'woo_cp'),
@@ -23,7 +24,7 @@ class WC_Compare_Product_Page_Tab{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		$woo_compare_product_page_tab = get_option('woo_compare_product_page_tab');
 		if ( !is_array($woo_compare_product_page_tab) ) $woo_compare_product_page_tab = array();
 		
@@ -39,7 +40,7 @@ class WC_Compare_Product_Page_Tab{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $woo_compare_product_page_tab;
 		$woo_compare_product_page_tab = get_option('woo_compare_product_page_tab');
 		if ( !is_array($woo_compare_product_page_tab) ) $woo_compare_product_page_tab = array();
@@ -55,7 +56,7 @@ class WC_Compare_Product_Page_Tab{
 		return $woo_compare_product_page_tab;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$woo_compare_product_page_tab = $_REQUEST['woo_compare_product_page_tab'];

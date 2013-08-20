@@ -9,9 +9,10 @@
  * woocp_categories_manager()
  * woocp_update_cat_orders()
  */
-class WC_Compare_Categories_Class {
+class WC_Compare_Categories_Class 
+{
 	
-	function init_categories_actions() {
+	public static function init_categories_actions() {
 		global $wpdb;
 		$cat_msg = '';
 		if(isset($_REQUEST['bt_save_cat'])){
@@ -50,7 +51,7 @@ class WC_Compare_Categories_Class {
 		return $cat_msg;
 	}
 	
-	function woocp_categories_manager() {
+	public static function woocp_categories_manager() {
 		global $wpdb;
 ?>
 
@@ -81,7 +82,7 @@ class WC_Compare_Categories_Class {
 	<?php
 	}
 
-	function woocp_update_cat_orders() {
+	public static function woocp_update_cat_orders() {
 		check_ajax_referer( 'woocp-update-cat-order', 'security' );
 		$updateRecordsArray  = $_REQUEST['recordsArray'];
 

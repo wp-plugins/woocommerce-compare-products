@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WC_Compare_Comparison_Page_Global_Settings{
-	function get_settings_default() {
+class WC_Compare_Comparison_Page_Global_Settings
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'open_compare_type'				=> 'new_page',
 			
@@ -21,7 +22,7 @@ class WC_Compare_Comparison_Page_Global_Settings{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		$woo_compare_comparison_page_global_settings = get_option('woo_compare_comparison_page_global_settings');
 		if ( !is_array($woo_compare_comparison_page_global_settings) ) $woo_compare_comparison_page_global_settings = array();
 		
@@ -37,7 +38,7 @@ class WC_Compare_Comparison_Page_Global_Settings{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $woo_compare_comparison_page_global_settings;
 		$woo_compare_comparison_page_global_settings = get_option('woo_compare_comparison_page_global_settings');
 		if ( !is_array($woo_compare_comparison_page_global_settings) ) $woo_compare_comparison_page_global_settings = array();
@@ -53,7 +54,7 @@ class WC_Compare_Comparison_Page_Global_Settings{
 		return $woo_compare_comparison_page_global_settings;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			update_option('product_compare_id', $_REQUEST['product_compare_id']);

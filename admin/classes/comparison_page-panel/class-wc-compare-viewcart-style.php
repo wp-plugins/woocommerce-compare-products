@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WC_Compare_ViewCart_Style{
-	function get_settings_default() {
+class WC_Compare_ViewCart_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'viewcart_text'					=> __('View Cart &rarr;', 'woo_cp'),
 			
@@ -26,7 +27,7 @@ class WC_Compare_ViewCart_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		
 		$default_settings = WC_Compare_ViewCart_Style::get_settings_default();
 				
@@ -38,14 +39,14 @@ class WC_Compare_ViewCart_Style{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $woo_compare_viewcart_style;
 		$woo_compare_viewcart_style = WC_Compare_ViewCart_Style::get_settings_default();
 		
 		return $woo_compare_viewcart_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			WC_Compare_ViewCart_Style::set_settings_default(true);

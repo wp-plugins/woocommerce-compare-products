@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WC_Compare_Table_Row_Style{
-	function get_settings_default() {
+class WC_Compare_Table_Row_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'table_border_size'				=> '1px',
 			'table_border_style'			=> 'solid',
@@ -28,7 +29,7 @@ class WC_Compare_Table_Row_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		
 		$default_settings = WC_Compare_Table_Row_Style::get_settings_default();
 				
@@ -40,14 +41,14 @@ class WC_Compare_Table_Row_Style{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $woo_compare_table_style;
 		$woo_compare_table_style = WC_Compare_Table_Row_Style::get_settings_default();
 		
 		return $woo_compare_table_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			WC_Compare_Table_Row_Style::set_settings_default(true);

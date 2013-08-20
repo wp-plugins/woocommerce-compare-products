@@ -7,8 +7,9 @@
  *
  * panel_manager()
  */
-class WC_Compare_Widget_Style_Panel{
-	function panel_manager() {
+class WC_Compare_Widget_Style_Panel
+{
+	public static function panel_manager() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$message = '<div class="updated" id=""><p>'.__('Widget Style Successfully saved.', 'woo_cp').'</p></div>';

@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WC_Compare_Widget_Style{
-	function get_settings_default() {
+class WC_Compare_Widget_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'widget_text'					=> __('You do not have any product to compare.', 'woo_cp'),
 			'text_font'						=> '',
@@ -24,7 +25,7 @@ class WC_Compare_Widget_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		
 		$default_settings = WC_Compare_Widget_Style::get_settings_default();
 				
@@ -37,14 +38,14 @@ class WC_Compare_Widget_Style{
 		}	
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $woo_compare_widget_style;
 		$woo_compare_widget_style = WC_Compare_Widget_Style::get_settings_default();
 		
 		return $woo_compare_widget_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			WC_Compare_Widget_Style::set_settings_default(true);

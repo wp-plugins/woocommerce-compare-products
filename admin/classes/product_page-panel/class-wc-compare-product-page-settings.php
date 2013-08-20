@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WC_Compare_Product_Page_Settings{
-	function get_settings_default() {
+class WC_Compare_Product_Page_Settings
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'product_page_button_position'	=> 'above',
 			'product_page_button_below_padding'=> 10,
@@ -25,7 +26,7 @@ class WC_Compare_Product_Page_Settings{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		$woo_compare_product_page_settings = get_option('woo_compare_product_page_settings');
 		if ( !is_array($woo_compare_product_page_settings) ) $woo_compare_product_page_settings = array();
 		
@@ -41,7 +42,7 @@ class WC_Compare_Product_Page_Settings{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $woo_compare_product_page_settings;
 		$woo_compare_product_page_settings = get_option('woo_compare_product_page_settings');
 		if ( !is_array($woo_compare_product_page_settings) ) $woo_compare_product_page_settings = array();
@@ -57,7 +58,7 @@ class WC_Compare_Product_Page_Settings{
 		return $woo_compare_product_page_settings;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$woo_compare_product_page_settings = $_REQUEST['woo_compare_product_page_settings'];
