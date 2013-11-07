@@ -126,9 +126,9 @@ class WC_Compare_MetaBox
 							foreach ($field_option as $option_value) {
 								$option_value = trim(stripslashes($option_value));
 								if (in_array($option_value, $field_value)) {
-									echo '<input type="checkbox" name="_woo_compare_'.$field_data->field_key.'[]" value="'.htmlspecialchars($option_value).'" checked="checked" style="float:none; width:auto; display:inline-block;" /> '.$option_value.' &nbsp;&nbsp;&nbsp;';
+									echo '<input type="checkbox" name="_woo_compare_'.$field_data->field_key.'[]" value="'.esc_attr($option_value).'" checked="checked" style="float:none; width:auto; display:inline-block;" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;&nbsp;';
 								}else {
-									echo '<input type="checkbox" name="_woo_compare_'.$field_data->field_key.'[]" value="'.htmlspecialchars($option_value).'" style="float:none; width:auto; display:inline-block;" /> '.$option_value.' &nbsp;&nbsp;&nbsp;';
+									echo '<input type="checkbox" name="_woo_compare_'.$field_data->field_key.'[]" value="'.esc_attr($option_value).'" style="float:none; width:auto; display:inline-block;" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;&nbsp;';
 								}
 							}
 						}
@@ -141,9 +141,9 @@ class WC_Compare_MetaBox
 							foreach ($field_option as $option_value) {
 								$option_value = trim(stripslashes($option_value));
 								if ($option_value == $field_value) {
-									echo '<input type="radio" name="_woo_compare_'.$field_data->field_key.'" value="'.htmlspecialchars($option_value).'" checked="checked" style="float:none; width:auto; display:inline-block;" /> '.$option_value.' &nbsp;&nbsp;&nbsp;';
+									echo '<input type="radio" name="_woo_compare_'.$field_data->field_key.'" value="'.esc_attr($option_value).'" checked="checked" style="float:none; width:auto; display:inline-block;" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;&nbsp;';
 								}else {
-									echo '<input type="radio" name="_woo_compare_'.$field_data->field_key.'" value="'.htmlspecialchars($option_value).'" style="float:none; width:auto; display:inline-block;" /> '.$option_value.' &nbsp;&nbsp;&nbsp;';
+									echo '<input type="radio" name="_woo_compare_'.$field_data->field_key.'" value="'.esc_attr($option_value).'" style="float:none; width:auto; display:inline-block;" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;&nbsp;';
 								}
 							}
 						}
@@ -158,9 +158,9 @@ class WC_Compare_MetaBox
 							foreach ($field_option as $option_value) {
 								$option_value = trim(stripslashes($option_value));
 								if ($option_value == $field_value) {
-									echo '<option value="'.htmlspecialchars($option_value).'" selected="selected">'.$option_value.'</option>';
+									echo '<option value="'.esc_attr($option_value).'" selected="selected">'.esc_attr( $option_value ).'</option>';
 								}else {
-									echo '<option value="'.htmlspecialchars($option_value).'">'.$option_value.'</option>';
+									echo '<option value="'.esc_attr($option_value).'">'.esc_attr( $option_value ).'</option>';
 								}
 							}
 						}
@@ -177,9 +177,9 @@ class WC_Compare_MetaBox
 							foreach ($field_option as $option_value) {
 								$option_value = trim(stripslashes($option_value));
 								if (in_array($option_value, $field_value)) {
-									echo '<option value="'.htmlspecialchars($option_value).'" selected="selected">'.$option_value.'</option>';
+									echo '<option value="'.esc_attr($option_value).'" selected="selected">'.esc_attr( $option_value ).'</option>';
 								}else {
-									echo '<option value="'.htmlspecialchars($option_value).'">'.$option_value.'</option>';
+									echo '<option value="'.esc_attr($option_value).'">'.esc_attr( $option_value ).'</option>';
 								}
 							}
 						}
@@ -187,7 +187,7 @@ class WC_Compare_MetaBox
 						break;
 
 					default:
-						echo '<input style="width:400px" type="text" name="_woo_compare_'.$field_data->field_key.'" id="'.$field_data->field_key.'" value="'.$field_value.'" />';
+						echo '<input style="width:400px" type="text" name="_woo_compare_'.$field_data->field_key.'" id="'.$field_data->field_key.'" value="'.esc_attr( $field_value ).'" />';
 						break;
 					}
 ?>
@@ -270,9 +270,9 @@ class WC_Compare_MetaBox
 							foreach ($field_option as $option_value) {
 								$option_value = trim(stripslashes($option_value));
 								if (in_array($option_value, $field_value)) {
-									echo '<input type="checkbox" name="variable_woo_compare_'.$field_data->field_key.'['.$post_id.'][]" value="'.htmlspecialchars($option_value).'" checked="checked" style="float:none; width:auto; display:inline-block;" /> '.$option_value.' &nbsp;&nbsp;&nbsp;';
+									echo '<input type="checkbox" name="variable_woo_compare_'.$field_data->field_key.'['.$post_id.'][]" value="'.esc_attr($option_value).'" checked="checked" style="float:none; width:auto; display:inline-block;" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;&nbsp;';
 								}else {
-									echo '<input type="checkbox" name="variable_woo_compare_'.$field_data->field_key.'['.$post_id.'][]" value="'.htmlspecialchars($option_value).'" style="float:none; width:auto; display:inline-block;" /> '.$option_value.' &nbsp;&nbsp;&nbsp;';
+									echo '<input type="checkbox" name="variable_woo_compare_'.$field_data->field_key.'['.$post_id.'][]" value="'.esc_attr($option_value).'" style="float:none; width:auto; display:inline-block;" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;&nbsp;';
 								}
 							}
 						}
@@ -285,9 +285,9 @@ class WC_Compare_MetaBox
 							foreach ($field_option as $option_value) {
 								$option_value = trim(stripslashes($option_value));
 								if ($option_value == $field_value) {
-									echo '<input type="radio" name="variable_woo_compare_'.$field_data->field_key.'['.$post_id.']" value="'.htmlspecialchars($option_value).'" checked="checked" style="float:none; width:auto; display:inline-block;" /> '.$option_value.' &nbsp;&nbsp;&nbsp;';
+									echo '<input type="radio" name="variable_woo_compare_'.$field_data->field_key.'['.$post_id.']" value="'.esc_attr($option_value).'" checked="checked" style="float:none; width:auto; display:inline-block;" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;&nbsp;';
 								}else {
-									echo '<input type="radio" name="variable_woo_compare_'.$field_data->field_key.'['.$post_id.']" value="'.htmlspecialchars($option_value).'" style="float:none; width:auto; display:inline-block;" /> '.$option_value.' &nbsp;&nbsp;&nbsp;';
+									echo '<input type="radio" name="variable_woo_compare_'.$field_data->field_key.'['.$post_id.']" value="'.esc_attr($option_value).'" style="float:none; width:auto; display:inline-block;" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;&nbsp;';
 								}
 							}
 						}
@@ -302,9 +302,9 @@ class WC_Compare_MetaBox
 							foreach ($field_option as $option_value) {
 								$option_value = trim(stripslashes($option_value));
 								if ($option_value == $field_value) {
-									echo '<option value="'.htmlspecialchars($option_value).'" selected="selected">'.$option_value.'</option>';
+									echo '<option value="'.esc_attr($option_value).'" selected="selected">'.esc_attr( $option_value ).'</option>';
 								}else {
-									echo '<option value="'.htmlspecialchars($option_value).'">'.$option_value.'</option>';
+									echo '<option value="'.esc_attr($option_value).'">'.esc_attr( $option_value ).'</option>';
 								}
 							}
 						}
@@ -321,9 +321,9 @@ class WC_Compare_MetaBox
 							foreach ($field_option as $option_value) {
 								$option_value = trim(stripslashes($option_value));
 								if (in_array($option_value, $field_value)) {
-									echo '<option value="'.htmlspecialchars($option_value).'" selected="selected">'.$option_value.'</option>';
+									echo '<option value="'.esc_attr($option_value).'" selected="selected">'.esc_attr( $option_value ).'</option>';
 								}else {
-									echo '<option value="'.htmlspecialchars($option_value).'">'.$option_value.'</option>';
+									echo '<option value="'.esc_attr($option_value).'">'.esc_attr( $option_value ).'</option>';
 								}
 							}
 						}
@@ -331,7 +331,7 @@ class WC_Compare_MetaBox
 						break;
 
 					default:
-						echo '<input style="width:400px" type="text" name="variable_woo_compare_'.$field_data->field_key.'['.$post_id.']" id="'.$field_data->field_key.'_'.$post_id.'" value="'.$field_value.'" />';
+						echo '<input style="width:400px" type="text" name="variable_woo_compare_'.$field_data->field_key.'['.$post_id.']" id="'.$field_data->field_key.'_'.$post_id.'" value="'.esc_attr( $field_value ).'" />';
 						break;
 					}
 ?>

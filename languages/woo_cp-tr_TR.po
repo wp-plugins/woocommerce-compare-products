@@ -2,25 +2,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Compare Products PRO v2.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-20 13:35+0700\n"
-"PO-Revision-Date: 2013-08-20 13:35+0700\n"
-"Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
+"POT-Creation-Date: 2013-11-07 17:24+0700\n"
+"PO-Revision-Date: 2013-11-07 17:24+0700\n"
+"Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: ManusH <info@ManusH.net>\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Language: Turkish\n"
-"X-Poedit-Country: TURKEY\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ../\n"
 "X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
 # @ woo_cp
-#: admin/compare_init.php:8
-#: admin/compare_init.php:229
+#: admin/compare_init.php:8 admin/compare_init.php:229
+#: classes/class-wc-compare-functions.php:861
 msgid "Product Comparison"
 msgstr "Ürün Karşılaştırması"
 
@@ -35,8 +36,7 @@ msgid "Features"
 msgstr "Özellikler"
 
 # @ woo_cp
-#: admin/compare_init.php:354
-#: admin/classes/class-wc-compare-products.php:206
+#: admin/compare_init.php:354 admin/classes/class-wc-compare-products.php:206
 msgid "Products"
 msgstr "Ürünler"
 
@@ -66,7 +66,9 @@ msgid "Compare Category Successfully edited"
 msgstr "Karşılaştırma Kategorisi başarıyla Düzenlendi."
 
 #: admin/classes/class-wc-compare-categories.php:28
-msgid "Nothing edited! You already have a Compare Category with that name. Use unique names to edit each Compare Category."
+msgid ""
+"Nothing edited! You already have a Compare Category with that name. Use "
+"unique names to edit each Compare Category."
 msgstr ""
 
 # @ woo_cp
@@ -80,7 +82,9 @@ msgid "Compare Category Error created"
 msgstr "Karşılaştırma Kategorisi HATA"
 
 #: admin/classes/class-wc-compare-categories.php:40
-msgid "Nothing created! You already have a Compare Category with that name. Use unique names to create each Compare Category."
+msgid ""
+"Nothing created! You already have a Compare Category with that name. Use "
+"unique names to create each Compare Category."
 msgstr ""
 
 # @ woo_cp
@@ -100,8 +104,12 @@ msgstr "Ürün Karşılaştırma Kategorisi Ekle"
 
 # @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:59
-msgid "Create Categories based on groups of products that share the same compare feature list."
-msgstr "Aynı özellikleri içeren ürünleri karşılaştırabilmek için Ürün Karşılaştırma Kategorisi  oluşturabilirsiniz."
+msgid ""
+"Create Categories based on groups of products that share the same compare "
+"feature list."
+msgstr ""
+"Aynı özellikleri içeren ürünleri karşılaştırabilmek için Ürün Karşılaştırma "
+"Kategorisi  oluşturabilirsiniz."
 
 # @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:73
@@ -115,19 +123,19 @@ msgstr "Kategori İsmi"
 
 # @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:79
-#: admin/classes/class-wc-compare-fields.php:182
+#: admin/classes/class-wc-compare-fields.php:186
 msgid "Save"
 msgstr "Kaydet"
 
 # @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:79
-#: admin/classes/class-wc-compare-fields.php:182
+#: admin/classes/class-wc-compare-fields.php:186
 msgid "Create"
 msgstr "Oluştur"
 
 # @ woo_cp
 #: admin/classes/class-wc-compare-categories.php:79
-#: admin/classes/class-wc-compare-fields.php:182
+#: admin/classes/class-wc-compare-fields.php:186
 msgid "Cancel"
 msgstr "İptal"
 
@@ -137,144 +145,181 @@ msgid "You just save the order for compare categories."
 msgstr "Karşılaştırma Kategorileri sıralamasını kaydettiniz."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:46
+#: admin/classes/class-wc-compare-fields.php:48
 msgid "Compare Feature Successfully edited"
 msgstr "Karşılaştırma Özelliği başarıyla düzenlendi"
 
-#: admin/classes/class-wc-compare-fields.php:48
-msgid "Nothing edited! You already have a Compare Feature with that name. Use the Features Search function to find it. Use unique names to edit each Compare Feature."
+#: admin/classes/class-wc-compare-fields.php:50
+msgid ""
+"Nothing edited! You already have a Compare Feature with that name. Use the "
+"Features Search function to find it. Use unique names to edit each Compare "
+"Feature."
 msgstr ""
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:61
+#: admin/classes/class-wc-compare-fields.php:63
 msgid "Compare Feature Successfully created"
 msgstr "Karşılaştırma Özelliği başarıyla oluşturuldu"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:63
+#: admin/classes/class-wc-compare-fields.php:65
 msgid "Compare Feature Error created"
 msgstr "Karşılaştırma Özelliği Hatası oluşturuldu"
 
-#: admin/classes/class-wc-compare-fields.php:67
-msgid "Nothing created! You already have a Compare Feature with that name. Use the Features Search function to find it. Use unique names to create each Compare Feature."
+#: admin/classes/class-wc-compare-fields.php:69
+msgid ""
+"Nothing created! You already have a Compare Feature with that name. Use the "
+"Features Search function to find it. Use unique names to create each Compare "
+"Feature."
 msgstr ""
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:77
-#: admin/classes/class-wc-compare-fields.php:91
+#: admin/classes/class-wc-compare-fields.php:79
+#: admin/classes/class-wc-compare-fields.php:93
 msgid "Compare Feature successfully deleted"
 msgstr "Karşılaştırma Özelliği Başarıyla Silindi."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:79
+#: admin/classes/class-wc-compare-fields.php:81
 msgid "Please select item(s) to delete"
 msgstr "Lütfen silinecek elemanları seçin."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:87
+#: admin/classes/class-wc-compare-fields.php:89
 msgid "Compare Feature successfully removed"
 msgstr "Karşılaştırma Özelliği Başarıyla Kaldırıldı."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:104
+#: admin/classes/class-wc-compare-fields.php:106
 msgid "Edit Compare Product Features"
 msgstr "Ürün Karşılaştırma Özelliklerini Düzenle."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:104
+#: admin/classes/class-wc-compare-fields.php:106
 msgid "Add Compare Product Features"
 msgstr "Ürün Karşılaştırma Özellikleri Ekle"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:120
+#: admin/classes/class-wc-compare-fields.php:122
 msgid "Edit Compare Features"
 msgstr "Karşılaştırma Özelliklerini Düzenle"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:120
+#: admin/classes/class-wc-compare-fields.php:122
 msgid "Create New Compare Features"
 msgstr "Yeni Karşılaştırma Özelliği Oluştur"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:125
-#: admin/classes/class-wc-compare-fields.php:202
-#: admin/classes/class-wc-compare-fields.php:397
+#: admin/classes/class-wc-compare-fields.php:127
+#: admin/classes/class-wc-compare-fields.php:226
+#: admin/classes/class-wc-compare-fields.php:421
 msgid "Feature Name"
 msgstr "Özellik İsmi"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:125
-msgid "This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height"
-msgstr "Ön-yüzde Karşılaştırma açılır-penceresindeki Tabloda ziyaretçilerin göreceği Karşılaştırma İsmi'dir. örn: Yükseklik"
+#: admin/classes/class-wc-compare-fields.php:127
+msgid ""
+"This is the Feature Name that users see in the Compare Fly-Out Window, for "
+"example-  System Height"
+msgstr ""
+"Ön-yüzde Karşılaştırma açılır-penceresindeki Tabloda ziyaretçilerin göreceği "
+"Karşılaştırma İsmi'dir. örn: Yükseklik"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:127
+#: admin/classes/class-wc-compare-fields.php:129
 msgid "Feature Unit of Measurement"
 msgstr "Özellik için Ölçü Birimi"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:127
-msgid "e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name."
-msgstr "Ör: kgs, mm, lbs, cm, inç - Karşılaştırma isminden hemen sonra (parantezler) içinde görüntülenecek ölçü birimi ifadesidir. Herhangi bir birim belirtmek istenmez ise boş bırakılabilir, Karşılaştırma ismi tyek başına görüntülenir."
+#: admin/classes/class-wc-compare-fields.php:129
+msgid ""
+"e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the "
+"Feature name in (brackets). If you leave this blank you will just see the "
+"Feature name."
+msgstr ""
+"Ör: kgs, mm, lbs, cm, inç - Karşılaştırma isminden hemen sonra (parantezler) "
+"içinde görüntülenecek ölçü birimi ifadesidir. Herhangi bir birim belirtmek "
+"istenmez ise boş bırakılabilir, Karşılaştırma ismi tyek başına görüntülenir."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:129
+#: admin/classes/class-wc-compare-fields.php:131
 msgid "Feature Input Type"
 msgstr "Özellik Veri Giriş Türü"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:143
-msgid "Users don't see this. Use to set the data input field type that you will use on to enter the Products data for this feature."
-msgstr "Sitenizdeki ziyaretçiler bu kısmı göremezler. Bu özellik için değerleri girerken kullanmak istediğiniz veri giriş yöntemini belirlemeniz için gereklidir."
+#: admin/classes/class-wc-compare-fields.php:147
+msgid ""
+"Users don't see this. Use to set the data input field type that you will use "
+"on to enter the Products data for this feature."
+msgstr ""
+"Sitenizdeki ziyaretçiler bu kısmı göremezler. Bu özellik için değerleri "
+"girerken kullanmak istediğiniz veri giriş yöntemini belirlemeniz için "
+"gereklidir."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:146
+#: admin/classes/class-wc-compare-fields.php:150
 msgid "Enter Input Type options"
 msgstr "Giriş Tipi seçeneklerini girin"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:146
-msgid "You have selected one of the Check Box, Radio Button, Drop Down, Mutli Select Input Types. Type your Options here, one line for each option."
-msgstr "Seçim Kutusu, Radyo Düğmeleri, Açılır Menü, Çoklu Seçim Giriş Tiplerinden birini seçtiniz. Seçenekleri buraya girebilirsiniz; her seçenek için ayrı satır kullanın."
+#: admin/classes/class-wc-compare-fields.php:150
+msgid ""
+"You have selected one of the Check Box, Radio Button, Drop Down, Mutli "
+"Select Input Types. Type your Options here, one line for each option."
+msgstr ""
+"Seçim Kutusu, Radyo Düğmeleri, Açılır Menü, Çoklu Seçim Giriş Tiplerinden "
+"birini seçtiniz. Seçenekleri buraya girebilirsiniz; her seçenek için ayrı "
+"satır kullanın."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:150
+#: admin/classes/class-wc-compare-fields.php:154
 msgid "Assign Feature to Categories"
 msgstr "Kategorilere Özellik Ata"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:156
+#: admin/classes/class-wc-compare-fields.php:160
 #, fuzzy
 msgid "Select Compare Categories"
 msgstr "Karşılaştırma Kategorisi"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:174
-msgid "Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories."
-msgstr "Özelliği bir yada daha fazla kategoriye atayabilirsiniz. Renk, Boyut, Ağırlık gibi özellikler bir çok Ürün Kategorisinde ortaklaşa yeralabilir, o kategorilere atanabilir. Öncelikle özelliği oluşturun, devamında onu bir veya dilediğiniz kadar kategoriye atayabilirsiniz."
+#: admin/classes/class-wc-compare-fields.php:178
+msgid ""
+"Assign features to one or more Categories. Features such as Colour, Size, "
+"Weight can be applicable to many Product categories. Create the Feature once "
+"and assign it to one or multiple categories."
+msgstr ""
+"Özelliği bir yada daha fazla kategoriye atayabilirsiniz. Renk, Boyut, "
+"Ağırlık gibi özellikler bir çok Ürün Kategorisinde ortaklaşa yeralabilir, o "
+"kategorilere atanabilir. Öncelikle özelliği oluşturun, devamında onu bir "
+"veya dilediğiniz kadar kategoriye atayabilirsiniz."
+
+#: admin/classes/class-wc-compare-fields.php:196
+msgid "This Type just is enabled on PRO version."
+msgstr ""
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:195
+#: admin/classes/class-wc-compare-fields.php:219
 msgid "Un-Assigned Features (Assign to a Category to activate)"
 msgstr "Hiç-Atanmamış Özellikler (Etkinleştirmek için bir kategoriye Atayın)"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:201
+#: admin/classes/class-wc-compare-fields.php:225
 #: admin/classes/class-wc-compare-products.php:193
 msgid "No"
 msgstr "Hayır"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:203
-#: admin/classes/class-wc-compare-fields.php:398
+#: admin/classes/class-wc-compare-fields.php:227
+#: admin/classes/class-wc-compare-fields.php:422
 msgid "Type"
 msgstr "Tip"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:217
-#: admin/classes/class-wc-compare-fields.php:247
-#: admin/classes/class-wc-compare-fields.php:261
-#: admin/classes/class-wc-compare-fields.php:409
+#: admin/classes/class-wc-compare-fields.php:241
+#: admin/classes/class-wc-compare-fields.php:271
+#: admin/classes/class-wc-compare-fields.php:285
+#: admin/classes/class-wc-compare-fields.php:433
 #: admin/classes/class-wc-compare-products.php:83
 #: admin/classes/class-wc-compare-products.php:114
 #: admin/classes/class-wc-compare-products.php:198
@@ -282,102 +327,107 @@ msgid "Edit"
 msgstr "Düzenle"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:217
-#: admin/classes/class-wc-compare-fields.php:247
-#: admin/classes/class-wc-compare-fields.php:409
+#: admin/classes/class-wc-compare-fields.php:241
+#: admin/classes/class-wc-compare-fields.php:271
+#: admin/classes/class-wc-compare-fields.php:433
 msgid "Are you sure you want to delete"
 msgstr "Silmek istediğinize emin misiniz?"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:217
-#: admin/classes/class-wc-compare-fields.php:222
-#: admin/classes/class-wc-compare-fields.php:247
-#: admin/classes/class-wc-compare-fields.php:409
+#: admin/classes/class-wc-compare-fields.php:241
+#: admin/classes/class-wc-compare-fields.php:246
+#: admin/classes/class-wc-compare-fields.php:271
+#: admin/classes/class-wc-compare-fields.php:433
 msgid "Delete"
 msgstr "SİL"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:222
+#: admin/classes/class-wc-compare-fields.php:246
 msgid "Are you sure about deleting this?"
 msgstr "Bunu silmek istediğinize emin misiniz?"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:230
+#: admin/classes/class-wc-compare-fields.php:254
 msgid "Manage Compare Categories and Features"
 msgstr "Karşılaştırma Kategorilerini ve Özellikleri Yönet"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:231
-msgid "Use drag and drop to change Category order and Feature order within Categories."
-msgstr "Kategorilerin sıralarını veya kategori içindeki Özelliklerin sıralamasını Sürükle/Bırak yöntemi ile kontrol edebilir, değiştirebilirsiniz."
+#: admin/classes/class-wc-compare-fields.php:255
+msgid ""
+"Use drag and drop to change Category order and Feature order within "
+"Categories."
+msgstr ""
+"Kategorilerin sıralarını veya kategori içindeki Özelliklerin sıralamasını "
+"Sürükle/Bırak yöntemi ile kontrol edebilir, değiştirebilirsiniz."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:261
+#: admin/classes/class-wc-compare-fields.php:285
 msgid "Are you sure you want to remove"
 msgstr "Kaldırmak istediğinizden emin misiniz?"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:261
+#: admin/classes/class-wc-compare-fields.php:285
 msgid "from"
 msgstr "-dan"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:261
+#: admin/classes/class-wc-compare-fields.php:285
+#: uploader/class-wc-compare-uploader.php:79
 msgid "Remove"
 msgstr "KALDIR"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:266
+#: admin/classes/class-wc-compare-fields.php:290
 msgid "You have not assigned any Features to this category yet. No Hurry!"
 msgstr "Bu kategoriye henüz hiç bir özellik atamadınız. Devam edin!"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:339
+#: admin/classes/class-wc-compare-fields.php:363
 msgid "You just save the order for Compare Features."
 msgstr "Karşılaştırma Özellikleri sıralamasını kaydettiniz."
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:347
+#: admin/classes/class-wc-compare-fields.php:371
 msgid "Categories & Features"
 msgstr "Kategoriler ve Özellikler"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:347
+#: admin/classes/class-wc-compare-fields.php:371
 msgid "Add New"
 msgstr "Yeni Ekle"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:360
+#: admin/classes/class-wc-compare-fields.php:384
 msgid "Search Features"
 msgstr "Özelliklerde Ara"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:390
+#: admin/classes/class-wc-compare-fields.php:414
 msgid "Found"
 msgstr "Bulundu"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:390
+#: admin/classes/class-wc-compare-fields.php:414
 msgid "feature(s)"
 msgstr "özellik(ler)"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:417
+#: admin/classes/class-wc-compare-fields.php:441
 msgid "Show"
 msgstr "Göster"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:428
+#: admin/classes/class-wc-compare-fields.php:452
 msgid "Go"
 msgstr "Git"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:429
+#: admin/classes/class-wc-compare-fields.php:453
 msgid "Displaying"
 msgstr "Görüntüleniyor:"
 
 # @ woo_cp
-#: admin/classes/class-wc-compare-fields.php:429
+#: admin/classes/class-wc-compare-fields.php:453
 msgid "of"
 msgstr "/"
 
@@ -561,7 +611,9 @@ msgid "Find Product Name"
 msgstr "Ürün İsmi BUL"
 
 #: admin/classes/class-wc-compare-products.php:223
-msgid "Please upgrade to the Pro Version to activate Products express Compare feature manager"
+msgid ""
+"Please upgrade to the Pro Version to activate Products express Compare "
+"feature manager"
 msgstr ""
 
 # @ woo_cp
@@ -600,6 +652,7 @@ msgstr "Tümünü Temizle"
 
 # @ woo_cp
 #: admin/classes/class-wc-compare-widget-style-panel.php:30
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:67
 #, fuzzy
 msgid "Product Thumbnails"
 msgstr "Ürün Karşılaştırması"
@@ -614,6 +667,11 @@ msgstr "Sepete Ekle"
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:99
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:96
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:96
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:98
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:116
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:127
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:96
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:96
 msgid "Settings"
 msgstr "Ayarlar"
 
@@ -631,6 +689,11 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:107
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:100
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:100
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:102
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:120
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:131
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:100
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:100
 msgid "Button or Text"
 msgstr "Düğme veya Metin"
 
@@ -638,6 +701,11 @@ msgstr "Düğme veya Metin"
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:108
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:101
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:101
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:103
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:121
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:132
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:101
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:101
 msgid "Button"
 msgstr "Düğme"
 
@@ -647,6 +715,15 @@ msgstr "Düğme"
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:249
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:101
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:249
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:103
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:79
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:121
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:272
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:132
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:279
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:101
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:259
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:101
 msgid "Linked Text"
 msgstr ""
 
@@ -659,6 +736,8 @@ msgid "Added To Cart Success"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:112
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:107
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:125
 msgid "Upload a 16px x 16px image, support .jpg, .pgn, .jpeg, .gif formats."
 msgstr ""
 
@@ -670,6 +749,9 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:121
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:110
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:110
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:116
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:134
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:141
 #, fuzzy
 msgid "Button Text"
 msgstr "Düğme veya Metin"
@@ -680,6 +762,19 @@ msgstr "Düğme veya Metin"
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:251
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:112
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:251
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:69
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:118
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:257
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:81
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:135
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:274
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:142
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:281
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:122
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:261
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:131
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:270
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:80
 msgid "For default"
 msgstr ""
 
@@ -689,6 +784,21 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:251
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:112
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:251
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:69
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:118
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:257
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:81
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:135
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:274
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:142
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:281
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:122
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:261
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:131
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:270
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:80
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:316
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:322
 msgid "or enter text"
 msgstr ""
 
@@ -697,6 +807,11 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:91
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:141
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:116
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:122
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:139
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:146
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:126
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:135
 msgid "Background Colour"
 msgstr ""
 
@@ -704,6 +819,11 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:129
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:118
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:118
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:124
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:141
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:148
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:128
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:137
 #, fuzzy
 msgid "Button colour. Default"
 msgstr "Düğme veya Metin"
@@ -711,6 +831,11 @@ msgstr "Düğme veya Metin"
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:134
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:123
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:123
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:129
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:146
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:153
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:133
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:142
 msgid "Background Colour Gradient From"
 msgstr ""
 
@@ -780,6 +905,90 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:103
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:115
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:121
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:95
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:114
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:126
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:132
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:143
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:166
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:185
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:197
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:203
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:216
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:240
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:259
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:271
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:277
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:301
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:320
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:332
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:338
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:71
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:78
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:104
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:115
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:134
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:140
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:86
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:105
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:117
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:123
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:130
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:131
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:138
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:158
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:169
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:182
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:183
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:239
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:148
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:155
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:175
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:186
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:199
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:200
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:256
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:155
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:162
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:182
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:193
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:206
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:207
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:263
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:73
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:79
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:94
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:114
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:125
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:131
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:139
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:141
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:110
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:135
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:142
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:162
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:173
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:186
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:187
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:243
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:119
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:144
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:151
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:171
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:182
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:195
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:196
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:252
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:157
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:174
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:183
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:228
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:244
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:260
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:276
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:288
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:302
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:304
 #, fuzzy
 msgid "Default"
 msgstr "SİL"
@@ -787,12 +996,23 @@ msgstr "SİL"
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:141
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:130
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:130
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:136
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:153
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:160
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:140
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:149
 msgid "Background Colour Gradient To"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:148
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:137
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:137
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:89
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:143
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:160
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:167
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:147
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:156
 msgid "Border Size"
 msgstr ""
 
@@ -810,6 +1030,36 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:203
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:275
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:91
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:102
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:173
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:247
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:308
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:92
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:93
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:146
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:209
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:281
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:105
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:163
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:226
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:298
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:170
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:233
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:305
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:102
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:150
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:213
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:285
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:159
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:222
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:294
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:104
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:133
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:216
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:232
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:248
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:264
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:352
 #, fuzzy
 msgid "Select Size"
 msgstr "Değer seçin"
@@ -817,6 +1067,12 @@ msgstr "Değer seçin"
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:167
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:156
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:156
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:108
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:162
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:179
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:186
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:166
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:175
 msgid "Border Style"
 msgstr ""
 
@@ -828,6 +1084,22 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:124
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:159
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:163
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:111
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:115
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:165
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:169
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:182
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:186
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:189
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:193
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:121
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:125
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:169
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:173
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:178
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:182
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:284
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:288
 msgid "Solid"
 msgstr ""
 
@@ -835,6 +1107,14 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:160
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:121
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:160
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:112
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:166
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:183
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:190
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:122
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:170
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:179
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:285
 msgid "Double"
 msgstr ""
 
@@ -842,6 +1122,14 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:161
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:122
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:161
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:113
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:167
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:184
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:191
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:123
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:171
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:180
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:286
 msgid "Dashed"
 msgstr ""
 
@@ -849,12 +1137,26 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:162
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:123
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:162
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:114
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:168
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:185
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:192
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:124
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:172
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:181
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:287
 msgid "Dotted"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:178
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:167
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:167
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:119
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:173
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:190
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:197
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:177
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:186
 msgid "Border Colour"
 msgstr ""
 
@@ -862,30 +1164,62 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:169
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:130
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:169
+#: admin/classes/comparison_page-panel/class-wc-compare-table-style.php:121
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:175
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:192
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:199
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:179
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:188
 msgid "Border colour. Default"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:185
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:174
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:174
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:180
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:197
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:204
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:184
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:193
 msgid "Border Rounded"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:187
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:176
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:176
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:182
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:199
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:206
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:138
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:186
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:195
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:301
 msgid "Rounded Corners"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:188
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:177
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:177
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:183
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:200
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:207
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:139
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:187
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:196
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:302
 msgid "Rounded Value"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:190
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:179
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:179
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:185
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:202
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:209
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:141
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:189
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:198
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:304
 msgid "Square Corners"
 msgstr ""
 
@@ -899,6 +1233,22 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:183
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:255
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:71
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:82
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:153
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:227
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:288
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:73
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:189
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:85
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:206
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:278
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:213
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:285
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:193
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:265
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:202
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:274
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:84
 #, fuzzy
 msgid "Font"
 msgstr "Bulundu"
@@ -913,6 +1263,25 @@ msgstr "Bulundu"
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:186
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:258
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:74
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:85
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:156
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:230
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:291
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:76
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:192
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:264
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:88
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:209
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:281
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:216
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:288
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:196
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:268
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:205
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:277
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:87
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:115
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:335
 #, fuzzy
 msgid "Select Font"
 msgstr "Değer seçin"
@@ -926,6 +1295,12 @@ msgstr "Değer seçin"
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:196
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:268
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:84
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:95
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:166
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:240
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:301
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:86
+#: classes/class-wc-compare-functions.php:758
 msgid "Tahoma"
 msgstr ""
 
@@ -933,6 +1308,11 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:211
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:200
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:200
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:206
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:223
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:230
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:210
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:219
 #, fuzzy
 msgid "Button Font Size"
 msgstr "Düğme veya Metin"
@@ -941,6 +1321,11 @@ msgstr "Düğme veya Metin"
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:230
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:219
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:219
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:225
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:242
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:249
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:229
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:238
 #, fuzzy
 msgid "Button Font Style"
 msgstr "Düğme veya Metin"
@@ -955,6 +1340,25 @@ msgstr "Düğme veya Metin"
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:222
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:294
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:110
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:121
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:192
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:266
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:327
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:112
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:228
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:300
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:124
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:245
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:317
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:252
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:324
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:232
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:304
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:241
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:313
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:123
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:152
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:371
 #, fuzzy
 msgid "Select Style"
 msgstr "Değer seçin"
@@ -971,6 +1375,27 @@ msgstr "Değer seçin"
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:295
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:111
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:115
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:122
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:193
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:197
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:267
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:328
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:113
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:117
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:229
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:301
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:125
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:246
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:318
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:253
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:325
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:233
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:305
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:242
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:314
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:124
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:153
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:372
 msgid "Normal"
 msgstr ""
 
@@ -983,6 +1408,25 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:224
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:296
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:112
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:123
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:194
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:268
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:329
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:114
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:230
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:302
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:126
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:247
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:319
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:254
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:326
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:234
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:306
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:243
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:315
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:125
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:154
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:373
 msgid "Italic"
 msgstr ""
 
@@ -1001,6 +1445,29 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:297
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:299
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:113
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:124
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:126
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:195
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:269
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:271
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:330
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:332
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:115
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:231
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:303
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:127
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:248
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:320
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:255
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:327
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:235
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:307
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:244
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:316
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:126
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:155
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:157
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:374
 msgid "Bold"
 msgstr ""
 
@@ -1013,24 +1480,58 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:226
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:298
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:114
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:125
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:196
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:270
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:331
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:116
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:232
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:304
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:128
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:249
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:321
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:256
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:328
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:236
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:308
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:245
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:317
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:127
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:156
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:375
 msgid "Bold/Italic"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:242
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:231
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:231
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:237
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:254
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:261
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:241
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:250
 msgid "Button Font Colour"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:249
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:238
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:238
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:244
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:261
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:268
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:248
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:257
 msgid "CSS Class"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:250
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:239
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:239
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-button-style.php:245
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:262
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:269
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:249
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:258
 msgid "Enter your own button CSS class"
 msgstr ""
 
@@ -1045,6 +1546,17 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-price-style.php:117
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:272
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:88
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:99
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:170
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:244
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:305
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:90
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:102
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:295
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:302
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:282
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:291
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:101
 msgid "Font Size"
 msgstr ""
 
@@ -1054,6 +1566,17 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-price-style.php:136
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:291
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:107
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:118
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:189
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:263
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:324
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:109
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:121
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:314
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:321
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:301
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:310
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:120
 msgid "Font Style"
 msgstr ""
 
@@ -1063,12 +1586,29 @@ msgstr ""
 #: admin/classes/comparison_page-panel/class-wc-compare-price-style.php:148
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:303
 #: admin/classes/comparison_page-panel/class-wc-compare-print-message-style.php:119
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:130
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:201
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:275
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:336
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:121
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:133
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:326
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:333
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:313
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:322
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:132
 msgid "Font Colour"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-addtocart-style.php:321
 #: admin/classes/comparison_page-panel/class-wc-compare-close-window-button-style.php:310
 #: admin/classes/comparison_page-panel/class-wc-compare-print-button-style.php:310
+#: admin/classes/comparison_page-panel/class-wc-compare-viewcart-style.php:128
+#: admin/classes/grid_view-panel/class-wc-compare-grid-view-view-compare-style.php:140
+#: admin/classes/product_page-panel/class-wc-compare-product-page-button-style.php:333
+#: admin/classes/product_page-panel/class-wc-compare-product-page-view-compare-style.php:340
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:320
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:329
 msgid "Font Hover Colour"
 msgstr ""
 
@@ -1105,7 +1645,9 @@ msgstr "Karşılaştır"
 #: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:85
 #, fuzzy
 msgid "Upload an image with formats .jpg, .pgn, .jpeg. Any size."
-msgstr "Görselin tam bağlantı yolu. Kabul edilen dosya türleri: *.jpg, *.png, *.jpeg . Dosya boyutu sınırlaması yoktur."
+msgstr ""
+"Görselin tam bağlantı yolu. Kabul edilen dosya türleri: *.jpg, *.png, *."
+"jpeg . Dosya boyutu sınırlaması yoktur."
 
 #: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:90
 msgid "Comparison Page Window"
@@ -1126,7 +1668,9 @@ msgid "New Window"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:97
-msgid "(Recommended - more mobile devise friendly, can't be blocked by pop-up blockers)"
+msgid ""
+"(Recommended - more mobile devise friendly, can't be blocked by pop-up "
+"blockers)"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:102
@@ -1134,7 +1678,11 @@ msgid "Comparison Page Shortcode"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-comparison-page-global-settings.php:106
-msgid "A 'Product Comparison' page with the shortcode [product_comparison_page] inserted should have been auto created on install. If not you need to manually create a new page and add the shortcode. Then set that page below so the plugin knows where to find it."
+msgid ""
+"A 'Product Comparison' page with the shortcode [product_comparison_page] "
+"inserted should have been auto created on install. If not you need to "
+"manually create a new page and add the shortcode. Then set that page below "
+"so the plugin knows where to find it."
 msgstr ""
 
 # @ woo_cp
@@ -1155,6 +1703,7 @@ msgstr ""
 
 # @ woo_cp
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:25
+#: admin/classes/widget-panel/class-wc-compare-widget-style.php:18
 msgid "You do not have any product to compare."
 msgstr "Karşılaştırmak için hiçbir ürün seçilmemiş."
 
@@ -1195,15 +1744,33 @@ msgstr ""
 # @ woo_cp
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:163
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:166
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:141
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:108
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:117
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:172
 #, fuzzy
 msgid "Center"
 msgstr "Oluştur"
 
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:164
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:142
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:86
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:109
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:118
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:171
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:174
 msgid "Left"
 msgstr ""
 
 #: admin/classes/comparison_page-panel/class-wc-compare-page-style.php:165
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:140
+#: admin/classes/comparison_page-panel/class-wc-compare-table-content-style.php:143
+#: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:87
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:107
+#: admin/classes/widget-panel/class-wc-compare-widget-button-style.php:110
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:116
+#: admin/classes/widget-panel/class-wc-compare-widget-clear-all-style.php:119
+#: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:173
 msgid "Right"
 msgstr ""
 
@@ -1484,7 +2051,9 @@ msgid "Grid View Compare Button/Link Position"
 msgstr "Karşılaştırma Düğmesinin konumunu elle ayarla"
 
 #: admin/classes/grid_view-panel/class-wc-compare-grid-view-settings.php:80
-msgid "Configure how the Compare feature shows on products Grid View extracts on your themes Shop, Product Category and Product Tag Pages."
+msgid ""
+"Configure how the Compare feature shows on products Grid View extracts on "
+"your themes Shop, Product Category and Product Tag Pages."
 msgstr ""
 
 # @ woo_cp
@@ -1525,7 +2094,8 @@ msgstr "Padding Top (üstten boşluk)"
 #: admin/classes/grid_view-panel/class-wc-compare-grid-view-settings.php:90
 #, fuzzy
 msgid "Change position if Compare Button/Link does not show on Grid View."
-msgstr "Karşılaştırma Düğmesi eğer ön-yüzde görüntülenemiyorsa, konumunu değiştirin."
+msgstr ""
+"Karşılaştırma Düğmesi eğer ön-yüzde görüntülenemiyorsa, konumunu değiştirin."
 
 # @ woo_cp
 #: admin/classes/grid_view-panel/class-wc-compare-grid-view-settings.php:96
@@ -1595,7 +2165,8 @@ msgstr "Ürün Sayfası Karşılaştırma Düğmeleri"
 #: admin/classes/product_page-panel/class-wc-compare-product-page-settings.php:92
 #, fuzzy
 msgid "Change position if Compare Button/Link does not show on Product Page."
-msgstr "Karşılaştırma Düğmesi eğer ön-yüzde görüntülenemiyorsa, konumunu değiştirin."
+msgstr ""
+"Karşılaştırma Düğmesi eğer ön-yüzde görüntülenemiyorsa, konumunu değiştirin."
 
 # @ woo_cp
 #: admin/classes/product_page-panel/class-wc-compare-product-page-settings.php:96
@@ -1603,14 +2174,19 @@ msgid "Manually set Compare button position"
 msgstr "Karşılaştırma Düğmesinin konumunu elle ayarla"
 
 #: admin/classes/product_page-panel/class-wc-compare-product-page-settings.php:97
-msgid "Check to deactivate default button position settings created by the plugin."
+msgid ""
+"Check to deactivate default button position settings created by the plugin."
 msgstr ""
 
 # @ woo_cp
 #: admin/classes/product_page-panel/class-wc-compare-product-page-settings.php:98
 #, fuzzy
-msgid "Then use this function to manually postion the Compare button on product pages"
-msgstr "Ürün sayfalarındaki Karşılaştırma Düğmesinin yerini kendiniz ayarlamak için bu fonksiyonu kullanın."
+msgid ""
+"Then use this function to manually postion the Compare button on product "
+"pages"
+msgstr ""
+"Ürün sayfalarındaki Karşılaştırma Düğmesinin yerini kendiniz ayarlamak için "
+"bu fonksiyonu kullanın."
 
 # @ woo_cp
 #: admin/classes/product_page-panel/class-wc-compare-product-page-settings.php:107
@@ -1641,7 +2217,9 @@ msgstr "Karşılaştırmalı Özellikler Sekmesi"
 #: admin/classes/product_page-panel/class-wc-compare-product-page-tab.php:84
 #, fuzzy
 msgid "Check to activate the Compare features tab on product pages."
-msgstr "Ürün sayfalarındaki Karşılaştırma Düğmesinin yerini kendiniz ayarlamak için bu fonksiyonu kullanın."
+msgstr ""
+"Ürün sayfalarındaki Karşılaştırma Düğmesinin yerini kendiniz ayarlamak için "
+"bu fonksiyonu kullanın."
 
 # @ woo_cp
 #: admin/classes/product_page-panel/class-wc-compare-product-page-tab.php:89
@@ -1671,8 +2249,13 @@ msgstr "İncelemeler Sekmesinden Sonra"
 
 # @ woo_cp
 #: admin/classes/product_page-panel/class-wc-compare-product-page-tab.php:101
-msgid "Select the position of the Compare Features tab on the default WooCommerce product page Nav bar. Products Compare feature list shows under the tab."
-msgstr "WooTicaret Ürün Sayfasında navigasyon çubuğu üzerinde KArşılaştırmalı Özellikler Sekmesinin yerini belirleyebilirsiniz. Ürünlerin karşılaştırmalı Özellikleri bu sekme altında sıralanacaklardır."
+msgid ""
+"Select the position of the Compare Features tab on the default WooCommerce "
+"product page Nav bar. Products Compare feature list shows under the tab."
+msgstr ""
+"WooTicaret Ürün Sayfasında navigasyon çubuğu üzerinde KArşılaştırmalı "
+"Özellikler Sekmesinin yerini belirleyebilirsiniz. Ürünlerin karşılaştırmalı "
+"Özellikleri bu sekme altında sıralanacaklardır."
 
 # @ woo_cp
 #: admin/classes/product_page-panel/class-wc-compare-product-page-tab.php:104
@@ -1703,7 +2286,8 @@ msgid "Product Thumbnails in Widget"
 msgstr ""
 
 #: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:68
-msgid "Check to show Product Thumbnails when items added to the Compare Widget."
+msgid ""
+"Check to show Product Thumbnails when items added to the Compare Widget."
 msgstr ""
 
 #: admin/classes/widget-panel/class-wc-compare-thumbnail-style.php:71
@@ -1826,7 +2410,9 @@ msgid "Widget Title Setup"
 msgstr ""
 
 #: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:96
-msgid "Custom settings below apply style to the 'Title' you add on the Woo Compare Widget."
+msgid ""
+"Custom settings below apply style to the 'Title' you add on the Woo Compare "
+"Widget."
 msgstr ""
 
 #: admin/classes/widget-panel/class-wc-compare-widget-title-style.php:100
@@ -2075,7 +2661,10 @@ msgid "Upgrade to Compare Product Pro"
 msgstr "Ürün Karşılaştırma Özelliklerini Düzenle."
 
 #: classes/class-wc-compare-functions.php:780
-msgid "<strong>NOTE:</strong> All the functions inside the Yellow border on the plugins admin panel are extra functionality that is activated by upgrading to the Pro version"
+msgid ""
+"<strong>NOTE:</strong> All the functions inside the Yellow border on the "
+"plugins admin panel are extra functionality that is activated by upgrading "
+"to the Pro version"
 msgstr ""
 
 # @ woo_cp
@@ -2089,7 +2678,9 @@ msgid "Activates these advanced Features"
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:785
-msgid "Activate Products Express Manager - massive time saver, worth the price of the upgrade on its own."
+msgid ""
+"Activate Products Express Manager - massive time saver, worth the price of "
+"the upgrade on its own."
 msgstr ""
 
 #: classes/class-wc-compare-functions.php:786
@@ -2264,8 +2855,7 @@ msgid "This page"
 msgstr "Bu sayfa"
 
 # @ woo_cp
-#: templates/product-compare.php:61
-#: templates/product-compare.php:63
+#: templates/product-compare.php:64 templates/product-compare.php:66
 #: widgets/compare_widget.php:41
 msgid "Compare Products"
 msgstr "Ürünleri Karşılaştır"
@@ -2312,24 +2902,31 @@ msgstr "Başlık"
 #~ msgstr ""
 #~ "Bu Karşılaştırma Kategorisi zaten var yada geçersiz. Lütfen tekrar "
 #~ "deneyin."
+
 # @ woo_cp
 #~ msgid "That Compare Feature Name already exists. Please try again"
 #~ msgstr "Bu Karşılaştırma Özelliği zaten var. Lütfen yeniden deneyin."
+
 # @ woo_cp
 #~ msgid "Update"
 #~ msgstr "Güncelle"
+
 # @ woo_cp
 #~ msgid "Product Compare Feature Fields"
 #~ msgstr "Ürün Karşılaştırma Özellik değerleri"
+
 # @ woo_cp
 #~ msgid "Compare Fly-Out Window Setup"
 #~ msgstr "Karşılaştırma Açılır-Penceresi Ayarları"
+
 # @ woo_cp
 #~ msgid "Default Button setting"
 #~ msgstr "Varsayılan Düğme ayarı"
+
 # @ woo_cp
 #~ msgid "Yes"
 #~ msgstr "Evet"
+
 # @ woo_cp
 #~ msgid ""
 #~ "Select to manually set / change the default position of the Compare "
@@ -2337,14 +2934,17 @@ msgstr "Başlık"
 #~ msgstr ""
 #~ "Ürün sayfalarında görüntülenecek Karşılaştırma Düğmesinin varsayılan "
 #~ "konumunu manüel olarak ayarlamak/değiştirmek için bu seçeneği kullanın."
+
 # @ woo_cp
 #~ msgid "Link"
 #~ msgstr "Bağlantı"
+
 # @ woo_cp
 #~ msgid "Show Compare feature on products as a Button or Hyperlink Text."
 #~ msgstr ""
 #~ "Karşılaştırma Özelliğini Ürün sayfalarında Düğme veya Bağlantı Köprüsü "
 #~ "verilmiş Metin olarak göster."
+
 # @ woo_cp
 #~ msgid ""
 #~ "Manual styling Class names - Compare Button 'bt_compare_this', sidebar "
@@ -2352,44 +2952,56 @@ msgstr "Başlık"
 #~ msgstr ""
 #~ "Kişisel tasarım için Sınıf isimleri - Karşılaştırma Düğmesi: "
 #~ "'bt_compare_this', Yan-sütun Bileşen Düğmesi: 'compare_button_go'"
+
 # @ woo_cp
 #~ msgid "Button or hyperlink text"
 #~ msgstr "Düğme veya Bağlantı Metni"
+
 # @ woo_cp
 #~ msgid "Set text to show on Compare Button / Link on Product pages"
 #~ msgstr ""
 #~ "Ürün sayfalarında gösterilecek Karşılaştırma Düğmesi/Bağlantısı için "
 #~ "kullanılacak Metni ayarlayın."
+
 # @ woo_cp
 #~ msgid "Compare product page navigation tab"
 #~ msgstr "Ürün sayfasındaki Karşılaştırmalı Özellikler navigasyon sekmesi"
+
 # @ woo_cp
 #~ msgid "Do not auto show"
 #~ msgstr "Otomatik Gösterme"
+
 # @ woo_cp
 #~ msgid "Compare Featured tab"
 #~ msgstr "Karşılaştırmalı Özellikler Sekmesi"
+
 # @ woo_cp
 #~ msgid "Set tab name"
 #~ msgstr "Sekme İsmini Ayarla"
+
 # @ woo_cp
 #~ msgid "Manually set Compare Features list"
 #~ msgstr "Karşılaştırmalı Özellikler Listesini manüel Ayarla"
+
 # @ woo_cp
 #~ msgid ""
 #~ "Show Compare Featured fields anywhere in your theme with this function"
 #~ msgstr ""
 #~ "Bu fonksiyonu kullanarak Karşılaştırmalı Özellikler ve Değerlerini "
 #~ "temanız içerisinde istediğiniz yerde görüntüleyebilirsiniz."
+
 # @ woo_cp
 #~ msgid "Compare Fly-Out Width"
 #~ msgstr "Karşılaştırma Açılır-Penceresi Genişliği"
+
 # @ woo_cp
 #~ msgid "Compare Fly-Out Height"
 #~ msgstr "Karşılaştırma Açılır-Penceresi Yüksekliği"
+
 # @ woo_cp
 #~ msgid "Fly-Out Inner Container Height"
 #~ msgstr "Açılır-Pencere İç-Taşıyıcı Yüksekliği"
+
 # @ woo_cp
 #~ msgid ""
 #~ "Set at less than the Fly-Out height so Header Image stays visible in the "
@@ -2398,14 +3010,17 @@ msgstr "Başlık"
 #~ "Açılır-Pencerenin kendi yüksekliğinden daha küçük bir değer belirleyin. "
 #~ "Böylelikle Başlık için belirlediğiniz Görsel pencere içinde rahatça "
 #~ "görüntülenebilir."
+
 # @ woo_cp
 #~ msgid "Compare Fly-Out Type"
 #~ msgstr "Karşılaştırma Açılır-Penceresi Tipi"
+
 # @ woo_cp
 #~ msgid "Choose to power the Fly-Out Screen with fancybox or lightbox tool."
 #~ msgstr ""
 #~ "Karşılaştırma Açılır-Penceresi için Fancybox veya Lightbox yöntemlerinden "
 #~ "birini seçin."
+
 # @ woo_cp
 #, fuzzy
 #~ msgid "There is a new version of WooCommerce Compare Products available."
