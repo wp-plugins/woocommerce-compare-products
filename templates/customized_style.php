@@ -1,5 +1,7 @@
 <style>
 <?php
+global $wc_compare_admin_interface, $wc_compare_fonts_face;
+
 // Grid View Button Style
 global $woo_compare_grid_view_settings, $woo_compare_grid_view_button_style;
 extract($woo_compare_grid_view_settings);
@@ -11,11 +13,7 @@ extract($woo_compare_grid_view_button_style);
 /* Grid View Button Style */
 .woo_grid_compare_button_container { 
 	text-align:center; 
-<?php if ($grid_view_button_position == 'above') { ?>
-	margin-bottom: <?php echo $grid_view_button_above_padding; ?>px !important;
-<? } else { ?>
-	margin-top: <?php echo $grid_view_button_below_padding; ?>px !important;
-<?php } ?>
+	margin: <?php echo $grid_view_button_margin_top; ?>px <?php echo $grid_view_button_margin_right; ?>px <?php echo $grid_view_button_margin_bottom; ?>px <?php echo $grid_view_button_margin_left; ?>px !important;
 }
 .woo_grid_compare_button_container .woo_bt_compare_this {
 	position: relative !important;
@@ -24,7 +22,7 @@ extract($woo_compare_grid_view_button_style);
 	line-height: 1 !important;
 }
 .woo_grid_compare_button_container .woo_bt_compare_this_button {
-	padding: 7px 10px !important;
+	padding: <?php echo $gridview_button_padding_tb; ?>px <?php echo $gridview_button_padding_lr; ?>px !important;
 	margin:0;
 	
 	/*Background*/
@@ -44,31 +42,13 @@ extract($woo_compare_grid_view_button_style);
 	
 		
 	/*Border*/
-	border: <?php echo $button_border_size; ?> <?php echo $button_border_style; ?> <?php echo $button_border_colour; ?> !important;
-<?php if ($button_border_rounded == 'rounded') { ?>
-	-webkit-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	-moz-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-<?php } else { ?>
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-<?php } ?>
+	<?php echo $wc_compare_admin_interface->generate_border_css( $woo_compare_grid_view_button_style['button_border'] ); ?>
+	
+	/* Shadow */
+	<?php echo $wc_compare_admin_interface->generate_shadow_css( $woo_compare_grid_view_button_style['button_shadow'] ); ?>
 	
 	/* Font */
-	font-family: <?php echo $button_font; ?> !important;
-	font-size: <?php echo $button_font_size; ?> !important;
-	color: <?php echo $button_font_colour; ?> !important;
-<?php if ( stristr($button_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($button_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $button_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_grid_view_button_style['button_font'] ); ?>
 	
 	text-align: center !important;
 	text-shadow: 0 -1px 0 hsla(0,0%,0%,.3);
@@ -76,21 +56,8 @@ extract($woo_compare_grid_view_button_style);
 }
 
 .woo_grid_compare_button_container .woo_bt_compare_this_link {
-	
 	/* Font */
-	font-family: <?php echo $link_font; ?> !important;
-	font-size: <?php echo $link_font_size; ?> !important;
-	color: <?php echo $link_font_colour; ?> !important;
-<?php if ( stristr($link_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($link_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $link_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_grid_view_button_style['link_font'] ); ?>
 }
 .woo_grid_compare_button_container .woo_bt_compare_this_link:hover {
 	color: <?php echo $link_font_hover_colour; ?> !important;
@@ -132,19 +99,7 @@ extract($woo_compare_gridview_view_compare_style);
 
 .woo_grid_compare_button_container .woo_bt_view_compare_link {
 	/* Font */
-	font-family: <?php echo $gridview_view_compare_link_font; ?> !important;
-	font-size: <?php echo $gridview_view_compare_link_font_size; ?> !important;
-	color: <?php echo $gridview_view_compare_link_font_colour; ?> !important;
-<?php if ( stristr($gridview_view_compare_link_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($gridview_view_compare_link_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $gridview_view_compare_link_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_gridview_view_compare_style['gridview_view_compare_link_font'] ); ?>
 }
 .woo_grid_compare_button_container .woo_bt_view_compare_link:hover {
 	color: <?php echo $gridview_view_compare_link_font_hover_colour; ?> !important;
@@ -159,11 +114,7 @@ extract($woo_compare_product_page_button_style);
 /* Product Page Button Style */
 .woo_compare_button_container { 
 	clear:both;
-<?php if ( $product_page_button_position == 'above' ) { ?>
-	margin-bottom: <?php echo $product_page_button_above_padding; ?>px !important;
-<? } else { ?>
-	margin-top: <?php echo $product_page_button_below_padding; ?>px !important;
-<?php } ?> 
+	margin: <?php echo $product_page_button_margin_top; ?>px <?php echo $product_page_button_margin_right; ?>px <?php echo $product_page_button_margin_bottom; ?>px <?php echo $product_page_button_margin_left; ?>px !important;
 }
 .woo_compare_button_container .woo_bt_compare_this {
 	position:relative !important;
@@ -172,7 +123,7 @@ extract($woo_compare_product_page_button_style);
 	line-height: 1 !important;
 }
 .woo_compare_button_container .woo_bt_compare_this_button {
-	padding: 7px 10px !important;
+	padding: <?php echo $product_compare_button_padding_tb; ?>px <?php echo $product_compare_button_padding_lr; ?>px !important;
 	margin:0;
 	
 	/*Background*/
@@ -190,33 +141,14 @@ extract($woo_compare_product_page_button_style);
 					<?php echo $button_bg_colour_to; ?> 100%
 				) !important;;
 	
-		
 	/*Border*/
-	border: <?php echo $button_border_size; ?> <?php echo $button_border_style; ?> <?php echo $button_border_colour; ?> !important;
-<?php if ($button_border_rounded == 'rounded') { ?>
-	-webkit-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	-moz-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-<?php } else { ?>
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-<?php } ?>
+	<?php echo $wc_compare_admin_interface->generate_border_css( $woo_compare_product_page_button_style['button_border'] ); ?>
+	
+	/* Shadow */
+	<?php echo $wc_compare_admin_interface->generate_shadow_css( $woo_compare_product_page_button_style['button_shadow'] ); ?>
 	
 	/* Font */
-	font-family: <?php echo $button_font; ?> !important;
-	font-size: <?php echo $button_font_size; ?> !important;
-	color: <?php echo $button_font_colour; ?> !important;
-<?php if ( stristr($button_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($button_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $button_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_product_page_button_style['button_font'] ); ?>
 	
 	text-align: center !important;
 	text-shadow: 0 -1px 0 hsla(0,0%,0%,.3);
@@ -225,19 +157,7 @@ extract($woo_compare_product_page_button_style);
 
 .woo_compare_button_container .woo_bt_compare_this_link {
 	/* Font */
-	font-family: <?php echo $product_compare_link_font; ?> !important;
-	font-size: <?php echo $product_compare_link_font_size; ?> !important;
-	color: <?php echo $product_compare_link_font_colour; ?> !important;
-<?php if ( stristr($product_compare_link_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($product_compare_link_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $product_compare_link_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $product_compare_link_font ); ?>
 }
 .woo_compare_button_container .woo_bt_compare_this_link:hover {
 	color: <?php echo $product_compare_link_font_hover_colour; ?> !important;
@@ -277,7 +197,7 @@ extract($woo_compare_product_page_view_compare_style);
 	margin-top:5px !important;
 }
 .woo_compare_button_container .woo_bt_view_compare_button {
-	padding: 7px 10px !important;
+	padding: <?php echo $product_view_compare_button_padding_tb; ?>px <?php echo $product_view_compare_button_padding_lr; ?>px !important;
 	margin:0;
 	
 	/*Background*/
@@ -295,33 +215,14 @@ extract($woo_compare_product_page_view_compare_style);
 					<?php echo $button_bg_colour_to; ?> 100%
 				) !important;;
 	
-		
 	/*Border*/
-	border: <?php echo $button_border_size; ?> <?php echo $button_border_style; ?> <?php echo $button_border_colour; ?> !important;
-<?php if ($button_border_rounded == 'rounded') { ?>
-	-webkit-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	-moz-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-<?php } else { ?>
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-<?php } ?>
+	<?php echo $wc_compare_admin_interface->generate_border_css( $woo_compare_product_page_view_compare_style['button_border'] ); ?>
+	
+	/* Shadow */
+	<?php echo $wc_compare_admin_interface->generate_shadow_css( $woo_compare_product_page_view_compare_style['button_shadow'] ); ?>
 	
 	/* Font */
-	font-family: <?php echo $button_font; ?> !important;
-	font-size: <?php echo $button_font_size; ?> !important;
-	color: <?php echo $button_font_colour; ?> !important;
-<?php if ( stristr($button_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($button_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $button_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_product_page_view_compare_style['button_font'] ); ?>
 	
 	text-align: center !important;
 	text-shadow: 0 -1px 0 hsla(0,0%,0%,.3);
@@ -330,19 +231,7 @@ extract($woo_compare_product_page_view_compare_style);
 
 .woo_compare_button_container .woo_bt_view_compare_link {
 	/* Font */
-	font-family: <?php echo $product_view_compare_link_font; ?> !important;
-	font-size: <?php echo $product_view_compare_link_font_size; ?> !important;
-	color: <?php echo $product_view_compare_link_font_colour; ?> !important;
-<?php if ( stristr($product_view_compare_link_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($product_view_compare_link_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $product_view_compare_link_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $product_view_compare_link_font ); ?>
 }
 .woo_compare_button_container .woo_bt_view_compare_link:hover {
 	color: <?php echo $product_view_compare_link_font_hover_colour; ?> !important;
@@ -372,58 +261,19 @@ extract($woo_compare_widget_title_style);
 	
 	/*Background*/
 	background-color: <?php echo $widget_title_bg_colour; ?> !important;
-		
-	/*Border*/
-	border-style:<?php echo $widget_title_border_style; ?> !important;
-	border-color: <?php echo $widget_title_border_colour; ?> !important;
-	border-top-width: <?php echo $widget_title_border_size_top; ?> !important;
-	border-bottom-width: <?php echo $widget_title_border_size_bottom; ?> !important;
-	border-left-width: <?php echo $widget_title_border_size_left; ?> !important;
-	border-right-width: <?php echo $widget_title_border_size_right; ?> !important;
 	
-<?php if ($widget_title_border_rounded == 'rounded') { ?>
-	-webkit-border-radius: <?php echo $widget_title_border_rounded_value; ?>px !important;
-	-moz-border-radius: <?php echo $widget_title_border_rounded_value; ?>px !important;
-	border-radius: <?php echo $widget_title_border_rounded_value; ?>px !important;
-<?php } else { ?>
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-<?php } ?>
+	/*Border*/
+	<?php echo $wc_compare_admin_interface->generate_border_css( $woo_compare_widget_title_style['widget_title_border'] ); ?>
 }
 
 #compare_widget_title_container #compare_widget_title_text {
 	/* Font */
-	font-family: <?php echo $widget_title_font; ?> !important;
-	font-size: <?php echo $widget_title_font_size; ?> !important;
-	color: <?php echo $widget_title_font_colour; ?> !important;
-<?php if ( stristr($widget_title_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($widget_title_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $widget_title_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_widget_title_style['widget_title_font'] ); ?>
 }
 
 #total_compare_product {
 	/* Font */
-	font-family: <?php echo $total_font; ?> !important;
-	font-size: <?php echo $total_font_size; ?> !important;
-	color: <?php echo $total_font_colour; ?> !important;
-<?php if ( stristr($total_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($total_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $total_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_widget_title_style['total_font'] ); ?>
 }
 
 <?php
@@ -434,19 +284,7 @@ extract($woo_compare_widget_style);
 /* Compare Widget Style */
 .no_compare_list {
 	/* Font */
-	font-family: <?php echo $text_font; ?> !important;
-	font-size: <?php echo $text_font_size; ?> !important;
-	color: <?php echo $text_font_colour; ?> !important;
-<?php if ( stristr($text_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($text_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $text_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_widget_style['text_font'] ); ?>
 }
 ul.compare_widget_ul {
 	list-style:none !important;
@@ -507,17 +345,13 @@ extract($woo_compare_widget_thumbnail_style);
 	padding: <?php echo $thumb_padding; ?>px !important;
 	/*Background*/
 	background-color: <?php echo $thumb_bg_colour; ?> !important;
+	
 	/*Border*/
-	border: <?php echo $thumb_border_size; ?> <?php echo $thumb_border_style; ?> <?php echo $thumb_border_colour; ?> !important;
-<?php if ($thumb_border_rounded == 'rounded') { ?>
-	-webkit-border-radius: <?php echo $thumb_border_rounded_value; ?>px !important;
-	-moz-border-radius: <?php echo $thumb_border_rounded_value; ?>px !important;
-	border-radius: <?php echo $thumb_border_rounded_value; ?>px !important;
-<?php } else { ?>
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-<?php } ?>
+	<?php echo $wc_compare_admin_interface->generate_border_css( $woo_compare_widget_thumbnail_style['thumb_border'] ); ?>
+	
+	/* Shadow */
+	<?php echo $wc_compare_admin_interface->generate_shadow_css( $woo_compare_widget_thumbnail_style['thumb_shadow'] ); ?>
+	
 }
 <?php } ?>
 
@@ -558,7 +392,7 @@ extract($woo_compare_widget_button_style);
 	margin:0;
 }
 .woo_compare_widget_button_go {
-	padding: 5px 10px !important;	
+	padding: <?php echo $compare_widget_button_padding_tb; ?>px <?php echo $compare_widget_button_padding_lr; ?>px !important;
 	/*Background*/
 	background-color: <?php echo $button_bg_colour; ?> !important;
 	background: -webkit-gradient(
@@ -576,31 +410,13 @@ extract($woo_compare_widget_button_style);
 	
 		
 	/*Border*/
-	border: <?php echo $button_border_size; ?> <?php echo $button_border_style; ?> <?php echo $button_border_colour; ?> !important;
-<?php if ($button_border_rounded == 'rounded') { ?>
-	-webkit-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	-moz-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-<?php } else { ?>
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-<?php } ?>
+	<?php echo $wc_compare_admin_interface->generate_border_css( $woo_compare_widget_button_style['button_border'] ); ?>
+	
+	/* Shadow */
+	<?php echo $wc_compare_admin_interface->generate_shadow_css( $woo_compare_widget_button_style['button_shadow'] ); ?>
 	
 	/* Font */
-	font-family: <?php echo $button_font; ?> !important;
-	font-size: <?php echo $button_font_size; ?> !important;
-	color: <?php echo $button_font_colour; ?> !important;
-<?php if ( stristr($button_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($button_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $button_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_widget_button_style['button_font'] ); ?>
 	
 	text-align: center !important;
 	text-shadow: 0 -1px 0 hsla(0,0%,0%,.3);
@@ -608,19 +424,7 @@ extract($woo_compare_widget_button_style);
 }
 .woo_compare_widget_link_go {
 	/* Font */
-	font-family: <?php echo $compare_widget_link_font; ?> !important;
-	font-size: <?php echo $compare_widget_link_font_size; ?> !important;
-	color: <?php echo $compare_widget_link_font_colour; ?> !important;
-<?php if ( stristr($compare_widget_link_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($compare_widget_link_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $compare_widget_link_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_widget_button_style['compare_widget_link_font'] ); ?>
 }
 .woo_compare_widget_link_go:hover {
 	color: <?php echo $compare_widget_link_font_hover_colour; ?> !important;
@@ -650,7 +454,7 @@ extract($woo_compare_widget_clear_all_style);
 	margin:0;
 }
 .woo_compare_clear_all_button {
-	padding: 5px 10px !important;	
+	padding: <?php echo $clear_all_button_padding_tb; ?>px <?php echo $clear_all_button_padding_lr; ?>px !important;
 	/*Background*/
 	background-color: <?php echo $clear_all_button_bg_colour; ?> !important;
 	background: -webkit-gradient(
@@ -668,31 +472,13 @@ extract($woo_compare_widget_clear_all_style);
 	
 		
 	/*Border*/
-	border: <?php echo $clear_all_button_border_size; ?> <?php echo $clear_all_button_border_style; ?> <?php echo $clear_all_button_border_colour; ?> !important;
-<?php if ($clear_all_button_border_rounded == 'rounded') { ?>
-	-webkit-border-radius: <?php echo $clear_all_button_border_rounded_value; ?>px !important;
-	-moz-border-radius: <?php echo $clear_all_button_border_rounded_value; ?>px !important;
-	border-radius: <?php echo $clear_all_button_border_rounded_value; ?>px !important;
-<?php } else { ?>
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-<?php } ?>
+	<?php echo $wc_compare_admin_interface->generate_border_css( $woo_compare_widget_clear_all_style['clear_all_button_border'] ); ?>
+	
+	/* Shadow */
+	<?php echo $wc_compare_admin_interface->generate_shadow_css( $woo_compare_widget_clear_all_style['clear_all_button_shadow'] ); ?>
 	
 	/* Font */
-	font-family: <?php echo $clear_all_button_font; ?> !important;
-	font-size: <?php echo $clear_all_button_font_size; ?> !important;
-	color: <?php echo $clear_all_button_font_colour; ?> !important;
-<?php if ( stristr($clear_all_button_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($clear_all_button_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $clear_all_button_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_widget_clear_all_style['clear_all_button_font'] ); ?>
 	
 	text-align: center !important;
 	text-shadow: 0 -1px 0 hsla(0,0%,0%,.3);
@@ -700,21 +486,34 @@ extract($woo_compare_widget_clear_all_style);
 }
 .woo_compare_clear_all_link {
 	/* Font */
-	font-family: <?php echo $clear_text_font; ?> !important;
-	font-size: <?php echo $clear_text_font_size; ?> !important;
-	color: <?php echo $clear_text_font_colour; ?> !important;
-<?php if ( stristr($clear_text_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($clear_text_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $clear_text_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wc_compare_fonts_face->generate_font_css( $woo_compare_widget_clear_all_style['clear_text_font'] ); ?>
 }
 .woo_compare_clear_all_link:hover {
 	color: <?php echo $clear_text_font_hover_colour; ?> !important;
+}
+
+/* 3RD Party Contact Form */
+.3rd_inquiry_form_container {
+	margin-top:10px;	
+}
+
+/* Video & Audio Container */
+.woocp_video_type_container {
+	width:80%;
+	position: relative;
+	padding-bottom: 45%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.woocp_video_type_container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.woocp_audio_type_container {
+	width:80%;
+	padding:5px 0;	
 }
 </style>

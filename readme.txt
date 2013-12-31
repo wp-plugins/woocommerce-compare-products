@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 3.5
-Tested up to: 3.7.1
-Stable tag: 2.1.7
+Tested up to: 3.8.0
+Stable tag: 2.1.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,16 +17,16 @@ Compare Products uses your existing WooCommerce Product Categories and Product A
 
 This allows users to firstly add products to a compare widget basket, then at the click of a mouse the chosen products can be viewed in a state-of-the-art comparison table. 
 
-Chosen products are compared side-by-side, feature by feature, price-by-price. Discard products from the table at the click of a mose as you hone in on the product that is the one for you. Save the comparison as a PDF or print it. 
+Chosen products are compared side-by-side, feature by feature, price-by-price. Discard products from the table at the click of a mouse as you hone in on the product that is the one for you. Save the comparison as a PDF or print it. 
  
 = Key Features =
-* In Version 2.1.0 we launch our the brand new feature, In-Plugin Custom Styling 
+
 * Get a taste for what it is like to be able to style and set the layout of every element of this plugins front end output from the admin panel.
 * Create the perfect layout and look for your compare features without touching the theme or plugin code.
 * Theme updates and changing a theme does not affect the layout and styles you create. It is all in the plugin, independent of the theme.
 * In Window Comparison page and the scrolling comparison table that will wow your users.
 * Create unique Comparison feature set for a group of products by using existing WooCommerce Product Categories, Attributes and Attribute terms.
-* Add or create completely new comparable feature sets independent to your existing WooCommerce Product categories, Attributes and terms.. 
+* Add or create completely new comparable feature sets independent to your existing WooCommerce Product categories, Attributes and terms. 
 * Works with any Theme that has the WooCommerce plugin installed and activated.
 * On install all of your existing Product Categories are auto created as Compare Categories
 * On install all of your existing Product Attributes are auto created as Compare Features. Each Attribute's Terms are auto created as Feature values (the data that is compared) 
@@ -39,37 +39,41 @@ Chosen products are compared side-by-side, feature by feature, price-by-price. D
 
 We love the Compare Products feature that the big e-commerce sites have. We have looked at them all and over 12 months have developed what we believe is a product comparison extension for WooCommerce that is better than any of them.
 
-We distribute the plugin in 2 versions - This FREE lite version and an advanced featured Pro Version.  Today thousands of WooCommerce stores owners successfully use the Free lite version to provide the Product Comparison feature we love - to their customers.
+= Mobile Platform App style admin interface =
 
-= Support =
+Just like the new WordPress v3.8.0 version we believe that you should be able to tweak your WooCommerce Compare Products settings 'on the fly' from your mobile or tablet.
 
-If you have any problem with setting up the Free lite version please post your support request here on the WordPress support forum. PLEASE if you have a problem DO NOT just give the plugin a bad star rating and review without first requesting support. Giving the plugin a bagging without affording us the opportunity to help solve the issue is in our opinion just incredibly unfair.
+* 100% compatible with WordPress v3.8.0 admin interface.
+* Backward compatibility to WooCommerce v2.0.20
+* App style admin interface.
+* Admin interface is optimized for iOS and Android mobile and tablet platforms.
 
-Once you have the plugin installed and activated please refer to the plugins comprehensive [Online Documentation](http://docs.a3rev.com/user-guides/woocommerce/compare-products/) and guide to setting up the Compare Products plugin on your WooCommerce store.If you have questions - agin please post them to the support forum here.
+= Lite Version Support =
 
-= PRO Version Upgrade =
+As a Lite Version user please post all support requests to the plugins WordPress Support forum. We do not watch that forum and posting there you will be relying on another user for support not an a3rev team member. Pro Version License holders have 'write' access to the a3rev support forum and priority support, not from support staff but from the developers.
+
+= Pro Version Upgrade =
+
+This plugin has a Pro version upgrade plugin that add more functionality to this Free version. You will see all of the available upgrade features on the plugins admin panel, in the Yellow sidebar. 
 
 * When you install WooCommerce Compare Products you will see all the added functionality that the PRO Version offers right there in the admin panel.
 * The plugin is designed so that the upgrade is completely seamless. 
 * When you upgrade nothing changes except all the features of Compare Products you see on the lite version are activated. 
-* This means you can activate, set up and use the free version and then if you find you want the added features and functionality you can upgrade, completely risk free.  
-
+* This means you can activate, set up and use the free version and then if you find you want the added features and functionality you can upgrade, completely risk free.
 
 = Pro Version Features =
+
 * Compare Audio - Shows the default WordPress Audio player in the Comparison table. Supported formats .mp3, .m4a, .ogg, .wav file
 * Compare Video - Shows and plays Youtube, Vimeo and WordPressTV videos in the Comparison table. 
 * All of the In-Plugin Custom Style and layout settings are activated.
 * Product Express Manager - worth the price of the Pro Version upgrade on its own - Saves you hours, days or even weeks of work on larger stores
-* Activates the 'View Cart' feature on Grid View. 
-* Activates all Grid View layout and display styling function.
+* Activates the 'View Cart' feature on Product Cards. 
+* Activates all Product Card layout and display styling function.
 * Activates full Compare Widget layout and styling functions.
 * Activates 'Add to Cart', 'View Cart' feature on the comparison table.
-* Activates full Comparison Table layout and style functions.   
+* Activates full Comparison Table layout and style functions. 
 
-
-View these features on the [Pro Version Demo site here](http://store.a3dev.net/shop/) Add some products to the Compare basket and try the comparison table. It is a beautiful presentation.
 View all the Pro Version features [here on the a3rev site](http://a3rev.com/shop/woocommerce-compare-products/)
-
 
 = Localization =
 * English (default) - always include.
@@ -127,6 +131,29 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.1.8 - 2013/12/31 =
+* Feature - Upgraded the plugin to the newly developed a3rev admin panel app interface.
+* Feature - a3rev Plugin Framework admin interface 100% Compatibility with WordPress v3.8.0 with backward compatibility.
+* Feature - a3rev framework admin interface 100% iOS and Android compatible.
+* Feature - Dashboard switches and sliders use Vector based display that shows when WordPress version 3.8.0 is activated.
+* Feature - All plugin .jpg icons and images use Vector based display for full compatibility with new WordPress version.
+* Feature - New admin UI features check boxes replaced by switches, some dropdowns replaced by sliders.
+* Feature - Added 4 new border display types, Grove, Ridge, Inset, Outset
+* Feature - Button Corner style - Rounded - Can now set a rounded value for each corner of the button to create many different button styles.
+* Feature - New Border / Button shadow features. Create shadow external or internal, set wide of shadow.
+* Feature - Replaced colour picker with new WordPress 3.6.0 colour picker.
+* Feature - Added choice of 350 Google fonts to the existing 17 websafe fonts in all new single row font editor.
+* Feature - New on page instant previews for Fonts editor, create border and shadow style. 
+* Feature - Added intuitive triggers for settings. When switched ON a features corresponding feature settings show, when OFF they hide.
+* Feature - Added House keeping function to settings. Clean up on Deletion.  Option - Choose if you ever delete this plugin it will completely remove all tables and data it created.
+* Tweak - Moved plugin settings from WooCommerce menu to its own menu item on the wp-admin sidebar.
+* Tweak - Changed plugins menu item name from Product Comparison to WC Compare.
+* Tweak - Added main sub menu items, Category & Feature | Product Manager | Settings & Style
+* Tweak - Yellow sidebar on Pro Version Menus does not show in Mobile screens to optimize admin panel screen space.
+* Tweak - Numerous admin description text tweaks and typo fix ups.
+* Tweak - Tested 100% compatible with WP 3.8.0
+* Tweak - Tested 100% compatible with WooCommerce Version 2.0.20
 
 = 2.1.7 - 2013/11/07 =
 * Tweak - added esc_attr() to text input fields to support hyphen character
@@ -211,7 +238,7 @@ You can use this plugin when you have installed the WooCommerce plugin.
 * Tweak - Updated Support and Pro Version link URL's on wordpress.org description, plugins and plugins dashboard. Links were returning 404 errors since the launch of the all new a3rev.com mobile responsive site as the base e-commerce permalinks is changed.
 
 = 2.0.2 - 2012/12/14 =
-* Fix - Updated depreciated custom database collator $wpdb->supports_collation() with new WP3.5 function $wpdb->has_cap( 'collation' ). ÊSupports backward version compatibility.
+* Fix - Updated depreciated custom database collator $wpdb->supports_collation() with new WP3.5 function $wpdb->has_cap( 'collation' ). √¶Supports backward version compatibility.
 * Fix - When Product attributes are auto created as Compare Features, if the Attribute has no terms then the value input field is created as Input Text - Single line instead of a Checkbox.
 * Fix - On Compare Products admin tab, ajax not able to load the products list again after saving a product edit
 
@@ -235,7 +262,7 @@ You can use this plugin when you have installed the WooCommerce plugin.
 * Tweak - Added support for use of special characters in Feature Fields.
 * Tweak - Added support for use of Cyrillic Symbols in Feature Fields.
 * Tweak - Added support for use of sup tags in Feature Fields.
-* Tweak - Language file added to support localization – looking for people to do translations.
+* Tweak - Language file added to support localization √ê looking for people to do translations.
 * Tweak - Created plugin documents on a3rev wiki.
 * Tweak - Replaced all Category Edit | Delete icons with WordPress link text. Replace edit icon on Product Update table with text link.
 * Tweak - Edited Product update table to fit 100% wide on page so that the horizontal scroll bar does not auto show.
@@ -284,11 +311,14 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 == Upgrade Notice ==
 
+= 2.1.8 =
+Major Upgrade ‚Äì Plugin converted to the a3rev plugin framework. 100% WP 3.8.0 and Woo 2.0.20 compatible. 14 x new * Features, 7 x * Tweaks.
+
 = 2.1.7 =
 Upgrade now for full compatibility with WP 3.7.1 and WooCommerce 2.0.19 plus 2 bug fixes.
 
 = 2.1.6 =
-Upgrade your your plugin now for full compatibility with WordPress 3.6.0
+Upgrade your plugin now for full compatibility with WordPress 3.6.0
 
 = 2.1.4 =
 Install this upgrade to fix colour picker bug in your plugin

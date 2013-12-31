@@ -20,15 +20,14 @@
  * get_compare_list_html_popup()
  * add_meta_all_products()
  * get_post_thumbnail()
- * modify_url()
  * printPage()
  * create_page()
- * get_font()
  * plugin_pro_notice()
  * upgrade_version_2_0()
  * upgrade_version_2_0_1()
  * upgrade_version_2_0_6()
  * upgrade_version_2_1_0()
+ * lite_upgrade_version_2_1_8()
  */
 class WC_Compare_Functions 
 {
@@ -49,32 +48,6 @@ class WC_Compare_Functions
 			$page_data = $wpdb->get_row( "SELECT ID, post_name FROM `" . $wpdb->posts . "` WHERE `post_content` LIKE '%[product_comparison_page]%' AND `post_type` = 'page' ORDER BY ID DESC LIMIT 1" );
 		
 		$product_compare_id = $page_data->ID;
-		
-		WC_Compare_Widget_Style::get_settings();
-		WC_Compare_Widget_Title_Style::get_settings();
-		WC_Compare_Widget_Button_Style::get_settings();
-		WC_Compare_Widget_Clear_All_Style::get_settings();
-		WC_Compare_Widget_Thumbnail_Style::get_settings();
-		
-		WC_Compare_Product_Page_Settings::get_settings();
-		WC_Compare_Product_Page_Button_Style::get_settings();
-		WC_Compare_Product_Page_View_Compare_Style::get_settings();
-		WC_Compare_Product_Page_Tab::get_settings();
-		
-		WC_Compare_Grid_View_Settings::get_settings();
-		WC_Compare_Grid_View_Button_Style::get_settings();
-		WC_Compare_Grid_View_View_Compare_Style::get_settings();
-		
-		WC_Compare_Comparison_Page_Global_Settings::get_settings();
-		WC_Compare_Page_Style::get_settings();
-		WC_Compare_Table_Row_Style::get_settings();
-		WC_Compare_Table_Content_Style::get_settings();
-		WC_Compare_Price_Style::get_settings();
-		WC_Compare_AddToCart_Style::get_settings();
-		WC_Compare_ViewCart_Style::get_settings();
-		WC_Compare_Print_Message_Style::get_settings();
-		WC_Compare_Print_Button_Style::get_settings();
-		WC_Compare_Close_Window_Button_Style::get_settings();
 	}
 
 	/**
@@ -364,7 +337,7 @@ class WC_Compare_Functions
 			
 			if ($woo_compare_widget_clear_all_style['clear_all_item_vertical'] != 'below') $html .= $clear_html;
 			
-			$widget_button_custom_class = $woo_compare_widget_button_style['button_class'];
+			$widget_button_custom_class = '';
 			$widget_button_text = $woo_compare_widget_button_style['button_text'];
 			$widget_button_class = 'woo_compare_widget_button_go';
 			
@@ -649,43 +622,7 @@ class WC_Compare_Functions
 		}
 		return $mediumSRC;
 	}
-	
-	public static function modify_url($mod=array()){
-		$url = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https://' : 'http://';
- 		$url .= isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : getenv('HTTP_HOST');
- 		$url .= isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : getenv('REQUEST_URI');
 		
-		$query = explode("&", $_SERVER['QUERY_STRING']);
-		if (!$_SERVER['QUERY_STRING']) {
-			$queryStart = "?";
-			foreach($mod as $key => $value){
-				if($value != ''){
-					$url .= $queryStart.$key.'='.$value;
-					$queryStart = "&";
-				}
-			}
-		} else {
-		// modify/delete data
-			foreach($query as $q){
-				list($key, $value) = explode("=", $q);
-				if(array_key_exists($key, $mod)){
-					if($mod[$key]){
-						$url = preg_replace('/'.$key.'='.$value.'/', $key.'='.$mod[$key], $url);
-					}else{
-						$url = preg_replace('/&?'.$key.'='.$value.'/', '', $url);
-					}
-				}
-			}
-			// add new data
-			foreach($mod as $key => $value){
-				if($value && !preg_match('/'.$key.'=/', $url)){
-					$url .= '&'.$key.'='.$value;
-				}
-			}
-		}
-		return $url;
-	}
-	
 	public static function printPage($link, $total = 0,$currentPage = 1,$div = 3,$rows = 5, $li = false, $a_class= ''){
 		if(!$total || !$rows || !$div || $total<=$rows) return false;
 		$nPage = floor($total/$rows) + (($total%$rows)?1:0);
@@ -747,51 +684,22 @@ class WC_Compare_Functions
 		
 		return $page_id;
 	}
-	
-	public static function get_font() {
-		$fonts = array( 
-			'Arial, sans-serif'													=> __( 'Arial', 'woo_cp' ),
-			'Verdana, Geneva, sans-serif'										=> __( 'Verdana', 'woo_cp' ),
-			'Trebuchet MS, Tahoma, sans-serif'								=> __( 'Trebuchet', 'woo_cp' ),
-			'Georgia, serif'													=> __( 'Georgia', 'woo_cp' ),
-			'Times New Roman, serif'											=> __( 'Times New Roman', 'woo_cp' ),
-			'Tahoma, Geneva, Verdana, sans-serif'								=> __( 'Tahoma', 'woo_cp' ),
-			'Palatino, Palatino Linotype, serif'								=> __( 'Palatino', 'woo_cp' ),
-			'Helvetica Neue, Helvetica, sans-serif'							=> __( 'Helvetica*', 'woo_cp' ),
-			'Calibri, Candara, Segoe, Optima, sans-serif'						=> __( 'Calibri*', 'woo_cp' ),
-			'Myriad Pro, Myriad, sans-serif'									=> __( 'Myriad Pro*', 'woo_cp' ),
-			'Lucida Grande, Lucida Sans Unicode, Lucida Sans, sans-serif'	=> __( 'Lucida', 'woo_cp' ),
-			'Arial Black, sans-serif'											=> __( 'Arial Black', 'woo_cp' ),
-			'Gill Sans, Gill Sans MT, Calibri, sans-serif'					=> __( 'Gill Sans*', 'woo_cp' ),
-			'Geneva, Tahoma, Verdana, sans-serif'								=> __( 'Geneva*', 'woo_cp' ),
-			'Impact, Charcoal, sans-serif'										=> __( 'Impact', 'woo_cp' ),
-			'Courier, Courier New, monospace'									=> __( 'Courier', 'woo_cp' ),
-			'Century Gothic, sans-serif'										=> __( 'Century Gothic', 'woo_cp' ),
-		);
 		
-		return apply_filters('wc_compare_fonts_support', $fonts );
-	}
-	
 	public static function plugin_pro_notice() {
 		$html = '';
-		$html .= '<div id="wc_compare_product_extensions">';
-		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><img src="'.WOOCP_IMAGES_URL.'/a3logo.png" /></a>';
+		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><div class="a3-plugin-ui-icon a3-plugin-ui-a3-rev-logo"></div></a>';
 		$html .= '<h3>'.__('Upgrade to Compare Product Pro', 'woo_cp').'</h3>';
 		$html .= '<p>'.__("<strong>NOTE:</strong> All the functions inside the Yellow border on the plugins admin panel are extra functionality that is activated by upgrading to the Pro version", 'woo_cp').':</p>';
 		$html .= '<h3>* <a href="'.WOOCP_AUTHOR_URI.'" target="_blank">'.__('WooCommerce Compare Products Pro', 'woo_cp').'</a></h3>';
 		$html .= '<h3>'.__('Activates these advanced Features', 'woo_cp').':</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>1. '.__("Activate Products Express Manager - massive time saver, worth the price of the upgrade on its own.", 'woo_cp').'</li>';
-		$html .= '<li>2. '.__('Activate Widget Custom Style and layout settings.', 'woo_cp').'</li>';
-		$html .= '<li>3. '.__("Activate Grid View WYSIWYG Button creator.", 'woo_cp').'</li>';
-		$html .= '<li>4. '.__('Activate Grid View text link instead of button option.', 'woo_cp').'</li>';
-		$html .= '<li>5. '.__("Activate Grid View 'View Compare' feature.", 'woo_cp').'</li>';
-		$html .= '<li>6. '.__("Activate WYSIWYG table style tools.", 'woo_cp').'</li>';
-		$html .= '<li>7. '.__("Activate WYSIWYG table content style tools.", 'woo_cp').'</li>';
-		$html .= '<li>8. '.__("Activate 'Add to Cart' button option on compare table.", 'woo_cp').'</li>';
-		$html .= '<li>9. '.__("Activate table empty cells text editor and background colour.", 'woo_cp').'</li>';
-		$html .= '<li>10. '.__("Activate same day priority support.", 'woo_cp').'</li>';
+		$html .= '<li>1. '.__("Activate Compare - Products Manager.", 'woo_cp').'</li>';
+		$html .= '<li>2. '.__('Activate the Compare Audio & Video feature.', 'woo_cp').'</li>';
+		$html .= '<li>3. '.__("Activate all Compare Widget settings.", 'woo_cp').'</li>';
+		$html .= '<li>4. '.__('Activate all Product Card Settings.', 'woo_cp').'</li>';
+		$html .= '<li>5. '.__("Activate all Comparison Table style Settings.", 'woo_cp').'</li>';
+		$html .= '<li>6. '.__("Activate same day priority support.", 'woo_cp').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
 		$html .= '<h3>'.__('Pro Version 7 day FREE trail', 'woo_cp').'</h3>';
@@ -818,7 +726,6 @@ class WC_Compare_Functions
 		$html .= '<li>* <a href="http://wordpress.org/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'woo_cp').'</a></li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		$html .= '</div>';
 		return $html;
 	}
 	
@@ -863,24 +770,24 @@ class WC_Compare_Functions
 	
 	public static function upgrade_version_2_1_0() {
 		$comparable_settings = get_option('woo_comparable_settings');
-		$woo_compare_comparison_page_global_settings = WC_Compare_Comparison_Page_Global_Settings::get_settings();
+		$woo_compare_comparison_page_global_settings = get_option('woo_compare_comparison_page_global_settings', array() );
 		$woo_compare_comparison_page_global_settings['open_compare_type'] = $comparable_settings['open_compare_type'];
 		update_option('woo_compare_comparison_page_global_settings', $woo_compare_comparison_page_global_settings);
 		
-		$woo_compare_product_page_button_style = WC_Compare_Product_Page_Button_Style::get_settings();
+		$woo_compare_product_page_button_style = get_option('woo_compare_product_page_button_style', array() );
 		$woo_compare_product_page_button_style['product_compare_button_type'] = $comparable_settings['button_type'];
 		$woo_compare_product_page_button_style['product_compare_button_text'] = $comparable_settings['button_text'];
 		$woo_compare_product_page_button_style['product_compare_link_text'] = $comparable_settings['button_text'];
 		update_option('woo_compare_product_page_button_style', $woo_compare_product_page_button_style);
 		
-		$woo_compare_product_page_settings = WC_Compare_Product_Page_Settings::get_settings();
+		$woo_compare_product_page_settings = get_option('woo_compare_product_page_settings', array() );
 		$woo_compare_product_page_settings['product_page_button_position'] = $comparable_settings['button_position'];
 		$woo_compare_product_page_settings['product_page_button_below_padding'] = $comparable_settings['below_padding'];
 		$woo_compare_product_page_settings['product_page_button_above_padding'] = $comparable_settings['above_padding'];
 		$woo_compare_product_page_settings['auto_add'] = $comparable_settings['auto_add'];
 		update_option('woo_compare_product_page_settings', $woo_compare_product_page_settings);
 		
-		$woo_compare_product_page_tab = WC_Compare_Product_Page_Tab::get_settings();
+		$woo_compare_product_page_tab = get_option('woo_compare_product_page_tab', array() );
 		$woo_compare_product_page_tab['compare_featured_tab'] = $comparable_settings['compare_featured_tab'];
 		if ($comparable_settings['auto_compare_featured_tab'] == 0) {
 			$woo_compare_product_page_tab['disable_compare_featured_tab'] = 1;
@@ -888,6 +795,355 @@ class WC_Compare_Functions
 			$woo_compare_product_page_tab['auto_compare_featured_tab'] = $comparable_settings['auto_compare_featured_tab'];
 		}
 		update_option('woo_compare_product_page_tab', $woo_compare_product_page_tab);
+	}
+	
+	public static function lite_upgrade_version_2_1_8() {
+		$woo_compare_product_page_settings = get_option('woo_compare_product_page_settings', array() );
+		$woo_compare_product_page_settings['product_page_button_margin_top'] = $woo_compare_product_page_settings['product_page_button_below_padding'];
+		$woo_compare_product_page_settings['product_page_button_margin_bottom'] = $woo_compare_product_page_settings['product_page_button_above_padding'];
+		update_option('woo_compare_product_page_settings', $woo_compare_product_page_settings);
+		
+		$woo_compare_product_page_button_style = get_option('woo_compare_product_page_button_style', array() );
+		$woo_compare_product_page_button_style['product_compare_link_font'] = array(
+						'size'					=> $woo_compare_product_page_button_style['product_compare_link_font_size'],
+						'face'					=> $woo_compare_product_page_button_style['product_compare_link_font'],
+						'style'					=> $woo_compare_product_page_button_style['product_compare_link_font_style'],
+						'color'					=> $woo_compare_product_page_button_style['product_compare_link_font_colour'],
+			);
+		$woo_compare_product_page_button_style['button_font'] = array(
+						'size'					=> $woo_compare_product_page_button_style['button_font_size'],
+						'face'					=> $woo_compare_product_page_button_style['button_font'],
+						'style'					=> $woo_compare_product_page_button_style['button_font_style'],
+						'color'					=> $woo_compare_product_page_button_style['button_font_colour'],
+			);
+		$woo_compare_product_page_button_style['button_border'] = array(
+						'width'					=> $woo_compare_product_page_button_style['button_border_size'],
+						'style'					=> $woo_compare_product_page_button_style['button_border_style'],
+						'color'					=> $woo_compare_product_page_button_style['button_border_colour'],
+						'corner'				=> $woo_compare_product_page_button_style['button_border_rounded'],
+						'top_left_corner'		=> $woo_compare_product_page_button_style['button_border_rounded_value'],
+						'top_right_corner'		=> $woo_compare_product_page_button_style['button_border_rounded_value'],
+						'bottom_left_corner'	=> $woo_compare_product_page_button_style['button_border_rounded_value'],
+						'bottom_right_corner'	=> $woo_compare_product_page_button_style['button_border_rounded_value'],
+			);
+		update_option('woo_compare_product_page_button_style', $woo_compare_product_page_button_style);
+		
+		$woo_compare_product_page_view_compare_style = get_option('woo_compare_product_page_view_compare_style', array() );
+		$woo_compare_product_page_view_compare_style['product_view_compare_link_font'] = array(
+						'size'					=> $woo_compare_product_page_view_compare_style['product_view_compare_link_font_size'],
+						'face'					=> $woo_compare_product_page_view_compare_style['product_view_compare_link_font'],
+						'style'					=> $woo_compare_product_page_view_compare_style['product_view_compare_link_font_style'],
+						'color'					=> $woo_compare_product_page_view_compare_style['product_view_compare_link_font_colour'],
+			);
+		$woo_compare_product_page_view_compare_style['button_font'] = array(
+						'size'					=> $woo_compare_product_page_view_compare_style['button_font_size'],
+						'face'					=> $woo_compare_product_page_view_compare_style['button_font'],
+						'style'					=> $woo_compare_product_page_view_compare_style['button_font_style'],
+						'color'					=> $woo_compare_product_page_view_compare_style['button_font_colour'],
+			);
+		$woo_compare_product_page_view_compare_style['button_border'] = array(
+						'width'					=> $woo_compare_product_page_view_compare_style['button_border_size'],
+						'style'					=> $woo_compare_product_page_view_compare_style['button_border_style'],
+						'color'					=> $woo_compare_product_page_view_compare_style['button_border_colour'],
+						'corner'				=> $woo_compare_product_page_view_compare_style['button_border_rounded'],
+						'top_left_corner'		=> $woo_compare_product_page_view_compare_style['button_border_rounded_value'],
+						'top_right_corner'		=> $woo_compare_product_page_view_compare_style['button_border_rounded_value'],
+						'bottom_left_corner'	=> $woo_compare_product_page_view_compare_style['button_border_rounded_value'],
+						'bottom_right_corner'	=> $woo_compare_product_page_view_compare_style['button_border_rounded_value'],
+			);
+		update_option('woo_compare_product_page_view_compare_style', $woo_compare_product_page_view_compare_style);
+		
+		$woo_compare_widget_style = get_option('woo_compare_widget_style', array() );	
+		$woo_compare_widget_style['text_font'] = array(
+						'size'					=> $woo_compare_widget_style['text_font_size'],
+						'face'					=> $woo_compare_widget_style['text_font'],
+						'style'					=> $woo_compare_widget_style['text_font_style'],
+						'color'					=> $woo_compare_widget_style['text_font_colour'],
+			);
+		update_option('woo_compare_widget_style', $woo_compare_widget_style);
+		
+		$woo_compare_widget_title_style = get_option('woo_compare_widget_title_style', array() );
+		$woo_compare_widget_title_style['widget_title_font'] = array(
+						'size'					=> $woo_compare_widget_title_style['widget_title_font_size'],
+						'face'					=> $woo_compare_widget_title_style['widget_title_font'],
+						'style'					=> $woo_compare_widget_title_style['widget_title_font_style'],
+						'color'					=> $woo_compare_widget_title_style['widget_title_font_colour'],
+			);
+		$woo_compare_widget_title_style['total_font'] = array(
+						'size'					=> $woo_compare_widget_title_style['total_font_size'],
+						'face'					=> $woo_compare_widget_title_style['total_font'],
+						'style'					=> $woo_compare_widget_title_style['total_font_style'],
+						'color'					=> $woo_compare_widget_title_style['total_font_colour'],
+			);
+		$woo_compare_widget_title_style['widget_title_border'] = array(
+						'width'					=> $woo_compare_widget_title_style['widget_title_border_size_bottom'],
+						'style'					=> $woo_compare_widget_title_style['widget_title_border_style'],
+						'color'					=> $woo_compare_widget_title_style['widget_title_border_colour'],
+						'corner'				=> $woo_compare_widget_title_style['widget_title_border_rounded'],
+						'top_left_corner'		=> $woo_compare_widget_title_style['widget_title_border_rounded_value'],
+						'top_right_corner'		=> $woo_compare_widget_title_style['widget_title_border_rounded_value'],
+						'bottom_left_corner'	=> $woo_compare_widget_title_style['widget_title_border_rounded_value'],
+						'bottom_right_corner'	=> $woo_compare_widget_title_style['widget_title_border_rounded_value'],
+			);
+		update_option('woo_compare_widget_title_style', $woo_compare_widget_title_style);
+		
+		$woo_compare_widget_button_style = get_option('woo_compare_widget_button_style', array() );
+		$woo_compare_widget_button_style['compare_widget_link_font'] = array(
+						'size'					=> $woo_compare_widget_button_style['compare_widget_link_font_size'],
+						'face'					=> $woo_compare_widget_button_style['compare_widget_link_font'],
+						'style'					=> $woo_compare_widget_button_style['compare_widget_link_font_style'],
+						'color'					=> $woo_compare_widget_button_style['compare_widget_link_font_colour'],
+			);
+		$woo_compare_widget_button_style['button_font'] = array(
+						'size'					=> $woo_compare_widget_button_style['button_font_size'],
+						'face'					=> $woo_compare_widget_button_style['button_font'],
+						'style'					=> $woo_compare_widget_button_style['button_font_style'],
+						'color'					=> $woo_compare_widget_button_style['button_font_colour'],
+			);
+		$woo_compare_widget_button_style['button_border'] = array(
+						'width'					=> $woo_compare_widget_button_style['button_border_size'],
+						'style'					=> $woo_compare_widget_button_style['button_border_style'],
+						'color'					=> $woo_compare_widget_button_style['button_border_colour'],
+						'corner'				=> $woo_compare_widget_button_style['button_border_rounded'],
+						'top_left_corner'		=> $woo_compare_widget_button_style['button_border_rounded_value'],
+						'top_right_corner'		=> $woo_compare_widget_button_style['button_border_rounded_value'],
+						'bottom_left_corner'	=> $woo_compare_widget_button_style['button_border_rounded_value'],
+						'bottom_right_corner'	=> $woo_compare_widget_button_style['button_border_rounded_value'],
+			);
+		update_option('woo_compare_widget_button_style', $woo_compare_widget_button_style);
+		
+		$woo_compare_widget_clear_all_style = get_option('woo_compare_widget_clear_all_style', array() );
+		$woo_compare_widget_clear_all_style['clear_text_font'] = array(
+						'size'					=> $woo_compare_widget_clear_all_style['clear_text_font_size'],
+						'face'					=> $woo_compare_widget_clear_all_style['clear_text_font'],
+						'style'					=> $woo_compare_widget_clear_all_style['clear_text_font_style'],
+						'color'					=> $woo_compare_widget_clear_all_style['clear_text_font_colour'],
+			);
+		$woo_compare_widget_clear_all_style['clear_all_button_font'] = array(
+						'size'					=> $woo_compare_widget_clear_all_style['clear_all_button_font_size'],
+						'face'					=> $woo_compare_widget_clear_all_style['clear_all_button_font'],
+						'style'					=> $woo_compare_widget_clear_all_style['clear_all_button_font_style'],
+						'color'					=> $woo_compare_widget_clear_all_style['clear_all_button_font_colour'],
+			);
+		$woo_compare_widget_clear_all_style['clear_all_button_border'] = array(
+						'width'					=> $woo_compare_widget_clear_all_style['clear_all_button_border_size'],
+						'style'					=> $woo_compare_widget_clear_all_style['clear_all_button_border_style'],
+						'color'					=> $woo_compare_widget_clear_all_style['clear_all_button_border_colour'],
+						'corner'				=> $woo_compare_widget_clear_all_style['clear_all_button_border_rounded'],
+						'top_left_corner'		=> $woo_compare_widget_clear_all_style['clear_all_button_border_rounded_value'],
+						'top_right_corner'		=> $woo_compare_widget_clear_all_style['clear_all_button_border_rounded_value'],
+						'bottom_left_corner'	=> $woo_compare_widget_clear_all_style['clear_all_button_border_rounded_value'],
+						'bottom_right_corner'	=> $woo_compare_widget_clear_all_style['clear_all_button_border_rounded_value'],
+			);
+		update_option('woo_compare_widget_clear_all_style', $woo_compare_widget_clear_all_style);
+			
+		$woo_compare_widget_thumbnail_style = get_option('woo_compare_widget_thumbnail_style', array() );
+		$woo_compare_widget_thumbnail_style['thumb_border'] = array(
+						'width'					=> $woo_compare_widget_thumbnail_style['thumb_border_size'],
+						'style'					=> $woo_compare_widget_thumbnail_style['thumb_border_style'],
+						'color'					=> $woo_compare_widget_thumbnail_style['thumb_border_colour'],
+						'corner'				=> $woo_compare_widget_thumbnail_style['thumb_border_rounded'],
+						'top_left_corner'		=> $woo_compare_widget_thumbnail_style['thumb_border_rounded_value'],
+						'top_right_corner'		=> $woo_compare_widget_thumbnail_style['thumb_border_rounded_value'],
+						'bottom_left_corner'	=> $woo_compare_widget_thumbnail_style['thumb_border_rounded_value'],
+						'bottom_right_corner'	=> $woo_compare_widget_thumbnail_style['thumb_border_rounded_value'],
+			);
+		update_option('woo_compare_widget_thumbnail_style', $woo_compare_widget_thumbnail_style);
+			
+		$woo_compare_grid_view_settings = get_option('woo_compare_grid_view_settings', array() );
+		$woo_compare_grid_view_settings['grid_view_button_margin_top'] = $woo_compare_grid_view_settings['grid_view_button_below_padding'];
+		$woo_compare_grid_view_settings['grid_view_button_margin_bottom'] = $woo_compare_grid_view_settings['grid_view_button_above_padding'];
+		update_option('woo_compare_grid_view_settings', $woo_compare_grid_view_settings);
+		
+		$woo_compare_grid_view_button_style = get_option('woo_compare_grid_view_button_style', array() );
+		$woo_compare_grid_view_button_style['link_font'] = array(
+						'size'					=> $woo_compare_grid_view_button_style['link_font_size'],
+						'face'					=> $woo_compare_grid_view_button_style['link_font'],
+						'style'					=> $woo_compare_grid_view_button_style['link_font_style'],
+						'color'					=> $woo_compare_grid_view_button_style['link_font_colour'],
+			);
+		$woo_compare_grid_view_button_style['button_font'] = array(
+						'size'					=> $woo_compare_grid_view_button_style['button_font_size'],
+						'face'					=> $woo_compare_grid_view_button_style['button_font'],
+						'style'					=> $woo_compare_grid_view_button_style['button_font_style'],
+						'color'					=> $woo_compare_grid_view_button_style['button_font_colour'],
+			);
+		$woo_compare_grid_view_button_style['button_border'] = array(
+						'width'					=> $woo_compare_grid_view_button_style['button_border_size'],
+						'style'					=> $woo_compare_grid_view_button_style['button_border_style'],
+						'color'					=> $woo_compare_grid_view_button_style['button_border_colour'],
+						'corner'				=> $woo_compare_grid_view_button_style['button_border_rounded'],
+						'top_left_corner'		=> $woo_compare_grid_view_button_style['button_border_rounded_value'],
+						'top_right_corner'		=> $woo_compare_grid_view_button_style['button_border_rounded_value'],
+						'bottom_left_corner'	=> $woo_compare_grid_view_button_style['button_border_rounded_value'],
+						'bottom_right_corner'	=> $woo_compare_grid_view_button_style['button_border_rounded_value'],
+			);
+		update_option('woo_compare_grid_view_button_style', $woo_compare_grid_view_button_style);
+		
+		$woo_compare_gridview_view_compare_style = get_option('woo_compare_gridview_view_compare_style', array() );
+		$woo_compare_gridview_view_compare_style['gridview_view_compare_link_font'] = array(
+						'size'					=> $woo_compare_gridview_view_compare_style['gridview_view_compare_link_font_size'],
+						'face'					=> $woo_compare_gridview_view_compare_style['gridview_view_compare_link_font'],
+						'style'					=> $woo_compare_gridview_view_compare_style['gridview_view_compare_link_font_style'],
+						'color'					=> $woo_compare_gridview_view_compare_style['gridview_view_compare_link_font_colour'],
+			);
+		update_option('woo_compare_gridview_view_compare_style', $woo_compare_gridview_view_compare_style);
+		
+		$woo_compare_page_style = get_option('woo_compare_page_style', array() );
+		$woo_compare_page_style['no_product_message_font'] = array(
+						'size'					=> $woo_compare_page_style['no_product_message_font_size'],
+						'face'					=> $woo_compare_page_style['no_product_message_font'],
+						'style'					=> $woo_compare_page_style['no_product_message_font_style'],
+						'color'					=> $woo_compare_page_style['no_product_message_font_colour'],
+			);
+		$woo_compare_page_style['header_bottom_border'] = array(
+						'width'					=> $woo_compare_page_style['header_bottom_border_size'],
+						'style'					=> $woo_compare_page_style['header_bottom_border_style'],
+						'color'					=> $woo_compare_page_style['header_bottom_border_colour'],
+			);
+		update_option('woo_compare_page_style', $woo_compare_page_style);
+		
+		$woo_compare_table_style = get_option('woo_compare_table_style', array() );
+		$woo_compare_table_style['table_border'] = array(
+						'width'					=> $woo_compare_table_style['table_border_size'],
+						'style'					=> $woo_compare_table_style['table_border_style'],
+						'color'					=> $woo_compare_table_style['table_border_colour'],
+			);
+		$woo_compare_table_style['table_row_padding_top'] = $woo_compare_table_style['row_padding_topbottom'];
+		$woo_compare_table_style['table_row_padding_bottom'] = $woo_compare_table_style['row_padding_topbottom'];
+		$woo_compare_table_style['table_row_padding_left'] = $woo_compare_table_style['row_padding_leftright'];
+		$woo_compare_table_style['table_row_padding_right'] = $woo_compare_table_style['row_padding_leftright'];
+		update_option('woo_compare_table_style', $woo_compare_table_style);
+		
+		$woo_compare_table_content_style = get_option('woo_compare_table_content_style', array() );
+		$woo_compare_table_content_style['feature_title_font'] = array(
+						'size'					=> $woo_compare_table_content_style['feature_title_font_size'],
+						'face'					=> $woo_compare_table_content_style['feature_title_font'],
+						'style'					=> $woo_compare_table_content_style['feature_title_font_style'],
+						'color'					=> $woo_compare_table_content_style['feature_title_font_colour'],
+			);
+		$woo_compare_table_content_style['content_font'] = array(
+						'size'					=> $woo_compare_table_content_style['content_font_size'],
+						'face'					=> $woo_compare_table_content_style['content_font'],
+						'style'					=> $woo_compare_table_content_style['content_font_style'],
+						'color'					=> $woo_compare_table_content_style['content_font_colour'],
+			);
+		$woo_compare_table_content_style['empty_font'] = array(
+						'size'					=> $woo_compare_table_content_style['empty_font_size'],
+						'face'					=> $woo_compare_table_content_style['empty_font'],
+						'style'					=> $woo_compare_table_content_style['empty_font_style'],
+						'color'					=> $woo_compare_table_content_style['empty_font_colour'],
+			);
+		$woo_compare_table_content_style['product_name_font'] = array(
+						'size'					=> $woo_compare_table_content_style['product_name_font_size'],
+						'face'					=> $woo_compare_table_content_style['product_name_font'],
+						'style'					=> $woo_compare_table_content_style['product_name_font_style'],
+						'color'					=> $woo_compare_table_content_style['product_name_font_colour'],
+			);
+		update_option('woo_compare_table_content_style', $woo_compare_table_content_style);
+		
+		$woo_compare_product_prices_style = get_option('woo_compare_product_prices_style', array() );
+		$woo_compare_product_prices_style['price_font'] = array(
+						'size'					=> $woo_compare_product_prices_style['price_font_size'],
+						'face'					=> $woo_compare_product_prices_style['price_font'],
+						'style'					=> $woo_compare_product_prices_style['price_font_style'],
+						'color'					=> $woo_compare_product_prices_style['price_font_colour'],
+			);
+		update_option('woo_compare_product_prices_style', $woo_compare_product_prices_style);
+		
+		$woo_compare_addtocart_style = get_option('woo_compare_addtocart_style', array() );
+		$woo_compare_addtocart_style['addtocart_link_font'] = array(
+						'size'					=> $woo_compare_addtocart_style['addtocart_link_font_size'],
+						'face'					=> $woo_compare_addtocart_style['addtocart_link_font'],
+						'style'					=> $woo_compare_addtocart_style['addtocart_link_font_style'],
+						'color'					=> $woo_compare_addtocart_style['addtocart_link_font_colour'],
+			);
+		$woo_compare_addtocart_style['addtocart_button_font'] = array(
+						'size'					=> $woo_compare_addtocart_style['addtocart_button_font_size'],
+						'face'					=> $woo_compare_addtocart_style['addtocart_button_font'],
+						'style'					=> $woo_compare_addtocart_style['addtocart_button_font_style'],
+						'color'					=> $woo_compare_addtocart_style['addtocart_button_font_colour'],
+			);
+		$woo_compare_addtocart_style['addtocart_button_border'] = array(
+						'width'					=> $woo_compare_addtocart_style['addtocart_button_border_size'],
+						'style'					=> $woo_compare_addtocart_style['addtocart_button_border_style'],
+						'color'					=> $woo_compare_addtocart_style['addtocart_button_border_colour'],
+						'corner'				=> $woo_compare_addtocart_style['addtocart_button_border_rounded'],
+						'top_left_corner'		=> $woo_compare_addtocart_style['addtocart_button_border_rounded_value'],
+						'top_right_corner'		=> $woo_compare_addtocart_style['addtocart_button_border_rounded_value'],
+						'bottom_left_corner'	=> $woo_compare_addtocart_style['addtocart_button_border_rounded_value'],
+						'bottom_right_corner'	=> $woo_compare_addtocart_style['addtocart_button_border_rounded_value'],
+			);
+		update_option('woo_compare_addtocart_style', $woo_compare_addtocart_style);
+		
+		$woo_compare_viewcart_style = get_option('woo_compare_viewcart_style', array() );
+		$woo_compare_viewcart_style['viewcart_link_font'] = array(
+						'size'					=> $woo_compare_viewcart_style['viewcart_link_font_size'],
+						'face'					=> $woo_compare_viewcart_style['viewcart_link_font'],
+						'style'					=> $woo_compare_viewcart_style['viewcart_link_font_style'],
+						'color'					=> $woo_compare_viewcart_style['viewcart_link_font_colour'],
+			);
+		update_option('woo_compare_viewcart_style', $woo_compare_viewcart_style);
+		
+		$woo_compare_print_message_style = get_option('woo_compare_print_message_style', array() );
+		$woo_compare_print_button_style = get_option('woo_compare_print_button_style', array() );
+		$woo_compare_print_page_settings = array();
+		$woo_compare_print_page_settings = array_merge( $woo_compare_print_page_settings, $woo_compare_print_message_style );
+		$woo_compare_print_page_settings = array_merge( $woo_compare_print_page_settings, $woo_compare_print_button_style );
+		$woo_compare_print_page_settings['print_message_font'] = array(
+						'size'					=> $woo_compare_print_message_style['print_message_font_size'],
+						'face'					=> $woo_compare_print_message_style['print_message_font'],
+						'style'					=> $woo_compare_print_message_style['print_message_font_style'],
+						'color'					=> $woo_compare_print_message_style['print_message_font_colour'],
+			);
+		$woo_compare_print_page_settings['print_link_font'] = array(
+						'size'					=> $woo_compare_print_button_style['print_link_font_size'],
+						'face'					=> $woo_compare_print_button_style['print_link_font'],
+						'style'					=> $woo_compare_print_button_style['print_link_font_style'],
+						'color'					=> $woo_compare_print_button_style['print_link_font_colour'],
+			);
+		$woo_compare_print_page_settings['button_font'] = array(
+						'size'					=> $woo_compare_print_button_style['button_font_size'],
+						'face'					=> $woo_compare_print_button_style['button_font'],
+						'style'					=> $woo_compare_print_button_style['button_font_style'],
+						'color'					=> $woo_compare_print_button_style['button_font_colour'],
+			);
+		$woo_compare_print_page_settings['button_border'] = array(
+						'width'					=> $woo_compare_print_button_style['button_border_size'],
+						'style'					=> $woo_compare_print_button_style['button_border_style'],
+						'color'					=> $woo_compare_print_button_style['button_border_colour'],
+						'corner'				=> $woo_compare_print_button_style['button_border_rounded'],
+						'top_left_corner'		=> $woo_compare_print_button_style['button_border_rounded_value'],
+						'top_right_corner'		=> $woo_compare_print_button_style['button_border_rounded_value'],
+						'bottom_left_corner'	=> $woo_compare_print_button_style['button_border_rounded_value'],
+						'bottom_right_corner'	=> $woo_compare_print_button_style['button_border_rounded_value'],
+			);
+		update_option('woo_compare_print_page_settings', $woo_compare_print_page_settings);
+		
+		$woo_compare_close_window_button_style = get_option('woo_compare_close_window_button_style', array() );
+		$woo_compare_close_window_button_style['close_link_font'] = array(
+						'size'					=> $woo_compare_close_window_button_style['close_link_font_size'],
+						'face'					=> $woo_compare_close_window_button_style['close_link_font'],
+						'style'					=> $woo_compare_close_window_button_style['close_link_font_style'],
+						'color'					=> $woo_compare_close_window_button_style['close_link_font_colour'],
+			);
+		$woo_compare_close_window_button_style['button_font'] = array(
+						'size'					=> $woo_compare_close_window_button_style['button_font_size'],
+						'face'					=> $woo_compare_close_window_button_style['button_font'],
+						'style'					=> $woo_compare_close_window_button_style['button_font_style'],
+						'color'					=> $woo_compare_close_window_button_style['button_font_colour'],
+			);
+		$woo_compare_close_window_button_style['button_border'] = array(
+						'width'					=> $woo_compare_close_window_button_style['button_border_size'],
+						'style'					=> $woo_compare_close_window_button_style['button_border_style'],
+						'color'					=> $woo_compare_close_window_button_style['button_border_colour'],
+						'corner'				=> $woo_compare_close_window_button_style['button_border_rounded'],
+						'top_left_corner'		=> $woo_compare_close_window_button_style['button_border_rounded_value'],
+						'top_right_corner'		=> $woo_compare_close_window_button_style['button_border_rounded_value'],
+						'bottom_left_corner'	=> $woo_compare_close_window_button_style['button_border_rounded_value'],
+						'bottom_right_corner'	=> $woo_compare_close_window_button_style['button_border_rounded_value'],
+			);
+		update_option('woo_compare_close_window_button_style', $woo_compare_close_window_button_style);
 	}
 }
 ?>

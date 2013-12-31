@@ -9,7 +9,7 @@
  * woocp_categories_manager()
  * woocp_update_cat_orders()
  */
-class WC_Compare_Categories_Class 
+class WC_Compare_Categories_Class
 {
 	
 	public static function init_categories_actions() {
@@ -57,7 +57,7 @@ class WC_Compare_Categories_Class
 
         <h3><?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit') { _e('Edit Compare Product Categories', 'woo_cp');}else { _e('Add Compare Product Categories', 'woo_cp'); } ?></h3>
         <?php if(isset($_REQUEST['act']) && $_REQUEST['act'] != 'cat-edit'){?><p><?php _e('Create Categories based on groups of products that share the same compare feature list.', 'woo_cp'); ?></p><?php } ?>
-        <form action="admin.php?page=woo-compare-settings&tab=features" method="post" name="form_add_compare" id="form_add_compare">
+        <form action="admin.php?page=woo-compare-features" method="post" name="form_add_compare" id="form_add_compare">
         <?php
 		if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit') {
 			$category_id = $_REQUEST['category_id'];
@@ -76,7 +76,7 @@ class WC_Compare_Categories_Class
                 </tbody>
             </table>
             <p class="submit">
-	        	<input type="submit" name="bt_save_cat" id="bt_save_cat" class="button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit') { _e('Save', 'woo_cp'); }else { _e('Create', 'woo_cp'); } ?>"  /> <?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit') { ?><a href="admin.php?page=woo-compare-settings&tab=features" style="text-decoration:none;"><input type="button" name="cancel" value="<?php _e('Cancel', 'woo_cp'); ?>" class="button" /></a><?php } ?>
+	        	<input type="submit" name="bt_save_cat" id="bt_save_cat" class="button button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit') { _e('Save', 'woo_cp'); }else { _e('Create', 'woo_cp'); } ?>"  /> <?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit') { ?><input type="button" class="button" onclick="window.location='admin.php?page=woo-compare-features'" value="<?php _e('Cancel', 'woo_cp'); ?>" /><?php } ?>
 	    	</p>
         </form>
 	<?php

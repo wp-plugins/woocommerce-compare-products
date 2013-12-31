@@ -100,11 +100,8 @@ class WC_Compare_Fields_Class
 	public static function woocp_features_manager() {
 		global $wpdb;
 ?>
-        <style>
-			#field_type_chzn{width:300px !important;}
-		</style>
         <h3 id="add_feature"><?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit') { _e('Edit Compare Product Features', 'woo_cp'); }else { _e('Add Compare Product Features', 'woo_cp'); }?></h3>
-        <form action="admin.php?page=woo-compare-settings&tab=features" method="post" name="form_add_compare" id="form_add_compare">
+        <form action="admin.php?page=woo-compare-features" method="post" name="form_add_compare" id="form_add_compare">
         <?php
 		if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit') {
 			$field_id = $_REQUEST['field_id'];
@@ -117,19 +114,26 @@ class WC_Compare_Fields_Class
 		}
 		$have_value = false;
 ?>
-        	<table cellspacing="0" class="widefat post fixed form-table">
+        	<table cellspacing="0" class="widefat post fixed">
             	<thead>
                 	<tr><th class="manage-column" scope="col"><?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit') { _e('Edit Compare Features', 'woo_cp'); }else { _e('Create New Compare Features', 'woo_cp'); } ?></th></tr>
                 </thead>
                 <tbody>
                 	<tr>
                     	<td>
-                        	<div class="field_title"><label for="field_name"><?php _e('Feature Name', 'woo_cp'); ?></label></div> <input type="text" name="field_name" id="field_name" value="<?php if (!empty($field)) echo stripslashes($field->field_name); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e('This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height', 'woo_cp') ?>' src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
-                            <div style="clear:both; height:20px"></div>
-                        	<div class="field_title"><label for="field_unit"><?php _e('Feature Unit of Measurement', 'woo_cp'); ?></label></div> <input type="text" name="field_unit" id="field_unit" value="<?php if (!empty($field)) echo stripslashes($field->field_unit); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e("e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name.", 'woo_cp') ?>' src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
-                            <div style="clear:both; height:20px"></div>
-                            <div class="field_title"><label for="field_type"><?php _e('Feature Input Type', 'woo_cp'); ?></label></div>
-                            <select style="min-width:300px;" name="field_type" id="field_type" class="chzn-select">
+                        	<table cellspacing="0" class="form-table">
+                            	<tr>
+                                	<th><div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="<?php _e('This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height', 'woo_cp') ?>"></div> <label for="field_name"><?php _e('Feature Name', 'woo_cp'); ?></label></th>
+                                    <td><input type="text" name="field_name" id="field_name" value="<?php if (!empty($field)) echo stripslashes($field->field_name); ?>" style="width:300px" /></td>
+                                </tr>
+                                <tr>
+                                	<th><div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="<?php _e("e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name.", 'woo_cp') ?>"></div> <label for="field_unit"><?php _e('Feature Unit of Measurement', 'woo_cp'); ?></label></th>
+                                    <td><input type="text" name="field_unit" id="field_unit" value="<?php if (!empty($field)) echo stripslashes($field->field_unit); ?>" style="width:300px" /></td>
+                                </tr>
+                                <tr>
+                                	<th><div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="<?php _e("Users don't see this. Use to set the data input field type that you will use on to enter the Products data for this feature.", 'woo_cp') ?>"></div> <label for="field_type"><?php _e('Feature Input Type', 'woo_cp'); ?></label></th>
+                                    <td>
+                                    	<select style="width:300px;" name="field_type" id="field_type" class="chzn-select">
                             <?php
 		foreach (WC_Compare_Fields_Class::$default_types as $type => $type_name) {
 			if ( in_array( $type, array( 'wp-video', 'wp-audio' ) ) ) {
@@ -144,15 +148,17 @@ class WC_Compare_Fields_Class
 			$have_value = true;
 		}
 ?>
-                            </select> <img class="help_tip" tip="<?php _e("Users don't see this. Use to set the data input field type that you will use on to enter the Products data for this feature.", 'woo_cp') ?>" src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
-                            <div style="clear:both; height:20px"></div>
-                            <div id="field_value" <?php if (!$have_value) { echo 'style="display:none"';} ?>>
-                                <div class="field_title"><label for="default_value"><?php _e('Enter Input Type options', 'woo_cp'); ?></label></div> <textarea style="min-width:300px;height:100px;" name="default_value" id="default_value"><?php if (!empty($field)) echo stripslashes($field->default_value); ?></textarea> <img class="help_tip" tip="<?php _e("You have selected one of the Check Box, Radio Button, Drop Down, Mutli Select Input Types. Type your Options here, one line for each option.", 'woo_cp') ?>" src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
-                                <div style="clear:both"></div>
-                            </div>
-                            <div style="clear:both; height:20px"></div>
-                            <div class="field_title"><label for="field_type"><?php _e('Assign Feature to Categories', 'woo_cp'); ?></label></div>
-                            	<?php
+                            </select>
+                                    </td>
+                                </tr>
+                                <tr id="field_value" <?php if (!$have_value) { echo 'style="display:none"';} ?>>
+                                	<th><div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="<?php _e("You have selected one of the Check Box, Radio Button, Drop Down, Mutli Select Input Types. Type your Options here, one line for each option.", 'woo_cp') ?>"></div> <label for="default_value"><?php _e('Enter Input Type options', 'woo_cp'); ?></label></th>
+                                    <td><textarea style="width:300px;height:100px;" name="default_value" id="default_value"><?php if (!empty($field)) echo stripslashes($field->default_value); ?></textarea></td>
+                                </tr>
+                                <tr>
+                                	<th><div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="<?php _e("Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories.", 'woo_cp') ?>"></div> <label for="field_type"><?php _e('Assign Feature to Categories', 'woo_cp'); ?></label></th>
+                                    <td>
+                                    <?php
 								$all_cat = WC_Compare_Categories_Data::get_results('', 'category_order ASC');
 								$cat_fields = WC_Compare_Categories_Fields_Data::get_catid_results($field_id);
 								if (is_array($all_cat) && count($all_cat) > 0) {
@@ -175,15 +181,16 @@ class WC_Compare_Fields_Class
                                 <?php 
 								}
 								?>
-                            	<img class="help_tip" style="vertical-align:top;" tip='<?php _e("Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories.", 'woo_cp') ?>' src="<?php echo WOOCP_IMAGES_URL; ?>/help.png" />
-
-                            <div style="clear:both"></div>
+                                    </td>
+                                </tr>
+                        	</table>
                     	</td>
                     </tr>
                 </tbody>
             </table>
             <p class="submit">
-	        	<input type="submit" name="bt_save_field" id="bt_save_field" class="button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit') { _e('Save', 'woo_cp'); }else { _e('Create', 'woo_cp'); } ?>"  /> <a href="admin.php?page=woo-compare-settings&tab=features" style="text-decoration:none;"><input type="button" name="cancel" value="<?php _e('Cancel', 'woo_cp'); ?>" class="button" /></a>
+	        	<input type="submit" name="bt_save_field" id="bt_save_field" class="button button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit') { _e('Save', 'woo_cp'); }else { _e('Create', 'woo_cp'); } ?>"  /> 
+                <input type="button" class="button" onclick="window.location='admin.php?page=woo-compare-features'" value="<?php _e('Cancel', 'woo_cp'); ?>" />
 	    	</p>
         </form>
         <script>
@@ -217,12 +224,12 @@ class WC_Compare_Fields_Class
 ?>
 
         <h3 id="#un_assigned"><?php _e('Un-Assigned Features (Assign to a Category to activate)', 'woo_cp'); ?></h3>
-        <form action="admin.php?page=woo-compare-settings&tab=features" method="post" name="form_delete_fields" id="form_delete_fields" style="margin-bottom:30px;">
+        <form action="admin.php?page=woo-compare-features" method="post" name="form_delete_fields" id="form_delete_fields" style="margin-bottom:30px;">
         	<table cellspacing="0" class="widefat post fixed" style="width:535px;">
             	<thead>
                 	<tr>
-                    	<th width="30" class="manage-column" scope="col" style="white-space: nowrap;"><input id="toggle1" class="toggle" type="checkbox" style="margin:0;" /></th>
-                        <th width="35" class="manage-column" scope="col" style="white-space: nowrap;"><?php _e('No', 'woo_cp'); ?></th>
+                    	<th width="25" class="manage-column" scope="col" style="white-space: nowrap;"><input id="toggle1" class="toggle" type="checkbox" style="margin:0;" /></th>
+                        <th width="30" class="manage-column" scope="col" style="white-space: nowrap;"><?php _e('No', 'woo_cp'); ?></th>
                         <th class="manage-column" scope="col"><?php _e('Feature Name', 'woo_cp'); ?></th>
                         <th width="90" class="manage-column" scope="col" style="text-align:right"><?php _e('Type', 'woo_cp'); ?></th>
                         <th width="100" class="manage-column" scope="col" style="text-align:right"></th>
@@ -238,12 +245,12 @@ class WC_Compare_Fields_Class
                         <td><?php echo $un_i; ?></td>
                         <td><?php echo stripslashes($field_data->field_name); ?></td>
                         <td align="right"><?php echo WC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
-                        <td align="right"><a href="admin.php?page=woo-compare-settings&tab=features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>" ><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-settings&tab=features&act=field-delete&field_id=<?php echo $field_data->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'woo_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?>');" title="<?php _e('Delete', 'woo_cp') ?>" ><?php _e('Delete', 'woo_cp') ?></a></td>
+                        <td align="right"><a href="admin.php?page=woo-compare-features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>" ><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-features&act=field-delete&field_id=<?php echo $field_data->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'woo_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?>');" title="<?php _e('Delete', 'woo_cp') ?>" ><?php _e('Delete', 'woo_cp') ?></a></td>
                 	</tr>
                  <?php } ?>
                 </tbody>
             </table>
-            <div style="margin-top:10px;"><input type="submit" name="bt_delete" id="bt_delete" class="button-primary" value="<?php _e('Delete', 'woo_cp') ; ?>" onclick="if (confirm('<?php _e('Are you sure about deleting this?', 'woo_cp') ; ?>')) return true; else return false" /></div>
+            <div style="margin-top:10px;"><input type="submit" name="bt_delete" id="bt_delete" class="button button-primary" value="<?php _e('Delete', 'woo_cp') ; ?>" onclick="if (confirm('<?php _e('Are you sure about deleting this?', 'woo_cp') ; ?>')) return true; else return false" /></div>
             </form>
         <?php
 		}
@@ -265,10 +272,10 @@ class WC_Compare_Fields_Class
   		  <table cellspacing="0" class="widefat post fixed sorttable" id="compare_orders_<?php echo $cat->id; ?>" style="width:535px; margin-bottom:20px;">
             <thead>
             <tr>
-              <th width="30" style="white-space: nowrap;"><span class="c_field_name">&nbsp;</span></th>
+              <th width="25" style="white-space: nowrap;"><span class="c_field_name">&nbsp;</span></th>
               <th><strong><?php echo stripslashes($cat->category_name) ;?></strong> :</th>
               <th width="90"></th>
-              <th width="100" style="text-align:right; font-size:12px;white-space: nowrap;"><a href="admin.php?page=woo-compare-settings&tab=features&act=cat-edit&category_id=<?php echo $cat->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>"><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-settings&tab=features&act=cat-delete&category_id=<?php echo $cat->id; ?>" title="<?php _e('Delete', 'woo_cp') ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'woo_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');"><?php _e('Delete', 'woo_cp') ?></a><?php if (is_array($compare_fields) && count($compare_fields)>0) { ?> | <span class="c_openclose_table c_close_table" id="expand_<?php echo $cat->id; ?>">&nbsp;</span><?php }else {?> | <span class="c_openclose_none">&nbsp;</span><?php }?></th>
+              <th width="100" style="text-align:right; font-size:12px;white-space: nowrap;"><a href="admin.php?page=woo-compare-features&act=cat-edit&category_id=<?php echo $cat->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>"><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-features&act=cat-delete&category_id=<?php echo $cat->id; ?>" title="<?php _e('Delete', 'woo_cp') ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'woo_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');"><?php _e('Delete', 'woo_cp') ?></a><?php if (is_array($compare_fields) && count($compare_fields)>0) { ?> | <span class="c_openclose_table c_close_table" id="expand_<?php echo $cat->id; ?>">&nbsp;</span><?php }else {?> | <span class="c_openclose_none">&nbsp;</span><?php }?></th>
             </tr>
             </thead>
             <tbody class="expand_<?php echo $cat->id; ?>">
@@ -282,7 +289,7 @@ class WC_Compare_Fields_Class
                 	<td><span class="compare_sort"><?php echo $i; ?></span>.</td>
                     <td><div class="c_field_name"><?php echo stripslashes($field_data->field_name); ?></div></td>
                     <td align="right"><?php echo WC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
-                    <td align="right"><a href="admin.php?page=woo-compare-settings&tab=features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>" ><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-settings&tab=features&act=field-delete&field_id=<?php echo $field_data->id; ?>&cat_id=<?php echo $cat->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to remove', 'woo_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?> <?php _e('from', 'woo_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');" title="<?php _e('Remove', 'woo_cp') ?>" ><?php _e('Remove', 'woo_cp') ?></a></td>
+                    <td align="right"><a href="admin.php?page=woo-compare-features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>" ><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-features&act=field-delete&field_id=<?php echo $field_data->id; ?>&cat_id=<?php echo $cat->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to remove', 'woo_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?> <?php _e('from', 'woo_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');" title="<?php _e('Remove', 'woo_cp') ?>" ><?php _e('Remove', 'woo_cp') ?></a></td>
                 </tr>
                 <?php
 					}
@@ -367,11 +374,11 @@ class WC_Compare_Fields_Class
 	public static function features_search_area() {
 		global $wpdb;
 	?>
-    	<div id="icon-post" class="icon32 icon32-posts-post"><br></div>
-        <h2><?php _e('Categories & Features', 'woo_cp'); ?> <a href="admin.php?page=woo-compare-settings&tab=features&act=add-new" class="add-new-h2"><?php _e('Add New', 'woo_cp'); ?></a></h2>
+    	<div class="icon32 icon32-compare-product" id="icon32-compare-product"><br></div>
+        <h2><?php _e('Categories & Features', 'woo_cp'); ?> <a href="admin.php?page=woo-compare-features&act=add-new" class="add-new-h2"><?php _e('Add New', 'woo_cp'); ?></a></h2>
         <div style="clear:both;height:12px"></div>
-        <form method="get" action="admin.php?page=woo-compare-settings&tab=features" name="compare_search_features">
-            <input type="hidden" name="page" value="woo-compare-settings"  />
+        <form method="get" action="admin.php?page=woo-compare-features" name="compare_search_features">
+            <input type="hidden" name="page" value="woo-compare-features"  />
             <input type="hidden" name="tab" value="features"  />
         <?php
 		$s_feature = '';
@@ -381,7 +388,7 @@ class WC_Compare_Fields_Class
                 <tbody>
                 	<tr valign="top">
                     	<th class="titledesc" scope="rpw" style="padding-left:0;"><input type="text" name="s_feature" id="s_feature" value="<?php echo $s_feature; ?>" style="min-width:300px" /></th>
-                        <td class="forminp" style="padding-right:0; text-align:right;"><input type="submit" id="search_features" name="" value="<?php _e('Search Features', 'woo_cp'); ?>" class="button"></td>
+                        <td class="forminp search_features_td" style="padding-right:0; text-align:right;"><input type="submit" id="search_features" name="" value="<?php _e('Search Features', 'woo_cp'); ?>" class="button"></td>
                     </tr>
                 </tbody>
             </table>
@@ -396,7 +403,7 @@ class WC_Compare_Fields_Class
 			$div = 5;
 			$keyword = trim(stripslashes($_REQUEST['s_feature']));
 			
-			$link = WC_Compare_Functions::modify_url(array('pp' => '', 'rows' => $rows, 's_feature' => $keyword ) );
+			$link = add_query_arg(array('pp' => '', 'rows' => $rows, 's_feature' => $keyword ) );
 			
 			$character = 'latin1';
 			if ( $wpdb->has_cap( 'collation' ) ) 
@@ -430,7 +437,7 @@ class WC_Compare_Fields_Class
                 	<tr>
                         <td><?php echo stripslashes($field_data->field_name); ?></td>
                         <td align="right"><?php echo WC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
-                        <td align="right"><a href="admin.php?page=woo-compare-settings&tab=features&tab=features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>" ><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-settings&tab=features&act=field-delete&field_id=<?php echo $field_data->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'woo_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?>');" title="<?php _e('Delete', 'woo_cp') ?>" ><?php _e('Delete', 'woo_cp') ?></a></td>
+                        <td align="right"><a href="admin.php?page=woo-compare-features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'woo_cp') ?>" ><?php _e('Edit', 'woo_cp') ?></a> | <a href="admin.php?page=woo-compare-features&act=field-delete&field_id=<?php echo $field_data->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'woo_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?>');" title="<?php _e('Delete', 'woo_cp') ?>" ><?php _e('Delete', 'woo_cp') ?></a></td>
                 	</tr>
                  <?php } ?>
                 </tbody>

@@ -97,9 +97,14 @@ class WC_Compare_MetaBox
 		if ($cat_id > 0 && WC_Compare_Categories_Data::get_count("id='".$cat_id."'") > 0) {
 ?>
     	<style>
-			.form-table th{padding-left:0px !important;}
+			.comparison_category_features_data th{padding-left:0px !important;}
+			@media screen and ( max-width: 782px ) {
+				.comparison_category_features_data textarea, .comparison_category_features_data input[type="text"], .comparison_category_features_data input[type="email"], .comparison_category_features_data input[type="number"], .comparison_category_features_data input[type="password"], .comparison_category_features_data select {
+					width: 100% !important;	
+				}
+			}
 		</style>
-        <table cellspacing="0" cellpadding="5" style="width: 100%;" class="form-table">
+        <table cellspacing="0" cellpadding="5" style="width: 100%;" class="form-table comparison_category_features_data">
             <tbody>
         <?php
 			$compare_fields = WC_Compare_Categories_Fields_Data::get_results("cat_id='".$cat_id."'", 'cf.field_order ASC');
@@ -197,7 +202,7 @@ class WC_Compare_MetaBox
 				}
 			}else {
 ?>
-        		<tr><td><i style="text-decoration:blink"><?php _e('There are no Features created for this category, please add some.', 'woo_cp'); ?> <a href="admin.php?page=woo-compare-settings&tab=features" target="_blank"><?php _e('This page', 'woo_cp'); ?></a></i></td></tr>
+        		<tr><td><i style="text-decoration:blink"><?php _e('There are no Features created for this category, please add some.', 'woo_cp'); ?> <a href="admin.php?page=woo-compare-features" target="_blank"><?php _e('This page', 'woo_cp'); ?></a></i></td></tr>
         <?php
 			}
 ?>
@@ -341,7 +346,7 @@ class WC_Compare_MetaBox
 				}
 			}else {
 ?>
-        		<tr><td><i style="text-decoration:blink"><?php _e('There are no Features created for this category, please add some.', 'woo_cp'); ?> <a href="admin.php?page=woo-compare-settings&tab=features" target="_blank"><?php _e('This page', 'woo_cp'); ?></a></i></td></tr>
+        		<tr><td><i style="text-decoration:blink"><?php _e('There are no Features created for this category, please add some.', 'woo_cp'); ?> <a href="admin.php?page=woo-compare-features" target="_blank"><?php _e('This page', 'woo_cp'); ?></a></i></td></tr>
         <?php
 			}
 ?>

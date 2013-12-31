@@ -7,7 +7,9 @@
  *
  * Table Of Contents
  *
+ * register_admin_screen()
  * template_loader()
+ * add_google_fonts()
  * include_customized_style()
  * woocp_shop_add_compare_button()
  * woocp_shop_add_compare_button_below_cart()
@@ -29,14 +31,30 @@
  * woocp_product_featured_tab_woo_2_0()
  * woocp_product_featured_panel()
  * woocp_product_featured_panel_woo_2_0()
- * woocp_admin_script()
  * woocp_set_selected_attributes()
  * auto_create_compare_category()
  * auto_create_compare_feature()
+ * a3_wp_admin()
+ * admin_sidebar_menu_css()
  * plugin_extra_links()
  */
 class WC_Compare_Hook_Filter 
 {
+	
+	public static function register_admin_screen () {
+		if (get_option('a3rev_woocp_just_confirm') == 1) {
+			WC_Compare_Data::automatic_add_features();
+			WC_Compare_Categories_Data::automatic_add_compare_categories();
+			update_option('a3rev_woocp_just_confirm', 0);
+		}
+		
+		$product_comparison = add_menu_page( __('Product Comparison', 'woo_cp'), __('WC Compare', 'woo_cp'), 'manage_options', 'woo-compare-features', array( 'WC_Compare_Features_Panel', 'admin_screen' ), null, '55.222');
+		
+		$compare_features = add_submenu_page('woo-compare-features', __( 'Compare Category & Feature', 'woo_cp' ), __( 'Category & Feature', 'woo_cp' ), 'manage_options', 'woo-compare-features', array( 'WC_Compare_Features_Panel', 'admin_screen' ) );
+		
+		$compare_products = add_submenu_page('woo-compare-features', __( 'Compare Products Manager', 'woo_cp' ), __( 'Product Manager', 'woo_cp' ), 'manage_options', 'woo-compare-products', array( 'WC_Compare_Products_Class', 'woocp_products_manager' ) );
+				
+	} // End register_admin_screen()
 	
 	public static function template_loader( $template ) {
 		global $product_compare_id;
@@ -56,6 +74,33 @@ class WC_Compare_Hook_Filter
 		return $template;
 	}
 	
+	public static function add_google_fonts() {
+		global $wc_compare_fonts_face;
+		global $woo_compare_product_page_button_style, $woo_compare_product_page_view_compare_style;
+		$google_fonts = array( 
+							$woo_compare_product_page_button_style['product_compare_link_font']['face'], 
+							$woo_compare_product_page_button_style['button_font']['face'], 
+							$woo_compare_product_page_view_compare_style['product_view_compare_link_font']['face'], 
+							$woo_compare_product_page_view_compare_style['button_font']['face'], 
+						);
+						
+		$google_fonts = apply_filters( 'wc_compare_google_fonts', $google_fonts );
+		
+		$wc_compare_fonts_face->generate_google_webfonts( $google_fonts );
+	}
+	
+	public static function add_google_fonts_comparison_page() {
+		global $wc_compare_fonts_face;
+		global $woo_compare_page_style;
+		$google_fonts = array( 
+							$woo_compare_page_style['no_product_message_font']['face'],
+						);
+						
+		$google_fonts = apply_filters( 'wc_comparison_page_google_fonts', $google_fonts );
+		
+		$wc_compare_fonts_face->generate_google_webfonts( $google_fonts );
+	}
+	
 	public static function include_customized_style() {
 		include( WOOCP_DIR. '/templates/customized_style.php' );
 	}
@@ -72,7 +117,7 @@ class WC_Compare_Hook_Filter
 		if ($template_name == 'loop/add-to-cart.php') {
 			$product_id = $product->id;
 			if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && WC_Compare_Functions::check_product_have_cat($product_id)) {
-				$compare_grid_view_custom_class = $woo_compare_grid_view_button_style['button_class'];
+				$compare_grid_view_custom_class = '';
 				$compare_grid_view_text = $woo_compare_grid_view_button_style['button_text'];
 				$compare_grid_view_class = 'woo_bt_compare_this_button';
 				
@@ -91,11 +136,14 @@ class WC_Compare_Hook_Filter
 		global $woo_compare_comparison_page_global_settings;
 		global $woo_compare_gridview_view_compare_style;
 		global $product_compare_id;
+		
+		if ( $woo_compare_grid_view_settings['disable_grid_view_compare'] == 1 || $woo_compare_grid_view_settings['grid_view_button_position'] == 'above' ) return;
+		
 		extract($woo_compare_grid_view_settings);
 		extract($woo_compare_grid_view_button_style);
 			$product_id = $product->id;
 			if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && WC_Compare_Functions::check_product_have_cat($product_id)) {
-				$compare_grid_view_custom_class = $woo_compare_grid_view_button_style['button_class'];
+				$compare_grid_view_custom_class = '';
 				$compare_grid_view_text = $woo_compare_grid_view_button_style['button_text'];
 				$compare_grid_view_class = 'woo_bt_compare_this_button';
 				
@@ -117,7 +165,7 @@ class WC_Compare_Hook_Filter
 		extract($woo_compare_product_page_button_style);
 		$product_id = $product->id;
 		if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && $woo_compare_product_page_settings['auto_add'] == 'yes' && WC_Compare_Functions::check_product_have_cat($product_id)) {
-			$product_compare_custom_class = $woo_compare_product_page_button_style['button_class'];
+			$product_compare_custom_class = '';
 			$product_compare_text = $woo_compare_product_page_button_style['product_compare_button_text'];
 			$product_compare_class = 'woo_bt_compare_this_button';
 			if ($woo_compare_product_page_button_style['product_compare_button_type'] == 'link') {
@@ -132,7 +180,7 @@ class WC_Compare_Hook_Filter
 				$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_link_text'];
 				$product_view_compare_class = 'woo_bt_view_compare_link';
 				if ($woo_compare_product_page_view_compare_style['product_view_compare_button_type'] == 'button') {
-					$product_view_compare_custom_class = $woo_compare_product_page_view_compare_style['button_class'];
+					$product_view_compare_custom_class = '';
 					$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_button_text'];
 					$product_view_compare_class = 'woo_bt_view_compare_button';
 				}
@@ -159,7 +207,7 @@ class WC_Compare_Hook_Filter
 		if (in_array($template_name, array('single-product/add-to-cart/simple.php', 'single-product/add-to-cart/grouped.php', 'single-product/add-to-cart/external.php', 'single-product/add-to-cart/variable.php'))) {
 			$product_id = $product->id;
 			if (($post->post_type == 'product' || $post->post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && $woo_compare_product_page_settings['auto_add'] == 'yes' && WC_Compare_Functions::check_product_have_cat($product_id)) {
-				$product_compare_custom_class = $woo_compare_product_page_button_style['button_class'];
+				$product_compare_custom_class = '';
 				$product_compare_text = $woo_compare_product_page_button_style['product_compare_button_text'];
 				$product_compare_class = 'woo_bt_compare_this_button';
 				if ($woo_compare_product_page_button_style['product_compare_button_type'] == 'link') {
@@ -174,7 +222,7 @@ class WC_Compare_Hook_Filter
 					$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_link_text'];
 					$product_view_compare_class = 'woo_bt_view_compare_link';
 					if ($woo_compare_product_page_view_compare_style['product_view_compare_button_type'] == 'button') {
-						$product_view_compare_custom_class = $woo_compare_product_page_view_compare_style['button_class'];
+						$product_view_compare_custom_class = '';
 						$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_button_text'];
 						$product_view_compare_class = 'woo_bt_view_compare_button';
 					}
@@ -202,7 +250,7 @@ class WC_Compare_Hook_Filter
 		$post_type = get_post_type($product_id);
 		$html = '';
 		if (($post_type == 'product' || $post_type == 'product_variation') && WC_Compare_Functions::check_product_activate_compare($product_id) && WC_Compare_Functions::check_product_have_cat($product_id)) {
-			$product_compare_custom_class = $woo_compare_product_page_button_style['button_class'];
+			$product_compare_custom_class = '';
 			$product_compare_text = $woo_compare_product_page_button_style['product_compare_button_text'];
 			$product_compare_class = 'woo_bt_compare_this_button';
 			if ($woo_compare_product_page_button_style['product_compare_button_type'] == 'link') {
@@ -217,7 +265,7 @@ class WC_Compare_Hook_Filter
 				$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_link_text'];
 				$product_view_compare_class = 'woo_bt_view_compare_link';
 				if ($woo_compare_product_page_view_compare_style['product_view_compare_button_type'] == 'button') {
-					$product_view_compare_custom_class = $woo_compare_product_page_view_compare_style['button_class'];
+					$product_view_compare_custom_class = '';
 					$product_view_compare_text = $woo_compare_product_page_view_compare_style['product_view_compare_button_text'];
 					$product_view_compare_class = 'woo_bt_view_compare_button';
 				}
@@ -704,77 +752,6 @@ class WC_Compare_Hook_Filter
 		echo WC_Compare_Hook_Filter::show_compare_fields($post->ID);
 	}
 	
-	public static function woocp_admin_header_script() {
-		wp_enqueue_script('jquery');
-		wp_enqueue_script('farbtastic');
-		wp_enqueue_style('farbtastic');
-		
-		WC_Compare_Uploader::uploader_js();
-	}
-
-	public static function woocp_admin_script() {
-		global $woocommerce;
-		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-		
-		wp_enqueue_style( 'a3rev-chosen-style', WOOCP_JS_URL . '/chosen/chosen.css' );
-		wp_enqueue_script( 'chosen', WOOCP_JS_URL . '/chosen/chosen.jquery'.$suffix.'.js', array(), false, true );
-		wp_enqueue_script( 'a3rev-chosen-script-init', WOOCP_JS_URL.'/init-chosen.js', array(), false, true );
-		
-		wp_enqueue_style( 'woocommerce_admin_styles', $woocommerce->plugin_url() . '/assets/css/admin.css' );
-		echo '<script src="'.WOOCP_JS_URL . '/tipTip/jquery.tipTip'.$suffix.'.js" type="text/javascript"></script>';
-		?>
-<script type="text/javascript">
-jQuery(window).load(function(){
-	// Subsubsub tabs
-	jQuery('div.a3_subsubsub_section ul.subsubsub li a:eq(0)').addClass('current');
-	jQuery('div.a3_subsubsub_section .section:gt(0)').hide();
-	jQuery('div.a3_subsubsub_section ul.subsubsub li a').click(function(){
-		var $clicked = jQuery(this);
-		var $section = $clicked.closest('.a3_subsubsub_section');
-		var $target  = $clicked.attr('href');
-	
-		$section.find('a').removeClass('current');
-	
-		if ( $section.find('.section:visible').size() > 0 ) {
-			$section.find('.section:visible').fadeOut( 100, function() {
-				$section.find( $target ).fadeIn('fast');
-			});
-		} else {
-			$section.find( $target ).fadeIn('fast');
-		}
-	
-		$clicked.addClass('current');
-		jQuery('#last_tab').val( $target );
-	
-		return false;
-	});
-	<?php if (isset($_REQUEST['subtab']) && $_REQUEST['subtab']) echo 'jQuery("div.a3_subsubsub_section ul.subsubsub li a[href='.$_REQUEST['subtab'].']").click();'; ?>
-});
-(function($){
-	$(function(){
-		// Tooltips
-		$(".help_tip").tipTip({
-			"attribute" : "tip",
-			"fadeIn" : 50,
-			"fadeOut" : 50
-		});
-		// Color picker
-		$('.colorpick').each(function(){
-			$('.colorpickdiv', $(this).parent()).farbtastic(this);
-			$(this).click(function() {
-				if ( $(this).val() == "" ) $(this).val('#000000');
-				$('.colorpickdiv', $(this).parent() ).show();
-			});	
-		});
-		$(document).mousedown(function(){
-			$('.colorpickdiv').hide();
-		});
-	});
-})(jQuery);
-</script>
-        <?php
-	}
-	
 	public static function woocp_set_selected_attributes($default_attributes) {
 		if (isset($_REQUEST['variation_selected']) && $_REQUEST['variation_selected'] > 0) {
 			$variation_id = $_REQUEST['variation_selected'];
@@ -824,6 +801,14 @@ jQuery(window).load(function(){
 				}
 			}
 		}
+	}
+	
+	public static function a3_wp_admin() {
+		wp_enqueue_style( 'a3rev-wp-admin-style', WOOCP_CSS_URL . '/a3_wp_admin.css' );
+	}
+	
+	public static function admin_sidebar_menu_css() {
+		wp_enqueue_style( 'a3rev-wc-cp-admin-sidebar-menu-style', WOOCP_CSS_URL . '/admin_sidebar_menu.css' );
 	}
 	
 	public static function plugin_extra_links($links, $plugin_name) {
