@@ -14,15 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		global $woo_compare_comparison_page_global_settings;
 		global $woo_compare_print_page_settings;
 		
-		$wc_frontend_script_path = str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ) . '/assets/js/frontend/';
+		$wc_frontend_script_path = str_replace( array( 'http:', 'https:' ), '', $woocommerce->plugin_url() ) . '/assets/js/frontend/';
 		
 		// Variables for JS scripts
 		$woocommerce_params = array(
-			'ajax_url'                         => WC()->ajax_url(),
-			'ajax_loader_url'                  => apply_filters( 'woocommerce_ajax_loader_url', str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ) . '/assets/images/ajax-loader@2x.gif' ),
+			'plugin_url'                       => $woocommerce->plugin_url(),
+			'ajax_url'                         => $woocommerce->ajax_url(),
+			'ajax_loader_url'                  => apply_filters( 'woocommerce_ajax_loader_url', str_replace( array( 'http:', 'https:' ), '', $woocommerce->plugin_url() ) . '/assets/images/ajax-loader@2x.gif' ),
 			'i18n_view_cart'                   => $woo_compare_viewcart_style['viewcart_text'],
-			'cart_url'                         => get_permalink( wc_get_page_id( 'cart' ) ),
-			'is_cart'						   => false,
+			'add_to_cart_nonce'                => wp_create_nonce( "add-to-cart" ),
+			'cart_url'                         => get_permalink( woocommerce_get_page_id( 'cart' ) ),
 			'cart_redirect_after_add'          => get_option( 'woocommerce_cart_redirect_after_add' )
 		);
 
@@ -42,10 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 <script type="text/javascript" src="<?php echo $site_url; ?>/wp-includes/js/jquery/jquery.js"></script>
 <script src="<?php echo WOOCP_JS_URL; ?>/jquery.printElement.js"></script>
 <?php do_action('woocp_comparison_page_header'); ?>
-<?php 
-	$wc_frontend_scripts_class = new WC_Frontend_Scripts();
-	$wc_frontend_scripts_class->load_scripts();  
-?>
+<?php $woocommerce->frontend_scripts(); ?>
 </head>
 <body>
 		<?php
@@ -141,10 +139,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
         <script src="<?php echo WOOCP_JS_URL; ?>/fixedcolumntable/fixedcolumntable.js"></script>
         <script src="<?php echo $wc_frontend_script_path; ?>add-to-cart-variation<?php echo $suffix; ?>.js"></script>
         <script src="<?php echo $wc_frontend_script_path; ?>add-to-cart<?php echo $suffix; ?>.js"></script>
-        <script src="<?php echo str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ); ?>/assets/js/jquery-blockui/jquery.blockUI<?php echo $suffix; ?>.js"></script>
+        <script src="<?php echo str_replace( array( 'http:', 'https:' ), '', $woocommerce->plugin_url() ); ?>/assets/js/jquery-blockui/jquery.blockUI<?php echo $suffix; ?>.js"></script>
 <script type="text/javascript">
 /* !![CDATA[ */
-var wc_add_to_cart_params = <?php echo json_encode( $woocommerce_params, JSON_FORCE_OBJECT) ?>;
+var woocommerce_params = <?php echo json_encode( $woocommerce_params, JSON_FORCE_OBJECT) ?>;
 /* ]]> */
 </script>
 </body>

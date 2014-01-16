@@ -59,10 +59,15 @@ class WC_Compare_Hook_Filter
 	public static function template_loader( $template ) {
 		global $product_compare_id;
 		global $post;
+		$current_db_version = get_option( 'woocommerce_db_version', null );
 
-		if ( $product_compare_id == $post->ID ) {
-
-			$file 	= 'product-compare.php';
+		if ( is_object( $post ) && $product_compare_id == $post->ID ) {
+			
+			if ( version_compare( $current_db_version, '2.1.0', '<' ) && null !== $current_db_version ) {
+				$file 	= 'product-compare-old.php';
+			} else {
+				$file 	= 'product-compare.php';
+			}
 			$find[] = $file;
 			$find[] = apply_filters( 'woocommerce_template_url', 'woocommerce/' ) . $file;
 			

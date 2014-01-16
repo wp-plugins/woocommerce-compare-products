@@ -18,7 +18,7 @@
  * insert_row()
  * delete_row()
  */
-class WC_Compare_Categories_Fields_Data 
+class WC_Compare_Categories_Fields_Data
 {
 	public static function install_database() {
 		global $wpdb;

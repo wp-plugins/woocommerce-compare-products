@@ -156,7 +156,7 @@ class WC_Compare_Functions
 	 */
 	public static function get_product_url($product_id) {
 		$mypost = get_post($product_id);
-		if ($mypost->post_type == 'product_variation') {
+		if ( $mypost && $mypost->post_type == 'product_variation') {
 			$product_url = add_query_arg('variation_selected', $product_id, get_permalink($mypost->post_parent));
 		}else {
 			$product_url = get_permalink($product_id);
@@ -309,6 +309,7 @@ class WC_Compare_Functions
 		global $woo_compare_comparison_page_global_settings;
 		global $woo_compare_widget_thumbnail_style;
 		global $woo_compare_widget_clear_all_style;
+		$current_db_version = get_option( 'woocommerce_db_version', null );
 		$woo_compare_basket_icon = get_option('woo_compare_basket_icon');
 		if (trim($woo_compare_basket_icon) == '') $woo_compare_basket_icon = WOOCP_IMAGES_URL.'/compare_remove.png';
 		$compare_list = WC_Compare_Functions::get_compare_list();
@@ -319,7 +320,7 @@ class WC_Compare_Functions
 				$thumbnail_html = '';
 					$thumbnail_html = WC_Compare_Functions::get_post_thumbnail($product_id, $woo_compare_widget_thumbnail_style['thumb_wide'], 9999, 'woo_compare_widget_thumbnail');
 					if (trim($thumbnail_html) == '') {
-						$thumbnail_html = '<img class="woo_compare_widget_thumbnail" alt="" src="'.woocommerce_placeholder_img_src().'" />';
+						$thumbnail_html = '<img class="woo_compare_widget_thumbnail" alt="" src="'. ( ( version_compare( $current_db_version, '2.1.0', '<' ) && null !== $current_db_version ) ? woocommerce_placeholder_img_src() : wc_placeholder_img_src() ).'" />';
 					}
 				$html .= '<li class="compare_widget_item">';
 				$html .= '<div class="compare_remove_column"><a class="woo_compare_remove_product" rel="'.$product_id.'"><img class="woo_compare_remove_icon" src="'.$woo_compare_basket_icon.'" /></a></div>';
@@ -422,7 +423,7 @@ class WC_Compare_Functions
 				$products_prices[$product_id] = $product_price;
 				$image_src = WC_Compare_Functions::get_post_thumbnail($product_id, 220, 180);
 				if (trim($image_src) == '') {
-					$image_src = '<img alt="'.$product_name.'" src="'.woocommerce_placeholder_img_src().'" />';
+					$image_src = '<img alt="'.$product_name.'" src="'. ( ( version_compare( $current_db_version, '2.1.0', '<' ) && null !== $current_db_version ) ? woocommerce_placeholder_img_src() : wc_placeholder_img_src() ) .'" />';
 				}
 				$html .= '<td class="first_row column_'.$i.'"><div class="td-spacer"><div class="woo_compare_popup_remove_product_container"><a class="woo_compare_popup_remove_product" rel="'.$product_id.'" style="cursor:pointer;">Remove <img src="'.$woo_compare_basket_icon.'" border=0 /></a></div>';
 				$html .= '<div class="compare_image_container">'.$image_src.'</div>';

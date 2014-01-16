@@ -199,6 +199,7 @@ function setLocationRemove(url) {
         e.preventDefault();
         return false
     });
+    
     $('#product_comparison td').hover(function () {
         $(this).parent('tr').find('td').addClass("row-hover");
     }, function () {

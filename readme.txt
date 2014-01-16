@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 3.5
 Tested up to: 3.8.0
-Stable tag: 2.1.8
+Stable tag: 2.1.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -131,6 +131,11 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.1.9 - 2014/01/16 =
+* Feature - Upgraded plugins code for 100% compatibility with soon to be released WooCommerce version 2.1 and backwards to version 2.0
+* Tweak - Clean up on deletion feature now entirely removes compare categories, features from database and product meta keys.
+* Tweak - Added description text to the top of each Pro Version yellow border section
 
 = 2.1.8 - 2013/12/31 =
 * Feature - Upgraded the plugin to the newly developed a3rev admin panel app interface.
@@ -310,6 +315,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 2.1.9 =
+Update now for full compatibility with soon to be released WooCommerce version 2.1 - backward compatible to version 2.0
 
 = 2.1.8 =
 Major Upgrade – Plugin converted to the a3rev plugin framework. 100% WP 3.8.0 and Woo 2.0.20 compatible. 14 x new * Features, 7 x * Tweaks.

@@ -148,7 +148,7 @@ class WC_Compare_Products_Class
 
 					if ($compare_category > 0) {
 						$category_data = WC_Compare_Categories_Data::get_row($compare_category);
-						update_post_meta($post_id, '_woo_compare_category_name', stripslashes($category_data->category_name));
+						if ( $category_data != NULL ) update_post_meta($post_id, '_woo_compare_category_name', stripslashes($category_data->category_name));
 
 						$compare_fields = WC_Compare_Categories_Fields_Data::get_results("cat_id='".$compare_category."'", 'cf.field_order ASC');
 						if (is_array($compare_fields) && count($compare_fields)>0) {
@@ -176,7 +176,7 @@ class WC_Compare_Products_Class
 		background:url(<?php echo WOOCP_IMAGES_URL; ?>/a3-plugins.png) no-repeat left top !important;
 	}
 	.pro_feature_fields {
-		padding:10px;	
+		padding:0 10px 10px 10px;	
 	}
 </style>
 <div id="htmlForm">
@@ -188,6 +188,7 @@ class WC_Compare_Products_Class
     <?php echo $compare_product_message; ?>
     <div style="clear:both; margin-bottom:20px;"></div>
     <div class="pro_feature_fields">
+    <?php global $wc_compare_admin_init; $wc_compare_admin_init->upgrade_top_message(true); ?>
     <table id="woocp_products_manager" style="display:none"></table>
     </div>
     <?php

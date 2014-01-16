@@ -373,6 +373,7 @@ class WC_Compare_MetaBox
 
 	public static function variable_compare_meta_boxes() {
 		global $post, $woocommerce;
+		$current_db_version = get_option( 'woocommerce_db_version', null );
 		$post_status = get_post_status($post->ID);
 		$post_type = get_post_type($post->ID);
 		if ($post_type == 'product' && $post_status != false) {
@@ -388,6 +389,11 @@ class WC_Compare_MetaBox
 					endif;
 				}
 			if ($variation_attribute_found) {
+				if ( version_compare( $current_db_version, '2.1.0', '<' ) && null !== $current_db_version ) {
+					$colspan = 7;
+				} else {
+					$colspan = 3;
+				}
 				$args = array(
 					'post_type' => 'product_variation',
 					'post_status' => array('private', 'publish'),
@@ -413,7 +419,7 @@ class WC_Compare_MetaBox
 							security: '<?php echo $woocp_variable_compare; ?>'
 						};
 						jQuery.post('<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>', data, function(response) {
-							current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
+							current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="<?php echo $colspan; ?>">'+response+'</td></tr>');
 						});
 						current_variation.addClass('have_compare_feature');
 					}
@@ -431,12 +437,12 @@ class WC_Compare_MetaBox
 									security: '<?php echo $woocp_variable_compare; ?>'
 								};
 								jQuery.post('<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>', data, function(response) {
-									current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
+									current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="<?php echo $colspan; ?>">'+response+'</td></tr>');
 								});
 								current_variation.addClass('have_compare_feature');
 							}
 						});
-					}, 1000);
+					}, 3000);
 				});
 				jQuery('#variable_product_options').on('click', 'button.link_all_variations', function(){
 					setTimeout(function(){
@@ -450,7 +456,7 @@ class WC_Compare_MetaBox
 									security: '<?php echo $woocp_variable_compare; ?>'
 								};
 								jQuery.post('<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>', data, function(response) {
-									current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="7">'+response+'</td></tr>');
+									current_variation.find('table.woocommerce_variable_attributes').append('<tr><td colspan="<?php echo $colspan; ?>">'+response+'</td></tr>');
 								});
 								current_variation.addClass('have_compare_feature');
 							}
@@ -476,7 +482,11 @@ class WC_Compare_MetaBox
 
 	<?php
 				$javascript = ob_get_clean();
-				$woocommerce->add_inline_js( $javascript );
+				if ( version_compare( $current_db_version, '2.1.0', '<' ) && null !== $current_db_version ) {
+					$woocommerce->add_inline_js( $javascript );
+				} else {
+					wc_enqueue_js( $javascript );
+				}
 			}
 		}
 	}
@@ -494,12 +504,13 @@ class WC_Compare_MetaBox
 			update_post_meta($post_id, '_woo_compare_category', $compare_category);
 
 			$category_data = WC_Compare_Categories_Data::get_row($compare_category);
-			update_post_meta($post_id, '_woo_compare_category_name', stripslashes($category_data->category_name));
+			if ( $category_data != NULL ) update_post_meta($post_id, '_woo_compare_category_name', stripslashes($category_data->category_name));
 
 			$compare_fields = WC_Compare_Categories_Fields_Data::get_results("cat_id='".$compare_category."'", 'cf.field_order ASC');
 			if (is_array($compare_fields) && count($compare_fields)>0) {
 				foreach ($compare_fields as $field_data) {
-					update_post_meta($post_id, '_woo_compare_'.$field_data->field_key, $_REQUEST['_woo_compare_'.$field_data->field_key]);
+					if ( isset( $_REQUEST['_woo_compare_'.$field_data->field_key] ) )
+						update_post_meta($post_id, '_woo_compare_'.$field_data->field_key, $_REQUEST['_woo_compare_'.$field_data->field_key]);
 				}
 			}
 
@@ -508,7 +519,7 @@ class WC_Compare_MetaBox
 				foreach ($variable_ids as $variation_id) {
 					$post_type = get_post_type($variation_id);
 					if ($post_type == 'product_variation') {
-						if ($_REQUEST['variable_woo_deactivate_compare_feature'][$variation_id] == 'no') {
+						if ( isset( $_REQUEST['variable_woo_deactivate_compare_feature'][$variation_id] ) && $_REQUEST['variable_woo_deactivate_compare_feature'][$variation_id] == 'no' ) {
 							update_post_meta($variation_id, '_woo_deactivate_compare_feature', 'no');
 						}else {
 							update_post_meta($variation_id, '_woo_deactivate_compare_feature', 'yes');
@@ -517,12 +528,13 @@ class WC_Compare_MetaBox
 						update_post_meta($variation_id, '_woo_compare_category', $variation_compare_category);
 
 						$variation_category_data = WC_Compare_Categories_Data::get_row($variation_compare_category);
-						update_post_meta($variation_id, '_woo_compare_category_name', stripslashes($variation_category_data->category_name));
+						if ( $variation_category_data != NULL ) update_post_meta($variation_id, '_woo_compare_category_name', stripslashes($variation_category_data->category_name));
 
 						$compare_fields = WC_Compare_Categories_Fields_Data::get_results("cat_id='".$variation_compare_category."'", 'cf.field_order ASC');
 						if (is_array($compare_fields) && count($compare_fields)>0) {
 							foreach ($compare_fields as $field_data) {
-								update_post_meta($variation_id, '_woo_compare_'.$field_data->field_key, $_REQUEST['variable_woo_compare_'.$field_data->field_key][$variation_id]);
+								if ( isset( $_REQUEST['variable_woo_compare_'.$field_data->field_key][$variation_id] ) )
+									update_post_meta($variation_id, '_woo_compare_'.$field_data->field_key, $_REQUEST['variable_woo_compare_'.$field_data->field_key][$variation_id]);
 							}
 						}
 					}

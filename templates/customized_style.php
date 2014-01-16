@@ -11,7 +11,8 @@ extract($woo_compare_grid_view_button_style);
 /* CSS Document */
 
 /* Grid View Button Style */
-.woo_grid_compare_button_container { 
+.woo_grid_compare_button_container {
+	display:inline-block; 
 	text-align:center; 
 	margin: <?php echo $grid_view_button_margin_top; ?>px <?php echo $grid_view_button_margin_right; ?>px <?php echo $grid_view_button_margin_bottom; ?>px <?php echo $grid_view_button_margin_left; ?>px !important;
 }
