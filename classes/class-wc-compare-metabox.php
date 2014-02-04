@@ -500,8 +500,12 @@ class WC_Compare_MetaBox
 			}else {
 				update_post_meta($post_id, '_woo_deactivate_compare_feature', 'yes');
 			}
-			$compare_category = $_REQUEST['_woo_compare_category'];
-			update_post_meta($post_id, '_woo_compare_category', $compare_category);
+			
+			$compare_category = 0;
+			if ( isset($_REQUEST['_woo_compare_category']) ) {
+				$compare_category = $_REQUEST['_woo_compare_category'];
+				update_post_meta($post_id, '_woo_compare_category', $compare_category);
+			}
 
 			$category_data = WC_Compare_Categories_Data::get_row($compare_category);
 			if ( $category_data != NULL ) update_post_meta($post_id, '_woo_compare_category_name', stripslashes($category_data->category_name));
@@ -524,8 +528,12 @@ class WC_Compare_MetaBox
 						}else {
 							update_post_meta($variation_id, '_woo_deactivate_compare_feature', 'yes');
 						}
-						$variation_compare_category = $_REQUEST['variable_woo_compare_category'][$variation_id];
-						update_post_meta($variation_id, '_woo_compare_category', $variation_compare_category);
+						
+						$variation_compare_category = 0;
+						if ( isset($_REQUEST['variable_woo_compare_category'][$variation_id]) ) {
+							$variation_compare_category = $_REQUEST['variable_woo_compare_category'][$variation_id];
+							update_post_meta($variation_id, '_woo_compare_category', $variation_compare_category);
+						}
 
 						$variation_category_data = WC_Compare_Categories_Data::get_row($variation_compare_category);
 						if ( $variation_category_data != NULL ) update_post_meta($variation_id, '_woo_compare_category_name', stripslashes($variation_category_data->category_name));

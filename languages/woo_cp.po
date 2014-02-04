@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Compare Products Pro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-31 10:41+0700\n"
-"PO-Revision-Date: 2013-12-31 10:41+0700\n"
+"POT-Creation-Date: 2014-02-04 13:58+0700\n"
+"PO-Revision-Date: 2014-02-04 13:58+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -82,8 +82,8 @@ msgstr ""
 msgid "Outset"
 msgstr ""
 
-#: admin/admin-interface.php:1293 admin/admin-interface.php:1383
-#: admin/admin-interface.php:1412
+#: admin/admin-interface.php:1294 admin/admin-interface.php:1384
+#: admin/admin-interface.php:1413
 #: admin/settings/comparison-page/add-to-cart-settings.php:210
 #: admin/settings/comparison-page/global-settings.php:205
 #: admin/settings/comparison-page/global-settings.php:211
@@ -106,8 +106,8 @@ msgstr ""
 msgid "ON"
 msgstr ""
 
-#: admin/admin-interface.php:1294 admin/admin-interface.php:1384
-#: admin/admin-interface.php:1413
+#: admin/admin-interface.php:1295 admin/admin-interface.php:1385
+#: admin/admin-interface.php:1414
 #: admin/settings/comparison-page/add-to-cart-settings.php:211
 #: admin/settings/comparison-page/global-settings.php:206
 #: admin/settings/comparison-page/global-settings.php:212
@@ -130,108 +130,124 @@ msgstr ""
 msgid "OFF"
 msgstr ""
 
-#: admin/admin-interface.php:1454
+#: admin/admin-interface.php:1455
 msgid "Width"
 msgstr ""
 
-#: admin/admin-interface.php:1456
+#: admin/admin-interface.php:1457
 msgid "Height"
 msgstr ""
 
-#: admin/admin-interface.php:1458
+#: admin/admin-interface.php:1459
 msgid "Hard Crop"
 msgstr ""
 
-#: admin/admin-interface.php:1536
+#: admin/admin-interface.php:1537
 msgid "-- Default Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:1547
+#: admin/admin-interface.php:1548
 msgid "-- Google Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:1588
+#: admin/admin-interface.php:1589
 msgid "Preview your customized typography settings"
 msgstr ""
 
-#: admin/admin-interface.php:1722 admin/admin-interface.php:1981
+#: admin/admin-interface.php:1723 admin/admin-interface.php:1982
 msgid "Preview your customized border settings"
 msgstr ""
 
-#: admin/admin-interface.php:1731 admin/admin-interface.php:1972
+#: admin/admin-interface.php:1732 admin/admin-interface.php:1973
 msgid "Rounded"
 msgstr ""
 
-#: admin/admin-interface.php:1732 admin/admin-interface.php:1973
+#: admin/admin-interface.php:1733 admin/admin-interface.php:1974
 msgid "Square"
 msgstr ""
 
-#: admin/admin-interface.php:1742 admin/admin-interface.php:1986
+#: admin/admin-interface.php:1743 admin/admin-interface.php:1987
 msgid "Top Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1762 admin/admin-interface.php:2006
+#: admin/admin-interface.php:1763 admin/admin-interface.php:2007
 msgid "Top Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1782 admin/admin-interface.php:2026
+#: admin/admin-interface.php:1783 admin/admin-interface.php:2027
 msgid "Bottom Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1802 admin/admin-interface.php:2046
+#: admin/admin-interface.php:1803 admin/admin-interface.php:2047
 msgid "Bottom Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1895
+#: admin/admin-interface.php:1896
 msgid "Preview your customized border styles settings"
 msgstr ""
 
-#: admin/admin-interface.php:2107
+#: admin/admin-interface.php:2108
 msgid "YES"
 msgstr ""
 
-#: admin/admin-interface.php:2108
+#: admin/admin-interface.php:2109
 msgid "NO"
 msgstr ""
 
-#: admin/admin-interface.php:2122
+#: admin/admin-interface.php:2123
 msgid "Horizontal Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2140
+#: admin/admin-interface.php:2141
 msgid "Vertical Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2158
+#: admin/admin-interface.php:2159
 msgid "Blur Distance"
 msgstr ""
 
-#: admin/admin-interface.php:2176
+#: admin/admin-interface.php:2177
 msgid "Spread Size"
 msgstr ""
 
-#: admin/admin-interface.php:2194
+#: admin/admin-interface.php:2195
 msgid "INNER"
 msgstr ""
 
-#: admin/admin-interface.php:2195
+#: admin/admin-interface.php:2196
 msgid "OUTER"
 msgstr ""
 
-#: admin/admin-interface.php:2213
+#: admin/admin-interface.php:2214
 msgid "Preview your customized box shadow settings"
 msgstr ""
 
-#: admin/admin-interface.php:2401
+#: admin/admin-interface.php:2402
 msgid "Save changes"
 msgstr ""
 
-#: admin/admin-interface.php:2402
+#: admin/admin-interface.php:2403
 msgid "Reset Settings"
 msgstr ""
 
+#: admin/admin-ui.php:127
+#, php-format
+msgid "Settings inside this yellow border are %s Features."
+msgstr ""
+
+#: admin/admin-ui.php:129
+#, php-format
+msgid ""
+"Upgrade to the <a href=\"%s\" target=\"_blank\">%s</a> to activate these "
+"settings."
+msgstr ""
+
+#: admin/admin-ui.php:131 admin/admin-ui.php:133
+msgid "Pro Version"
+msgstr ""
+
 #: admin/compare_init.php:9 classes/class-wc-compare-filter.php:51
-#: classes/class-wc-compare-functions.php:768
+#: classes/class-wc-compare-functions.php:769
 msgid "Product Comparison"
 msgstr ""
 
@@ -434,7 +450,7 @@ msgid "Un-Assigned Features (Assign to a Category to activate)"
 msgstr ""
 
 #: admin/classes/class-wc-compare-fields.php:232
-#: admin/classes/class-wc-compare-products.php:213
+#: admin/classes/class-wc-compare-products.php:214
 msgid "No"
 msgstr ""
 
@@ -449,7 +465,7 @@ msgstr ""
 #: admin/classes/class-wc-compare-fields.php:440
 #: admin/classes/class-wc-compare-products.php:83
 #: admin/classes/class-wc-compare-products.php:114
-#: admin/classes/class-wc-compare-products.php:218
+#: admin/classes/class-wc-compare-products.php:219
 msgid "Edit"
 msgstr ""
 
@@ -554,32 +570,32 @@ msgstr ""
 msgid "WooCommerce Compare Products Manager"
 msgstr ""
 
-#: admin/classes/class-wc-compare-products.php:214
-#: admin/classes/class-wc-compare-products.php:221
+#: admin/classes/class-wc-compare-products.php:215
+#: admin/classes/class-wc-compare-products.php:222
 msgid "Product Name"
 msgstr ""
 
-#: admin/classes/class-wc-compare-products.php:215
+#: admin/classes/class-wc-compare-products.php:216
 msgid "Product Category"
 msgstr ""
 
-#: admin/classes/class-wc-compare-products.php:216
+#: admin/classes/class-wc-compare-products.php:217
 msgid "Compare Category"
 msgstr ""
 
-#: admin/classes/class-wc-compare-products.php:217
+#: admin/classes/class-wc-compare-products.php:218
 msgid "Activated / Deactivated"
 msgstr ""
 
-#: admin/classes/class-wc-compare-products.php:226
+#: admin/classes/class-wc-compare-products.php:227
 msgid "Products"
 msgstr ""
 
-#: admin/classes/class-wc-compare-products.php:227
+#: admin/classes/class-wc-compare-products.php:228
 msgid "Find Product Name"
 msgstr ""
 
-#: admin/classes/class-wc-compare-products.php:243
+#: admin/classes/class-wc-compare-products.php:244
 msgid ""
 "Please upgrade to the Pro Version to activate Products express Compare "
 "feature manager"
@@ -1562,8 +1578,8 @@ msgid "Compare Tab Name"
 msgstr ""
 
 #: admin/settings/product-page/compare-tab-settings.php:239
-#: classes/class-wc-compare-filter.php:673
-#: classes/class-wc-compare-filter.php:705
+#: classes/class-wc-compare-filter.php:678
+#: classes/class-wc-compare-filter.php:710
 msgid "Technical Details"
 msgstr ""
 
@@ -1963,148 +1979,148 @@ msgstr ""
 msgid "Product Manager"
 msgstr ""
 
-#: classes/class-wc-compare-filter.php:455
+#: classes/class-wc-compare-filter.php:460
 msgid "Product_Comparison"
 msgstr ""
 
-#: classes/class-wc-compare-filter.php:818
+#: classes/class-wc-compare-filter.php:823
 msgid "Documentation"
 msgstr ""
 
-#: classes/class-wc-compare-filter.php:819
+#: classes/class-wc-compare-filter.php:824
 msgid "Support"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:438
+#: classes/class-wc-compare-functions.php:439
 msgid "Buy product"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:635
-#: classes/class-wc-compare-functions.php:638
+#: classes/class-wc-compare-functions.php:636
+#: classes/class-wc-compare-functions.php:639
 msgid "Back"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:652
-#: classes/class-wc-compare-functions.php:655
+#: classes/class-wc-compare-functions.php:653
+#: classes/class-wc-compare-functions.php:656
 msgid "Next"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:691
+#: classes/class-wc-compare-functions.php:692
 msgid "Upgrade to Compare Product Pro"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:692
+#: classes/class-wc-compare-functions.php:693
 msgid ""
 "<strong>NOTE:</strong> All the functions inside the Yellow border on the "
 "plugins admin panel are extra functionality that is activated by upgrading "
 "to the Pro version"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:693
+#: classes/class-wc-compare-functions.php:694
 msgid "WooCommerce Compare Products Pro"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:694
+#: classes/class-wc-compare-functions.php:695
 msgid "Activates these advanced Features"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:697
+#: classes/class-wc-compare-functions.php:698
 msgid "Activate Compare - Products Manager."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:698
+#: classes/class-wc-compare-functions.php:699
 msgid "Activate the Compare Audio & Video feature."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:699
+#: classes/class-wc-compare-functions.php:700
 msgid "Activate all Compare Widget settings."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:700
+#: classes/class-wc-compare-functions.php:701
 msgid "Activate all Product Card Settings."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:701
+#: classes/class-wc-compare-functions.php:702
 msgid "Activate all Comparison Table style Settings."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:702
+#: classes/class-wc-compare-functions.php:703
 msgid "Activate same day priority support."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:705
+#: classes/class-wc-compare-functions.php:706
 msgid "Pro Version 7 day FREE trail"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:706
+#: classes/class-wc-compare-functions.php:707
 msgid "Click here"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:706
+#: classes/class-wc-compare-functions.php:707
 msgid "for a 7 day Free Trail of the awesome Pro Version features."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:707
+#: classes/class-wc-compare-functions.php:708
 msgid "View this plugins"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:707
+#: classes/class-wc-compare-functions.php:708
 msgid "documentation"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:708
+#: classes/class-wc-compare-functions.php:709
 msgid "Visit this plugins"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:708
+#: classes/class-wc-compare-functions.php:709
 msgid "support forum"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:709
+#: classes/class-wc-compare-functions.php:710
 msgid "More FREE a3rev WooCommerce Plugins"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:712
+#: classes/class-wc-compare-functions.php:713
 msgid "WooCommerce Product Sort & Display"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:713
+#: classes/class-wc-compare-functions.php:714
 msgid "WooCommerce Products Quick View"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:714
+#: classes/class-wc-compare-functions.php:715
 msgid "WooCommerce Dynamic Products Gallery"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:715
+#: classes/class-wc-compare-functions.php:716
 msgid "WooCommerce Predictive Search"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:716
+#: classes/class-wc-compare-functions.php:717
 msgid "WooCommerce Compare Products"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:717
+#: classes/class-wc-compare-functions.php:718
 msgid "WooCommerce Widget Product Slideshow"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:718
+#: classes/class-wc-compare-functions.php:719
 msgid "WooCommerce Email Inquiry & Cart Options"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:721
+#: classes/class-wc-compare-functions.php:722
 msgid "FREE a3rev WordPress Plugins"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:724
+#: classes/class-wc-compare-functions.php:725
 msgid "Contact Us page - Contact People"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:725
+#: classes/class-wc-compare-functions.php:726
 msgid "WordPress Email Template"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:726
+#: classes/class-wc-compare-functions.php:727
 msgid "Page View Count"
 msgstr ""
 
@@ -2142,7 +2158,8 @@ msgstr ""
 msgid "This page"
 msgstr ""
 
-#: templates/product-compare.php:64 templates/product-compare.php:66
+#: templates/product-compare-old.php:64 templates/product-compare-old.php:66
+#: templates/product-compare.php:66 templates/product-compare.php:68
 #: widgets/compare_widget.php:41
 msgid "Compare Products"
 msgstr ""
