@@ -1,9 +1,9 @@
 === Woocommerce Compare Products ===
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
-Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 2.1.9.1
+Requires at least: 3.7
+Tested up to: 3.9
+Stable tag: 2.1.9.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -131,6 +131,14 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.1.9.2 - 2014/05/07 =
+* Tweak - Update the compare widget. Added load items to cart by ajax to solve the problem of cart items being cached by caching plugins
+* Tweak - set DONOTCACHEPAGE constant for Comparison page to prevent caching of current items in widget.
+* Tweak - Updated Framework help text font for consistency.
+* Tweak - Added remove_all_filters('mce_external_plugins'); before call to wp_editor to remove extension scripts from other plugins.
+* Tweak - Tested 100% compatible with WooCommerce version 2.1.8
+* Tweak - Tested 100% compatible with WordPress version 3.9 
 
 = 2.1.9.1 - 2014/02/04 =
 * Fix - Undefined index: _woo_compare_category in class-wc-compare-metabox.php 
@@ -318,6 +326,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 2.1.9.2 =
+Upgrade now for Tweaks that prevent caching plugins caching Compare Widget and Comparison table content. Also 100% Compatility with WC v2.1.8 and WP 3.9
 
 = 2.1.9.1 =
 Upgrade now for undefined index bug fix that surfaced in version 2.1.9

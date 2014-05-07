@@ -4,8 +4,8 @@
  * Install Database, settings option and auto add widget to sidebar
  */
 function woocp_install() {
-	update_option('a3rev_woocp_pro_version', '2.1.9.1');
-	update_option('a3rev_woocp_lite_version', '2.1.9.1');
+	update_option('a3rev_woocp_pro_version', '2.1.9.2');
+	update_option('a3rev_woocp_lite_version', '2.1.9.2');
 	$product_compare_id = WC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'woo_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 	
@@ -52,6 +52,9 @@ add_filter( 'plugin_row_meta', array('WC_Compare_Hook_Filter', 'plugin_extra_lin
 // Need to call Admin Init to show Admin UI
 global $wc_compare_admin_init;
 $wc_compare_admin_init->init();
+
+// Set nocache constants to comparision page
+add_action('init', array( 'WC_Compare_Hook_Filter', 'nocache_ours_page' ), 0 );
 
 // Add upgrade notice to Dashboard pages
 add_filter( $wc_compare_admin_init->plugin_name . '_plugin_extension', array( 'WC_Compare_Functions', 'plugin_pro_notice' ) );
@@ -223,8 +226,8 @@ function woo_cp_lite_upgrade_plugin () {
 		update_option('a3rev_woocp_pro_version', '2.1.8');
 		update_option('a3rev_woocp_lite_version', '2.1.8');
 	}
-	update_option('a3rev_woocp_pro_version', '2.1.9.1');
-	update_option('a3rev_woocp_lite_version', '2.1.9.1');
+	update_option('a3rev_woocp_pro_version', '2.1.9.2');
+	update_option('a3rev_woocp_lite_version', '2.1.9.2');
 
 }
 
