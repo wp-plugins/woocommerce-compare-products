@@ -347,7 +347,10 @@ class WC_Compare_Functions
 				$product_compare_page = '#';
 			}
 			
-			$html .= '<div class="woo_compare_widget_button_container"><a class="woo_compare_button_go '.$widget_button_class.' '.$widget_button_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="">'.$widget_button_text.'</a></div>';
+			$widget_compare_popup_button = '';
+			if ( $woo_compare_comparison_page_global_settings['open_compare_type'] != 'new_page' ) $widget_compare_popup_button = 'woo_compare_popup_button_go';
+			
+			$html .= '<div class="woo_compare_widget_button_container"><a class="woo_compare_button_go '.$widget_compare_popup_button.' '.$widget_button_class.' '.$widget_button_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="">'.$widget_button_text.'</a></div>';
 			
 			if ($woo_compare_widget_clear_all_style['clear_all_item_vertical'] == 'below') $html .= $clear_html;
 			
