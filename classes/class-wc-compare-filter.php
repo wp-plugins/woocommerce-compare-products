@@ -42,11 +42,6 @@ class WC_Compare_Hook_Filter
 {
 	
 	public static function register_admin_screen () {
-		if (get_option('a3rev_woocp_just_confirm') == 1) {
-			WC_Compare_Data::automatic_add_features();
-			WC_Compare_Categories_Data::automatic_add_compare_categories();
-			update_option('a3rev_woocp_just_confirm', 0);
-		}
 		
 		$product_comparison = add_menu_page( __('Product Comparison', 'woo_cp'), __('WC Compare', 'woo_cp'), 'manage_options', 'woo-compare-features', array( 'WC_Compare_Features_Panel', 'admin_screen' ), null, '55.222');
 		
@@ -402,7 +397,6 @@ class WC_Compare_Hook_Filter
 	}
 
 	public static function woocp_variable_ajax_add_to_cart() {
-		global $woocommerce;
 		check_ajax_referer( 'woocp-add-to-cart', 'security' );
 
 		// Get product ID to add and quantity
@@ -419,7 +413,7 @@ class WC_Compare_Hook_Filter
 		// Add to cart validation
 		$passed_validation  = apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity);
 
-		if ($passed_validation && $woocommerce->cart->add_to_cart($product_id, $quantity, $variation_id, $variation_data)) {
+		if ($passed_validation && WC()->cart->add_to_cart($product_id, $quantity, $variation_id, $variation_data)) {
 			// Return html fragments
 			$data = apply_filters('add_to_cart_fragments', array());
 		} else {
@@ -427,7 +421,6 @@ class WC_Compare_Hook_Filter
 				'error' => true,
 				'product_url' => get_permalink( $product_id )
 			);
-			$woocommerce->set_messages();
 		}
 
 		echo json_encode( $data );
