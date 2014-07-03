@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 3.7
 Tested up to: 3.9.1
-Stable tag: 2.1.9.3
+Stable tag: 2.1.9.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -34,28 +34,29 @@ Chosen products are compared side-by-side, feature by feature, price-by-price. D
 * Fully tested and optimized for all iPads, Android, Kindle and Google Tablets
 * Fully tested and optimized for IOS and Android Mobile platforms.
 
+= Mobile Responsive App style admin interface =
 
-= Why We Built it! =
-We love the Compare Products feature that the big e-commerce sites have. We have looked at them all and over 12 months have developed what we believe is a product comparison extension for WooCommerce that is better than any of them.
+* 100% compatible with WordPress v3.9.0 admin interface.
+* Backward compatibility to WordPress v3.7.0
+* App style admin inteface.
+* Admin interface is optimized for mobiles and tablets.
 
-= Lite Version Support =
-* As a Lite Version user please post all support requests to the plugins WordPress Support forum.
-* We do not watch that forum and posting there you will be relying on another user for support, not an a3rev team member.
-* Upgrading to a Pro Version Licence gives 'write' access to the a3rev support forum.
+= a3rev Plugins Lite & Pro Version Admin Interface =
 
-= Pro Version Upgrade =
-Below is are lists of features and benefits you will get by upgrading from the Lite to the Pro version.
+* All a3rev Lite Version plugins have exactly the same admin interface as the Pro Version.
+* Pro Version features and settings are inside of a Yellow border.
+* The Pro Version settings are all active on the admin panels But do not save and are not applied to the front end.
+* Upgrading to the Pro version activates all the Pro version Features and Settings and removes the Yellow side bar and borders.
+
+>= Premium Support =
+
+>The a3rev team does not provide support for the WooCommerce Compare Products plugin on the WordPress.org forums. One on one developer support is available via the plugins [a3rev support forum](https://a3rev.com/forums/forum/woocommerce-plugins/compare-products/) to people who have purchased a [WooCommerce Comapre Products Pro](http://a3rev.com/shop/woocommerce-compare-products/) plugin License.
+
+>The Pro Version has lots of extra features (listed below) that coupled with developer support might be well worth your investment!
 
 = Seamless Upgrading =
 * No data loss in the upgrade.
 * Deactivate the Lite Version and install and activate the Pro version and all your Compare data is ready for you on the Pro Version. 
-
-= Free Trial Period =
-* Try the [full Pro Version for free.](http://a3rev.com/shop/woocommerce-compare-products/)
-* a3rev try before you buy
-* No credit card required.
-* 60 day no questions asked money back guarantee on all licenses upgraded from trail to Lifetime Licenses.
-* Immediate access to developer support from the plugins a3rev support forum.
 
 = Full WooCommerce Integration =
 * As of Version 2.2.0 - Full Integration with WooCommerce Product Categories, Product Attributes and their Terms.
@@ -90,7 +91,12 @@ WooCommerce Product Categories, Product Attributes and Terms if they do not alre
 * Turkish - added thanks to ManusH
 * .pot file (woo_cp.pot) in languages folder for translations.
 * Your translation? Please [send it to us](http://www.a3rev.com/contact-us-page/) We'll acknowledge your work and link to your site.
-Please [Contact us](http://www.a3rev.com/contact-us-page/) if you'd like to provide a translation or an update. 
+
+= Plugin Resources =
+
+[PRO Version](http://a3rev.com/shop/woocommerce-compare-products/) |
+[Documentation](http://docs.a3rev.com/user-guides/woocommerce/compare-products/) |
+[Lite Version Support](http://wordpress.org/support/plugin/woocommerce-compare-products/)
 
 
 == Screenshots ==
@@ -133,6 +139,10 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.1.9.4 - 2014/07/03 =
+* Tweak - Updated plugins description and dashboard text for details about plugin upgrade version.
+* Tweak - Checked for full compatibility with WooCommerce Version 2.1.12
 
 = 2.1.9.3 - 2014/06/12 =
 * Feature -  On upgrade to Pro version All Compare Categories, Compare Features and input terms created in the Lite Version are auto converted to WooCommerce Product Categories, Product Attributes and Terms if they do not already exist.
@@ -344,6 +354,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 == Upgrade Notice ==
 
+= 2.1.9.4 =
+Update your plugin now with tweaks for full compatibility with WooCommerce Version 2.1.12
+
 = 2.1.9.3 =
 Upgrade now for 10 code Tweaks and 100% Compatility with WooCommerce version 2.1.11 and WordPress version 3.9.1
 
@@ -357,7 +370,7 @@ Upgrade now for undefined index bug fix that surfaced in version 2.1.9
 Update now for full compatibility with soon to be released WooCommerce version 2.1 - backward compatible to version 2.0
 
 = 2.1.8 =
-Major Upgrade – Plugin converted to the a3rev plugin framework. 100% WP 3.8.0 and Woo 2.0.20 compatible. 14 x new * Features, 7 x * Tweaks.
+Major Upgrade. Plugin converted to the a3rev plugin framework. 100% WP 3.8.0 and Woo 2.0.20 compatible. 14 x new * Features, 7 x * Tweaks.
 
 = 2.1.7 =
 Upgrade now for full compatibility with WP 3.7.1 and WooCommerce 2.0.19 plus 2 bug fixes.

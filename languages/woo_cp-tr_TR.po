@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Compare Products PRO v2.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-12 17:11+0700\n"
-"PO-Revision-Date: 2014-06-12 17:11+0700\n"
+"POT-Creation-Date: 2014-07-03 10:11+0700\n"
+"PO-Revision-Date: 2014-07-03 10:11+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: ManusH <info@ManusH.net>\n"
 "Language: tr_TR\n"
@@ -266,15 +266,11 @@ msgstr ""
 #: admin/admin-ui.php:137
 #, php-format
 msgid ""
-"The fully featured %s in availble for a <a href=\"%s\" target=\"_blank"
-"\">Free Trail Here</a>."
+"Upgrade to the <a href=\"%s\" target=\"_blank\">%s License</a> to activate "
+"these settings."
 msgstr ""
 
-#: admin/admin-ui.php:139 classes/class-wc-compare-functions.php:662
-msgid "No credit card required."
-msgstr ""
-
-#: admin/admin-ui.php:141
+#: admin/admin-ui.php:140
 msgid "Pro Version"
 msgstr ""
 
@@ -2548,152 +2544,143 @@ msgstr ""
 msgid "WooCommerce Compare Products Pro"
 msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
 
-#: classes/class-wc-compare-functions.php:661
-#, php-format
-msgid "Trial the <a href=\"%s\" target=\"_blank\">Pro Version for Free</a>"
-msgstr ""
-
-#: classes/class-wc-compare-functions.php:663
-msgid "Immediate access to developer support."
-msgstr ""
-
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:665
+#: classes/class-wc-compare-functions.php:661
 #, fuzzy
 msgid "Pro Version Features"
 msgstr "Bu sayfayı Yazdır"
 
-#: classes/class-wc-compare-functions.php:668
+#: classes/class-wc-compare-functions.php:664
 msgid "Full and tight Intergartion with WooCommerce."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:669
+#: classes/class-wc-compare-functions.php:665
 msgid "Compare WooCommerce taxonomies."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:670
+#: classes/class-wc-compare-functions.php:666
 msgid "No Duplication of Categories, attributes and terms."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:671
+#: classes/class-wc-compare-functions.php:667
 msgid "No Data lost in upgrading from Lite to Pro."
 msgstr ""
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:672
+#: classes/class-wc-compare-functions.php:668
 #, fuzzy
 msgid "Save time - activate Compare - Products Manager."
 msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:673
+#: classes/class-wc-compare-functions.php:669
 #, fuzzy
 msgid "Activate the Compare Audio & Video feature."
 msgstr "Yeni Karşılaştırma Özelliği Oluştur"
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:674
+#: classes/class-wc-compare-functions.php:670
 #, fuzzy
 msgid "Activate all Compare Widget settings."
 msgstr "Karşılaştırma Ayarları"
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:675
+#: classes/class-wc-compare-functions.php:671
 #, fuzzy
 msgid "Activate all Product Card Settings."
 msgstr "Ürün Sayfası Karşılaştırma Düğmeleri"
 
-#: classes/class-wc-compare-functions.php:676
+#: classes/class-wc-compare-functions.php:672
 msgid "Activate all Comparison Table style Settings."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:677
+#: classes/class-wc-compare-functions.php:673
 msgid "Activate same day priority support."
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:680
+#: classes/class-wc-compare-functions.php:676
 msgid "View this"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:680
+#: classes/class-wc-compare-functions.php:676
 msgid "plugins documentation"
 msgstr ""
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:681
+#: classes/class-wc-compare-functions.php:677
 #, fuzzy
 msgid "Visit this"
 msgstr "Bu sayfayı Yazdır"
 
-#: classes/class-wc-compare-functions.php:681
+#: classes/class-wc-compare-functions.php:677
 msgid "plugins support forum"
 msgstr ""
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:682
+#: classes/class-wc-compare-functions.php:678
 #, fuzzy
 msgid "More FREE a3rev WooCommerce Plugins"
 msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:685
+#: classes/class-wc-compare-functions.php:681
 #, fuzzy
 msgid "WooCommerce Product Sort & Display"
 msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:686
+#: classes/class-wc-compare-functions.php:682
 #, fuzzy
 msgid "WooCommerce Products Quick View"
 msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:687
+#: classes/class-wc-compare-functions.php:683
 #, fuzzy
 msgid "WooCommerce Dynamic Products Gallery"
 msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:688
+#: classes/class-wc-compare-functions.php:684
 #, fuzzy
 msgid "WooCommerce Predictive Search"
 msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
 
 # @ woo_cp
-#: classes/class-wc-compare-functions.php:689
+#: classes/class-wc-compare-functions.php:685
 #, fuzzy
 msgid "WooCommerce Widget Product Slideshow"
 msgstr "WooTicaret Ürün Karşılaştırma Yöneticisi"
 
-#: classes/class-wc-compare-functions.php:690
+#: classes/class-wc-compare-functions.php:686
 msgid "WooCommerce Email Inquiry & Cart Options"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:693
+#: classes/class-wc-compare-functions.php:689
 msgid "FREE a3rev WordPress Plugins"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:696
+#: classes/class-wc-compare-functions.php:692
 msgid "a3 Responsive Slider"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:696
+#: classes/class-wc-compare-functions.php:692
 msgid "Just released"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:697
+#: classes/class-wc-compare-functions.php:693
 msgid "Contact Us page - Contact People"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:698
+#: classes/class-wc-compare-functions.php:694
 msgid "WordPress Email Template"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:699
+#: classes/class-wc-compare-functions.php:695
 msgid "Page View Count"
 msgstr ""
 
-#: classes/class-wc-compare-functions.php:702
+#: classes/class-wc-compare-functions.php:698
 #, php-format
 msgid ""
 "View all <a href=\"%s\" target=\"_blank\">17 a3rev plugins</a> on the "

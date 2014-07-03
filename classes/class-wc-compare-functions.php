@@ -656,12 +656,8 @@ class WC_Compare_Functions
 		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><div class="a3-plugin-ui-icon a3-plugin-ui-a3-rev-logo"></div></a>';
 		$html .= '<h3>'.__('Upgrade to Compare Product Pro', 'woo_cp').'</h3>';
 		$html .= '<p>'.__("<strong>NOTE:</strong> All the functions inside the Yellow border on the plugins admin panel are extra functionality that is activated by upgrading to the Pro version", 'woo_cp').':</p>';
-		$html .= '<h3>'.__('WooCommerce Compare Products Pro', 'woo_cp').'</h3>';
-		$html .= '<p>';
-		$html .= '* '. sprintf( __('Trial the <a href="%s" target="_blank">Pro Version for Free</a>', 'woo_cp'), WOOCP_AUTHOR_URI ).'<br />';
-		$html .= '* '. __('No credit card required.', 'woo_cp').'<br />';
-		$html .= '* '. __('Immediate access to developer support.', 'woo_cp');
-		$html .= '</p>';
+		$html .= '<h3><a href="'.WOOCP_AUTHOR_URI.'" target="_blank">'.__('WooCommerce Compare Products Pro', 'woo_cp').'</a></h3>';
+		
 		$html .= '<h3>'.__('Pro Version Features', 'woo_cp').':</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
