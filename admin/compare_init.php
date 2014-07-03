@@ -4,8 +4,8 @@
  * Install Database, settings option and auto add widget to sidebar
  */
 function woocp_install() {
-	update_option('a3rev_woocp_pro_version', '2.1.9.1');
-	update_option('a3rev_woocp_lite_version', '2.1.9.1');
+	update_option('a3rev_woocp_pro_version', '2.2.0');
+	update_option('a3rev_woocp_lite_version', '2.1.9.3');
 	$product_compare_id = WC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'woo_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 	
@@ -16,20 +16,42 @@ function woocp_install() {
 	WC_Compare_Data::install_database();
 	WC_Compare_Categories_Data::install_database();
 	WC_Compare_Categories_Fields_Data::install_database();
-	WC_Compare_Functions::add_meta_all_products();
-	WC_Compare_Widget_Add::automatic_add_widget_to_sidebar();
-	update_option('a3rev_woocp_just_confirm', 1);
 	
 	update_option('a3rev_woocp_just_installed', true);
 }
 
 update_option('a3rev_woocp_plugin', 'woo_compare');
 
+if ( is_admin() ) {
+	
+	// Includes files for Dashboard
+	include 'classes/class-wc-compare-categories.php';
+	include 'classes/class-wc-compare-fields.php';
+	include 'classes/class-wc-compare-features-panel.php';
+	include 'classes/class-wc-compare-products.php';
+	
+	include_once( WOOCP_DIR. '/classes/class-wc-compare-categories.php' );
+	include_once( WOOCP_DIR. '/classes/class-wc-compare-features.php' );
+	
+	include_once ( WOOCP_DIR. '/classes/class-wc-compare-metabox.php' );	
+	
+	// Editor
+	include_once ( WOOCP_DIR. '/tinymce3/tinymce.php' );
+	
+}
+
 function woocp_init() {
 	if ( get_option('a3rev_woocp_just_installed') ) {
 		delete_option('a3rev_woocp_just_installed');
+		
+		update_option( 'a3rev_woocp_install_default_data_start', true );
 		wp_redirect( admin_url( 'admin.php?page=woo-compare-features', 'relative' ) );
 		exit;
+	}
+	
+	if ( get_option( 'a3rev_woocp_install_default_data_start' ) ) {
+		delete_option( 'a3rev_woocp_install_default_data_start' );
+		include_once( WOOCP_DIR. '/includes/class-wc-compare-install.php' );
 	}
 	load_plugin_textdomain( 'woo_cp', false, WOOCP_FOLDER.'/languages' );
 }
@@ -52,6 +74,9 @@ add_filter( 'plugin_row_meta', array('WC_Compare_Hook_Filter', 'plugin_extra_lin
 // Need to call Admin Init to show Admin UI
 global $wc_compare_admin_init;
 $wc_compare_admin_init->init();
+
+// Set nocache constants to comparision page
+add_action('init', array( 'WC_Compare_Hook_Filter', 'nocache_ours_page' ), 0 );
 
 // Add upgrade notice to Dashboard pages
 add_filter( $wc_compare_admin_init->plugin_name . '_plugin_extension', array( 'WC_Compare_Functions', 'plugin_pro_notice' ) );
@@ -192,39 +217,47 @@ if (in_array(basename($_SERVER['PHP_SELF']), array('admin.php')) && isset($_REQU
 }
 
 // Check upgrade functions
-add_action('plugins_loaded', 'woo_cp_lite_upgrade_plugin');
+add_action( 'init', 'woo_cp_lite_upgrade_plugin' );
 function woo_cp_lite_upgrade_plugin () {
 	
 	// Upgrade to 2.0.0
 	if(version_compare(get_option('a3rev_woocp_pro_version'), '2.0.0') === -1){
-		WC_Compare_Functions::upgrade_version_2_0();
+		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.0.php' );
 		update_option('a3rev_woocp_pro_version', '2.0.0');
 	}
 	// Upgrade to 2.0.1
 	if(version_compare(get_option('a3rev_woocp_pro_version'), '2.0.1') === -1){
-		WC_Compare_Functions::upgrade_version_2_0_1();
+		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.0.php' );
 		update_option('a3rev_woocp_pro_version', '2.0.1');
 	}
 	// Upgrade to 2.0.6
 	if(version_compare(get_option('a3rev_woocp_pro_version'), '2.0.6') === -1){
-		WC_Compare_Functions::upgrade_version_2_0_6();
+		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.0.php' );
 		update_option('a3rev_woocp_pro_version', '2.0.6');
 	}
 	// Upgrade to 2.1.0
 	if(version_compare(get_option('a3rev_woocp_pro_version'), '2.1.0') === -1){
-		WC_Compare_Functions::upgrade_version_2_1_0();
+		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.0.php' );
 		update_option('a3rev_woocp_pro_version', '2.1.0');
 	}
 	
 	// Upgrade to 2.1.8
 	if(version_compare(get_option('a3rev_woocp_pro_version'), '2.1.8') === -1){
+		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.0.php' );
 		WC_Compare_Functions::lite_upgrade_version_2_1_8();
 		
 		update_option('a3rev_woocp_pro_version', '2.1.8');
 		update_option('a3rev_woocp_lite_version', '2.1.8');
 	}
-	update_option('a3rev_woocp_pro_version', '2.1.9.1');
-	update_option('a3rev_woocp_lite_version', '2.1.9.1');
+	
+	// Upgrade to 2.2.0
+	if( version_compare(get_option('a3rev_woocp_lite_version'), '2.1.9.3') === -1 ) {
+		include( WOOCP_DIR. '/includes/updates/compare-update-2.1.9.3.php' );
+		update_option('a3rev_woocp_lite_version', '2.1.9.3');
+	}
+	
+	update_option('a3rev_woocp_pro_version', '2.1.9.2');
+	update_option('a3rev_woocp_lite_version', '2.1.9.3');
 
 }
 
