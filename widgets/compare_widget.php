@@ -28,9 +28,7 @@ class WC_Compare_Widget extends WP_Widget
 		extract($woo_compare_widget_style);
 		extract($woo_compare_widget_title_style);
 		extract($args, EXTR_SKIP);
-		$compare_list = WC_Compare_Functions::get_compare_list();
 		$total_compare_product = 0;
-		if (is_array($compare_list)) $total_compare_product = count($compare_list);
 		$title = empty($instance['title']) ? '' : apply_filters('widget_title', $instance['title']);
 		
 		echo $before_widget;
@@ -41,7 +39,7 @@ class WC_Compare_Widget extends WP_Widget
 			echo $before_title . __( 'Compare Products', 'woo_cp' ).' <span class="total_compare_product_container">'.$before_total_text.'<span id="total_compare_product">'.$total_compare_product.'</span>'.$after_total_text.'</span>' . $after_title;
 
 
-		echo '<div class="woo_compare_widget_container">'.WC_Compare_Functions::get_compare_list_html_widget().'</div><div class="woo_compare_widget_loader" style="display:none; text-align:center"><img src="'.WOOCP_IMAGES_URL.'/ajax-loader.gif" border=0 /></div>';
+		echo '<div class="woo_compare_widget_container"></div><div class="woo_compare_widget_loader" style="display:none; text-align:center"><img src="'.WOOCP_IMAGES_URL.'/ajax-loader.gif" border=0 /></div>';
 
 		echo $after_widget;
 
@@ -65,63 +63,6 @@ class WC_Compare_Widget extends WP_Widget
           	</label>
         </p>
 		<?php
-	}
-}
-
-/**
- * Auto Add Compare Widget
- *
- * Table Of Contents
- *
- * automatic_add_widget_to_sidebar()
- */
-class WC_Compare_Widget_Add 
-{
-	public static function automatic_add_widget_to_sidebar() {
-		$add_to_sidebars = array('primary', 'primary-widget-area', 'sidebar-1');
-		$widget_name = 'woo_compare_widget';
-		$sidebar_options = get_option('sidebars_widgets');
-		$compare_widget = get_option('widget_'.$widget_name);
-		$have_widget = false;
-		foreach ($sidebar_options as $siderbar_name => $sidebar_widgets) {
-			if ($siderbar_name == 'wp_inactive_widgets') continue;
-			if (is_array($sidebar_widgets) && count($sidebar_widgets) > 0) {
-				foreach ($sidebar_widgets as $sidebar_widget) {
-					if (stristr($sidebar_widget, $widget_name) !== false) {
-						$have_widget = true;
-						break;
-					}
-				}
-			}
-			if ($have_widget) break;
-		}
-		if (!$have_widget) {
-			if (!is_array($compare_widget)) $compare_widget = array();
-			$count = count($compare_widget)+1;
-			$added_widget = false;
-			$new_sidebar_options = $sidebar_options;
-			foreach ($add_to_sidebars as $sidebar_name) {
-				if (isset($sidebar_options[$sidebar_name])) {
-					$sidebar_options[$sidebar_name][] = $widget_name.'-'.$count;
-					$added_widget = true;
-					break;
-				}
-			}
-			if (!$added_widget) {
-				foreach ($new_sidebar_options as $siderbar_name => $sidebar_widgets) {
-					if ($siderbar_name == 'wp_inactive_widgets') continue;
-					$sidebar_options[$siderbar_name][] = $widget_name.'-'.$count;
-					break;
-				}
-			}
-
-			// add widget to sidebar:
-			$compare_widget[$count] = array(
-				'title' => ''
-			);
-			update_option('sidebars_widgets', $sidebar_options);
-			update_option('widget_'.$widget_name, $compare_widget);
-		}
 	}
 }
 ?>
