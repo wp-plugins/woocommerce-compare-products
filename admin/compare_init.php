@@ -4,8 +4,8 @@
  * Install Database, settings option and auto add widget to sidebar
  */
 function woocp_install() {
-	update_option('a3rev_woocp_pro_version', '2.2.0');
-	update_option('a3rev_woocp_lite_version', '2.1.9.4');
+	update_option('a3rev_woocp_pro_version', '2.4.0');
+	update_option('a3rev_woocp_lite_version', '2.1.9.5');
 	$product_compare_id = WC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'woo_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 	
@@ -227,23 +227,23 @@ function woo_cp_lite_upgrade_plugin () {
 	}
 	// Upgrade to 2.0.1
 	if(version_compare(get_option('a3rev_woocp_pro_version'), '2.0.1') === -1){
-		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.0.php' );
+		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.1.php' );
 		update_option('a3rev_woocp_pro_version', '2.0.1');
 	}
 	// Upgrade to 2.0.6
 	if(version_compare(get_option('a3rev_woocp_pro_version'), '2.0.6') === -1){
-		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.0.php' );
+		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.6.php' );
 		update_option('a3rev_woocp_pro_version', '2.0.6');
 	}
 	// Upgrade to 2.1.0
 	if(version_compare(get_option('a3rev_woocp_pro_version'), '2.1.0') === -1){
-		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.0.php' );
+		include( WOOCP_DIR. '/includes/updates/compare-update-2.1.0.php' );
 		update_option('a3rev_woocp_pro_version', '2.1.0');
 	}
 	
 	// Upgrade to 2.1.8
 	if(version_compare(get_option('a3rev_woocp_pro_version'), '2.1.8') === -1){
-		include( WOOCP_DIR. '/includes/updates/compare-update-2.0.0.php' );
+		include( WOOCP_DIR. '/includes/updates/compare-update-2.1.8.php' );
 		WC_Compare_Functions::lite_upgrade_version_2_1_8();
 		
 		update_option('a3rev_woocp_pro_version', '2.1.8');
@@ -256,8 +256,8 @@ function woo_cp_lite_upgrade_plugin () {
 		update_option('a3rev_woocp_lite_version', '2.1.9.3');
 	}
 	
-	update_option('a3rev_woocp_pro_version', '2.1.9.2');
-	update_option('a3rev_woocp_lite_version', '2.1.9.4');
+	update_option('a3rev_woocp_pro_version', '2.4.0');
+	update_option('a3rev_woocp_lite_version', '2.1.9.5');
 
 }
 

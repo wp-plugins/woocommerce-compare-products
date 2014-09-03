@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 3.7
-Tested up to: 3.9.1
-Stable tag: 2.1.9.4
+Tested up to: 3.9.2
+Stable tag: 2.1.9.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -68,6 +68,18 @@ WooCommerce Product Categories, Product Attributes and Terms if they do not alre
 * On upgrade to Pro version the Lite Version Categories and Features sub menu changes to Categories and Attributes.
 * On upgrade to Pro version all Lite Version create and edit Compare Categories and Compare features code is removed.
 * On upgrade to Pro Version all Lite Version Un-Assigned Compare features code is removed.
+
+>= backbone.js / WooCommerce JSON REST API =
+
+>* The front end compare list widget and comparison list table are built in [backbone.js](http://backbonejs.org/)
+>* Backbone.js live synch between compare list in widget and table loaded by pop-up or on new window.
+>* Lightweight - all events are parsed via the backbone.js JSON interface with the WooCommerce JSON REST API
+
+>= Sass #dynamic {stylesheets}
+
+>* All front end style is created via [Sass](http://sass-lang.com/) #dynamic {stylesheets}
+>* All admin panels are built in Sass
+ 
 
 = Compare Audio and Video =
 * Compare Audio - Shows the default WordPress Audio player in the Comparison table. Supported formats .mp3, .m4a, .ogg, .wav file
@@ -139,6 +151,11 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.1.9.5 - 2014/09/03 =
+* Tweak - Tested fully compatible with WooCommerce 2.2 back to 2.1
+* Tweak - use wc_get_product() function instead of get_product() function when site is using WooCommerce Version 2.2
+* Tweak - Updated google font face in plugin framework.
 
 = 2.1.9.4 - 2014/07/03 =
 * Tweak - Updated plugins description and dashboard text for details about plugin upgrade version.
@@ -353,6 +370,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 2.1.9.5 =
+Upgrade now for full compatibility with soon to be released WooCommerce Version 2.2 backwards to version 2.1
 
 = 2.1.9.4 =
 Update your plugin now with tweaks for full compatibility with WooCommerce Version 2.1.12
