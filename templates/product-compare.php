@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		$woo_compare_logo = get_option('woo_compare_logo');
 		$suffix	= defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		
-		global $woocommerce, $woo_compare_page_style, $woo_compare_close_window_button_style, $woo_compare_viewcart_style;
+		global $woo_compare_page_style, $woo_compare_close_window_button_style, $woo_compare_viewcart_style;
 		global $woo_compare_comparison_page_global_settings;
 		global $woo_compare_print_page_settings;
 		
