@@ -1,9 +1,9 @@
 === Woocommerce Compare Products ===
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
-Requires at least: 3.7
+Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 2.1.9.6
+Stable tag: 2.2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -34,11 +34,17 @@ Chosen products are compared side-by-side, feature by feature, price-by-price. D
 * Fully tested and optimized for all iPads, Android, Kindle and Google Tablets
 * Fully tested and optimized for IOS and Android Mobile platforms.
 
+= Featuring Sass (Simply Awesome Stylesheets)  =
+
+* All the front end style display is created via [Sass](http://sass-lang.com/) for faster loader and render.
+* Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+* This plugins backend admin panels are created in Sass.
+
 = Mobile Responsive App style admin interface =
 
-* 100% compatible with WordPress v3.9.0 admin interface.
+* 100% compatible with WordPress v4.0 admin interface.
 * Backward compatibility to WordPress v3.7.0
-* App style admin inteface.
+* Sass app style admin inteface.
 * Admin interface is optimized for mobiles and tablets.
 
 = a3rev Plugins Lite & Pro Version Admin Interface =
@@ -55,10 +61,12 @@ Chosen products are compared side-by-side, feature by feature, price-by-price. D
 >The Pro Version has lots of extra features (listed below) that coupled with developer support might be well worth your investment!
 
 = Seamless Upgrading =
+
 * No data loss in the upgrade.
 * Deactivate the Lite Version and install and activate the Pro version and all your Compare data is ready for you on the Pro Version.
 
 = Full WooCommerce Integration =
+
 * As of Version 2.2.0 - Full Integration with WooCommerce Product Categories, Product Attributes and their Terms.
 * With the Pro Version the Compare feature works directly with Product Categories, Attributes and Terms.
 * Just 1 Setting on Product Categories activates the Category for comparison.
@@ -75,27 +83,25 @@ WooCommerce Product Categories, Product Attributes and Terms if they do not alre
 >* Backbone.js live synch between compare list in widget and table loaded by pop-up or on new window.
 >* Lightweight - all events are parsed via the backbone.js JSON interface with the WooCommerce JSON REST API
 
->= Sass #dynamic {stylesheets}
+= Products Express Manager =
 
->* All front end style is created via [Sass](http://sass-lang.com/) #dynamic {stylesheets}
->* All admin panels are built in Sass
+* Product Express Manager - If your time is worth anything to you - you will want this feature.
+* Saves you hours, days or even weeks of work (on larger stores) in apply compare to your products
 
+= Compare Videos and Audio files =
 
-= Compare Audio and Video =
 * Compare Audio - Shows the default WordPress Audio player in the Comparison table. Supported formats .mp3, .m4a, .ogg, .wav file
-* Compare Video - Shows and plays Youtube, Vimeo and WordPressTV videos in the Comparison table.
+* Compare Video - Shows and plays Youtube, Vimeo and WordPressTV videos in the Comparison tabl
 
-= Huge Time Saving and Productivity Boost =
-* Product Express Manager - worth the price of the Pro Version upgrade on its own
-* Saves you hours, days or even weeks of work setting up the compare products feature on products on larger stores
+= Full Sass #dynamic {stylesheets} functions =
 
-= Advanced User UI =
-* All of the In-Plugin Custom Style and layout settings are activated.
+* All of the Sass #dynamic {stylesheets} Style and layout settings are activated.
+* Create a unique style and layout of the Compare front end features in Sass without touching the code.
 * Activates the 'View Cart' feature on Product Cards.
-* Activates all Product Card layout and display styling function.
-* Activates full Compare Widget layout and styling functions.
-* Activates 'Add to Cart', 'View Cart' feature on the comparison table.
-* Activates full Comparison Table layout and style functions.
+* Sass #dynamic {stylesheets} products Grid View layout and display styling function.
+* Sass #dynamic {stylesheets} full Compare Widget layout and styling functions.
+* Sass #dynamic {stylesheets} 'Add to Cart', 'View Checkout' custom style feature on the comparison table.
+* Sass #dynamic {stylesheets} full Comparison Table layout and style functions.
 
 
 = Localization =
@@ -151,6 +157,10 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.2.0 - 2014/09/18 =
+* Feature - Converted all front end CSS #dynamic {stylesheets} to Sass #dynamic {stylesheets} for faster loading.
+* Feature - Convert all back end CSS to Sass.
 
 = 2.1.9.6 - 2014/09/13 =
 * Tweak - Tested 100% compatible with WooCommerce 2.2.2
@@ -375,6 +385,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 2.2.0 =
+Major Version upgrade! Full front end conversion to Sass #dynamic {stylesheets}. Admin panel full conversion from CSS to Sass.
 
 = 2.1.9.6 =
 Upgrade now for full compatibility with WordPress v4.0 and WooCommerce v2.2.2

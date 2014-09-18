@@ -5,7 +5,7 @@
  */
 function woocp_install() {
 	update_option('a3rev_woocp_pro_version', '2.4.1');
-	update_option('a3rev_woocp_lite_version', '2.1.9.6');
+	update_option('a3rev_woocp_lite_version', '2.2.0');
 	$product_compare_id = WC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'woo_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 
@@ -16,6 +16,10 @@ function woocp_install() {
 	WC_Compare_Data::install_database();
 	WC_Compare_Categories_Data::install_database();
 	WC_Compare_Categories_Fields_Data::install_database();
+
+	// Build sass
+	global $wc_compare_less;
+	$wc_compare_less->plugin_build_sass();
 
 	update_option('a3rev_woocp_just_installed', true);
 }
@@ -152,9 +156,6 @@ add_action( 'wp_head', array( 'WC_Compare_Hook_Filter', 'add_google_fonts'), 11 
 // Include google fonts into header
 add_action( 'woocp_comparison_page_header', array( 'WC_Compare_Hook_Filter', 'add_google_fonts_comparison_page'), 11 );
 
-// Add Custom style on frontend
-add_action( 'wp_head', array( 'WC_Compare_Hook_Filter', 'include_customized_style'), 11);
-
 // Add script into footer to hanlde the event from widget, popup
 add_action('get_footer', array('WC_Compare_Hook_Filter', 'woocp_footer_script') );
 
@@ -250,14 +251,22 @@ function woo_cp_lite_upgrade_plugin () {
 		update_option('a3rev_woocp_lite_version', '2.1.8');
 	}
 
-	// Upgrade to 2.2.0
+	// Upgrade to 2.1.9.3
 	if( version_compare(get_option('a3rev_woocp_lite_version'), '2.1.9.3') === -1 ) {
 		include( WOOCP_DIR. '/includes/updates/compare-update-2.1.9.3.php' );
 		update_option('a3rev_woocp_lite_version', '2.1.9.3');
 	}
 
+	// Upgrade to 2.2.0
+	if( version_compare(get_option('a3rev_woocp_lite_version'), '2.2.0') === -1 ){
+		// Build sass
+		global $wc_compare_less;
+		$wc_compare_less->plugin_build_sass();
+		update_option('a3rev_woocp_lite_version', '2.2.0');
+	}
+
 	update_option('a3rev_woocp_pro_version', '2.4.1');
-	update_option('a3rev_woocp_lite_version', '2.1.9.6');
+	update_option('a3rev_woocp_lite_version', '2.2.0');
 
 }
 
