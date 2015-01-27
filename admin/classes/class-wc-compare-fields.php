@@ -208,7 +208,7 @@ class WC_Compare_Fields_Class
 					$("#field_value").hide();
 				}
 			}
-			$("select#field_type").trigger("liszt:updated");
+			$("select#field_type").trigger("chosen:updated");
 		});
 	});
 })(jQuery);
