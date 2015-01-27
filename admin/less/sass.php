@@ -64,6 +64,14 @@ class WC_Compare_Less
             @file_put_contents($_upload_dir['basedir'] . '/sass/' . $filename . '.css', '');
             @file_put_contents($_upload_dir['basedir'] . '/sass/' . $filename . '.min.css', '');
         }
+
+        $mixins = $this->css_file_name . '_mixins';
+        if( !file_exists( $_upload_dir['basedir'].'/sass/'.$mixins.'.less' ) ){
+            $mixinsless = $this->plugin_dir.'/admin/less/assets/css/mixins.less';
+            $a3rev_mixins_less = $_upload_dir['basedir'].'/sass/'.$mixins.'.less';
+            @copy($mixinsless, $a3rev_mixins_less);
+        }
+
         $files = array_diff(scandir($_upload_dir['basedir'] . '/sass'), array(
             '.',
             '..'
@@ -78,7 +86,7 @@ class WC_Compare_Less
       
         if ($sass != '') {
             
-            $sass_data = '@import "'.$this->plugin_dir.'/admin/less/assets/css/mixins.less";' . "\n";
+            $sass_data = '@import "'.$mixins.'.less";' . "\n";
             
             $sass_data .= $sass;
             

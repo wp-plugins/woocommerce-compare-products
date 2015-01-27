@@ -41,6 +41,7 @@ if ( get_option('woo_compare_product_lite_clean_on_deletion') == 1 ) {
 	delete_option( 'woo_compare_basket_icon' );
 	
 	delete_option( 'woo_compare_product_lite_clean_on_deletion' );
+	delete_option( 'a3rev_woocp_lite_version' );
 	
 	delete_post_meta_by_key('_woo_deactivate_compare_feature');
 	delete_post_meta_by_key('_woo_compare_category');

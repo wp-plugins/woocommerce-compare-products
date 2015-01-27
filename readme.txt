@@ -2,8 +2,8 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 3.8
-Tested up to: 4.0
-Stable tag: 2.2.0
+Tested up to: 4.1
+Stable tag: 2.2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -157,6 +157,12 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.2.1 - 2015/01/27 =
+* Tweak - Audit, test and tweak for 100% compatibility with WooCommerce 2.2.10
+* Tweak - Audit, test and tweak for 100% compatibility with WordPress Version 4.1
+* Fix - Sass compile path not saving on windows xampp.
+* Fix - Auto checked if the site has old version of Lite database and if so run update database structure during upgrade to latest version.
 
 = 2.2.0 - 2014/09/18 =
 * Feature - Converted all front end CSS #dynamic {stylesheets} to Sass #dynamic {stylesheets} for faster loading.
@@ -385,6 +391,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 2.2.1 =
+Important Upgrade. Please upgrade now for full compatibility with WooCommerce 2.2.10 and WordPress 4.1 including an important plugin database upgrade.
 
 = 2.2.0 =
 Major Version upgrade! Full front end conversion to Sass #dynamic {stylesheets}. Admin panel full conversion from CSS to Sass.
