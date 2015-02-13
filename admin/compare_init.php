@@ -12,8 +12,8 @@ function woocp_install() {
 		include( WOOCP_DIR. '/includes/updates/compare-update-2.1.9.3.php' );
 	}
 
-	update_option('a3rev_woocp_pro_version', '2.4.3');
-	update_option('a3rev_woocp_lite_version', '2.2.1');
+	update_option('a3rev_woocp_pro_version', '2.4.4');
+	update_option('a3rev_woocp_lite_version', '2.2.2');
 	$product_compare_id = WC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'woo_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 
@@ -273,8 +273,8 @@ function woo_cp_lite_upgrade_plugin () {
 		update_option('a3rev_woocp_lite_version', '2.2.0');
 	}
 
-	update_option('a3rev_woocp_pro_version', '2.4.3');
-	update_option('a3rev_woocp_lite_version', '2.2.1');
+	update_option('a3rev_woocp_pro_version', '2.4.4');
+	update_option('a3rev_woocp_lite_version', '2.2.2');
 
 }
 

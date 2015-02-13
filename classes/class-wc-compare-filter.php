@@ -416,6 +416,9 @@ class WC_Compare_Hook_Filter
 		if ($passed_validation && WC()->cart->add_to_cart($product_id, $quantity, $variation_id, $variation_data)) {
 			// Return html fragments
 			$data = apply_filters('add_to_cart_fragments', array());
+
+			// For WC 2.3
+			$data = apply_filters('woocommerce_add_to_cart_fragments', $data);
 		} else {
 			$data = array(
 				'error' => true,
