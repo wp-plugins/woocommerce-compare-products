@@ -253,7 +253,6 @@ class WC_Compare_Products_Class
 	}
 
 	public static function woocp_compare_products_script() {
-		//global $woocommerce;
 		echo'<style>
 			#TB_ajaxContent{padding-bottom:0 !important; padding-right:0 !important; height:auto !important; width:auto !important;}
 			#TB_iframeContent{width:auto !important; padding-right:10px !important; margin-bottom:0px !important; max-height:480px !important;}
