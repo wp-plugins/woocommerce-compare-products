@@ -43,8 +43,8 @@ class WC_Compare_Data
 				  `field_order` int(11) NOT NULL,
 				  PRIMARY KEY  (`id`)
 				) $collate; ";
-			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-			dbDelta($sql);
+
+			$wpdb->query($sql);
 		}
 	}
 	
