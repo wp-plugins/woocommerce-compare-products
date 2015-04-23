@@ -403,7 +403,8 @@ class WC_Compare_Fields_Class
 			$div = 5;
 			$keyword = trim(stripslashes($_REQUEST['s_feature']));
 			
-			$link = add_query_arg(array('pp' => '', 'rows' => $rows, 's_feature' => $keyword ) );
+			// fixed for 4.1.2
+			$link = esc_url( add_query_arg(array('pp' => '', 'rows' => $rows, 's_feature' => $keyword ) ) );
 			
 			$character = 'latin1';
 			if ( $wpdb->has_cap( 'collation' ) ) 

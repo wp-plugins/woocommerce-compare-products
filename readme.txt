@@ -3,7 +3,7 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WooCommerce, WooCommerce Plugins, WooCommerce compare products, compare products plugin, compare products
 Requires at least: 3.8
 Tested up to: 4.2.0
-Stable tag: 2.2.4
+Stable tag: 2.2.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -157,6 +157,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.2.5 - 2015/04/23 =
+* Fix - Move the output of <code>add_query_arg()</code> into <code>esc_url()</code> function to fix the XSS vulnerability identified in WordPress 4.1.2 security upgrade
 
 = 2.2.4 - 2015/04/21 =
 * Tweak - Tested and Tweaked for full compatibility with WordPress Version 4.2.0
@@ -408,6 +411,9 @@ You can use this plugin when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 2.2.5 =
+Important Security Patch! - please run this update now. Fixes XSS vulnerability declared and patched in WordPress Security update v 4.1.2
 
 = 2.2.4 =
 Maintenance upgrade. Code tweaks for full compatibility with WordPress 4.2.0 and WooCommerce 2.3.8
