@@ -397,7 +397,6 @@ class WC_Compare_Hook_Filter
 	}
 
 	public static function woocp_variable_ajax_add_to_cart() {
-		check_ajax_referer( 'woocp-add-to-cart', 'security' );
 
 		// Get product ID to add and quantity
 		$variation_id   = (int) $_REQUEST['product_id'];
@@ -431,7 +430,6 @@ class WC_Compare_Hook_Filter
 	}
 
 	public static function woocp_add_to_compare() {
-		check_ajax_referer( 'woocp-compare-events', 'security' );
 
 		$product_id  = $_REQUEST['product_id'];
 		WC_Compare_Functions::add_product_to_compare_list($product_id);
@@ -440,7 +438,6 @@ class WC_Compare_Hook_Filter
 	}
 
 	public static function woocp_remove_from_popup_compare() {
-		check_ajax_referer( 'woocp-compare-events', 'security' );
 
 		$product_id  = $_REQUEST['product_id'];
 		WC_Compare_Functions::delete_product_on_compare_list($product_id);
@@ -449,7 +446,6 @@ class WC_Compare_Hook_Filter
 	}
 	
 	public static function woocp_update_compare_popup() {
-		check_ajax_referer( 'woocp-compare-events', 'security' );
 		$result = WC_Compare_Functions::get_compare_list_html_popup();
 		$result .= '<script src="'. WOOCP_JS_URL.'/fixedcolumntable/fixedcolumntable.js"></script>';
 		echo json_encode( $result );
@@ -457,28 +453,24 @@ class WC_Compare_Hook_Filter
 	}
 
 	public static function woocp_update_compare_widget() {
-		//check_ajax_referer( 'woocp-compare-events', 'security' );
 		$result = WC_Compare_Functions::get_compare_list_html_widget();
 		echo json_encode( $result );
 		die();
 	}
 
 	public static function woocp_update_total_compare() {
-		//check_ajax_referer( 'woocp-compare-events', 'security' );
 		$result = WC_Compare_Functions::get_total_compare_list();
 		echo json_encode( $result );
 		die();
 	}
 
 	public static function woocp_remove_from_compare() {
-		check_ajax_referer( 'woocp-compare-events', 'security' );
 		$product_id  = $_REQUEST['product_id'];
 		WC_Compare_Functions::delete_product_on_compare_list($product_id);
 		die();
 	}
 
 	public static function woocp_clear_compare() {
-		check_ajax_referer( 'woocp-compare-events', 'security' );
 		WC_Compare_Functions::clear_compare_list();
 		die();
 	}
