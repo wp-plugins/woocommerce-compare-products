@@ -34,8 +34,8 @@ class WC_Compare_Categories_Fields_Data
 				  `field_id` int(11) NOT NULL,
 				  `field_order` int(11) NOT NULL
 				) $collate;";
-			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-			dbDelta($sql);
+
+			$wpdb->query($sql);
 		}
 	}
 

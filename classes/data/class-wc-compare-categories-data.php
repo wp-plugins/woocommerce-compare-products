@@ -6,7 +6,6 @@
  * Table Of Contents
  *
  * install_database()
- * automatic_add_compare_categories()
  * get_row()
  * get_maximum_order()
  * get_count()
@@ -35,23 +34,10 @@ class WC_Compare_Categories_Data
 				  `category_order` int(11) NOT NULL,
 				  PRIMARY KEY  (`id`)
 				) $collate; ";
-			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-			dbDelta($sql);
+
+			$wpdb->query($sql);
 		}
 	}
-	
-	public static function automatic_add_compare_categories() {
-		$terms = get_terms("product_cat", array('hide_empty' => 0));
-		if ( count($terms) > 0 ) {
-			foreach ($terms as $category_product) {
-				$check_existed = WC_Compare_Categories_Data::get_count("category_name='".trim(addslashes($category_product->name))."'");
-				if ($check_existed < 1 ) {
-					WC_Compare_Categories_Data::insert_row(array('category_name' => trim(addslashes($category_product->name))));
-				}
-			}
-		}
-	}
-	
 
 	public static function get_row($id, $where='', $output_type='OBJECT') {
 		global $wpdb;

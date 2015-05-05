@@ -372,7 +372,7 @@ class WC_Compare_MetaBox
 	}
 
 	public static function variable_compare_meta_boxes() {
-		global $post, $woocommerce;
+		global $post;
 		$current_db_version = get_option( 'woocommerce_db_version', null );
 		$post_status = get_post_status($post->ID);
 		$post_type = get_post_type($post->ID);
@@ -483,6 +483,7 @@ class WC_Compare_MetaBox
 	<?php
 				$javascript = ob_get_clean();
 				if ( version_compare( $current_db_version, '2.1.0', '<' ) && null !== $current_db_version ) {
+					global $woocommerce;
 					$woocommerce->add_inline_js( $javascript );
 				} else {
 					wc_enqueue_js( $javascript );
