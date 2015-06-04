@@ -32,6 +32,14 @@ class WC_Compare_Admin_UI
 	 */
 	public $plugin_name = 'wc_compare_product';
 	
+	public $is_free_plugin = true;
+	
+	/**
+	 * @var string
+	 * You must change to correct class name that you are working
+	 */
+	public $class_name = 'WC_Compare';
+	
 	/**
 	 * @var string
 	 * You must change to correct pro plugin page url on a3rev site
@@ -52,7 +60,7 @@ class WC_Compare_Admin_UI
 	 * @var array
 	 * You must change to correct page you want to include scripts & styles, if you have many pages then use array() : array( 'quotes-orders-mode', 'quotes-orders-rule' )
 	 */
-	public $admin_pages = array( 'woo-compare-features', 'woo-compare-products' );
+	public $admin_pages = array( 'woo-compare-features', 'woo-compare-products', 'product_attributes' );
 	
 	
 	/*-----------------------------------------------------------------------------------*/
@@ -122,15 +130,14 @@ class WC_Compare_Admin_UI
 	/* upgrade_top_message() */
 	/* Show upgrade top message for pro fields
 	/*-----------------------------------------------------------------------------------*/
-	public function upgrade_top_message( $echo = false ) {
+	public function upgrade_top_message( $echo = false, $setting_id = '' ) {
 		$upgrade_top_message = sprintf( '<div class="pro_feature_top_message">' 
-			. __( 'Settings inside this yellow border are %s Features.', 'woo_cp' ) 
+			. __( 'Advanced settings inside this yellow border are not activated on the Lite Version.', 'woo_cp' ) 
 			. '<br />' 
-			. __( 'Upgrade to the <a href="%s" target="_blank">%s</a> to activate these settings.', 'woo_cp' ) 
+			. __( 'Upgrade to the <a href="%s" target="_blank">%s License</a> to activate these settings.', 'woo_cp' ) 
 			. '</div>'
-			, apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'woo_cp' ) )
-			, apply_filters( $this->plugin_name . '_pro_plugin_page_url', $this->pro_plugin_page_url )
-			, apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'woo_cp' ) ) 
+			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_plugin_page_url', apply_filters( $this->plugin_name . '_pro_plugin_page_url', $this->pro_plugin_page_url ) )
+			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_version_name', apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'woo_cp' ) ) )
 		);
 		
 		$upgrade_top_message = apply_filters( $this->plugin_name . '_upgrade_top_message', $upgrade_top_message );
