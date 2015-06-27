@@ -9,13 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 		$woo_compare_logo = get_option('woo_compare_logo');
 		$suffix	= defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		
+
 		global $woocommerce, $woo_compare_page_style, $woo_compare_close_window_button_style, $woo_compare_viewcart_style;
 		global $woo_compare_comparison_page_global_settings;
 		global $woo_compare_print_page_settings;
-		
+
 		$wc_frontend_script_path = str_replace( array( 'http:', 'https:' ), '', $woocommerce->plugin_url() ) . '/assets/js/frontend/';
-		
+
 		// Variables for JS scripts
 		$woocommerce_params = array(
 			'plugin_url'                       => $woocommerce->plugin_url(),
@@ -50,19 +50,26 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			$print_button_class = 'compare_print_button_type';
 			$print_custom_class = '';
 			$print_button_text = $woo_compare_print_page_settings['button_text'];
-		
+
 			$close_button_class = 'compare_close_button_type';
 			$close_custom_class = '';
 			$close_button_text = $woo_compare_close_window_button_style['button_text'];
 		?>
     	<div class="compare_print_container"><div id="compare_popup_container" class="compare_popup_container">
         <link type="text/css" href="<?php echo WOOCP_JS_URL; ?>/fixedcolumntable/fixedcolumntable.css" rel="stylesheet" />
-        <?php include( WOOCP_DIR. '/templates/product_comparison_style.php' ); ?>
+        <?php
+        $_upload_dir = wp_upload_dir();
+		if ( file_exists( $_upload_dir['basedir'] . '/sass/wc_product_comparison.min.css' ) ) {
+			echo '<link media="screen" type="text/css" href="' . str_replace(array('http:','https:'), '', $_upload_dir['baseurl'] ) . '/sass/wc_product_comparison.min.css" rel="stylesheet" />' . "\n";
+		} else {
+			include( WOOCP_DIR. '/templates/product_comparison_style.php' );
+		}
+		?>
         <?php do_action('woocp_comparison_table_before'); ?>
 				<div class="compare_heading">
 					<?php if ( $woo_compare_logo != '') { ?>
                     <img class="compare_logo" src="<?php echo $woo_compare_logo; ?>" alt="<?php _e('Compare Products', 'woo_cp'); ?>" />
-                    <?php } else { ?> 
+                    <?php } else { ?>
                     <h1><?php _e('Compare Products', 'woo_cp'); ?></h1>
                     <?php } ?>
                     <div class="print_control">
@@ -118,7 +125,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									$(".popup_woo_compare_widget_loader").hide();
 									$(".compare_popup_wrap").html(result);
 								});
-								
+
 								data = {
 									action: 		"woocp_update_compare_widget",
 									security: 		"<?php echo $woocp_compare_events; ?>"
