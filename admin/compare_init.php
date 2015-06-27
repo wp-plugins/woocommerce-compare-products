@@ -13,7 +13,7 @@ function woocp_install() {
 	}
 
 	update_option('a3rev_woocp_pro_version', '2.4.5');
-	update_option('a3rev_woocp_lite_version', '2.2.7');
+	update_option('a3rev_woocp_lite_version', '2.2.8');
 	$product_compare_id = WC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'woo_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 
@@ -267,14 +267,15 @@ function woo_cp_lite_upgrade_plugin () {
 
 	// Upgrade to 2.2.0
 	if( version_compare(get_option('a3rev_woocp_lite_version'), '2.2.0') === -1 ){
+		update_option('a3rev_woocp_lite_version', '2.2.0');
+
 		// Build sass
 		global $wc_compare_less;
 		$wc_compare_less->plugin_build_sass();
-		update_option('a3rev_woocp_lite_version', '2.2.0');
 	}
 
 	update_option('a3rev_woocp_pro_version', '2.4.5');
-	update_option('a3rev_woocp_lite_version', '2.2.7');
+	update_option('a3rev_woocp_lite_version', '2.2.8');
 
 }
 
